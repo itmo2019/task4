@@ -1,0 +1,191 @@
+html {
+    height: 100%;
+}
+
+body {
+    background-color : #e5eaf0;
+    height: 100%;
+}
+
+.header {
+    position: relative;
+    height: 5.2%;
+    width: 100%;
+    top: 2%;
+    left: 2%;
+}
+
+.main {
+    float: right;
+    height: 100%;
+    width: 80%;
+}
+
+.img {
+    position: relative;
+    height: auto;
+    top: 10%;
+    float: left;
+}
+
+.article {
+    visibility: hidden;
+    display: none;
+    opacity: 0;
+}
+
+.logo {
+    position: relative;
+    font-family: YandexSans sans-serif;
+    width: auto;
+    top: 1%;
+    float: left;
+    font-size: 90%;
+}
+
+.search {
+    position: relative;
+    width: 70%;
+    top: 5%;
+    float: left;
+    height: 100%;
+}
+
+.yandex {
+    font-weight: bold;
+    position: relative;
+    float: left;
+    font-size: 40px;
+}
+
+.mail {
+    position: relative;
+    font-weight: normal;
+    float: left;
+    font-size: 40px;
+}
+
+.search-form {
+    position: relative;
+    margin-left: 25%;
+    width: 50%;
+    height: 100%;
+}
+
+@font-face {
+    font-family: YandexSans;
+    font-style: normal;
+    font-weight: normal;
+    src: url("YandexSansDisplay-Regular.woff2");
+}
+
+@font-face {
+    font-family: YandexSans;
+    font-style: normal;
+    font-weight: bold;
+    src: url("YandexSansDisplay-Bold.woff2");
+}
+
+.menu {
+    float: left;
+    position: relative;
+    top: 0;
+    height: 100%;
+    width: 18.4%
+}
+
+.content {
+    position: relative;
+    float: left;
+    left: 2%;
+    top: 8%;
+    width: 100%;
+    height: 100%;
+}
+
+.button_write {
+    position: relative;
+    height: 5.1%;
+    background: #6287bd;
+    font-family: HelveticaNeue-Medium sans-serif;
+    color: white;
+    text-align: center;
+    top: 0;
+    font-size: 80%;
+}
+
+.options {
+    height: 21%;
+}
+
+.option {
+    font-family: HelveticaNeue-Medium sans-serif;
+    font-size: 90%;
+    height: 16.6%;
+}
+
+.actions {
+    height: 5%;
+}
+
+.checkbox {
+    float: left;
+}
+
+.action {
+    float: left;
+}
+
+.letter {
+    height: 5%;
+}
+
+.contact {
+    float: left;
+}
+
+.from {
+    float: left;
+}
+
+.checked {
+    float: left;
+}
+
+.theme {
+    float: left;
+}
+
+.data {
+    float: left;
+}
+
+.footer {
+    height: 5%;
+    position: relative;
+    bottom: 0;
+    left: 0;
+}
+
+.link {
+    float: right;
+}
+
+#id:target #id{
+    display: inline-block;
+}
+
+#id:target .main {
+    display: none;
+}
+
+.shaped {
+    float: left;
+    height: 80px;
+    width: 80px;
+    float: right;
+    background: black center top no-repeat;
+    background-size: cover;
+    shape-outside: circle(40px);
+    clip-path: circle(40px);
+}
