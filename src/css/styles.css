@@ -12,8 +12,8 @@ body {
 
 main {
   position: absolute;
-  width: 98%;
-  height: 98%;
+  width: 95%;
+  height: 95%;
   padding: 5px;
   margin: 5px;
 }
@@ -33,6 +33,7 @@ main {
   left: 31px;
   width: 300px;
   height: 31px;
+  cursor: pointer;
 }
 
 #main_title_bold {
@@ -87,6 +88,7 @@ main {
   top: 11px;
   bottom: 11px;
   right: 10px;
+  cursor: pointer;
 }
 
 .page_content {
@@ -178,6 +180,7 @@ main {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.34);
   border-radius: 3px;
   background-color: #ffffff;
+  overflow: auto;
 }
 
 .message {
@@ -289,6 +292,7 @@ main {
   font-family: HelveticaNeue, serif;
   font-size: 100%;
   color: #cccccc;
+  cursor: pointer;
 }
 
 .make_as_read {
@@ -312,20 +316,19 @@ main {
 
 .messages_footer_toolbar {
   position: absolute;
-  right: 40px;
   bottom: 9px;
   top: 7px;
-  height: 12px;
-  width: 345px;
+  right: 0;
+  horiz-align: right;
   white-space: nowrap;
 }
 
 .messages_footer__text {
   display: inline-block;
   color: #9b9b9b;
-  font-family: "Helvetica Neue", serif;
-  font-size: 12px;
+  font-size: 11px;
   padding-right: 30px;
+  cursor: pointer;
 }
 
 .first_message {
@@ -338,6 +341,7 @@ main {
   padding: 30px;
   background-color: #ffffff;
   z-index: 1;
+  overflow: auto;
 }
 
 .close_message {
@@ -359,5 +363,6 @@ main {
 
 .beautiful_cat {
   height: 200px;
-  border-radius: 10%;
+  shape-outside: url("../img/cat.png");
+  shape-image-threshold: 0.7;
 }
