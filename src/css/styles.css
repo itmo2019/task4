@@ -353,8 +353,17 @@ main {
   display: inline-block;
   color: #9b9b9b;
   font-size: 11px;
+}
+
+.messages_footer__text_to_bold {
+  display: inline-block;
+  color: #9b9b9b;
+  font-size: 11px;
   padding-right: 30px;
-  cursor: pointer;
+}
+
+.messages_footer__text_to_bold:hover {
+  color: #000;
 }
 
 .first_message {
