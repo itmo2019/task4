@@ -33,7 +33,6 @@ main {
   left: 31px;
   width: 300px;
   height: 31px;
-  cursor: pointer;
 }
 
 .simple_link {
@@ -59,7 +58,6 @@ main {
   position: absolute;
   width: 20px;
   height: 17px;
-  cursor: pointer;
 }
 
 .menu_icon_line {
@@ -98,7 +96,6 @@ main {
   top: 11px;
   bottom: 11px;
   right: 10px;
-  cursor: pointer;
 }
 
 .page_content {
@@ -123,7 +120,6 @@ main {
   height: 32px;
   border-radius: 3px;
   background-color: #6287bd;
-  cursor: pointer;
 }
 
 .main_menu_write {
@@ -156,7 +152,6 @@ main {
   font-family: HelveticaNeue, serif;
   font-size: 100%;
   color: #707070;
-  cursor: pointer;
 }
 
 .main_menu_li__text {
@@ -303,7 +298,6 @@ main {
   border-radius: 3px;
   border: 1px solid rgba(0, 0, 0, 0.15);
   background-color: #ffffff;
-  cursor: pointer;
 }
 
 .messages_title__text {
@@ -315,7 +309,6 @@ main {
   font-size: 13px;
   font-weight: 500;
   color: #cccccc;
-  cursor: pointer;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
@@ -353,17 +346,24 @@ main {
   display: inline-block;
   color: #9b9b9b;
   font-size: 11px;
+  cursor: default;
 }
 
 .messages_footer__text_to_bold {
   display: inline-block;
-  color: #9b9b9b;
-  font-size: 11px;
   padding-right: 30px;
+  cursor: default;
 }
 
-.messages_footer__text_to_bold:hover {
+.footer_link {
+  color: #9b9b9b;
+  font-size: 11px;
+  text-decoration: none;
+}
+
+.footer_link:hover {
   color: #000;
+
 }
 
 .first_message {
