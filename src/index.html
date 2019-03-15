@@ -5,7 +5,7 @@
   <link href="css/styles.css" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Задание #2</title>
-  <!-- There were used Yandex Sans only for educational use. It wasn't used for commercial targets.-->
+  <!-- There were used Yandex Sans only for educational use. It didn't used for commercial targets.-->
 </head>
 <body>
 <main>
@@ -16,22 +16,28 @@
       <div class="menu_icon_line"></div>
     </div>
     <div class="main_title">
-      <span id="main_title_bold">Яндекс</span> Почта
+      <a class="simple_link" href="https://yandex.ru">
+        <img class="main_title_left" src="img/YandexLogoLeft.png">
+      </a>
+      <a class="simple_link" href="#">
+        <img class="main_title_right" src="img/YandexLogoRight.png">
+      </a>
     </div>
-    <div class="main_search">
-      <div class="main_search__text">Поиск</div>
-      <img class="main_search__remove" src="img/close.png">
-    </div>
+    <label>
+      <input type="search" placeholder="Поиск" class="main_search">
+    </label>
   </header>
   <div class="page_content">
     <article class="main_menu">
-      <div class="main_menu_write_box">
-        <div class="main_menu_write">Написать</div>
-      </div>
+      <a class="simple_link" href="#compose">
+        <div class="main_menu_write_box">
+          <div class="main_menu_write">Написать</div>
+        </div>
+      </a>
 
       <ul class="main_menu_content">
         <li class="main_menu_li">
-          <div class="main_menu_li__text">Входящие</div>
+          <div class="main_menu_li__text">Входящиеееееееееееееееее</div>
         </li>
         <li class="main_menu_li">
           <div class="main_menu_li__text">Отправленные</div>
@@ -52,7 +58,9 @@
     </article>
     <article class="inbox">
       <header class="messages_title">
-        <div class="checkbox_main"></div>
+        <label>
+          <input type="checkbox" class="checkbox_main">
+        </label>
         <div class="messages_title__text">Переслать</div>
         <div class="messages_title__text">Удалить</div>
         <div class="messages_title__text">Это спам!</div>
@@ -61,7 +69,9 @@
       <article class="messages">
         <label for="close_message_checkbox">
           <div class="message" id="first_email">
-            <div class="message_checkbox"></div>
+            <label>
+              <input type="checkbox" class="message_checkbox">
+            </label>
             <img class="message_icon" src="img/ya-default.png">
             <span class="unread_message_author">Яндекс.Котики</span>
             <div class="make_as_read"></div>
@@ -108,7 +118,9 @@
           однако об их результатах ничего не сообщается.
         </div>
         <section class="message">
-          <div class="message_checkbox"></div>
+          <label>
+            <input type="checkbox" class="message_checkbox">
+          </label>
           <img class="message_icon" src="img/ya-default.png">
           <span class="unread_message_author">Команда Яндекс.Почты ллулулууллулулулулл</span>
           <div class="make_as_read"></div>
@@ -116,14 +128,18 @@
           <time class="message_date" datetime="2019.02.17">17 фев</time>
         </section>
         <section class="message">
-          <div class="message_checkbox"></div>
+          <label>
+            <input type="checkbox" class="message_checkbox">
+          </label>
           <img class="message_icon" src="img/ya-default.png">
           <span class="read_message_author">Команда Яндекс.Почты</span>
           <span class="read_message_body">Как читать почту с мобильногоооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооо</span>
           <time class="message_date" datetime="2019.02.16">16 фев</time>
         </section>
         <section class="message">
-          <div class="message_checkbox"></div>
+          <label>
+            <input type="checkbox" class="message_checkbox">
+          </label>
           <img class="message_icon" src="img/ya-default.png">
           <span class="read_message_author">Яндекс</span>
           <span class="read_message_body">Соберите всю почту в этот ящик</span>

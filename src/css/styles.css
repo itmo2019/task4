@@ -1,7 +1,7 @@
 @import "font/stylesheet.css";
 
 * {
-  font-family: 'Yandex Sans Text';
+  font-family: 'Yandex Sans Text', serif;
 }
 
 body {
@@ -26,7 +26,7 @@ main {
 
 .main_title {
   position: absolute;
-  top: -8px;
+  top: -6px;
   font-size: 30px;
   font-weight: 100;
   font-style: normal;
@@ -36,9 +36,23 @@ main {
   cursor: pointer;
 }
 
-#main_title_bold {
-  font-weight: 400;
-  letter-spacing: -2px;
+.simple_link {
+  text-decoration: none;
+  border: 0;
+}
+
+.main_title_left {
+  border: 0;
+  width: 80px;
+  height: 31px;
+  padding: 0;
+}
+
+.main_title_right {
+  border: 0;
+  padding-bottom: 1px;
+  width: 70px;
+  height: 31px;
 }
 
 .menu_icon {
@@ -123,7 +137,7 @@ main {
   right: 45px;
   bottom: 10px;
   font-family: HelveticaNeue, serif;
-  font-size: 100%;
+  font-size: 12px;
   color: #ffffff;
 }
 
@@ -133,7 +147,7 @@ main {
 
 .main_menu_content {
   position: relative;
-  top: 15px;
+  top: 8px;
   list-style: none;
   padding: 0;
   margin: 0;
@@ -141,8 +155,8 @@ main {
 
 .main_menu_li {
   padding-top: 6px;
-  width: 59px;
-  height: 13px;
+  width: 147px;
+  height: 22px;
   font-family: HelveticaNeue, serif;
   font-size: 100%;
   color: #707070;
@@ -151,6 +165,12 @@ main {
 
 .main_menu_li__text {
   padding-left: 10px;
+  width: 130px;
+  height: 20px;
+  font-size: 11px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .main_menu_li:hover {
@@ -211,6 +231,7 @@ main {
   left: 86px;
   top: 12px;
   width: 170px;
+  font-size: 13px;
   font-weight: bold;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -222,6 +243,7 @@ main {
   left: 86px;
   top: 12px;
   width: 170px;
+  font-size: 13px;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
@@ -232,6 +254,7 @@ main {
   left: 281px;
   right: 100px;
   top: 12px;
+  font-size: 13px;
   font-weight: bold;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -243,6 +266,7 @@ main {
   left: 281px;
   right: 100px;
   top: 12px;
+  font-size: 13px;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
@@ -252,6 +276,12 @@ main {
   position: absolute;
   right: 20px;
   top: 13px;
+  font-size: 13px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
   text-align: right;
   color: #9b9b9b;
 }
@@ -288,11 +318,15 @@ main {
   display: inline-block;
   margin-left: 20px;
   vertical-align: top;
-  margin-right: 6px;
+  width: 90px;
   font-family: HelveticaNeue, serif;
-  font-size: 100%;
+  font-size: 13px;
+  font-weight: 500;
   color: #cccccc;
   cursor: pointer;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .make_as_read {
@@ -335,8 +369,8 @@ main {
   position: absolute;
   display: none;
   top: 37px;
-  left: 0px;
-  right: 0px;
+  left: 0;
+  right: 0;
   bottom: 50px;
   padding: 30px;
   background-color: #ffffff;
