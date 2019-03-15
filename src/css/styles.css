@@ -289,10 +289,24 @@ main {
   border-bottom: solid 1px #ededed;
 }
 
-.checkbox_main {
+.checkbox_main_box {
   display: inline-block;
-  -webkit-appearance: none;
-  margin-top: 0;
+  padding-bottom: 3px;
+}
+
+.checkbox_message {
+  display: none;
+}
+
+.checkbox_message_label {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+}
+
+.checkbox_message + .checkbox_message_label:before {
+  display: inline-block;
+  content: '';
   width: 16px;
   height: 16px;
   border-radius: 3px;
@@ -300,11 +314,32 @@ main {
   background-color: #ffffff;
 }
 
+.checkbox_message:checked + .checkbox_message_label:after {
+  content: "";
+  padding: 2px;
+  text-align: center;
+  position: absolute;
+  width: 1px;
+  height: 5px;
+  border: solid blue;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  top: 2px;
+  left: 5px;
+}
+
+.checkbox_message_box {
+  position: absolute;
+  top: 11px;
+  left: 20px;
+}
+
 .messages_title__text {
   display: inline-block;
   margin-left: 20px;
   margin-right: 6px;
-  vertical-align: top;
   font-family: HelveticaNeue, serif;
   font-size: 13px;
   font-weight: 500;
