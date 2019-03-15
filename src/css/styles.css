@@ -2,6 +2,7 @@
 
 * {
   font-family: 'Yandex Sans Text', serif;
+  font-weight: 300;
 }
 
 body {
@@ -29,7 +30,6 @@ main {
   top: -6px;
   font-size: 30px;
   font-weight: 100;
-  font-style: normal;
   left: 31px;
   width: 300px;
   height: 31px;
@@ -87,11 +87,7 @@ main {
   bottom: 0;
   font-size: 16px;
   opacity: 0.5;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
   line-height: 2.13;
-  letter-spacing: normal;
   color: #000000;
 }
 
@@ -171,6 +167,7 @@ main {
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+  color: #707070;
 }
 
 .main_menu_li:hover {
@@ -277,11 +274,6 @@ main {
   right: 20px;
   top: 13px;
   font-size: 13px;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: normal;
-  letter-spacing: normal;
   text-align: right;
   color: #9b9b9b;
 }
@@ -317,8 +309,8 @@ main {
 .messages_title__text {
   display: inline-block;
   margin-left: 20px;
+  margin-right: 6px;
   vertical-align: top;
-  width: 90px;
   font-family: HelveticaNeue, serif;
   font-size: 13px;
   font-weight: 500;
