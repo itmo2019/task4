@@ -73,10 +73,18 @@
         <label>
           <input type="checkbox" class="checkbox_main">
         </label>
-        <div class="messages_title__text">Переслать</div>
-        <div class="messages_title__text">Удалить</div>
-        <div class="messages_title__text">Это спам!</div>
-        <div class="messages_title__text">Прочитано</div>
+        <a class="simple_link" href="#forward">
+          <div class="messages_title__text">Переслать</div>
+        </a>
+        <a class="simple_link" href="#remove">
+          <div class="messages_title__text">Удалить</div>
+        </a>
+        <a class="simple_link" href="#spam">
+          <div class="messages_title__text">Это спам!</div>
+        </a>
+        <a class="simple_link" href="#mark_as_read">
+          <div class="messages_title__text">Прочитано</div>
+        </a>
       </header>
       <article class="messages">
         <label for="close_message_checkbox">
@@ -93,7 +101,9 @@
         </label>
         <input type="checkbox" id="close_message_checkbox"/>
         <div class="first_message">
-          <label for="close_message_checkbox"><div class="close_message">x</div></label>
+          <label for="close_message_checkbox">
+            <div class="close_message">x</div>
+          </label>
           <h3>Летучие кошки</h3>
 
           Наверное, неудивительно, что в первую очередь ученых интересует поразительная способность кошек при падении с
