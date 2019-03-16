@@ -115,7 +115,7 @@ function create_new_message() {
   let new_message = document.createElement("div");
   new_message.classList.add("inbox__message");
   messages_count++;
-  new_message.id = "message_" + messages.toString();
+  new_message.id = "message_" + messages_count.toString();
 
   new_message.appendChild(get_checkbox(messages_count));
   new_message.appendChild(get_icon());
@@ -123,8 +123,7 @@ function create_new_message() {
   new_message.appendChild(get_read());
   new_message.appendChild(get_body());
   new_message.appendChild(get_date_node());
-  let check_all_checkbox = document.getElementById("checkbox_all");
-  check_all_checkbox.checked = false;
+  document.getElementById("checkbox_all").checked = false;
   add_message_with_animation(messages, new_message)
 }
 
@@ -132,7 +131,9 @@ function check_all_clicked() {
   let check_all_checkbox = document.getElementById("checkbox_all");
   for (var i = 1; i <= messages_count; i++) {
     var checkbox = document.getElementById("checkbox_" + i.toString());
-    checkbox.checked = check_all_checkbox.checked;
+    if (checkbox != null) {
+      checkbox.checked = check_all_checkbox.checked;
+    }
   }
 }
 
@@ -146,4 +147,5 @@ function remove_checked() {
     }
   }
   remove_message_with_animation(messages, messages_to_remove);
+  document.getElementById("checkbox_all").checked = false;
 }
