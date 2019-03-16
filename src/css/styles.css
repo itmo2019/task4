@@ -11,7 +11,7 @@
   font-family: 'Yandex Sans';
   font-style: normal;
   font-weight: 400;
-  src: url('fonts/YandexSansBold.woff2') format('woff2');
+  src: url('../fonts/YandexSansBold.woff2') format('woff2');
 }
 
 html {
@@ -33,77 +33,9 @@ main {
   margin: 5px;
 }
 
-.main-header {
-  position: absolute;
-  top: 12px;
-  left: 22px;
-}
-
 .simple_link {
   text-decoration: none;
   border: 0;
-}
-
-.menu_icon_line {
-  margin-top: 4px;
-  top: 19px;
-  left: 22px;
-  width: 20px;
-  height: 3px;
-  background-color: #000000;
-}
-
-.main_search__text {
-  position: absolute;
-  left: 15px;
-  top: 0;
-  bottom: 0;
-  font-size: 16px;
-  opacity: 0.5;
-  line-height: 2.13;
-  color: #000;
-}
-
-.main_search__remove {
-  position: absolute;
-  height: 9px;
-  width: 9px;
-  top: 11px;
-  bottom: 11px;
-  right: 10px;
-}
-
-.page-content {
-  position: absolute;
-  top: 56px;
-  left: 22px;
-  width: 98%;
-  height: 92%;
-  min-width: 800px;
-  min-height: 600px;
-  padding: 0;
-  margin: 0;
-}
-
-.main_menu {
-  position: absolute;
-}
-
-.main_menu_write_button {
-  position: relative;
-  width: 147px;
-  height: 32px;
-  border: 0;
-  border-radius: 3px;
-  background-color: #6287bd;
-  box-shadow: none;
-  font-size: 12px;
-  color: #fff;
-  cursor: pointer;
-}
-
-.main_menu_write_button:hover {
-  background-color: #597ab2;
 }
 
 .main_menu_content {
@@ -112,55 +44,6 @@ main {
   list-style: none;
   padding: 0;
   margin: 0;
-}
-
-.main_menu_li {
-  padding-top: 6px;
-  width: 147px;
-  height: 22px;
-  font-size: 100%;
-  color: #707070;
-}
-
-.main_menu_li__text {
-  padding-left: 10px;
-  width: 130px;
-  height: 20px;
-  font-size: 11px;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
-  color: #707070;
-}
-
-.main_menu_li:hover {
-  width: 147px;
-  height: 22px;
-  border-radius: 3px;
-  background-color: #cdd6e4;
-}
-
-.main_menu_li:hover .main_menu_li__text {
-  font-weight: bold;
-  color: #555;
-}
-
-.main_menu_li {
-  padding-top: 6px;
-  width: 147px;
-  height: 22px;
-}
-
-.inbox {
-  position: absolute;
-  top: 0;
-  left: 169px;
-  right: 20px;
-  bottom: 14px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.34);
-  border-radius: 3px;
-  background-color: #ffffff;
-  overflow: auto;
 }
 
 .message {

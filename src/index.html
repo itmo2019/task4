@@ -29,44 +29,20 @@
     </div>
   </header>
   <div class="page-content">
-    <article class="main_menu">
-      <button class="main_menu_write_button">
-        Написать
-      </button>
-      <ul class="main_menu_content">
-        <li class="main_menu_li">
-          <a class="simple_link" href="#inbox">
-            <div class="main_menu_li__text">Входящие</div>
-          </a>
-        </li>
-        <li class="main_menu_li">
-          <a class="simple_link" href="#sent">
-            <div class="main_menu_li__text">Отправленные</div>
-          </a>
-        </li>
-        <li class="main_menu_li">
-          <a class="simple_link" href="#trash">
-            <div class="main_menu_li__text">Удалённые</div>
-          </a>
-        </li>
-        <li class="main_menu_li">
-          <a class="simple_link" href="#spam">
-            <div class="main_menu_li__text">Спам</div>
-          </a>
-        </li>
-        <li class="main_menu_li">
-          <a class="simple_link" href="#draft">
-            <div class="main_menu_li__text">Черновики</div>
-          </a>
-        </li>
-        <li class="main_menu_li">
-          <a class="simple_link" href="#folder">
-            <div class="main_menu_li__text">Создать папку</div>
-          </a>
-        </li>
-      </ul>
+    <article class="page-content__left-toolbar">
+      <nav class="mail-toolbar">
+        <button class="mail-toolbar__button">
+          Написать
+        </button>
+        <a class="mail-toolbar__element" href="#inbox">Входящие</a>
+        <a class="mail-toolbar__element" href="#sent">Отправленные</a>
+        <a class="mail-toolbar__element" href="#trash">Удалённые</a>
+        <a class="mail-toolbar__element" href="#spam">Спам</a>
+        <a class="mail-toolbar__element" href="#draft">Черновики</a>
+        <a class="mail-toolbar__element" href="#folder">Создать папку</a>
+      </nav>
     </article>
-    <article class="inbox">
+    <article class="page-content__content">
       <header class="messages_title">
         <div class="checkbox_main_box">
           <input id="checkbox_main" class="checkbox_message" type="checkbox"/>

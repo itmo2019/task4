@@ -1,3 +1,9 @@
 @import "__icon/main-header__icon.css";
 @import "__logo/main-header__logo.css";
 @import "__search/main-header__search.css";
+
+.main-header {
+  position: absolute;
+  top: 12px;
+  left: 22px;
+}
