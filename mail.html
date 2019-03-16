@@ -5,94 +5,101 @@
     <title>task 2</title>
     <link rel="stylesheet" href="mail.css">
 </head>
-<body>
+<body class="body">
 <div class="header">
     <div class="img">
-        <img class="toolbar" src="https://upload.wikimedia.org/wikipedia/commons/b/b2/Hamburger_icon.svg" width="31px" alt="toolbar">
+        <img class="img__toolbar" src="https://upload.wikimedia.org/wikipedia/commons/b/b2/Hamburger_icon.svg" width="31px" alt="toolbar">
     </div>
     <div class="logo">
-        <span class="yandex">Яндекс</span>
-        <span class="mail">Почта</span>
+        <span class="logo__yandex">Яндекс</span>
+        <span class="logo__mail">Почта</span>
     </div>
     <div class="search">
         <label>
-            <input type="text" class="search-form">
+            <input type="text" class="search__search-form">
         </label>
     </div>
 </div>
 <div class="content">
 <div class="menu">
-    <div class="button_write">Написать</div>
+    <div class="menu__button_write">Написать</div>
     <div class="options">
-        <div class="option">Входящие</div>
-        <div class="option">Отправленные</div>
-        <div class="option">Удалённые</div>
-        <div class="option">Спам</div>
-        <div class="option">Черновики</div>
-        <div class="option">Создать папку</div>
+        <div class="option options__option1">Входящие</div>
+        <div class="option options__option2">Отправленные</div>
+        <div class="option options__option3">Удалённые</div>
+        <div class="option options__option4">Спам</div>
+        <div class="option options__option5">Черновики</div>
+        <div class="option options__option6">Создать папку</div>
     </div>
 </div>
 
 <div class="main">
     <div class="actions">
-            <input type="checkbox" class="checkbox">
-        <div class="action"><div class="text_button">Переслать</div></div>
-        <div class="action"><div class="text_button">Удалить</div></div>
-        <div class="action"><div class="text_button">Это спам!</div></div>
-        <div class="action"><div class="text_button">Прочитано</div></div>
+        <input type="checkbox" class="checkbox actions__checkbox">
+        <div class="action"><div class="text action__text">Переслать</div></div>
+        <div class="action"><div class="text action__text">Удалить</div></div>
+        <div class="action"><div class="text action__text">Это спам!</div></div>
+        <div class="action"><div class="text action__text">Прочитано</div></div>
     </div>
     <div class="letters">
-    <div class="letter" tabindex="0" id="firstletter">
-            <input type="checkbox" class="checkbox">
-        <img src="yandex_cyr_icon-icons.com_59870.svg" height="100%" class="contact" alt="yaicon">
-        <div class="from"><div class="text_letter">ЯндексПаспорт</div></div>
-        <div class="checked"></div>
-        <div class="theme"><div class="text_letter">Доступ к аккаунту восстановлён</div></div>
-        <div class="data"><div class="text_letter">6 авг</div></div>
+    <div class="letter letter_focused" tabindex="0">
+        <input type="checkbox" class="checkbox">
+        <img src="yandex_cyr_icon-icons.com_59870.svg" height="100%" class="letter__contact" alt="yaicon">
+        <div class="from"><div class="text_overflow">ЯндексПаспорт</div></div>
+        <div class="letter__checked"></div>
+        <div class="theme"><div class="text_overflow">Доступ к аккаунту восстановлён</div></div>
+        <div class="data"><div class="text_overflow">6 авг</div></div>
     </div>
     <article class="article">
-        <div class="cancel" tabindex="1"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Fairytale_button_cancel.png" width="34px" alt="cancel"></div>
-        <section id="first">
+        <div class="cancel cancel_focused" tabindex="1"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Fairytale_button_cancel.png" width="34px" alt="cancel" class="cancel__button"></div>
+        <section class="first-section">
             <div class="shaped"></div>
-            <p>
-                <span class="letter">Ф</span><b>роненд разаработчик</b> является одной из самых востребованных профессией по версии сайта <a href="https://insights.stackoverflow.com/survey/2018/#developer-roles">StackOverflow</a>.
+            <p class="paragrah">
+                <span class="paragraph__first-letter">Ф</span><b>роненд разаработчик</b> является одной из самых востребованных профессией по версии сайта <a href="https://insights.stackoverflow.com/survey/2018/#developer-roles">StackOverflow</a>.
                 Но так же существует и большая конкуренция, поскольку в сети множество курсов, обучающих созданию сайтов.
                 А значит для получения высокооплачиваемой работы необходимо обладать качественными знаниями (о них говорится на изображении).
                 Я надеюсь, что курс фронтенда даст мне знания, которых хватит для создания простейших веб-приложений.
             </p>
         </section>
     </article>
-    <div class="letter">
+        <div class="letter">
             <input type="checkbox" class="checkbox">
-        <img src="yandex_cyr_icon-icons.com_59870.svg" height="100%" class="contact" alt="yaicon">
-        <div class="from"><div class="text_letter">ЯндексПаспорт</div></div>
-        <div class="checked"></div>
-        <div class="theme"><div class="text_letter">Доступ к аккаунту восстановлён и всегда будет открыт чтобы не случилось с вами и миром вокруг мы всегда будем рады вас видеть и предложить вам помощь</div></div>
-        <div class="data"><div class="text_letter">6 авг</div></div>
-    </div>
-    <div class="letter">
+            <img src="yandex_cyr_icon-icons.com_59870.svg" height="100%" class="letter__contact" alt="yaicon">
+            <div class="from"><div class="text_overflow">ЯндексПаспорт</div></div>
+            <div class="letter__checked"></div>
+            <div class="theme"><div class="text_overflow">Доступ к аккаунту восстановлён</div></div>
+            <div class="data"><div class="text_overflow">6 авг</div></div>
+        </div>
+        <div class="letter">
             <input type="checkbox" class="checkbox">
-        <img src="yandex_cyr_icon-icons.com_59870.svg" height="100%" class="contact" alt="yaicon">
-        <div class="from"><div class="text_letter">ЯндексПаспорт</div></div>
-        <div class="checked"></div>
-        <div class="theme"><div class="text_letter">Доступ к аккаунту восстановлён</div></div>
-        <div class="data"><div class="text_letter">6 авг</div></div>
-    </div>
-    <div class="letter">
+            <img src="yandex_cyr_icon-icons.com_59870.svg" height="100%" class="letter__contact" alt="yaicon">
+            <div class="from"><div class="text_overflow">ЯндексПаспорт</div></div>
+            <div class="letter__checked"></div>
+            <div class="theme"><div class="text_overflow">Доступ к аккаунту восстановлён</div></div>
+            <div class="data"><div class="text_overflow">6 авг</div></div>
+        </div>
+        <div class="letter">
             <input type="checkbox" class="checkbox">
-        <img src="yandex_cyr_icon-icons.com_59870.svg" height="100%" class="contact" alt="yaicon">
-        <div class="from"><div class="text_letter">ЯндексПаспорт</div></div>
-        <div class="checked"></div>
-        <div class="theme"><div class="text_letter">Доступ к аккаунту восстановлён</div></div>
-        <div class="data"><div class="text_letter">6 авг</div></div>
-    </div>
+            <img src="yandex_cyr_icon-icons.com_59870.svg" height="100%" class="letter__contact" alt="yaicon">
+            <div class="from"><div class="text_overflow">ЯндексПаспорт</div></div>
+            <div class="letter__checked"></div>
+            <div class="theme"><div class="text_overflow">Доступ к аккаунту восстановлён</div></div>
+            <div class="data"><div class="text_overflow">6 авг</div></div>
+        </div>
     </div>
     <div class="footer">
-        <div class="link">&copy; 2001-2018, Яндекс</div>
-        <div class="link">Реклама</div>
-        <div class="link">Помощь и обратная связь</div>
+        <div class="link footer__link1">&copy; 2001-2018, Яндекс</div>
+        <div class="link footer__link2">Реклама</div>
+        <div class="link footer__link3">Помощь и обратная связь</div>
     </div>
 </div>
 </div>
 </body>
 </html>
+
+<script>
+    var button_write = document.getElementsByClassName('menu__button_write')[0];
+    button_write.addEventListener("click", () => {var letters = document.getElementsByClassName('letter');
+                                                  var newLetter = letters[letters.length - 1].cloneNode(true);
+                                                  document.getElementsByClassName('letters')[0].insertBefore(newLetter, letters[0]);})
+</script>

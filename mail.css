@@ -53,7 +53,7 @@ body {
     height: 100%;
 }
 
-.yandex {
+.logo__yandex {
     font-family: YandexSans, sans-serif;
     font-weight: bold;
     position: relative;
@@ -64,7 +64,7 @@ body {
     transform: scaleY(2);
 }
 
-.mail {
+.logo__mail {
     font-family: YandexSans, sans-serif;
     position: relative;
     font-weight: normal;
@@ -75,7 +75,7 @@ body {
     transform: scaleY(2);
 }
 
-.search-form {
+.search__search-form {
     position: relative;
     margin-left: 25%;
     width: 50%;
@@ -114,7 +114,7 @@ body {
     height: 100%;
 }
 
-.button_write {
+.menu__button_write {
     padding-top: 4%;
     position: relative;
     height: 5.1%;
@@ -169,12 +169,12 @@ body {
     padding: 0 2%;
 }
 
-.text_button {
+.text {
     display: table-cell;
     vertical-align: middle;
 }
 
-.text_letter {
+.text_overflow {
     display: table-cell;
     vertical-align: middle;
     max-width: 0;
@@ -194,7 +194,7 @@ body {
     padding: 0 1%;
 }
 
-.contact {
+.letter__contact {
     float: left;
 }
 
@@ -262,11 +262,11 @@ body {
     right: 0;
 }
 
-.cancel:focus .article {
+.cancel_focused:focus .article {
     display: none;
 }
 
-.cancel:focus ~.letter {
+.cancel_focused:focus ~.letter {
     display: block;
 }
 
@@ -284,11 +284,11 @@ body {
     src: url("HelveticaNeueCyr-Bold.otf");
 }
 
-#firstletter:focus ~.letter {
+.letter_focused:focus ~.letter {
     display: none;
 }
 
-#firstletter:focus ~.article {
+.letter_focused:focus ~.article {
     display: block;
     position: relative;
     top: -11%;
