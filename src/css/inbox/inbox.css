@@ -1,0 +1,8 @@
+@import "__footer/inbox__footer.css";
+@import "__footer/inbox__footer-element.css";
+@import "__footer/inbox__footer-date.css";
+@import "__messages/inbox__message.css";
+@import "__header/inbox__header.css";
+@import "__header/inbox__checkbox-all.css";
+@import "__header/inbox__header-element.css";
+@import "__messages/inbox__messages.css";

@@ -1,4 +1,11 @@
-@import "default.css";
+@import "yandex-mail-logo/yandex-mail-logo.css";
+@import "search/search.css";
+@import "tools-icon/tools-icon.css";
+@import "main-header/main-header.css";
+@import "page-content/page-content.css";
+@import "mail-toolbar/mail-toolbar.css";
+@import "inbox/inbox.css";
+@import "checkbox/checkbox.css";
 
 @font-face {
   font-family: 'Yandex Sans';
@@ -31,11 +38,6 @@ main {
   height: 95%;
   padding: 5px;
   margin: 5px;
-}
-
-.simple_link {
-  text-decoration: none;
-  border: 0;
 }
 
 .main_menu_content {
@@ -139,72 +141,10 @@ main {
   height: 30px;
 }
 
-.messages_title {
-  padding-top: 11px;
-  padding-left: 20px;
-  white-space: nowrap;
-  border-bottom: solid 1px #ededed;
-}
-
-.checkbox_main_box {
-  display: inline-block;
-  padding-bottom: 3px;
-}
-
-.checkbox_message {
-  display: none;
-}
-
-.checkbox_message_label {
-  display: inline-block;
-  position: relative;
-  cursor: pointer;
-}
-
-.checkbox_message + .checkbox_message_label:before {
-  display: inline-block;
-  content: '';
-  width: 16px;
-  height: 16px;
-  border-radius: 3px;
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  background-color: #fff;
-}
-
-.checkbox_message:checked + .checkbox_message_label:after {
-  content: '';
-  padding: 2px;
-  text-align: center;
-  position: absolute;
-  width: 1px;
-  height: 5px;
-  border: solid #0000ff;
-  border-width: 0 3px 3px 0;
-  transform: rotate(45deg);
-  top: 2px;
-  left: 5px;
-}
-
 .checkbox_message_box {
   position: absolute;
   top: 11px;
   left: 20px;
-}
-
-.messages_title__text {
-  display: inline-block;
-  margin-left: 20px;
-  margin-right: 6px;
-  font-size: 13px;
-  font-weight: 500;
-  color: #ccc;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
-}
-
-.messages_title__text:hover {
-  color: #000;
 }
 
 .make_as_read {
@@ -215,46 +155,6 @@ main {
   height: 10px;
   background: #6287bd;
   border-radius: 50%;
-}
-
-.messages_footer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 31px;
-  border-top: solid 1px #e2e2e2;
-}
-
-.messages_footer_toolbar {
-  position: absolute;
-  bottom: 9px;
-  top: 7px;
-  right: 0;
-  white-space: nowrap;
-}
-
-.messages_footer__text {
-  display: inline-block;
-  color: #9b9b9b;
-  font-size: 11px;
-  cursor: default;
-}
-
-.messages_footer__text_to_bold {
-  display: inline-block;
-  padding-right: 30px;
-  cursor: default;
-}
-
-.footer_link {
-  color: #9b9b9b;
-  font-size: 11px;
-  text-decoration: none;
-}
-
-.footer_link:hover {
-  color: #000;
 }
 
 .first_message {

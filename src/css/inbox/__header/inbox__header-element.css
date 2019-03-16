@@ -1,0 +1,16 @@
+.inbox_header-element {
+  display: inline-block;
+  text-decoration: none;
+  margin-left: 20px;
+  margin-right: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #ccc;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.inbox_header-element:hover {
+  color: #000;
+}
