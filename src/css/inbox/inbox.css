@@ -13,6 +13,10 @@
 @import "__messages/inbox__message-read.css";
 @import "__messages/inbox__message-checkbox.css";
 @import "__messages/inbox__message_bold.css";
+@import "__letter/inbox__letter.css";
+@import "__letter/inbox__letter-beautiful-cat.css";
+@import "__letter/inbox__letter-close-message.css";
+@import "__letter/inbox__letter-close-message-checkbox.css";
 
 .inbox {
   overflow: hidden;
