@@ -369,10 +369,14 @@ main {
   margin-right: 6px;
   font-size: 13px;
   font-weight: 500;
-  color: #cccccc;
+  color: #ccc;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+}
+
+.messages_title__text:hover {
+  color: #000;
 }
 
 .make_as_read {
