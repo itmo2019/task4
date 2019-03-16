@@ -4,7 +4,7 @@
   font-family: 'Yandex Sans';
   font-style: normal;
   font-weight: 300;
-  src: url('fonts/YandexSansThin.woff2') format('woff2');
+  src: url('../fonts/YandexSansThin.woff2') format('woff2');
 }
 
 @font-face {
