@@ -39,11 +39,8 @@ main {
 
 .main_title {
   position: absolute;
-  top: -6px;
-  font-size: 30px;
-  font-weight: 100;
   left: 31px;
-  width: 300px;
+  width: 153px;
   height: 31px;
 }
 
@@ -53,21 +50,24 @@ main {
 }
 
 .main_title_left {
-  border: 0;
+  position: absolute;
+  top: 0;
   width: 80px;
   height: 31px;
-  padding: 0;
 }
 
 .main_title_right {
+  position: absolute;
+  top: 0;
+  left: 83px;
   border: 0;
-  padding-bottom: 1px;
   width: 70px;
   height: 31px;
 }
 
 .menu_icon {
   position: absolute;
+  top: 10px;
   width: 20px;
   height: 17px;
 }
@@ -96,7 +96,7 @@ main {
   top: 10px;
   right: 9px;
 
-  background-image: image('img/resetSearch.png');
+  background-image: image('img/resetSearch.svg');
 }
 
 .main_search__text {
