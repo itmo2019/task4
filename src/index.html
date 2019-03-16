@@ -1,28 +1,34 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <title>Задание #2</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link href="css/styles.css" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link href="css/styles.css" rel="stylesheet"/>
   <!-- There were used Yandex Sans only for educational use. It didn't used for commercial targets.-->
 </head>
 <body>
 <main>
-  <header class="main_header">
-    <a class="simple_link" href="#menu">
-      <img class="menu_icon" src="img/menuIcon.svg">
-    </a>
-    <div class="main_title">
-      <img src="img/YandexLogo.svg" />
-      <a class="main_title_left" href="https://yandex.ru"></a>
-      <a class="main_title_right" href="#"></a>
+  <header class="main-header">
+    <div class="main-header__icon">
+      <a href="#menu">
+        <img class="tools-icon" src="img/menuIcon.svg">
+      </a>
     </div>
-    <label>
-      <input type="search" placeholder="Поиск" class="main_search" />
-    </label>
+    <div class="main-header__logo">
+      <div class="yandex-mail-logo">
+        <img src="img/YandexLogo.svg"/>
+        <a class="yandex-mail-logo__link-yandex" href="https://yandex.ru"></a>
+        <a class="yandex-mail-logo__link-mail" href="#"></a>
+      </div>
+    </div>
+    <div class="main-header__search">
+      <label>
+        <input type="search" placeholder="Поиск" class="search"/>
+      </label>
+    </div>
   </header>
-  <div class="page_content">
+  <div class="page-content">
     <article class="main_menu">
       <button class="main_menu_write_button">
         Написать
@@ -63,7 +69,7 @@
     <article class="inbox">
       <header class="messages_title">
         <div class="checkbox_main_box">
-          <input id="checkbox_main" class="checkbox_message" type="checkbox" />
+          <input id="checkbox_main" class="checkbox_message" type="checkbox"/>
           <label for="checkbox_main" class="checkbox_message_label"></label>
         </div>
         <a class="simple_link" href="#forward">
@@ -83,17 +89,17 @@
         <label for="close_message_checkbox">
           <div class="first_email" id="first_email">
             <div class="checkbox_message_box">
-              <input id="checkbox_main_1" class="checkbox_message" type="checkbox" />
+              <input id="checkbox_main_1" class="checkbox_message" type="checkbox"/>
               <label for="checkbox_main_1" class="checkbox_message_label"></label>
             </div>
-            <img class="message_icon" src="img/ya-default.svg" />
+            <img class="message_icon" src="img/ya-default.svg"/>
             <span class="unread_message_author">Яндекс.Котики</span>
             <div class="make_as_read"></div>
             <span class="unread_message_body">Летучие котики</span>
             <time class="message_date" datetime="2019.02.20T08:23:11+04:00">20 фев</time>
           </div>
         </label>
-        <input type="checkbox" class="close_message_checkbox" id="close_message_checkbox" />
+        <input type="checkbox" class="close_message_checkbox" id="close_message_checkbox"/>
         <div class="first_message">
           <label for="close_message_checkbox">
             <div class="close_message">x</div>
@@ -108,7 +114,7 @@
           отличие от своих многочисленных последователей, в ходе своей работы не уронили ни
           одной кошки. Вместо этого они создали математическую абстракцию, модель кошки, которая
           довольно хорошо описывала процесс и результаты падения живых кошек, которых когда-то
-          бросал <img align="right" class="beautiful_cat" src="img/cat.png" />кто-то другой. До
+          бросал <img align="right" class="beautiful_cat" src="img/cat.png"/>кто-то другой. До
           сих пор статья Кэйна и Шера остается едва ли не единственной публикацией о кошках в
           журнале International Journal of Solids and Structures. Не все физики считают, что
           кошек необходимо бросать с высоты, — некоторых интересует и характерная манера
@@ -126,10 +132,10 @@
         </div>
         <section class="message">
           <div class="checkbox_message_box">
-            <input id="checkbox_main_2" class="checkbox_message" type="checkbox" />
+            <input id="checkbox_main_2" class="checkbox_message" type="checkbox"/>
             <label for="checkbox_main_2" class="checkbox_message_label"></label>
           </div>
-          <img class="message_icon" src="img/ya-default.svg" />
+          <img class="message_icon" src="img/ya-default.svg"/>
           <span class="unread_message_author">Команда Яндекс.Почты ллулулууллулулулулл</span>
           <div class="make_as_read"></div>
           <span class="unread_message_body">Как читать почту с мобильного</span>
@@ -137,10 +143,10 @@
         </section>
         <section class="message">
           <div class="checkbox_message_box">
-            <input id="checkbox_main_3" class="checkbox_message" type="checkbox" />
+            <input id="checkbox_main_3" class="checkbox_message" type="checkbox"/>
             <label for="checkbox_main_3" class="checkbox_message_label"></label>
           </div>
-          <img class="message_icon" src="img/ya-default.svg" />
+          <img class="message_icon" src="img/ya-default.svg"/>
           <span class="read_message_author">Команда Яндекс.Почты</span>
           <span class="read_message_body"
           >Как читать почту с
@@ -150,10 +156,10 @@
         </section>
         <section class="message">
           <div class="checkbox_message_box">
-            <input id="checkbox_main_4" class="checkbox_message" type="checkbox" />
+            <input id="checkbox_main_4" class="checkbox_message" type="checkbox"/>
             <label for="checkbox_main_4" class="checkbox_message_label"></label>
           </div>
-          <img class="message_icon" src="img/ya-default.svg" />
+          <img class="message_icon" src="img/ya-default.svg"/>
           <span class="read_message_author">Яндекс</span>
           <span class="read_message_body">Соберите всю почту в этот ящик</span>
           <time class="message_date" datetime="2019.01.10T09:23:11+04:00">10 янв</time>
