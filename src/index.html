@@ -52,12 +52,12 @@
           </div>
           <div id="create_new_message" onclick="create_new_message()" class="inbox_header-element">Создать письмо</div>
           <a class="inbox_header-element" href="#forward">Переслать</a>
-          <a class="inbox_header-element" href="#remove">Удалить</a>
+          <a class="inbox_header-element" onclick="remove_checked()" href="#remove">Удалить</a>
           <a class="inbox_header-element" href="#spam">Это спам!</a>
           <a class="inbox_header-element" href="#mark_as_read">Прочитано</a>
         </header>
         <div class="inbox__messages" id="messages">
-          <label for="close_message_checkbox">
+          <label for="close_message_checkbox" id="message_1">
             <div class="inbox__message" id="first_email">
               <div class="inbox__message-checkbox">
                 <input id="checkbox_1" class="checkbox" type="checkbox"/>
@@ -70,7 +70,7 @@
               <time class="inbox__message-date" datetime="2019.02.20T08:23:11+04:00">20 фев.</time>
             </div>
           </label>
-          <section class="inbox__message">
+          <section class="inbox__message" id="message_2">
             <div class="inbox__message-checkbox">
               <input id="checkbox_2" class="checkbox" type="checkbox"/>
               <label for="checkbox_2" class="checkbox__label"></label>
@@ -81,7 +81,7 @@
             <span class="inbox__message-body inbox__message_bold">Как читать почту с мобильного</span>
             <time class="inbox__message-date" datetime="2019.02.17T08:23:11+04:00">17 фев.</time>
           </section>
-          <section class="inbox__message">
+          <section class="inbox__message" id="message_3">
             <div class="inbox__message-checkbox">
               <input id="checkbox_3" class="checkbox" type="checkbox"/>
               <label for="checkbox_3" class="checkbox__label"></label>
@@ -94,7 +94,7 @@
             >
             <time class="inbox__message-date" datetime="2019.02.16T08:12:00+04:00">16 фев.</time>
           </section>
-          <section class="inbox__message">
+          <section class="inbox__message" id="message_4">
             <div class="inbox__message-checkbox">
               <input id="checkbox_4" class="checkbox" type="checkbox"/>
               <label for="checkbox_4" class="checkbox__label"></label>

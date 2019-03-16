@@ -82,11 +82,40 @@ function add_message_with_animation(messages, new_message) {
   }
 }
 
+function remove_message_with_animation(messages, messages_to_remove) {
+  var pos = 0;
+  var id = setInterval(move_element_from_right_to_left, 1);
+
+  function move_element_from_right_to_left() {
+    if (pos === 500) {
+      clearInterval(id);
+    } else {
+      pos += 10;
+      for (var i = 0; i < messages_to_remove.length; i++) {
+        messages_to_remove[i].style.left = pos.toString() + 'px';
+      }
+    }
+  }
+
+  var remove_id = setInterval(remove, 50);
+
+  function remove() {
+    if (pos === 500) {
+      for (var i = 0; i < messages_to_remove.length; i++) {
+        messages.removeChild(messages_to_remove[i])
+      }
+      clearInterval(remove_id);
+    }
+  }
+
+}
+
 function create_new_message() {
   let messages = document.getElementById("messages");
   let new_message = document.createElement("div");
   new_message.classList.add("inbox__message");
   messages_count++;
+  new_message.id = "message_" + messages.toString();
 
   new_message.appendChild(get_checkbox(messages_count));
   new_message.appendChild(get_icon());
@@ -105,4 +134,16 @@ function check_all_clicked() {
     var checkbox = document.getElementById("checkbox_" + i.toString());
     checkbox.checked = check_all_checkbox.checked;
   }
+}
+
+function remove_checked() {
+  let messages_to_remove = [];
+  let messages = document.getElementById("messages");
+  for (var i = 1; i <= messages_count; i++) {
+    var checkbox = document.getElementById("checkbox_" + i.toString());
+    if (checkbox != null && checkbox.checked) {
+      messages_to_remove.push(document.getElementById("message_" + i.toString()));
+    }
+  }
+  remove_message_with_animation(messages, messages_to_remove);
 }
