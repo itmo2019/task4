@@ -233,7 +233,14 @@ main {
   cursor: pointer;
 }
 
-#first_email:focus + .first_message {
+.first_email {
+  position: relative;
+  height: 40px;
+  border-bottom: solid 1px #e2e2e2;
+  cursor: pointer;
+}
+
+.first_email:focus + .first_message {
   opacity: 1;
 }
 
@@ -437,11 +444,11 @@ main {
   cursor: pointer;
 }
 
-#close_message_checkbox {
+.close_message_checkbox {
   display: none;
 }
 
-#close_message_checkbox:checked + .first_message {
+.close_message_checkbox:checked + .first_message {
   display: block;
 }
 
