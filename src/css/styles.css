@@ -95,7 +95,7 @@ main {
   font-size: 16px;
   opacity: 0.5;
   line-height: 2.13;
-  color: #000000;
+  color: #000;
 }
 
 .main_search__remove {
@@ -139,7 +139,7 @@ main {
   bottom: 10px;
   font-family: HelveticaNeue, serif;
   font-size: 12px;
-  color: #ffffff;
+  color: #fff;
 }
 
 .main_menu_write_box:hover {
@@ -183,7 +183,7 @@ main {
 
 .main_menu_li:hover .main_menu_li__text {
   font-weight: bold;
-  color: #555555;
+  color: #555;
 }
 
 .main_menu_li {
@@ -219,7 +219,7 @@ main {
   height: 16px;
   border-radius: 3px;
   border: 1px solid rgba(0, 0, 0, 0.15);
-  background-color: #ffffff;
+  background-color: #fff;
   cursor: pointer;
 }
 
@@ -320,7 +320,7 @@ main {
   height: 16px;
   border-radius: 3px;
   border: 1px solid rgba(0, 0, 0, 0.15);
-  background-color: #ffffff;
+  background-color: #fff;
 }
 
 .checkbox_message:checked + .checkbox_message_label:after {
@@ -330,7 +330,7 @@ main {
   position: absolute;
   width: 1px;
   height: 5px;
-  border: solid blue;
+  border: solid #0000ff;
   border-width: 0 3px 3px 0;
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
@@ -407,7 +407,6 @@ main {
 
 .footer_link:hover {
   color: #000;
-
 }
 
 .first_message {
@@ -418,7 +417,7 @@ main {
   right: 0;
   bottom: 50px;
   padding: 30px;
-  background-color: #ffffff;
+  background-color: #fff;
   z-index: 1;
   overflow: auto;
 }
