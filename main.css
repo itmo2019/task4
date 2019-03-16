@@ -1,0 +1,330 @@
+@font-face {
+    font-family: YandexSansBold;
+    src: url("static/fonts/YandexSansDisplay-Bold.ttf");
+}
+
+@font-face {
+    font-family: YandexSansThin;
+    src: url("static/fonts/YandexSansDisplay-Thin.ttf");
+}
+
+@font-face {
+    font-family: HelveticaNeue;
+    src: url("static/fonts/HelveticaNeueCyr-Medium.otf");
+}
+
+@font-face {
+    font-family: HelveticaNeueLight;
+    src: url("static/fonts/HelveticaNeueCyr-Light.otf");
+}
+
+.content__header {
+    width: 184px;
+    height: 31px;
+    position: absolute;
+    left: 22px;
+    top: 12px;
+}
+
+.ya-mail-logo {
+    font-size: 25px;
+}
+
+.logo__logo-ya {
+    width: 100%;
+    font-family: YandexSansBold, sans-serif;
+    margin-right: 4px;
+    margin-left: 3px;
+}
+
+.logo__logo-mail {
+    width: 100%;
+    font-family: YandexSansThin, sans-serif;
+}
+
+.content_inline {
+    display: inline;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a, a:active, a:visited, a:hover {
+    color: unset;
+    text-decoration: none;
+    position: unset !important;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    background-color: #e5eaf0;
+}
+
+.content__page_wrapper {
+    width: 800px;
+    min-height: 100%;
+    position: relative;
+    margin: 0 auto;
+}
+
+.content__top-search {
+    width: 301px;
+    height: 32px;
+    position: absolute;
+    left: 320px;
+    top: 11px;
+    vertical-align: middle;
+    padding-left: 16px;
+
+    opacity: 0.5;
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.2);
+    background-color: #ffffff;
+    font: 15px YandexSanThin;
+    line-height: 2.13;
+    color: #000;
+}
+
+.actions-bar__nav-bar {
+    margin-top: 0;
+    margin-left: 22px;
+    padding: 0;
+}
+
+.actions-bar__nav-bar li:not(.actions-bar__write-message-action){
+    width: 137px;
+    height: 22px;
+    margin-left: 0;
+    padding-left: 10px;
+    text-align: left;
+    vertical-align: middle;
+    line-height: 22px;
+}
+
+.actions-bar__nav-bar li:not(.actions-bar__write-message-action):hover{
+    background-color: #cdd6e4;
+}
+
+.actions-bar__write-message-action {
+    width: 147px;
+    height: 32px;
+    border-radius: 3px;
+    background-color: #6287bd;
+    font-family: HelveticaNeue, sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    color: #ffffff;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 32px;
+    margin-bottom: 8px;
+}
+
+.content__actions-bar {
+    width: 200px;
+    position: absolute;
+    left: 0;
+    top: 56px;
+    font-family: HelveticaNeue, sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    color: #707070;
+}
+
+.content__mail-box {
+    width: 589px;
+    min-height: 530px;
+    position: absolute;
+    left: 191px;
+    top: 56px;
+    border-radius: 3px;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.34);
+    background-color: #ffffff;
+    margin-bottom: 30px;
+}
+
+.mail-box__actions {
+    position: relative;
+    width: 100%;
+    height: 37px;
+    font-family: HelveticaNeue, sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: #cccccc;
+}
+
+.mail-box__actions * {
+    position: absolute;
+    top: 11px;
+}
+
+.mail-box__actions ul {
+    position: unset;
+}
+
+.mail-box__select-all {
+    left: 20px;
+}
+
+.mail-box__resend {
+    left: 56px;
+}
+
+.mail-box__delete {
+    left: 150px;
+}
+
+.mail-box__strike {
+    left: 228px;
+}
+
+.mail-box__mark-as-read {
+    left: 315px;
+}
+
+.messages-list__message-snippet {
+    border-bottom: solid 1px #e2e2e2;
+}
+
+.mail-box-content {
+    width: 100%;
+    min-height: 463px;
+    border-top: solid 1px #e2e2e2;
+    border-bottom: solid 1px #e2e2e2;
+}
+
+.messages-list {
+    padding: 0;
+    margin: 0;
+}
+
+.messages-list__message-snippet {
+    position: relative;
+    height: 37px;
+
+    font: 13px HelveticaNeue;
+    color: #000;
+}
+
+.messages-snippet_bold {
+    font-weight: bold;
+}
+
+.messages-list__message-snippet * {
+    display: inline;
+    position: absolute;
+    top: 12px;
+}
+
+.message-snippet__message-tick {
+    left: 20px;
+}
+
+.message-snippet__avatar {
+    width: 30px;
+    height: 30px;
+    left: 46px;
+    top: 4px;
+    background-image: url(//yastatic.net/mail/socialavatars/socialavatars/v4/ya-default.svg);
+    border-radius: 15px;
+}
+
+.message-snippet__sender-name {
+    left: 86px;
+    max-width: 170px;
+    max-height: 16px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.message-snippet__message-item {
+    width: 10px;
+    height: 10px;
+    background-color: #6287bd;
+    border-radius: 10px;
+    left: 261px;
+}
+
+.message-snippet__message-topic {
+    left: 281px;
+    max-width: 250px;
+    max-height: 16px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.message-snippet__message-time {
+    right: 20px;
+    text-align: right;
+    color: #9b9b9b;
+    font-weight: normal;
+}
+
+.content__footer-wrapper {
+    width: 100%;
+    height: 30px;
+    position: relative;
+}
+
+footer {
+    width: 345px;
+    height: 12px;
+    position: absolute;
+    right: 20px;
+    bottom: 10px;
+    font: 11px HelveticaNeueLight;
+    color: #9b9b9b;
+}
+
+footer nav a, footer span {
+    margin-left: 15px;
+}
+
+.mail-box-content__article {
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 463px;
+    position: absolute;
+    top: 0;
+    background-color: white;
+    z-index: 1;
+    font-family: sans-serif;
+    font-size: 14px;
+    padding: 20px 0 20px 20px;
+    display: none;
+    font-weight: 300;
+}
+
+.article__moon {
+    position: relative;
+    float: right;
+    border-radius: 50%;
+    shape-outside:circle();
+}
+
+.article__cross {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 10px;
+    width: 15px;
+    height: 15px;
+    font-family: HelveticaNeueLight, sans-serif;
+    font-weight: 100;
+    text-align: center;
+    line-height: 15px;
+    vertical-align: middle;
+}
+
+.article__cross:hover {
+    background-color: #cdd6e4;
+}
+
+#first-message-tick:checked + .mail-box-content__article {
+    display: block;
+}
+
+.first-message-label {
+    position: unset;
+}
