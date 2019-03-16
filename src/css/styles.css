@@ -135,25 +135,20 @@ main {
   position: absolute;
 }
 
-.main_menu_write_box {
+.main_menu_write_button {
   position: relative;
   width: 147px;
   height: 32px;
+  border: 0;
   border-radius: 3px;
   background-color: #6287bd;
-}
-
-.main_menu_write {
-  position: absolute;
-  top: 7px;
-  left: 45px;
-  right: 45px;
-  bottom: 10px;
+  box-shadow: none;
   font-size: 12px;
   color: #fff;
+  cursor: pointer;
 }
 
-.main_menu_write_box:hover {
+.main_menu_write_button:hover {
   background-color: #597ab2;
 }
 
