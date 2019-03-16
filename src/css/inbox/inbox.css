@@ -1,8 +1,19 @@
 @import "__footer/inbox__footer.css";
 @import "__footer/inbox__footer-element.css";
 @import "__footer/inbox__footer-date.css";
-@import "__messages/inbox__message.css";
 @import "__header/inbox__header.css";
 @import "__header/inbox__checkbox-all.css";
 @import "__header/inbox__header-element.css";
 @import "__messages/inbox__messages.css";
+@import "__messages/inbox__message.css";
+@import "__messages/inbox__message-author.css";
+@import "__messages/inbox__message-date.css";
+@import "__messages/inbox__message-body.css";
+@import "__messages/inbox__message-icon.css";
+@import "__messages/inbox__message-read.css";
+@import "__messages/inbox__message-checkbox.css";
+@import "__messages/inbox__message_bold.css";
+
+.inbox {
+  overflow: hidden;
+}

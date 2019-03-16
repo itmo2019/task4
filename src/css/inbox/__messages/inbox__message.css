@@ -1,0 +1,6 @@
+.inbox__message {
+  position: relative;
+  height: 40px;
+  border-bottom: solid 1px #e2e2e2;
+  cursor: pointer;
+}

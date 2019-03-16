@@ -40,33 +40,6 @@ main {
   margin: 5px;
 }
 
-.main_menu_content {
-  position: relative;
-  top: 8px;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.message {
-  position: relative;
-  height: 40px;
-  border-bottom: solid 1px #e2e2e2;
-  cursor: pointer;
-}
-
-.message_checkbox {
-  position: absolute;
-  left: 20px;
-  top: 11px;
-  width: 16px;
-  height: 16px;
-  border-radius: 3px;
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  background-color: #fff;
-  cursor: pointer;
-}
-
 .first_email {
   position: relative;
   height: 40px;
@@ -76,85 +49,6 @@ main {
 
 .first_email:focus + .first_message {
   opacity: 1;
-}
-
-.unread_message_author {
-  position: absolute;
-  left: 86px;
-  top: 12px;
-  width: 170px;
-  font-size: 13px;
-  font-weight: bold;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
-}
-
-.read_message_author {
-  position: absolute;
-  left: 86px;
-  top: 12px;
-  width: 170px;
-  font-size: 13px;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
-}
-
-.unread_message_body {
-  position: absolute;
-  left: 281px;
-  right: 100px;
-  top: 12px;
-  font-size: 13px;
-  font-weight: bold;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
-}
-
-.read_message_body {
-  position: absolute;
-  left: 281px;
-  right: 100px;
-  top: 12px;
-  font-size: 13px;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
-}
-
-.message_date {
-  position: absolute;
-  right: 20px;
-  top: 13px;
-  font-size: 13px;
-  text-align: right;
-  color: #9b9b9b;
-}
-
-.message_icon {
-  position: absolute;
-  left: 46px;
-  top: 5px;
-  width: 30px;
-  height: 30px;
-}
-
-.checkbox_message_box {
-  position: absolute;
-  top: 11px;
-  left: 20px;
-}
-
-.make_as_read {
-  position: absolute;
-  left: 261px;
-  top: 14px;
-  width: 10px;
-  height: 10px;
-  background: #6287bd;
-  border-radius: 50%;
 }
 
 .first_message {
