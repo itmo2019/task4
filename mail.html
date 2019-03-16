@@ -8,14 +8,16 @@
 <body>
 <div class="header">
     <div class="img">
-        <img class="toolbar" src="https://upload.wikimedia.org/wikipedia/commons/b/b2/Hamburger_icon.svg" width="31px">
+        <img class="toolbar" src="https://upload.wikimedia.org/wikipedia/commons/b/b2/Hamburger_icon.svg" width="31px" alt="toolbar">
     </div>
     <div class="logo">
-        <div class="yandex">Яндекс</div>
-        <div class="mail">Почта</div>
+        <span class="yandex">Яндекс</span>
+        <span class="mail">Почта</span>
     </div>
     <div class="search">
-        <input type="text" class="search-form">
+        <label>
+            <input type="text" class="search-form">
+        </label>
     </div>
 </div>
 <div class="content">
@@ -32,93 +34,58 @@
 </div>
 
 <div class="main">
-    <div class="article">
-        <header>
-            <h1>Чего я жду от курсов по фронтеду?</h1>
-        </header>
-
-        <figure>
-            <img src="knowledge.jpg" width="400">
-            <figcaption>Необходимые знания (изображение взято с сайта <a href="https://habr.com/ru/company/netologyru/blog/328426/">habr</a> )</figcaption>
-        </figure>
-        <p><address>Александра Лисицына</address></p>
-        <p><time>21:00 23.02.2019</time></p>
-        </footer>
-    </div>
     <div class="actions">
-        <input type="checkbox" class="checkbox">
-        <div class="action">Переслать</div>
-        <div class="action">Удалить</div>
-        <div class="action">Это спам!</div>
-        <div class="action">Прочитано</div>
+            <input type="checkbox" class="checkbox">
+        <div class="action"><div class="text_button">Переслать</div></div>
+        <div class="action"><div class="text_button">Удалить</div></div>
+        <div class="action"><div class="text_button">Это спам!</div></div>
+        <div class="action"><div class="text_button">Прочитано</div></div>
+    </div>
+    <div class="letters">
+    <div class="letter" tabindex="0" id="firstletter">
+            <input type="checkbox" class="checkbox">
+        <img src="yandex_cyr_icon-icons.com_59870.svg" height="100%" class="contact" alt="yaicon">
+        <div class="from"><div class="text_letter">ЯндексПаспорт</div></div>
+        <div class="checked"></div>
+        <div class="theme"><div class="text_letter">Доступ к аккаунту восстановлён</div></div>
+        <div class="data"><div class="text_letter">6 авг</div></div>
+    </div>
+    <article class="article">
+        <div class="cancel" tabindex="1"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Fairytale_button_cancel.png" width="34px" alt="cancel"></div>
+        <section id="first">
+            <div class="shaped"></div>
+            <p>
+                <span class="letter">Ф</span><b>роненд разаработчик</b> является одной из самых востребованных профессией по версии сайта <a href="https://insights.stackoverflow.com/survey/2018/#developer-roles">StackOverflow</a>.
+                Но так же существует и большая конкуренция, поскольку в сети множество курсов, обучающих созданию сайтов.
+                А значит для получения высокооплачиваемой работы необходимо обладать качественными знаниями (о них говорится на изображении).
+                Я надеюсь, что курс фронтенда даст мне знания, которых хватит для создания простейших веб-приложений.
+            </p>
+        </section>
+    </article>
+    <div class="letter">
+            <input type="checkbox" class="checkbox">
+        <img src="yandex_cyr_icon-icons.com_59870.svg" height="100%" class="contact" alt="yaicon">
+        <div class="from"><div class="text_letter">ЯндексПаспорт</div></div>
+        <div class="checked"></div>
+        <div class="theme"><div class="text_letter">Доступ к аккаунту восстановлён и всегда будет открыт чтобы не случилось с вами и миром вокруг мы всегда будем рады вас видеть и предложить вам помощь</div></div>
+        <div class="data"><div class="text_letter">6 авг</div></div>
     </div>
     <div class="letter">
-        <input type="checkbox" class="checkbox">
-        <img src="yandex_cyr_icon-icons.com_59870.svg" height="15px" class="contact">
-        <div class="from">ЯндексПаспорт</div>
+            <input type="checkbox" class="checkbox">
+        <img src="yandex_cyr_icon-icons.com_59870.svg" height="100%" class="contact" alt="yaicon">
+        <div class="from"><div class="text_letter">ЯндексПаспорт</div></div>
         <div class="checked"></div>
-        <div class="theme"><a href="#id">Доступ к аккаунту восстановлён</a></div>
-        <article id="id">
-            <hr>
-            <section id="first">
-                <div class="shaped"></div>
-                <p>
-                    <span class="letter">Ф</span><b>роненд разаработчик</b> является одной из самых востребованных профессией по версии сайта <a href="https://insights.stackoverflow.com/survey/2018/#developer-roles">StackOverflow</a>.
-                    Но так же существует и большая конкуренция, поскольку в сети множество курсов, обучающих созданию сайтов.
-                    А значит для получения высокооплачиваемой работы необходимо обладать качественными знаниями (о них говорится на изображении).
-                    Я надеюсь, что курс фронтенда даст мне знания, которых хватит для создания простейших веб-приложений.
-                </p>
-            </section>
-
-            <section id="second">
-                <p>
-                    <span class="letter">В</span> случае верстки хотелось бы не просто узнать о <i>HTML</i> и <i>CSS</i>, но и научиться <em>адаптивному дизайну</em>.
-                    Ведь данная верстка очень важна в современом мире, так как мы постоянно используем разные устройства для захода на сайты, и всегда хочется, чтобы сайт отображался корректно.
-                    Еще хотелось бы немного узнать о <div class="list">фреймворках:</div>
-                <ul id="frame">
-                    <li>Foundation</li>
-                    <li>Bootstrap</li>
-                    <li>Materialize CSS</li>
-                </ul>
-                и <div class="list">препроцессарах:</div>
-                <ul id="prep">
-                    <li>Sass</li>
-                    <li>Less</li>
-                </ul>
-                </p>
-            </section>
-
-            <section id="third">
-                <span class="letter">Ч</span>то касается остального, то помимо <strong>JavaScript</strong>, хотелось бы изучить фреймворки, например React.
-                И, возможно, о работе с базми данных (jQuery).
-            </section>
-            <hr>
-        </article>
-        <div class="data">6 авг</div>
+        <div class="theme"><div class="text_letter">Доступ к аккаунту восстановлён</div></div>
+        <div class="data"><div class="text_letter">6 авг</div></div>
     </div>
     <div class="letter">
-        <input type="checkbox" class="checkbox">
-        <img src="yandex_cyr_icon-icons.com_59870.svg" width="15px" class="contact">
-        <div class="from">ЯндексПаспорт</div>
+            <input type="checkbox" class="checkbox">
+        <img src="yandex_cyr_icon-icons.com_59870.svg" height="100%" class="contact" alt="yaicon">
+        <div class="from"><div class="text_letter">ЯндексПаспорт</div></div>
         <div class="checked"></div>
-        <div class="theme">Доступ к аккаунту восстановлён</div>
-        <div class="data">6 авг</div>
+        <div class="theme"><div class="text_letter">Доступ к аккаунту восстановлён</div></div>
+        <div class="data"><div class="text_letter">6 авг</div></div>
     </div>
-    <div class="letter">
-        <input type="checkbox" class="checkbox">
-        <img src="yandex_cyr_icon-icons.com_59870.svg" width="15px" class="contact">
-        <div class="from">ЯндексПаспорт</div>
-        <div class="checked"></div>
-        <div class="theme">Доступ к аккаунту восстановлён</div>
-        <div class="data">6 авг</div>
-    </div>
-    <div class="letter">
-        <input type="checkbox" class="checkbox">
-        <img src="yandex_cyr_icon-icons.com_59870.svg" width="15px" class="contact">
-        <div class="from">ЯндексПаспорт</div>
-        <div class="checked"></div>
-        <div class="theme">Доступ к аккаунту восстановлён</div>
-        <div class="data">6 авг</div>
     </div>
     <div class="footer">
         <div class="link">&copy; 2001-2018, Яндекс</div>
