@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="main.css">
+        <script type="text/javascript" src="main.js" async></script>
     </head>
 <body class="content">
     <div class="content__page_wrapper">
@@ -21,7 +22,7 @@
             <ul class="actions-bar__nav-bar">
                 <li class="actions-bar__write-message-action"><a href="">Написать</a></li>
                 <li><a href="">Входящие</a></li>
-                <li><a href="">Отправленные</a></li>
+                <li><a href="">Отправленные</a></li>    
                 <li><a href="">Удаленные</a></li>
                 <li><a href="">Спам</a></li>
                 <li><a href="">Черновики</a></li>
@@ -32,25 +33,27 @@
             <div class="mail-box__actions">
                 <input class="mail-box__select-all" type="checkbox">
                 <ul>
-                    <li class="mail-box__resend"><a href="">Переслать</a></li>
-                    <li class="mail-box__delete"><a href="">Удалить</a></li>
-                    <li class="mail-box__strike"><a href="">Это спам!</a></li>
-                    <li class="mail-box__mark-as-read"><a href="">Прочитано</a></li>
+                    <li class="mail-box__get-message">Получить письмо</li>
+                    <li class="mail-box__resend">Переслать</li>
+                    <li class="mail-box__delete">Удалить</li>
+                    <li class="mail-box__strike">Это спам!</li>
+                    <li class="mail-box__mark-as-read">Прочитано</li>
                 </ul>
             </div>
             <div class="mail-box-content">
+                <input type="checkbox" id="first-message-click"></input>
+                <div class="article mail-box-content__article">
+                    <label class="article__cross" for="first-message-click">X</label>
+                    <img class="article__moon" src="/static/moon.png" width="150" height="150" alt="">
+                    После Солнца Луна является самым заметным космическим телом на небосводе, поэтому люди всегда проявляли к ней повышенный интерес. Сегодня ночное светило – объект самого пристального изучения.
+                    Благодаря исследованиям астрономов мы знаем о нем практически всё, но некоторые люди до сих пор задаются вопросом, что такое Луна – спутник, звезда или планета. Чтобы дать однозначный ответ, необходимо, прежде всего, разобраться в понятиях этих небесных тел.
+                    Звездами во Вселенной называют массивные газовые шары, которые излучают свет и удерживают равновесие благодаря силам собственного притяжения. В их недрах происходят реакции термоядерного синтеза, а температура измеряется миллионами кельвинов. 
+                    В большинстве случаев звезды имеют большой диаметр и высокую массу. Их химический состав представляет собой набор легких элементов, которые обычно имеют вес меньше гелия.
+                </div>
                 <ul class="messages-list">
                     <li class="message-snippet messages-list__message-snippet messages-snippet_bold">
-                        <input id="first-message-tick" class="message-snippet__message-tick" type="checkbox">
-                        <div class="article mail-box-content__article">
-                            <label class="article__cross" for="first-message-tick">X</label>
-                            <img class="article__moon" src="/static/moon.png" width="150" height="150" alt="">
-                            После Солнца Луна является самым заметным космическим телом на небосводе, поэтому люди всегда проявляли к ней повышенный интерес. Сегодня ночное светило – объект самого пристального изучения.
-                            Благодаря исследованиям астрономов мы знаем о нем практически всё, но некоторые люди до сих пор задаются вопросом, что такое Луна – спутник, звезда или планета. Чтобы дать однозначный ответ, необходимо, прежде всего, разобраться в понятиях этих небесных тел.
-                            Звездами во Вселенной называют массивные газовые шары, которые излучают свет и удерживают равновесие благодаря силам собственного притяжения. В их недрах происходят реакции термоядерного синтеза, а температура измеряется миллионами кельвинов. 
-                            В большинстве случаев звезды имеют большой диаметр и высокую массу. Их химический состав представляет собой набор легких элементов, которые обычно имеют вес меньше гелия.
-                        </div>
-                        <label class="first-message-label" for="first-message-tick">
+                        <input class="message-snippet__message-tick" type="checkbox">
+                        <label class="first-message-label" for="first-message-click">
                             <img class="message-snippet__avatar" width="30" height="30" alt="">
                             <span class="message-snippet__sender-name">Яндекс.Почта</span>
                             <div class="message-snippet__message-item"></div>

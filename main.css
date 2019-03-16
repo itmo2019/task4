@@ -161,6 +161,7 @@ html, body {
 
 .mail-box__actions ul {
     position: unset;
+    cursor: pointer;
 }
 
 .mail-box__select-all {
@@ -183,10 +184,6 @@ html, body {
     left: 315px;
 }
 
-.messages-list__message-snippet {
-    border-bottom: solid 1px #e2e2e2;
-}
-
 .mail-box-content {
     width: 100%;
     min-height: 463px;
@@ -205,6 +202,53 @@ html, body {
 
     font: 13px HelveticaNeue;
     color: #000;
+    border-bottom: solid 1px #e2e2e2;
+}
+
+.messages-list__message-snippet_deleted {
+    animation: deleting 500ms ease-in forwards !important;
+}
+
+@keyframes deleting {
+    from {
+        opacity: 1;
+        height: 37px;
+    }
+    75% {
+        transform: translateX(100%);
+        opacity: 0;
+        height: 37px;
+    }
+    to {
+        transform: translateX(100%);
+        opacity: 0;
+        height: 0;
+        border: 0;
+    }
+}
+
+.message_snippet_added {
+    animation: adding 500ms ease-in;
+}
+
+@keyframes adding {
+    from {
+        height: 0;
+        opacity: 0;
+    }
+    50% {
+        height: 37px;
+        opacity: 0;
+    }
+    to {
+        height: 37px;
+        opacity: 1;
+    }
+}
+
+.mail-box__get-message {
+    position: absolute;
+    right: 20px;
 }
 
 .messages-snippet_bold {
@@ -283,10 +327,10 @@ footer nav a, footer span {
 
 .mail-box-content__article {
     box-sizing: border-box;
-    width: 100%;
+    width: 100%;    
     min-height: 463px;
     position: absolute;
-    top: 0;
+    top: 51px;
     background-color: white;
     z-index: 1;
     font-family: sans-serif;
@@ -321,8 +365,12 @@ footer nav a, footer span {
     background-color: #cdd6e4;
 }
 
-#first-message-tick:checked + .mail-box-content__article {
+#first-message-click:checked + .mail-box-content__article {
     display: block;
+}
+
+#first-message-click {
+    display: none;
 }
 
 .first-message-label {
