@@ -36,10 +36,10 @@
 <div class="main">
     <div class="actions">
         <input type="checkbox" class="checkbox actions__checkbox">
-        <div class="action"><div class="text action__text">Переслать</div></div>
-        <div class="action"><div class="text action__text">Удалить</div></div>
-        <div class="action"><div class="text action__text">Это спам!</div></div>
-        <div class="action"><div class="text action__text">Прочитано</div></div>
+        <div class="action"><div class="text action__replace">Переслать</div></div>
+        <div class="action"><div class="text action__remove">Удалить</div></div>
+        <div class="action"><div class="text action__spam">Это спам!</div></div>
+        <div class="action"><div class="text action__readed">Прочитано</div></div>
     </div>
     <div class="letters">
     <div class="letter letter_focused" tabindex="0">
@@ -101,5 +101,9 @@
     var button_write = document.getElementsByClassName('menu__button_write')[0];
     button_write.addEventListener("click", () => {var letters = document.getElementsByClassName('letter');
                                                   var newLetter = letters[letters.length - 1].cloneNode(true);
-                                                  document.getElementsByClassName('letters')[0].insertBefore(newLetter, letters[0]);})
+                                                  document.getElementsByClassName('letters')[0].insertBefore(newLetter, letters[0]);});
+    var letters = document.getElementsByClassName('letter');
+    for (var i = 0; i < letters.length; i++) {
+        letters[i].addEventListener("click", () => {this.parrentNode.removeChild(this);})
+    }
 </script>
