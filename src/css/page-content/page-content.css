@@ -1,0 +1,12 @@
+@import "__content/page-content__content.css";
+@import "__left-toolbar/page-content__left-toolbar.css";
+
+.page-content {
+  position: absolute;
+  top: 56px;
+  left: 22px;
+  width: 98%;
+  height: 92%;
+  min-width: 800px;
+  min-height: 600px;
+}

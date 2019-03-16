@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Задание #2</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link href="css/styles.css" rel="stylesheet"/>
+  <!-- There were used Yandex Sans only for educational use. It didn't used for commercial targets.-->
+</head>
+<body>
+<main>
+  <header class="main-header">
+    <div class="main-header__icon">
+      <a href="#menu">
+        <img class="tools-icon" src="img/menuIcon.svg">
+      </a>
+    </div>
+    <div class="main-header__logo">
+      <div class="yandex-mail-logo">
+        <img src="img/YandexLogo.svg"/>
+        <a class="yandex-mail-logo__link-yandex" href="https://yandex.ru"></a>
+        <a class="yandex-mail-logo__link-mail" href="#"></a>
+      </div>
+    </div>
+    <div class="main-header__search">
+      <label>
+        <input type="search" placeholder="Поиск" class="search"/>
+      </label>
+    </div>
+  </header>
+  <div class="page-content">
+    <article class="page-content__left-toolbar">
+      <nav class="mail-toolbar">
+        <button class="mail-toolbar__button">
+          Написать
+        </button>
+        <a class="mail-toolbar__element" href="#inbox">Входящие</a>
+        <a class="mail-toolbar__element" href="#sent">Отправленные</a>
+        <a class="mail-toolbar__element" href="#trash">Удалённые</a>
+        <a class="mail-toolbar__element" href="#spam">Спам</a>
+        <a class="mail-toolbar__element" href="#draft">Черновики</a>
+        <a class="mail-toolbar__element" href="#folder">Создать папку</a>
+      </nav>
+    </article>
+    <article class="page-content__content">
+      <div class="inbox">
+        <header class="inbox__header">
+          <div class="inbox__checkbox-all">
+            <input id="checkbox_all" class="checkbox" type="checkbox"/>
+            <label for="checkbox_all" class="checkbox__label"></label>
+          </div>
+          <a class="inbox_header-element" href="#forward">Переслать</a>
+          <a class="inbox_header-element" href="#remove">Удалить</a>
+          <a class="inbox_header-element" href="#spam">Это спам!</a>
+          <a class="inbox_header-element" href="#mark_as_read">Прочитано</a>
+        </header>
+        <div class="inbox__messages">
+          <label for="close_message_checkbox">
+            <div class="inbox__message" id="first_email">
+              <div class="inbox__message-checkbox">
+                <input id="checkbox_1" class="checkbox" type="checkbox"/>
+                <label for="checkbox_1" class="checkbox__label"></label>
+              </div>
+              <img class="inbox__message-icon" src="img/ya-default.svg"/>
+              <span class="inbox__message-author inbox__message_bold">Яндекс.Котики</span>
+              <div class="inbox__message-read"></div>
+              <span class="inbox__message-body inbox__message_bold">Летучие котики</span>
+              <time class="inbox__message-date" datetime="2019.02.20T08:23:11+04:00">20 фев</time>
+            </div>
+          </label>
+          <section class="inbox__message">
+            <div class="inbox__message-checkbox">
+              <input id="checkbox_2" class="checkbox" type="checkbox"/>
+              <label for="checkbox_2" class="checkbox__label"></label>
+            </div>
+            <img class="inbox__message-icon" src="img/ya-default.svg"/>
+            <span class="inbox__message-author inbox__message_bold">Команда Яндекс.Почты ллулулууллулулулулл</span>
+            <div class="inbox__message-read"></div>
+            <span class="inbox__message-body inbox__message_bold">Как читать почту с мобильного</span>
+            <time class="inbox__message-date" datetime="2019.02.17T08:23:11+04:00">17 фев</time>
+          </section>
+          <section class="inbox__message">
+            <div class="inbox__message-checkbox">
+              <input id="checkbox_3" class="checkbox" type="checkbox"/>
+              <label for="checkbox_3" class="checkbox__label"></label>
+            </div>
+            <img class="inbox__message-icon" src="img/ya-default.svg"/>
+            <span class="inbox__message-author">Команда Яндекс.Почты</span>
+            <span class="inbox__message-body"
+            >Как читать почту с
+                мобильногоооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооо</span
+            >
+            <time class="inbox__message-date" datetime="2019.02.16T08:12:00+04:00">16 фев</time>
+          </section>
+          <section class="inbox__message">
+            <div class="inbox__message-checkbox">
+              <input id="checkbox_main_4" class="checkbox" type="checkbox"/>
+              <label for="checkbox_main_4" class="checkbox__label"></label>
+            </div>
+            <img class="inbox__message-icon" src="img/ya-default.svg"/>
+            <span class="inbox__message-author">Яндекс</span>
+            <span class="inbox__message-body">Соберите всю почту в этот ящик</span>
+            <time class="inbox__message-date" datetime="2019.01.10T09:23:11+04:00">10 янв</time>
+          </section>
+        </div>
+        <input type="checkbox" class="inbox__letter-close-message-checkbox" id="close_message_checkbox"/>
+        <div class="inbox__letter">
+          <label for="close_message_checkbox">
+            <div class="inbox__letter-close-message">x</div>
+          </label>
+          <h3>Летучие кошки</h3>
+
+          Наверное, неудивительно, что в первую очередь ученых интересует поразительная
+          способность кошек при падении с любой высоты приземляться на лапы. Считается, что
+          официальная история научных изысканий в области физики падающих котят началась в 1969
+          году, когда два физика из Стэнфордского университета опубликовали исследование под
+          названием "Динамическое объяснение феномена падающей кошки". При этом физики, в
+          отличие от своих многочисленных последователей, в ходе своей работы не уронили ни
+          одной кошки. Вместо этого они создали математическую абстракцию, модель кошки, которая
+          довольно хорошо описывала процесс и результаты падения живых кошек, которых когда-то
+          бросал <img align="right" class="beautiful_cat" src="img/cat.png"/>кто-то другой. До
+          сих пор статья Кэйна и Шера остается едва ли не единственной публикацией о кошках в
+          журнале International Journal of Solids and Structures. Не все физики считают, что
+          кошек необходимо бросать с высоты, — некоторых интересует и характерная манера
+          животных красться, осторожно подстерегая добычу. Кристин Бишоп из Калифорнийского
+          университета в Дэвисе (США) и ее коллеги для своего исследования крадущихся кошек
+          частично побрили трех из них и разрисовали специальной краской, помогавшей следить за
+          работой мускулов и движением животного. На благодатной теме падающих кошек отметился и
+          знаменитый журнал Annals of Improbable Research, ежегодно вручающий Шнобелевские
+          премии самым смешным и странным исследованиям. Автор статьи в номере за 1998 год,
+          Фиорелла Гамбале, бросила кошку по имени Эстер с разной высоты в общей сложности 600
+          раз. Таким образом, ей удалось установить, что Эстер успевает перевернуться и
+          приземлиться на четыре лапы при падении с высоты более одного фута (около 30
+          сантиметров). В статье Гамбале писала, что рассчитывает продолжить эксперименты с той
+          же кошкой на малых высотах, однако об их результатах ничего не сообщается.
+        </div>
+        <footer class="inbox__footer">
+          <a class="inbox__footer-element" href="https://yandex.ru/support/mail/">Помощь и обратная связь</a>
+          <a class="inbox__footer-element" href="https://yandex.ru/adv/">Реклама</a>
+          <span class="inbox__footer-date">© 2001—2018,</span>
+          <a class="inbox__footer-element" href="https://yandex.ru/">Яндекc</a>
+        </footer>
+      </div>
+    </article>
+
+  </div>
+</main>
+</body>
+</html>

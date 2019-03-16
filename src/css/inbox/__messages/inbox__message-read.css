@@ -1,0 +1,9 @@
+.inbox__message-read {
+  position: absolute;
+  left: 261px;
+  top: 14px;
+  width: 10px;
+  height: 10px;
+  background: #6287bd;
+  border-radius: 50%;
+}
