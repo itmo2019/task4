@@ -27,9 +27,9 @@
 }
 
 .mails-placeholder__list-of-mails {
-    overflow-y: scroll;
+    overflow-y: hidden;
     overflow-x: hidden;
-    height: 450px;
+    min-height: 450px;
 }
 
 .mails-placeholder__list-of-footer-items {
@@ -47,4 +47,15 @@
     font-family: HelveticaNeueLight, Arial;
     font-size: 11px;
 
+}
+
+.circle {
+    float: left;
+    shape-outside: circle();
+}
+
+.placeholder-for-close-button {
+    float: right;
+    background-color: red;
+    cursor: pointer;
 }

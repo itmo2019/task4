@@ -78,6 +78,15 @@
     margin-top: 5px;
 }
 
+.mail__on-click-label {
+    display: inline;
+    top: 0;
+    position: absolute;
+    width: 100%;
+    height: 40px;
+    z-index: 2;
+}
+
 .mail__item-mail__select {
     bottom: 10px;
     margin-left: 20px;
@@ -96,12 +105,14 @@
     min-width: 160px;
     width: 19.63%;
     bottom: 6px;
+    height: 13px;
 }
 
 .mail__item-mail__text-message {
     min-width: 215px;
     width: 40%;
     bottom: 6px;
+    height: 13px;
 }
 
 .mail_status_read .mail__item-mail__text-message {

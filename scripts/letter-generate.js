@@ -1,8 +1,3 @@
-var countLetter = 1;
-let createNewLetter = document.getElementById("add-new-letter");
-let mailsPlaceholder = document.getElementById("mails-placeholder");
-
-
 createNewLetter.addEventListener("click", addLetter);
 document.addEventListener("DOMContentLoaded", addLetter);
 
@@ -18,6 +13,19 @@ function addLetter() {
     element.addEventListener('click', deleteMessage(countLetter));
     element.addEventListener('animationend', (event) => {
         event.target.remove();
+        if (letterStorage.size === 0) {
+            return;
+        }
+        let items = mailsPlaceholder.getElementsByClassName("mail");
+        let key = letterStorage.keys()[0];
+        let mail = letterStorage[key];
+        if (items.length === 0) {
+            mailsPlaceholder.appendChild(mail);
+        } else {
+            let before = items[0];
+            mailsPlaceholder.insertBefore(mail, before);
+        }
+        letterStorage.delete(key);
     });
     countLetter++;
 }
@@ -45,6 +53,13 @@ function createCheckBox() {
     return checkBox;
 }
 
+function createClickLabel() {
+    let clickBox = document.createElement("div");
+    clickBox.className = "mail__on-click-label";
+    clickBox.innerHTML = "";
+    return clickBox;
+}
+
 function createLogo() {
     let logo = document.createElement("img");
     logo.className = "mail__item mail__item-mail__logo";
@@ -67,17 +82,24 @@ function createMessage() {
 }
 
 function createDate() {
+    function randomDate(start, end) {
+        return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
+    }
+
+    let date = randomDate(new Date(2007, 1, 1), new Date());
     let time = document.createElement("div");
     time.className = "mail__item mail__item-mail__receive-time text_hide-by-size";
-    time.innerText = "6 янв";
+
+
+    time.innerText = date.toLocaleDateString("ru-RU", {month: 'short', day: 'numeric'});
     return time;
 }
 
-function deleteMessage(item) {
+function deleteMessage(id) {
     return () => {
-        let element = document.getElementById("mail-" + item.toString());
+        let element = document.getElementById("mail-" + id.toString());
         if (element === null) {
-            console.log("can't delete mail-" + item.toString());
+            console.log("can't delete mail-" + id.toString());
             return;
         }
         element.classList.add("delete-animation");
