@@ -1,0 +1,13 @@
+div {
+	color: red;
+}
+.heart {
+	float: left;
+	margin: 0px 5px 5px 0px;
+	shape-outside: circle();
+}
+p {
+	margin-left: 5px;
+	text-indent: 5px; 
+	hyphens: auto;
+}

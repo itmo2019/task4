@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Task4</title>
+	<meta charset="utf-8">
+	<meta name="author" content="Daria Zvyagintseva">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="style.css">
+	
+</head>
+<body>
+	<button id="newButton">новое письмо</button>
+	<input  class="body__find" name="request" value="" type="search" placeholder="Поиск">
+	<div class="yandex body__yandex">
+		<img src="./logo.jpg" 
+		alt="Лого яндекса"
+		height="31"
+		width="153"
+		class="yandex__logo">
+	</div>
+	<div class="body__inbox"></div>
+	<div class="body__newbox">
+		<a class="body__newbox-refl">Написать</a>
+	</div>
+	<div class="menu body__menu">
+		<ul class="menu__list-of-options">
+			<li class="menu__list-in">
+				<a>Входящие</a>
+			</li>
+			<li class="menu__list-send">
+				<a>Отправленные</a>
+			</li>
+			<li class="menu__list-del">
+				<a>Удаленные</a>
+			</li>
+			<li class="menu__list-spam">
+				<a>Спам</a>
+			</li>
+			<li class="menu__list-draft">
+				<a>Черновики</a>
+			</li>
+			<li class="menu__list-makedir">
+				<a>Создать папку</a>
+			</li>
+		</ul>
+	</div>	
+	<div class="window body__window">
+		<div class="header window__header">
+				<input type="checkbox" class="header__box-item" id = "set-all-box">
+				<input type="submit" name="forward" class="header__item" value="Переслать">
+				<button id="delButton">Удалить</button>
+				<input type="submit" name="spam" class="header__item" value="Это спам!">
+				<input type="submit" name="read" class="header__item" value="Прочитано">
+		</div>
+		<div id = "firstLine" class="window__firstline"></div>
+		<div id = "letters-context">
+			<input type="checkbox" id="show-letter1">
+			<article id = "essay">
+				<label id="krestik" for="show-letter1">x</label>
+           		<iframe src="essay/index.html" width=100% height=100%></iframe>
+			</article>
+		</div>
+		<div class="letters window__letters" id = "list-of-letters">
+			<div class = "firstletter letters__firstletter">
+				<label id = "letters__letter1" for="show-letter1" class="letter firstletter__clickme unreaded-letter">
+					<input type="checkbox" class="firstletter__box letter__box">
+					<div class="firstletter__logo-authtor">Я</div>
+					<div class="firstletter__authtor">Яндекс.Паспорт</div> 
+					<div class="firstletter__textletter">Доступ к аккаунту востановлен</div>
+					<div class="firstletter__date">6 авг</div>
+					<div class="firstletter__unreaded"></div>
+				</label>
+				<div class="letters__line"></div>
+			</div>
+			<div class="letters__emptypart"></div>
+		</div>
+		<div class="allright window__allright" id = 'allright'>
+				<div class="allright__line"></div>
+				<p class="allright__foot">Помощь и обратноя связь &nbsp; &nbsp; &nbsp; Реклама &nbsp; &nbsp; &nbsp;  &#169; 2001-2018, Яндекс</p>
+			</div>
+
+	</div>
+	<script type="text/javascript" src="markov.js">
+	</script>
+	<script language="JavaScript" type="text/javascript">
+		var authors = ["Александр Пушкин", "Петр Гринев", "Маша Миронова", "Емельян Пугачев", "Швабрин", "Савельич", "Капитан Миронов", "Капитанша Василиса Егоровна", "Иван Игнатьич", "Зурин", "Бопре", "Екатерина II", "Генерал Андрей Карпович", "Отец Петра Гринева", "Мать Петра Гринева"]
+		var allTexts = document.getElementById("letters-context")
+		var cntletters = 1
+		var nonDeletedLetters = 1 
+		function genNewLine() {
+			var newLine = document.createElement('div');
+			newLine.id = "newLine"
+			newLine.class = "letters__line"
+			newLine.style.position = 'relative'
+			newLine.style.marginTop = '4px'
+			newLine.style.width = '100%'
+			newLine.style.height = '2px'
+			newLine.style.border = 'solid 1px #e2e2e2'
+			return newLine;
+		}
+		function genAuthtor() {
+			i =  Math.random() * authors.length
+  			return authors[~~i]
+		}
+		function f(cnt) {
+			var labelName = "show-letter" + cnt 
+			var z = document.getElementById(labelName)
+			var y = z.nextElementSibling //крестик
+			var x = y.nextElementSibling //текст письма
+			if (document.getElementById(labelName).checked) {
+				x.style.display = "block"
+				y.style.display = "block"
+			} else {
+				x.style.display = "none"
+				y.style.display = "none"
+			}
+			var leti = document.getElementById("letters__letter" + cnt)
+			if (leti.classList.contains("unreaded-letter")) {
+				leti.classList.remove("unreaded-letter")
+				leti.getElementsByClassName("letter__unreaded")[0].style.display = "none"
+			}
+				
+		}
+		function shcl () {
+			var leti = document.getElementById("letters__letter1")
+			if (leti.classList.contains("unreaded-letter")) {
+				leti.classList.remove("unreaded-letter")
+				leti.getElementsByClassName("firstletter__unreaded")[0].style.display = "none"
+			}
+		}
+		document.getElementById("show-letter1").addEventListener('onclick', shcl())
+		function genNewLetter() {
+			var labelName = "show-letter" + cntletters
+			var newLetter = document.createElement('label');
+			newLetter.className = "letter letters__letter unreaded-letter"
+			newLetter.id = "letters__letter" + cntletters
+			newLetter.innerHTML = '<input type="checkbox" class="letter__box">'
+			author = genAuthtor()
+			newLetter.innerHTML+=' <div class="letter__logo-authtor">'+ author[0]+'</div>' 
+			newLetter.innerHTML+='<div class="letter__authtor">' + author + '</div>'
+			newLetter.innerHTML+=' <div class="letter__unreaded"></div>'
+			mesText = (generate())
+			var newLable = document.createElement('input');
+			newLable.setAttribute('type', "checkbox")
+			newLable.id = labelName
+			newLable.className = "letters__show-action"
+			newLable.setAttribute("onclick", "f(" + cntletters + ")")
+			newLetter.setAttribute("for", labelName)
+			allTexts.appendChild (newLable)
+			allTexts.innerHTML+='<label class="krestik" style="display: none;" for="'  + labelName + '">x</label>'
+			allTexts.innerHTML+='<div class = "letters__text" style="display: none;">'+"От: "+author+"</br>"+ mesText +'</div>'
+		
+			newLetter.innerHTML+='<div class="letter__textletter">' + mesText + '</div>'
+			newLetter.innerHTML+='<div class="letter__date">16 мар</div> </div>'
+			
+			return newLetter
+		}
+		function genLetterAndLine () {
+			
+			cntletters++
+			nonDeletedLetters++
+			var newDiv = document.createElement('div')
+			newDiv.className="firstletter"
+			if (nonDeletedLetters > 30) {
+				newDiv.className+=" hidden";
+			}
+			newDiv.appendChild (genNewLetter())
+
+
+			newDiv.appendChild(genNewLine())
+			var lofl = document.getElementById("list-of-letters")
+			lofl.insertBefore(newDiv, lofl.firstChild)
+		}
+		
+		document.getElementById("newButton").onclick=function(){
+				genLetterAndLine()
+		}
+
+	</script>
+
+	<script language="JavaScript" type="text/javascript">
+		var setAll = document.getElementById("set-all-box")
+		setAll.onclick=function(){
+			var chbox;
+			chbox = document.getElementsByClassName('letter__box');
+			if (setAll.checked) {
+				for (var i = 0; i < chbox.length; i++) {
+					var elem = chbox[i].parentElement.parentElement;
+					if (!(elem.classList.contains("hidden") || (elem.classList.contains("deleted")))) {
+						chbox[i].checked = true;
+					}
+				}
+			} else {
+				for (var i = 0; i < chbox.length; i++) {
+					var elem = chbox[i].parentElement.parentElement;
+					if (!(elem.classList.contains("hidden") || (elem.classList.contains("deleted")))) {
+						chbox[i].checked = true;
+					}
+				}
+			}	
+		}
+	</script>
+	<script language="JavaScript" type="text/javascript">
+		document.getElementById("delButton").onclick=function(){
+			var d;
+			d=document.getElementsByClassName('letter');
+			for (var i = 0; i < d.length; i++) {
+				if (d[i].firstElementChild.checked) {
+					if (nonDeletedLetters > 30) {
+						var hiddenElem = document.getElementsByClassName("hidden")[0]
+						hiddenElem.classList.remove("hidden")
+					}
+					nonDeletedLetters--
+					d[i].className+=" deleted";
+					d[i].nextElementSibling.className+=" deleted";
+					d[i].parentElement.className+=" deleted";
+					d[i].firstElementChild.checked = false;
+				}
+			}
+
+
+			var setAll = document.getElementById("set-all-box")
+			if (setAll.checked) {
+				setAll.checked = false;
+			}
+			
+		}
+	</script>
+
+	<script type="text/javascript">
+		var f1 = function() {			
+			var t2 =  Math.floor(Math.random() * (600000 - 300000 + 1) + 300000)
+			newButton.click()
+			var p = setTimeout(f1, t2)
+		}
+		var t1 =  Math.floor(Math.random() * (600000 - 10 + 1) + 10)
+		var p = setTimeout(f1, t1)
+	</script>
+</body>
+</html>
