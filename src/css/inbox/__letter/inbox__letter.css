@@ -1,0 +1,12 @@
+.inbox__letter {
+  position: absolute;
+  display: none;
+  top: 37px;
+  left: 0;
+  right: 0;
+  bottom: 32px;
+  padding: 30px;
+  background-color: #fff;
+  z-index: 1;
+  overflow: auto;
+}

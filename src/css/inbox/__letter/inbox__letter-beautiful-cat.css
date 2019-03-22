@@ -1,0 +1,5 @@
+.beautiful_cat {
+  height: 200px;
+  shape-outside: url('../../../img/cat.png');
+  shape-image-threshold: 0.7;
+}

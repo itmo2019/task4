@@ -1,0 +1,7 @@
+@import "__link-mail/yandex-mail-logo__link-mail.css";
+@import "__link-yandex/yandex-mail-logo__link-yandex.css";
+
+.yandex-mail-logo {
+  width: 153px;
+  height: 31px;
+}

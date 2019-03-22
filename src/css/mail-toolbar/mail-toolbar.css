@@ -1,0 +1,6 @@
+@import "__button/mail-toolbar__button.css";
+@import "__element/mail-toolbar__element.css";
+
+.mail-toolbar {
+  width: 147px;
+}

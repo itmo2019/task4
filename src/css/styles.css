@@ -1,0 +1,41 @@
+@import "yandex-mail-logo/yandex-mail-logo.css";
+@import "search/search.css";
+@import "tools-icon/tools-icon.css";
+@import "main-header/main-header.css";
+@import "page-content/page-content.css";
+@import "mail-toolbar/mail-toolbar.css";
+@import "inbox/inbox.css";
+@import "checkbox/checkbox.css";
+
+@font-face {
+  font-family: 'Yandex Sans';
+  font-style: normal;
+  font-weight: 300;
+  src: url('../fonts/YandexSansThin.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Yandex Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/YandexSansBold.woff2') format('woff2');
+}
+
+html {
+  font-family: 'Yandex Sans', serif;
+  font-weight: 300;
+}
+
+body {
+  margin: 0;
+  background-color: #e5eaf0;
+  overflow: auto;
+}
+
+main {
+  position: absolute;
+  width: 95%;
+  height: 95%;
+  padding: 5px;
+  margin: 5px;
+}

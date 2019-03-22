@@ -1,0 +1,9 @@
+.inbox__messages {
+  position: absolute;
+  top: 37px;
+  left: 0;
+  right: 0;
+  bottom: 31px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}

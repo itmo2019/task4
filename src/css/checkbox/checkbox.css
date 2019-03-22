@@ -1,0 +1,5 @@
+@import "__label/checkbox__label.css";
+
+.checkbox {
+  display: none;
+}
