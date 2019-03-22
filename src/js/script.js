@@ -2,8 +2,8 @@ const approxTime = new Date();
 const approxTimeISO = approxTime.toISOString();
 const approxTimeShort = approxTime.toLocaleDateString('ru-RU', {day: 'numeric', month: 'short'});
 
-var messagesCount = 4;
-var mainPageMessagesCount = 4;
+let messagesCount = 4;
+let mainPageMessagesCount = 4;
 const maxMainPageMessagesCount = 30;
 
 const newMessageTimeoutMax = 1000 * 60 * 5;
@@ -89,10 +89,10 @@ function getBody() {
 }
 
 function addMessageWithAnimation(messages, newMessage) {
-  var pos = 500;
+  let pos = 500;
   newMessage.style.left = pos + 'px';
   messages.insertBefore(newMessage, messages.firstChild);
-  var id = setInterval(moveElementFromRightToLeft, 5);
+  let id = setInterval(moveElementFromRightToLeft, 5);
 
   function moveElementFromRightToLeft() {
     if (pos === 0) {
@@ -105,25 +105,25 @@ function addMessageWithAnimation(messages, newMessage) {
 }
 
 function removeMessageWithAnimation(messages, messagesToremove) {
-  var pos = 0;
-  var id = setInterval(moveElementFromLeftToRight, 1);
+  let pos = 0;
+  let id = setInterval(moveElementFromLeftToRight, 1);
 
   function moveElementFromLeftToRight() {
     if (pos === 500) {
       clearInterval(id);
     } else {
       pos += 10;
-      for (var i = 0; i < messagesToremove.length; i++) {
+      for (let i = 0; i < messagesToremove.length; i++) {
         messagesToremove[i].style.left = pos.toString() + 'px';
       }
     }
   }
 
-  var remove_id = setInterval(remove, 50);
+  let remove_id = setInterval(remove, 50);
 
   function remove() {
     if (pos === 500) {
-      for (var i = 0; i < messagesToremove.length; i++) {
+      for (let i = 0; i < messagesToremove.length; i++) {
         messages.removeChild(messagesToremove[i])
       }
       clearInterval(remove_id);
@@ -152,8 +152,8 @@ function newMail() {
 
 function checkAllClicked() {
   let checkAllCheckboxes = document.getElementById("checkbox_all");
-  for (var i = 1; i <= messagesCount; i++) {
-    var checkbox = document.getElementById("checkbox_" + i.toString());
+  for (let i = 1; i <= messagesCount; i++) {
+    let checkbox = document.getElementById("checkbox_" + i.toString());
     if (checkbox != null) {
       checkbox.checked = checkAllCheckboxes.checked;
     }
@@ -163,8 +163,8 @@ function checkAllClicked() {
 function remove_checked() {
   let messagesToRemove = [];
   let messages = document.getElementById("messages");
-  for (var i = 1; i <= messagesCount; i++) {
-    var checkbox = document.getElementById("checkbox_" + i.toString());
+  for (let i = 1; i <= messagesCount; i++) {
+    let checkbox = document.getElementById("checkbox_" + i.toString());
     if (checkbox != null && checkbox.checked) {
       messagesToRemove.push(document.getElementById("message_" + i.toString()));
     }
