@@ -1,7 +1,29 @@
 const approxTime = new Date();
 const approxTimeISO = approxTime.toISOString();
 const approxTimeShort = approxTime.toLocaleDateString('ru-RU', {day: 'numeric', month: 'short'});
+
 var messagesCount = 4;
+var mainPageMessagesCount = 4;
+const maxMainPageMessagesCount = 30;
+
+const newMessageTimeoutMax = 1000 * 60 * 5;
+const minNewMessageTimeout = 10;
+const maxNewMessageTimeout = 1000 * 60 * 10;
+
+window.onload = function () {
+  setTimeout(newMessagePerRandomTime, getRandomFromRange(minNewMessageTimeout, maxNewMessageTimeout))
+};
+
+function getRandomFromRange(min, max) {
+  return Math.random() * (max - min) + min;
+}
+
+function newMessagePerRandomTime() {
+  newMail();
+  let randomTimeout = getRandomFromRange(minNewMessageTimeout, maxNewMessageTimeout);
+  let timeout = Math.max(randomTimeout, newMessageTimeoutMax);
+  setTimeout(newMessagePerRandomTime, timeout)
+}
 
 function getDateTime() {
   let date = document.createElement("time");
@@ -115,6 +137,7 @@ function newMail() {
   let newMessage = document.createElement("div");
   newMessage.classList.add("inbox__message");
   messagesCount++;
+  mainPageMessagesCount++;
   newMessage.id = "message_" + messagesCount.toString();
 
   newMessage.appendChild(getCheckobxDiv(messagesCount));
@@ -148,4 +171,5 @@ function remove_checked() {
   }
   removeMessageWithAnimation(messages, messagesToRemove);
   document.getElementById("checkbox_all").checked = false;
+  mainPageMessagesCount -= messagesToRemove.length;
 }
