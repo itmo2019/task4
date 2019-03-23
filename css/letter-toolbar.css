@@ -1,0 +1,38 @@
+.letter-toolbar {
+    padding: 10px 20px;
+    font-size: 13px;
+}
+
+.letter-toolbar > li {
+    display: inline-block;
+}
+
+.letter-toolbar > li:first-child {
+    margin-right: -5px;
+}
+
+.letter-toolbar > li:not(:first-child) {
+    margin-left: 25px;
+    color: #ccc;
+    font-weight: 500;
+}
+
+.letter-toolbar > li > input[type="button"] {
+    border: none;
+    outline: none;
+    background-color: inherit;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+}
+
+.letter-toolbar > li > input[type="button"]:hover {
+    color: #000;
+}
+
+.letter-toolbar > li > input[type="button"]:disabled {
+    color: inherit;
+}

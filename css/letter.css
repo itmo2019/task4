@@ -1,0 +1,83 @@
+.letter {
+    position: relative;
+}
+
+.letter__line {
+    position: relative;
+    padding: 10px 20px;
+    font-size: 13px;
+    height: 20px;
+    background-color: #fff;
+}
+
+.letter__line > li {
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+}
+
+.letter__line > li:first-child {
+    vertical-align: initial;
+}
+
+.letter_unread {
+    font-weight: 700;
+}
+
+.letter__line > li:last-child {
+    font-weight: initial;
+}
+
+.letter__author {
+    margin: -5px 0 0 10px;
+    width: 30px;
+    height: 30px;
+}
+
+.letter__author_has-logo {
+    width: 100%;
+    height: 100%;
+    border-radius: 100px;
+}
+
+.letter__author-name {
+    margin: 0 0 5px 10px;
+    width: 160px;
+}
+
+.letter__read-mark {
+    margin: 0 0 5px 5px;
+    width: 10px;
+    height: 10px;
+}
+
+.letter__read-mark_unread {
+    border-radius: 100px;
+    background-color: #6287bd;
+}
+
+.letter__topic {
+    min-width: 220px;
+    position: absolute;
+    top: 13px;
+    left: 281px;
+    right: 70px;
+    overflow: hidden;
+}
+
+.letter__date {
+    color: #9b9b9b;
+    text-align: right;
+    position: absolute;
+    top: 13px;
+    right: 20px;
+}
+
+.letter__open-letter {
+    position: absolute;
+    left: 45px;
+    right: 0;
+    top: -2px;
+    bottom: 2px;
+}
