@@ -15,6 +15,8 @@ window.onload = function () {
 };
 
 function selectCheckbox(checkbox) {
+    window.event.stopPropagation();
+
     if (checkbox.checked) {
         if (!anyCheckboxIsActive) {
             let deleteButton = document.getElementById('delete-messages');
@@ -60,6 +62,9 @@ function newRandomMessage() {
 
 function createMessage() {
     let messagesList = document.getElementsByClassName('messages-list')[0];
+    if (messagesList.children.length > 29) {
+        messagesList.removeChild(messagesList.children[29]);
+    }
     let newMessage = document.createElement('div');
     buildNewMessage(newMessage);
     newMessage.style.height = '0';
