@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Яндекс Почта</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div class="top">
+        <div class="strips">
+            <div class="strips__strip"></div>
+            <div class="strips__strip"></div>
+            <div class="strips__strip"></div>
+        </div>
+        <img src="../images/mail-logo.png" class="top__mail-logo">
+        <div class="search">
+            <input class="search__entry-field" placeholder="Поиск">
+            <div class="search__close-icon">𐄂</div>
+        </div>
+    </div>
+    <div class="main">
+        <div class="menu">
+            <button class="menu__button">Написать</button>
+            <ul class="menu__options">
+                <li class="menu__option" id="menu__incoming"><a class="menu__link" href="">Входящие</a></li>
+                <li class="menu__option"><a class="menu__link" href="">Отправленные</a></li>
+                <li class="menu__option"><a class="menu__link" href="">Удалённые</a></li>
+                <li class="menu__option"><a class="menu__link" href="">Спам</a></li>
+                <li class="menu__option"><a class="menu__link" href="">Черновики</a></li>
+                <li class="menu__option"><a class="menu__link" href="">Создать папку</a></li>
+            </ul>
+            <!-- <button id="menu__receive" class="menu__button">Получить письмо</button> -->
+        </div>
+        <div class="content">
+            <div class="actions">
+                <input type="checkbox" id="actions__check">
+                <button class="actions__action">Переслать</button>
+                <button class="actions__action" id="actions__remove">Удалить</button>
+                <button class="actions__action">Это Спам!</button>
+                <button class="actions__action">Прочитано</button>
+            </div>
+            <div id="letter-box">
+            </div>
+            <div class="footer">
+                <div class="info">
+                    <a class="info__option" href="">Помощь и обратная связь</a>
+                    <a class="info__option" href="">Реклама</a>
+                    <a class="info__option" href="">© 2001-2018, Яндекс</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+
+</html>
