@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Frontend, task № 3">
+    <meta name="author" content="Ilya Kokorin">
+    <title>Яндекс. Почта</title>
+    <link rel="stylesheet" href="styles.css">
+    <script type="text/javascript" src="script.js"></script>
+  </head>
+  <body>
+    <div class="page-wrapper">
+      <header class="mail-header">
+        <img class="mail-header__tools-icon" src="../resources/logo_lines.svg" alt="logo-lines">
+        <img class="mail-header__logo" src="../resources/mail_logo_for_top.png" width="153" height="31" alt="yandex mail logo"/>
+        <input class="main-header__search" type="search" placeholder="Поиск"/>
+      </header>
+
+      <main class="page-content">
+        <div class="page-content__left-toolbar">
+          <div class="mail-toolbar">
+            <button class="mail-toolbar__button">
+              Написать
+            </button>
+            <button class="mail-toolbar__button" onclick="newMail()">
+              Получить письмо
+            </button>
+            <a class="mail-toolbar__element" href="">Входящие</a>
+            <a class="mail-toolbar__element" href="">Отправленные</a>
+            <a class="mail-toolbar__element" href="">Удалённые</a>
+            <a class="mail-toolbar__element" href="">Спам</a>
+            <a class="mail-toolbar__element" href="">Черновики</a>
+            <a class="mail-toolbar__element" href="">Создать папку</a>
+          </div>
+        </div>
+
+        <div class="mailbox-content">
+          <div class="messages-control-panel">
+            <div class="messages-control-panel__choose-all">
+              <input id="checkbox_all" onclick="markOrUnmarkAll()" class="checkbox" type="checkbox"/>
+              <label for="checkbox_all" class="checkbox__label"></label>
+            </div>
+            <a class="messages-control-panel__element" href="">Переслать</a>
+            <a class="messages-control-panel__element" onclick="removeLetters()" href="#">Удалить</a>
+            <a class="messages-control-panel__element" href="">Это спам!</a>
+            <a class="messages-control-panel__element" href="">Прочитано</a>
+          </div>
+
+          <div class="mailbox">
+            <div class="mailbox-content__letter" id="letter_opened">
+              <div class="mailbox-content__cross" onclick="closeMessage()">x</div>
+              <div class="mailbox-content__letter-content" id="letter-content"></div>
+            </div>
+            <div class="mailbox-content__messages" id="messages-wrapper"></div>
+          </div>
+
+          <footer class="mailbox-content__footer">
+            <a class="mailbox-content__footer-element" href="">Помощь и обратная связь</a>
+            <a class="mailbox-content__footer-element" href="">Реклама</a>
+            <a class="mailbox-content__footer-element">© 2001—2018, Яндекc</a>
+          </footer>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
