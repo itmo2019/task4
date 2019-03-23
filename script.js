@@ -52,7 +52,7 @@ function selectAll(selectAllCheckbox) {
 }
 
 function createAndRandom() {
-    createMessage();
+    newMail();
     newRandomMessage()
 }
 
@@ -60,7 +60,7 @@ function newRandomMessage() {
     setTimeout(createAndRandom, Math.random() * (timeoutUpper - timeoutLower) + timeoutLower);
 }
 
-function createMessage() {
+function newMail() {
     let messagesList = document.getElementsByClassName('messages-list')[0];
     if (messagesList.children.length > 29) {
         messagesList.removeChild(messagesList.children[29]);
