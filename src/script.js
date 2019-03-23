@@ -262,6 +262,15 @@ function generateWords() {
   return result;
 }
 
+function checkStarts(s, prefs) {
+  for (let i = 0; i < prefs.length; i++) {
+    if (s.startsWith(prefs[i])) {
+      return true;
+    }
+  }
+  return false;
+}
+
 function generateSentence() {
   let words = generateWords();
   addCommas(words);
@@ -270,7 +279,9 @@ function generateSentence() {
   words[words.length - 1] += chooseWeighted(punctuationSigns, weights);
   words[0] = words[0].charAt(0).toUpperCase() + words[0].slice(1, words[0].length);
   for (let i = 1; i < words.length; i++) {
-    words[i] = words[i].charAt(0).toLowerCase() + words[i].slice(1, words[i].length);
+    if (!checkStarts(words[i], ['Бог', 'Рос', 'Отеч', 'Петр', 'Екат'])) {
+      words[i] = words[i].charAt(0).toLowerCase() + words[i].slice(1, words[i].length);
+    }
   }
   let result = '';
   for (let i = 0; i < words.length; i++) {
