@@ -2,7 +2,7 @@ const approxTime = new Date();
 const approxTimeISO = approxTime.toISOString();
 const approxTimeShort = approxTime.toLocaleDateString('ru-RU', {day: 'numeric', month: 'short'});
 
-const maxMainPageMessagesCount = 5;
+const maxMainPageMessagesCount = 10;
 let messagesCount = 1;
 const messages = new Set();
 let letter = null;
@@ -55,30 +55,39 @@ function Message(id) {
   element.id = "message_" + id.toString();
   element.appendChild(getCheckboxDiv(id));
   element.appendChild(getIconImg());
-  element.appendChild(getAuthorSpan());
+  element.appendChild(getAuthorSpan(id));
   element.appendChild(getReadDiv(id));
-  element.appendChild(getBody(this.body));
+  element.appendChild(getBodyDiv(this.body, id));
   element.appendChild(getDateTime());
-  element.appendChild(getLink(this.body));
+  element.appendChild(getLink(this, this.body));
   let messagesDiv = document.getElementById("messages");
   addMessageWithAnimation(messagesDiv, element);
 
   this.getRead = function () {
-    return document.getElementById("read_" + this.id.toString())
+    return document.getElementById("message-read_" + this.id.toString())
   };
 
   this.getCheckbox = function () {
-    return document.getElementById("checkbox_" + this.id.toString())
+    return document.getElementById("message-checkbox_" + this.id.toString())
   };
 
   this.getElement = function () {
     return document.getElementById("message_" + this.id.toString())
   };
 
-  function getLink(body) {
+  this.getBody = function () {
+    return document.getElementById("message-body_" + this.id.toString())
+  };
+
+  this.getAuthor = function () {
+    return document.getElementById("message-author_" + this.id.toString())
+  };
+
+  function getLink(message, body) {
     let link = document.createElement("a");
     link.classList.add("inbox__message-open-link");
     link.onclick = function () {
+      readMessage(message);
       showMessage(body);
     };
     return link
@@ -105,7 +114,7 @@ function Message(id) {
     let messageCheckbox = document.createElement("div");
     messageCheckbox.classList.add("inbox__message-checkbox");
 
-    let checkboxId = "checkbox_" + id.toString();
+    let checkboxId = "message-checkbox_" + id.toString();
 
     let messageCheckboxInput = document.createElement("input");
     messageCheckboxInput.classList.add("checkbox");
@@ -122,34 +131,36 @@ function Message(id) {
     return messageCheckbox
   }
 
-  function getAuthorSpan() {
-    let body = document.createElement("span");
-    body.classList.add("inbox__message-author");
-    body.classList.add("inbox__message_bold");
-    body.innerText = "Котик #" + getRandomFromRange(1, 1000) + " из Яндекса";
+  function getAuthorSpan(id) {
+    let author = document.createElement("span");
+    author.classList.add("inbox__message-author");
+    author.classList.add("inbox__message_bold");
+    author.id = "message-author_" + id.toString();
+    author.innerText = "Котик #" + getRandomFromRange(1, 1000) + " из Яндекса";
 
-    return body
+    return author
   }
 
   function getReadDiv(id) {
     let read = document.createElement("div");
     read.classList.add("inbox__message-read");
-    read.id = "read_" + id.toString();
+    read.id = "message-read_" + id.toString();
 
     return read
   }
 
-  function getBody(text) {
+  function getBodyDiv(text, id) {
     let body = document.createElement("div");
     body.classList.add("inbox__message-body");
     body.classList.add("inbox__message_bold");
+    body.id = "message-body_" + id.toString();
     body.innerText = text;
 
     return body
   }
 
   function generateMessage() {
-    return new LoremIpsum().paragraph(20, 60);
+    return new LoremIpsum().paragraph(100, 200);
   }
 }
 
@@ -244,6 +255,26 @@ function removeChecked() {
   for (let i = messages.size - 1; i >= Math.max(0, messages.size - maxMainPageMessagesCount); i--) {
     messagesAsArray[i].getElement().style.display = "block"
   }
+}
+
+function readMessage(message) {
+  message.getBody().classList.remove("inbox__message_bold");
+  message.getAuthor().classList.remove("inbox__message_bold");
+  message.getRead().style.display = "none";
+}
+
+function readChecked() {
+  if (letter.style.display === "block") {
+    return;
+  }
+  for (let message of messages) {
+    let checkbox = message.getCheckbox();
+    if (checkbox.checked) {
+      checkbox.checked = false;
+      readMessage(message);
+    }
+  }
+  document.getElementById("checkbox_all").checked = false;
 }
 
 // was taken from https://github.com/jsilvermist/lorem-ipsum-js

@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8"/>
-  <title>Задание #2</title>
+  <title>Задание #4</title>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <link href="css/styles.css" rel="stylesheet"/>
   <script type="text/javascript" src="js/script.js"></script>
@@ -52,9 +52,9 @@
           </div>
           <div id="create_new_message" onclick="newMail()" class="inbox_header-element">Создать письмо</div>
           <a class="inbox_header-element" href="#forward">Переслать</a>
-          <a class="inbox_header-element" onclick="removeChecked()" href="#remove">Удалить</a>
+          <a class="inbox_header-element" onclick="removeChecked()" href="#">Удалить</a>
           <a class="inbox_header-element" href="#spam">Это спам!</a>
-          <a class="inbox_header-element" href="#mark_as_read">Прочитано</a>
+          <a class="inbox_header-element" onclick="readChecked()" href="#">Прочитано</a>
         </header>
         <div class="inbox__letter" id="letter">
           <div onclick="closeMessage()" class="inbox__letter-close-message">x</div>
