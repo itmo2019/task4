@@ -6,8 +6,12 @@ let months = ['январь', 'февраль', 'март', 'апрель', 'м�
 let anyCheckboxIsActive = false;
 let idToHtmlMap = new Map();
 
+let timeoutUpper = 10 * 60 * 1000;
+let timeoutLower = 5 * 60 * 1000;
+
+
 window.onload = function () {
-    createMessage();
+    createAndRandom();
 };
 
 function selectCheckbox(checkbox) {
@@ -43,6 +47,15 @@ function selectAll(selectAllCheckbox) {
     } else {
         deleteButton.style.cursor = 'pointer';
     }
+}
+
+function createAndRandom() {
+    createMessage();
+    newRandomMessage()
+}
+
+function newRandomMessage() {
+    setTimeout(createAndRandom, Math.random() * (timeoutUpper - timeoutLower) + timeoutLower);
 }
 
 function createMessage() {
