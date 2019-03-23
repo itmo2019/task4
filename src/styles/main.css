@@ -1,0 +1,234 @@
+/*CONTENT*/
+.inner {
+    position: relative;
+    width: 79%;
+    min-height: 530px;
+    border-radius: 3px;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.34);
+    background-color: #ffffff;
+    font-size: 13px;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.hr {
+    opacity: 0.2;
+}
+
+/*TOOLBAR*/
+.toolbar {
+    position: relative;
+    line-height: 37px;
+    margin-left: 0;
+    color: #cccccc;
+    width: 100%;
+    height: 100%;
+    overflow-y: hidden;
+    font-weight: 500;
+}
+
+.toolbar > a {
+    text-decoration: none;
+    color: #707070 !important;
+}
+
+.toolbar > a, .toolbar > input {
+    padding: 10px 12px;
+    cursor: pointer;
+}
+
+.toolbar > a:hover, .toolbar > input:hover {
+    background-color: #f0f0f0;
+}
+
+.toolbar > input {
+    background-color: transparent;
+    border: none;
+    text-decoration: none;
+    color: #707070;
+}
+
+.message__check, .toolbar__check {
+    position: relative;
+    float: left;
+    width: 16px;
+    height: 16px;
+    border-radius: 3px;
+    margin: 10px;
+    padding: 2px;
+    border: solid 1px rgba(0, 0, 0, 0.15);
+    background-color: #ffffff;
+    -webkit-appearance: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.message__check:checked, .toolbar__check:checked {
+    background: #e2e2e2;
+    background-clip: content-box;
+}
+
+/*MESSAGES*/
+.message-list {
+    min-height: 491px;
+    max-height: 1363px;
+    overflow-y: hidden;
+    position: relative;
+}
+
+.message-list__box {
+    display: inline-block;
+    width: 100%;
+    height: 40px;
+    line-height: 100%;
+}
+
+.message {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 100%;
+    display: none;
+    z-index: 5;
+    background-color: #ffffff;
+    min-height: 490px;
+    height: 100%;
+}
+
+.message__check {
+    margin-top: 14px;
+}
+
+.message__logo {
+    margin: 6px 10px 0 0;
+    display: block;
+    float: left;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    vertical-align: center;
+}
+
+.message__contact {
+    display: block;
+    width: 175px;
+    padding-top: 14px;
+    float: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.message__not-read {
+    font-weight: bold;
+}
+
+.message__read-icon {
+    display: inline-block;
+    background-color: #6287bd;
+    border-radius: 100px;
+    float: left;
+    height: 10px;
+    width: 10px;
+    margin-top: 16px;
+    margin-right: 10px;
+}
+
+.message__read-icon-invisible {
+    visibility: hidden;
+}
+
+.message__subject {
+    display: block;
+    width: 44%;
+    margin-top: 14px;
+    float: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.message__date {
+    display: inline-block;
+    margin-top: 14px;
+    float: right;
+    margin-right: 15px;
+    text-align: right;
+    color: #9b9b9b;
+}
+
+.message__page {
+    padding: 10px 24px;
+    white-space: normal;
+}
+
+.message__image {
+    shape-outside: url('../images/message__image.png');
+    shape-image-threshold: 0.7;
+    float: right;
+}
+
+.message__close {
+    padding: 10px;
+    float: right;
+    cursor: pointer;
+}
+
+#message-list__cutter {
+    display: none;
+}
+
+#message-list__cutter:checked + .message {
+    display: block;
+}
+
+.message__delete {
+    animation-name: message__delete-anim;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes message__delete-anim {
+    0% {
+        height: 40px;
+        transform: scaleY(1);
+    }
+    100% {
+        height: 0;
+        transform: scaleY(0);
+    }
+}
+
+.message__create {
+    animation-name: message__create-anim;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes message__create-anim {
+    0% {
+        height: 0;
+        transform: scaleY(0);
+    }
+    100% {
+        height: 40px;
+        transform: scaleY(1);
+    }
+}
+
+/*FOOTER*/
+.footer {
+    display: inline-block;
+    bottom: 0;
+    width: 100%;
+    text-align: right;
+}
+
+.footer > a {
+    display: inline-block;
+    font-size: 11px;
+    line-height: 30px;
+    color: #9b9b9b;
+    padding-right: 15px;
+    text-decoration: none;
+}

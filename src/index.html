@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Входящие - Почта</title>
+    <link href="styles/body.css" rel="stylesheet">
+    <link href="styles/header.css" rel="stylesheet">
+    <link href="styles/left-panel.css" rel="stylesheet">
+    <link href="styles/main.css" rel="stylesheet">
+    <script src="scripts/script.js" type="text/javascript"></script>
+</head>
+<body>
+<header class="header">
+    <button class="header__pancakes">
+        <img alt="menu button" src="images/header__pancakes.svg">
+    </button>
+    <div class="header__logo">
+        <a href="http://mail.yandex.ru">
+            <img alt="Yandex Mail logo" src="images/header__logo.svg">
+        </a>
+    </div>
+    <div class="search">
+        <input class="search__text" maxlength="100" placeholder="Поиск" type="text">
+        <button class="search__clear" type="reset">✖</button>
+    </div>
+</header>
+<main class="main">
+    <aside class="left-panel">
+        <button class="compose">Написать</button>
+        <nav class="folders">
+            <ul>
+                <li><a href="#">Входящие</a></li>
+                <li><a href="#">Отправленные</a></li>
+                <li><a href="#">Удаленные</a></li>
+                <li><a href="#">Спам</a></li>
+                <li><a href="#">Черновики</a></li>
+                <li><a href="#">Создать папку</a></li>
+                <li><a href="#">ЛОРЕМ ИПСУМ ДОЛОР СИТ АМЕТ</a></li>
+            </ul>
+        </nav>
+    </aside>
+    <div class="inner">
+        <div class="toolbar">
+            <label>
+                <input class="toolbar__check" id="checkbox__toolbar" onclick="checkAll(this)" type="checkbox">
+            </label>
+            <input id="button__create-mail" onclick="newMailIncoming()" type="button" value="Новое письмо">
+            <a>Переслать</a>
+            <input id="button__delete-mail" onclick="deleteMail()" type="button" value="Удалить">
+            <a>Это спам!</a>
+            <a>Прочитано</a>
+            <hr class="hr">
+        </div>
+        <div id="messages" class="message-list">
+            <input id="message-list__cutter" type="checkbox">
+            <div class="message">
+                <label for="message-list__cutter">
+                    <span class="message__close">✖</span>
+                </label>
+                <div class="message__page">
+                    <img alt="Свежий круассан" class="message__image" src="images/message__image.png" width="180">
+                    Мучные изделия в форме полумесяцев выпекались в Австрии по меньшей мере с XIII века. Но началом
+                    нынешней популярности круассанов можно считать 1839 год, когда австрийский артиллерийский офицер
+                    Август Цанг открыл в Париже «Венскую пекарню», где пекли такие булочки.
+                    <p>Существует легенда, что в 1683 году венский пекарь Петер Вендлер впервые сделал булочку в
+                        честь
+                        неуспеха турецкой осады Вены. Османское войско осадило Вену; пекари, работавшие по ночам и
+                        готовившие для горожан свежие булочки к утру, услышали шум от мотыг и кирок, — поняли, что
+                        турки
+                        делают подкоп под стенами города. Вовремя предупредив об этом солдат, они сорвали план
+                        врага.
+                    <p>По другой версии, спустя некоторое время после осады, шляхтичем Юрием Кульчицким в Вене была
+                        открыта первая знаменитая кофейня, в которой подавали круассаны в форме османского
+                        полумесяца и
+                        ароматный кофе по-восточному. Считается, что с тех пор эти необычные булочки стали очень
+                        популярны среди покупателей.
+                    <p>В 1770 году круассан впервые появился во Франции. Это случилось благодаря приезду из Вены
+                        Марии-Антуанетты и появлению вместе с ней в Париже «венской выпечки». Но венский и
+                        французский
+                        круассаны — это всё же два разных изделия. Ведь из Вены — только форма изделия, а изготовили
+                        его
+                        впервые из слоёного теста с маслом именно французские повара, и это случилось в начале XX
+                        века.
+                        В скором времени появилось целое «семейство» подобных дрожжевых и слоеных булочек, например,
+                        улитка с изюмом, слойка с яблочным пюре, слойка с шоколадом и т. д. В 2013 году
+                        антиправительственные повстанцы в Сирии запретили круассаны на контролируемой ими территории
+                        в
+                        Алеппо, объясняя свой запрет вышеупомянутой австрийской легендой
+                </div>
+            </div>
+            <div>
+                <div class="message-list__box">
+                    <label>
+                        <input class="message__check" type="checkbox">
+                    </label>
+                    <label for="message-list__cutter">
+                        <img class="message__logo" src="images/message__logo.svg">
+                        <div class="message__contact message__not-read">Яндекс.Паспорт</div>
+                        <div class="message__read-icon"></div>
+                        <div class="message__subject message__not-read">Доступ к аккаунту восстановлен</div>
+                        <div class="message__date">6 авг</div>
+                    </label>
+                </div>
+                <hr class="hr">
+            </div>
+            <div>
+                <div class="message-list__box">
+                    <label>
+                        <input class="message__check" type="checkbox">
+                    </label>
+                    <label for="message-list__cutter">
+                        <img alt="logo of message contact" class="message__logo" src="images/message__logo.svg">
+                        <div class="message__contact message__not-read">Команда Яндекс.Почты</div>
+                        <div class="message__read-icon"></div>
+                        <div class="message__subject message__not-read">Как читать почту с мобильного</div>
+                        <div class="message__date">6 июл</div>
+                    </label>
+                </div>
+                <hr class="hr">
+            </div>
+            <div>
+                <div class="message-list__box">
+                    <label>
+                        <input class="message__check" type="checkbox">
+                    </label>
+                    <label for="message-list__cutter">
+                        <img alt="logo of message contact" class="message__logo" src="images/message__logo.svg">
+                        <div class="message__contact">Команда Яндекс.Почты
+                            ssssssssssssssssssssssssssssssssssssssssssssssss
+                        </div>
+                        <div class="message__read-icon message__read-icon-invisible"></div>
+                        <div class="message__subject">Как читать почту с мобильного
+                            sssssssssssssssssssssssssssssssssssssssssssssssssssssssss
+                        </div>
+                        <div class="message__date">6 июл</div>
+                    </label>
+                </div>
+                <hr class="hr">
+            </div>
+            <div>
+                <div class="message-list__box">
+                    <label>
+                        <input class="message__check" type="checkbox">
+                    </label>
+                    <label for="message-list__cutter">
+                        <img alt="logo of message contact" class="message__logo" src="images/message__logo.svg">
+                        <div class="message__contact">Яндекс</div>
+                        <div class="message__read-icon message__read-icon-invisible"></div>
+                        <div class="message__subject">Соберите всю почту в этот ящик</div>
+                        <div class="message__date">6 июл</div>
+                    </label>
+                </div>
+                <hr class="hr">
+            </div>
+        </div>
+        <footer class="footer">
+            <hr class="hr">
+            <a href="#">Помощь и обратная связь</a>
+            <a href="#">Реклама</a>
+            <a href="#">&copy; 2001-2018, Яндекс</a>
+        </footer>
+    </div>
+</main>
+</body>
+</html>
