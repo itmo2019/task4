@@ -1,6 +1,6 @@
 const mailHtml = '                <section class="mail _bottom-separator-view">\n' +
     '                            <div class="chose mail__elem mail__elem_view">\n' +
-    '                                <input class="checkbox" type="checkbox">\n' +
+    '                                <input class="mail__checkbox" type="checkbox">\n' +
     '                            </div>\n' +
     '                            <a href="#popup-essay" class="_simple-link-view">\n' +
     '                                <div class="mail__sender-logo mail__ivanov-logo_view"><p class="ii">И</p></div>\n' +
@@ -17,11 +17,31 @@ const mailHtml = '                <section class="mail _bottom-separator-view">\
     '                            </a>\n' +
     '                        </section>'
 
+function chooseAll(checkbox) {
+    let checkboxes = document.getElementsByClassName("mail__checkbox");
+    for (let i = 0; i < checkboxes.length; ++i) {
+        checkboxes[i].checked = checkbox.checked;
+    }
+    
+}
+
+function deleteChosen() {
+    let checkboxes = document.getElementsByClassName("mail__checkbox");
+    let list = document.getElementById("mail-list");
+    let checkboxesLength = checkboxes.length;
+    while(checkboxesLength--) {
+        if (checkboxes[checkboxesLength].checked) {
+            list.removeChild(checkboxes[checkboxesLength].parentElement.parentElement.parentElement);
+        }
+    }
+    document.getElementById("checkbox").checked = false;
+}
+
 
 function addNewMail() {
     let newItem = document.createElement("li");
     newItem.innerHTML = mailHtml;
-    let list = document.getElementById("mailList");
+    let list = document.getElementById("mail-list");
     let firstElem = document.getElementsByClassName("mail-list__elem")[0];
     if (firstElem != null) {
         let ref = firstElem.childNodes[1].childNodes[3];
@@ -35,7 +55,7 @@ function addNewMail() {
 }
 
 function deleteTopMail() {
-    let list = document.getElementById("mailList");
+    let list = document.getElementById("mail-list");
     let childToDelete = document.getElementsByClassName("mail-list__elem")[0];
     if (childToDelete != null)
         list.removeChild(childToDelete);

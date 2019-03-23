@@ -34,34 +34,31 @@
             <button class="sidebar__add-mail sidebar__add-mail_view _text-overflow-behaviour" id="sidebar__add-mail" onclick="addNewMail()">
                 Получить письмо
             </button>
-            <button class="sidebar__delete-mail sidebar__delete-mail_view _text-overflow-behaviour" id="sidebar__delete-mail" onclick="deleteTopMail()">
-                Удалить письмо
-            </button>
         </div>
         <div class="mail-content mail-content_view">
             <header class="actions actions_view _bottom-separator-view">
                 <div class="chose chose_view actions_elem-view actions_option-view">
-                    <input class="checkbox" type="checkbox">
+                    <input class="checkbox" id="checkbox" type="checkbox" onchange="chooseAll(this)">
                 </div>
-                <div class="actions__resend actions__resend_view actions_elem-view actions_option-view _text-overflow-behaviour">
+                <button class="actions__resend actions__resend_view actions_elem-view actions_option-view _no-button-decoration _text-overflow-behaviour">
                     Переслать
-                </div>
-                <div class="actions__delete actions__delete_view actions_elem-view actions_option-view _text-overflow-behaviour">
+                </button>
+                <button class="actions__delete actions__delete_view actions_elem-view actions_option-view _no-button-decoration _text-overflow-behaviour" onclick="deleteChosen()">
                     Удалить
-                </div>
-                <div class="actions__spam actions__spam_view actions_elem-view actions_option-view _text-overflow-behaviour">
+                </button>
+                <button class="actions__spam actions__spam_view actions_elem-view actions_option-view _no-button-decoration _text-overflow-behaviour">
                     Это спам!
-                </div>
-                <div class="actions__read actions_elem-view actions_option-view _text-overflow-behaviour">
+                </button>
+                <button class="actions__read actions__read_view actions_elem-view actions_option-view _no-button-decoration _text-overflow-behaviour">
                     Прочитано
-                </div>
+                </button>
             </header>
             <main class="content-main content-main_view">
-                <ul class="mail-list slide-fade" id="mailList">
+                <ul class="mail-list slide-fade" id="mail-list">
                     <li class="mail-list__elem mail-list__elem_view">
                         <section class="mail _bottom-separator-view">
                             <div class="chose chose_view mail__elem mail__elem_view">
-                                <input class="checkbox" type="checkbox">
+                                <input class="mail__checkbox" type="checkbox">
                             </div>
                             <a href="index.html" class="_simple-link-view">
                                 <div class="mail__sender-logo mail__yandex-logo_view"><p class="ya">Я</p></div>
@@ -81,7 +78,7 @@
                     <li class="mail-list__elem mail-list__elem_view">
                         <section class="mail _bottom-separator-view">
                             <div class="chose mail__elem mail__elem_view">
-                                <input class="checkbox" type="checkbox">
+                                <input class="mail__checkbox" type="checkbox">
                             </div>
                             <a href="index.html" class="_simple-link-view">
                                 <div class="mail__sender-logo mail__yandex-logo_view"><p class="ya">Я</p></div>
@@ -101,7 +98,7 @@
                     <li class="mail-list__elem mail-list__elem_view">
                         <section class="mail _bottom-separator-view">
                             <div class="chose mail__elem mail__elem_view">
-                                <input class="checkbox" type="checkbox">
+                                <input class="mail__checkbox" type="checkbox">
                             </div>
                             <a href="index.html" class="_simple-link-view">
                                 <div class="mail__sender-logo mail__yandex-logo_view"><p class="ya">Я</p></div>
@@ -118,10 +115,10 @@
                             </a>
                         </section>
                     </li>
-                    <li class="mail-list__elem mail-list__elem_view" id="mail-list">
+                    <li class="mail-list__elem mail-list__elem_view">
                         <section class="mail _bottom-separator-view">
                             <div class="chose mail__elem mail__elem_view">
-                                <input class="checkbox" type="checkbox">
+                                <input class="mail__checkbox" type="checkbox">
                             </div>
                             <a href="index.html" class="_simple-link-view">
                                 <div class="mail__sender-logo mail__yandex-logo_view"><p class="ya">Я</p></div>

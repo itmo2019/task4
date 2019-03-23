@@ -163,6 +163,12 @@ body {
     height: 16px;
 }
 
+
+.mail__checkbox {
+    width: 16px;
+    height: 16px;
+}
+
 .actions__checkbox_view {
     margin: 0;
     border-radius: 3px;
@@ -425,7 +431,24 @@ body {
 
 }
 
+
+._no-button-decoration {
+    padding: 0;
+    border: none;
+    background: none;
+}
+
+._no-button-decoration:focus{
+    outline: 0;
+}
+
+._no-button-decoration:hover {
+    border-radius: 3px;
+    background-color: #cdd6e4;
+}
+
 .actions__resend_view {
+    color: #000;
     margin-right: 26px;
 }
 
@@ -435,6 +458,7 @@ body {
 }
 
 .actions__delete_view {
+    color: #000;
     margin-right: 24px;
 }
 
@@ -444,12 +468,17 @@ body {
 }
 
 .actions__spam_view {
+    color: #000;
     margin-right: 25px;
 }
 
 .actions__read {
     width: 70px;
     height: 16px;
+}
+
+.actions__read_view {
+    color: #000;
 }
 
 .sidebar__mail-send {
@@ -474,23 +503,6 @@ body {
 }
 
 .sidebar__add-mail_view {
-    margin-top: 8px;
-    border-radius: 3px;
-    background-color: #6287bd;
-    border: none;
-    font: normal 500 12px normal HelveticaNeue;
-    letter-spacing: normal;
-    font-stretch: normal;
-    color: #fff;
-}
-
-.sidebar__delete-mail {
-    width: 147px;
-    height: 32px;
-}
-
-
-.sidebar__delete-mail_view {
     margin-top: 8px;
     border-radius: 3px;
     background-color: #6287bd;
@@ -701,11 +713,6 @@ address {
 abbr {
     border-bottom: 1px;
 }
-
-.EssayOl {
-    margin-left: 48px;
-}
-
 
 ._programming-language-link-view:link {
     color: blue;
