@@ -4,7 +4,7 @@ const approxTimeShort = approxTime.toLocaleDateString('ru-RU', {day: 'numeric', 
 
 const maxMainPageMessagesCount = 5;
 let messagesCount = 1;
-const messages = [];
+const messages = new Set();
 
 const newMessageTimeoutMax = minutesToMillis(5);
 const minNewMessageTimeout = 10;
@@ -12,7 +12,7 @@ const maxNewMessageTimeout = minutesToMillis(10);
 
 window.onload = function () {
   setTimeout(newMessagePerRandomTime, getRandomFromRange(minNewMessageTimeout, maxNewMessageTimeout));
-  messages.push(new Message(1));
+  messages.add(new Message(1));
 };
 
 function minutesToMillis(minutes) {
@@ -39,22 +39,22 @@ function Message(id) {
   element.appendChild(getCheckboxDiv(id));
   element.appendChild(getIconImg());
   element.appendChild(getAuthorSpan(id));
-  element.appendChild(getReadDiv());
+  element.appendChild(getReadDiv(id));
   element.appendChild(getBody());
   element.appendChild(getDateTime());
   let messagesDiv = document.getElementById("messages");
   addMessageWithAnimation(messagesDiv, element);
 
-  this.readDiv = function () {
-    document.getElementById("message_" + this.id.toString())
+  this.getRead = function () {
+    return document.getElementById("read_" + this.id.toString())
   };
 
-  this.checkbox = function () {
-    document.getElementById("checkbox_" + this.id.toString())
+  this.getCheckbox = function () {
+    return document.getElementById("checkbox_" + this.id.toString())
   };
 
-  this.element = function () {
-    document.getElementById("checkbox_" + this.id.toString())
+  this.getElement = function () {
+    return document.getElementById("message_" + this.id.toString())
   };
 
   function getDateTime() {
@@ -95,18 +95,19 @@ function Message(id) {
     return messageCheckbox
   }
 
-  function getAuthorSpan() {
+  function getAuthorSpan(id) {
     let body = document.createElement("span");
     body.classList.add("inbox__message-author");
     body.classList.add("inbox__message_bold");
-    body.innerText = "И еще Котик из Яндекса";
+    body.innerText = "Котик" + id.toString() + " из Яндекса";
 
     return body
   }
 
-  function getReadDiv() {
+  function getReadDiv(id) {
     let read = document.createElement("div");
     read.classList.add("inbox__message-read");
+    read.id = "read_" + id.toString();
 
     return read
   }
@@ -169,32 +170,41 @@ function removeMessageWithAnimation(messages, messagesToRemove) {
 function newMail() {
   messagesCount++;
   let message = new Message(messagesCount);
-  messages.push(message);
+  messages.add(message);
   document.getElementById("checkbox_all").checked = false;
-  if (message.id > maxMainPageMessagesCount) {
-    Array.from(messages)[messages.length - maxMainPageMessagesCount].element.style.display = "none";
+  if (messages.size > maxMainPageMessagesCount) {
+    Array.from(messages)[messages.size - maxMainPageMessagesCount - 1].getElement().style.display = "none";
   }
 }
 
 function checkAllClicked() {
   let checkAllCheckboxes = document.getElementById("checkbox_all");
-  for (let i = 0; i < messages.length; i++) {
-    let checkbox = document.getElementById("checkbox_" + messages[i].id.toString());
-    if (checkbox != null && checkbox.style.display !== "none") {
+  for (let message of messages) {
+    let checkbox = message.getCheckbox();
+    if (message.getElement().style.display !== "none") {
       checkbox.checked = checkAllCheckboxes.checked;
     }
   }
 }
 
-function remove_checked() {
+function removeChecked() {
   let messagesToRemove = [];
   let messagesDiv = document.getElementById("messages");
-  for (let i = 1; i <= messages.length; i++) {
-    let checkbox = document.getElementById("checkbox_" + i.toString());
-    if (checkbox != null && checkbox.checked) {
-      messagesToRemove.push(document.getElementById("message_" + i.toString()));
+  for (let message of messages) {
+    let checkbox = message.getCheckbox();
+    if (checkbox.checked) {
+      messagesToRemove.push(message);
     }
   }
-  removeMessageWithAnimation(messagesDiv, messagesToRemove);
+  removeMessageWithAnimation(messagesDiv, messagesToRemove.map(function (it) {
+    return it.getElement()
+  }));
   document.getElementById("checkbox_all").checked = false;
+  for (let message of messagesToRemove) {
+    messages.delete(message);
+  }
+  let messagesAsArray = Array.from(messages);
+  for (let i = messages.size - 1; i >= Math.max(0, messages.size - maxMainPageMessagesCount); i--) {
+    messagesAsArray[i].getElement().style.display = "block"
+  }
 }
