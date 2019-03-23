@@ -1,0 +1,255 @@
+@font-face {
+    font-family: YandexSansBold;
+    src: url("/fonts/YandexSansDisplay-Bold.ttf");
+}
+
+@font-face {
+    font-family: YandexSansThin;
+    src: url("/fonts/YandexSansDisplay-Thin.ttf");
+}
+
+@font-face {
+    font-family: HelveticaNeue;
+    src: url("/fonts/HelveticaNeueCyr-Medium.otf");
+}
+
+@font-face {
+    font-family: HelveticaNeueLight;
+    src: url("/fonts/HelveticaNeueCyr-Light.otf");
+}
+
+body {
+    min-width: 750px;
+    max-width: 1600px;
+    background: #e5eaf0;
+    margin: 0 auto;
+    padding: 0;
+    position: relative;
+}
+
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.check {
+    width: 16px;
+    height: 16px;
+    border-radius: 3px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    background-color: #ffffff;
+    float: left;
+    margin: 12px;
+}
+
+.hidden-check {
+    display: none;
+}
+
+
+/*Start Container*/
+
+.main-block {
+    width: calc(100% - 230px);
+    min-width: 515px;
+    min-height: 400px;
+    margin-left: 22px;
+    margin-bottom: 14px;
+    margin-right: 20px;
+    padding: 0;
+    float: right;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.34);
+    border-radius: 3px;
+    background-color: #ffffff;
+    position: relative;
+}
+
+.main-block__mail-functions {
+    border-bottom: 2px solid rgba(0, 0, 0, 0.15);
+}
+
+.main-block__all-function {
+    margin: 0;
+}
+
+.main-block__mail-checkbox {
+    margin: 11px 12px;
+}
+
+.main-block__func {
+    list-style: none;
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.main-block__ref-func {
+    text-decoration: none;
+    color: #cccccc;
+    font-family: "HelveticaNeue", sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.main-block__ref-func:hover {
+    border-bottom: 2px solid #cccccc;
+}
+
+
+#get-letter {
+
+}
+
+#remove {
+
+}
+
+/*End Container*/
+
+/*Start letters*/
+.main-block__all-letters {
+    height: calc(100vh - 14px);
+    overflow: scroll;
+}
+
+
+.main-block__topic {
+    color: #000000;
+    font-family: "HelveticaNeue", sans-serif;
+    font-size: 0.8em;
+    margin-left: 2%;
+    margin-top: 11px;
+    min-width: 30px;
+    width: 30%;
+    height: 18px;
+    overflow: hidden;
+    float: left;
+}
+
+.main-block__letter {
+    border-bottom: 2px solid #e2e2e2;
+    height: 40px;
+}
+
+.main-block__img-ya {
+    text-align: center;
+    float: left;
+    margin-left: 2%;
+    margin-top: 5px;
+    height: 30px;
+}
+
+
+.main-block__mail-from {
+    margin: 10px;
+    float: left;
+    font-family: "HelveticaNeue", sans-serif;
+    font-size: 0.8em;
+    height: 18px;
+    width: 29%;
+    overflow: hidden;
+}
+
+.main-block__mail-not-read {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #6287bd;
+    margin-left: 10px;
+    margin-top: 15px;
+    float: left;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.bold-text {
+    font-weight: 700;
+}
+
+.main-block__date {
+    color: #9b9b9b;
+    font-family: "HelveticaNeue", sans-serif;
+    font-size: 11px;
+    float: right;
+    margin-right: 2%;
+    margin-top: 12px;
+    width: 6%;
+    height: 15px;
+    overflow: hidden;
+}
+
+/*End letter*/
+
+/*Start My letter*/
+.main-block__my-letter {
+    display: none;
+    position: absolute;
+    background: rgb(199, 216, 226);
+    padding: 10px 2%;
+    shape-outside: circle();
+    float: left;
+    color: #000000;
+    font-family: "HelveticaNeue", sans-serif;
+    font-size: 0.8em;
+    font-weight: 700;
+    height: calc(100% - 80px);
+    overflow: scroll;
+}
+
+.main-block__paragraph {
+    margin-top: 10px;
+}
+
+
+input[type=checkbox]:checked + label {
+    display: none;
+}
+
+input[type=checkbox]:checked ~ .main-block__letter {
+    display: none;
+}
+
+input[type=checkbox]:checked ~ .main-block__my-letter {
+    display: block;
+}
+
+.main-block__letter-img {
+    border-radius: 50%;
+    shape-outside: circle();
+    float: right;
+}
+
+.close {
+    float: right;
+}
+
+/*End My Letter*/
+
+/*start footer*/
+.footer {
+    background-color: white;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 31px;
+    width: 100%;
+    color: #9b9b9b;
+    font-family: "HelveticaNeue", sans-serif;
+    font-size: 0.7em;
+    border-top: 2px solid rgba(140, 140, 140, 0.45);
+}
+
+.footer__texts {
+    margin-right: 20px;
+    float: right;
+}
+
+.footer__ref {
+    margin-right: 10px;
+    text-decoration: none;
+    color: #9b9b9b;
+}
+
+/*End footer*/

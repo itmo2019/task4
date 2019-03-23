@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Яндекс.Почта</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+<header class="header clearfix">
+    <div class="header__lines">
+        <div class="header__line"></div>
+        <div class="header__line"></div>
+        <div class="header__line"></div>
+    </div>
+    <div class="header__main-logo">
+        <img src="img/logo.png" alt="logo">
+    </div>
+    <form method="post" class="header__search">
+        <input type="text" placeholder="Поиск" class="header__input">
+        <button type="reset" class="header__button">
+            <img src="img/reset.png" height="12" width="12" alt="reset">
+        </button>
+    </form>
+</header>
+<div class="clearfix">
+    <section class="menu">
+        <button class="menu__to-write">
+            Написать
+        </button>
+        <ul class="menu__bar">
+            <li class="menu__action">
+                <a href="#" class="menu__text-ref">Входящие</a>
+            </li>
+            <li class="menu__action">
+                <a href="#" class="menu__text-ref">Отправленные</a>
+            </li>
+            <li class="menu__action">
+                <a href="#" class="menu__text-ref">Удаленные</a>
+            </li>
+            <li class="menu__action">
+                <a href="#" class="menu__text-ref">Спам</a>
+            </li>
+            <li class="menu__action">
+                <a href="#" class="menu__text-ref">Черновики</a>
+            </li>
+            <li class="menu__action">
+                <a href="#" class="menu__text-ref">Создать папку</a>
+            </li>
+        </ul>
+    </section>
+    <div class="main-block">
+        <div class="main-block__mail-functions clearfix">
+            <label>
+                <input type="checkbox" class="check main-block__mail-checkbox">
+            </label>
+            <ul class="main-block__all-function">
+                <li class="main-block__func">
+                    <a href="#" id="get-letter" class="main-block__ref-func">Получить</a>
+                </li>
+                <li class="main-block__func">
+                    <a href="#" id="remove" class="main-block__ref-func">Удалить</a>
+                </li>
+                <li class="main-block__func">
+                    <a href="#" class="main-block__ref-func">Переслать</a>
+                </li>
+                <li class="main-block__func">
+                    <a href="#" class="main-block__ref-func">Это спам!</a>
+                </li>
+                <li class="main-block__func">
+                    <a href="#" class="main-block__ref-func">Прочитано</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="main-block__all-letters" id="all-letters">
+            <input type="checkbox" class="check hidden-check" id="op">
+            <div class="main-block__my-letter">
+                <label for="op" class="close clearfix">
+                    <img src="img/reset.png" alt="reset" width="15">
+                </label>
+                <p class="main-block__paragraph">
+                <h1>
+                    Амурский тигр
+                </h1>
+                <h2>
+                    Отряд: Хищные (Carnivora)
+                    <br>
+                    Семейство: Кошачьи (Felidae)
+                    <br>
+                    Род: Panthera
+                </h2>
+                <p class="main-block__paragraph">
+                    <img src="https://avatars.mds.yandex.net/get-pdb/33827/636d8365-c3e7-4f98-82b0-f88b17257327/orig"
+                         alt="tiger" width="300px" height="300px" class="main-block__letter-img">
+
+                    Под охраной: В 1947 году тигр был взят под охрану — в России охота на него была полностью запрещена.
+                    Этот удивительный зверь занесён в Красный список Международного союза охраны природы и Красную книгу
+                    Российской Федерации как вид, находящийся под угрозой исчезновения, включён в Приложение II
+                    Конвенции о
+                    международной торговле видами дикой фауны и флоры, находящимися под угрозой исчезновения (СИТЕС).
+                <p class="main-block__paragraph">
+                    Где живет: В настоящее время 95% всей популяции амурского тигра обитает на Дальнем Востоке России.
+                    5% – в Китае.
+                    Размер: Длина тела амурского тигра без хвоста – 160-200 см, длина хвоста около 100 см. Вес взрослого
+                    животного может достигать 300 кг. Самая большая зафиксированная масса тигра – 384 кг.
+                </p>
+                <p class="main-block__paragraph">
+                    Внешний вид: Амурский тигр крупнее своих южных сородичей, его шерсть гуще и светлее. По рыжеватому
+                    фону,
+                    образуя сложный узор, идут поперечные тёмные полосы. Рисунок на шкуре тигра уникален, как отпечатки
+                    пальца у человека: вы не найдёте двух тигров с одинаковым узором. Чёрные полоски, несмотря на их
+                    яркость, служат тигру маскировкой. А вот большие белые пятна на чёрной тыльной стороне ушей имеют
+                    иное
+                    назначение. Когда тигрица идёт по лесу, она ставит уши так, что чёрно-белое поле прекрасно видно
+                    следующим за ней тигрятам. Зимой шкура тигров светлеет, становится густой и пушистой. Больших снегов
+                    тигр не боится – ходить по ним ему помогают широкие лапы.
+                </p>
+            </div>
+
+            <div class="main-block__letter clearfix">
+                <label>
+                    <input type="checkbox" class="check">
+                </label>
+                <label for="op">
+                    <div class="main-block__img-ya">
+                        <img src="img/yandex.png" alt="Yandex">
+                    </div>
+                    <span class="main-block__mail-from  bold-text">Мир дикой природы</span>
+                    <div class="main-block__mail-not-read"></div>
+                    <span class="main-block__topic bold-text">Статья про Амурского тигра</span>
+                    <time class="main-block__date" datetime="06.08">6 авг</time>
+                </label>
+            </div>
+
+            <div class="main-block__letter clearfix">
+                <label>
+                    <input type="checkbox" class="check">
+                </label>
+                <div class="main-block__img-ya">
+                    <img src="img/yandex.png" alt="Yandex">
+                </div>
+                <span class="main-block__mail-from  bold-text">Команда Яндекс.Почты</span>
+                <div class="main-block__mail-not-read"></div>
+                <span class="main-block__topic bold-text">Как читать почту с мобильного</span>
+                <time class="main-block__date" datetime="06.07">6 июл</time>
+            </div>
+            <div class="main-block__letter clearfix">
+                <label>
+                    <input type="checkbox" class="check">
+                </label>
+                <div class="main-block__img-ya">
+                    <img src="img/yandex.png" alt="Yandex">
+                </div>
+                <span class="main-block__mail-from ">Команда Яндекс.Почты</span>
+                <div class="main-block__mail-not-read hidden"></div>
+                <span class="main-block__topic">Как читать почту с мобильного</span>
+                <time class="main-block__date" datetime="06.07">6 июл</time>
+            </div>
+            <div class="main-block__letter clearfix">
+                <label>
+                    <input type="checkbox" class="check">
+                </label>
+                <div class="main-block__img-ya">
+                    <img src="img/yandex.png" alt="Yandex">
+                </div>
+                <span class="main-block__mail-from ">Яндекс</span>
+                <div class="main-block__mail-not-read hidden"></div>
+                <span class="main-block__topic">Собери свою поту в этот ящик</span>
+                <time class="main-block__date" datetime="06.07">6 июл</time>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <span class="footer__texts">
+                <a href="#" class="footer__ref">Помощь и обратная связь</a>
+                <a href="#" class="footer__ref">Реклама</a>
+                <span>&copy; 2001&mdash;2018, Яндекс</span>
+            </span>
+        </footer>
+    </div>
+</div>
+</body>
+<script src="js/actions.js"></script>
+</html>
