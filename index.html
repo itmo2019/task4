@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Почта</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+<div class="mail-page">
+    <header class="mail-page-header">
+        <a class="header__menu">
+            <div class="menu__stripe"></div>
+            <div class="menu__stripe"></div>
+            <div class="menu__stripe"></div>
+        </a>
+
+        <div class="header__yandex-service-logo">
+            <a class="yandex-service-logo__image-link">
+                <img class="yandex-service-logo__image" src="resources/yandex-mail.png" alt="yandex">
+            </a>
+        </div>
+
+        <input type="search" class="header__search-bar" placeholder="Поиск"/>
+
+        <button class="header__message-creator" onclick="createMessage()">Создать письмо</button>
+    </header>
+
+    <div class="mail-page__main-block">
+        <div class="main-block__left-menu">
+            <div class="write-letter-button">Написать</div>
+
+            <div class="folders-list">
+                <div class="folders-list__folder selected">Входящие</div>
+                <div class="folders-list__folder">Отправленные</div>
+                <div class="folders-list__folder">Удаленные</div>
+                <div class="folders-list__folder">Спам</div>
+                <div class="folders-list__folder">Черновики</div>
+                <div class="folders-list__folder">Создать папку</div>
+            </div>
+        </div>
+
+        <div class="messages-block">
+            <div class="messages-block-header">
+                <input type="checkbox" class="checkbox" id="check-all" onclick="selectAll(this)">
+                <div class="messages-block-header__action">Переслать</div>
+                <div class="messages-block-header__action" id="delete-messages" onclick="deleteSelectedMessages()">
+                    Удалить
+                </div>
+                <div class="messages-block-header__action">Это спам!</div>
+                <div class="messages-block-header__action">Прочитано</div>
+            </div>
+
+            <input type="checkbox" id="show-first-message">
+
+            <div class="first-message">
+                <label for="show-first-message">
+                    <div class="close-message">&times;</div>
+                </label>
+
+                <div class="first-message__text">
+                    Тибетский мастиф является одной из древнейших рабочих пород собак, которая была сторожевой
+                    собакой в тибетских монастырях, а также помогала кочевникам в Гималайских горах. Начиная с
+                    первых упоминаний ещё в античные времена, эта порода всегда была окружена мифами и легендами.
+                    Аристотель (384—322 гг. до н. э.) и Марко Поло (в знаменитых записках о путешествии в Азию в
+                    1271 г.), а также многие другие авторы воспевают
+                    <img class="first-message__image" src="resources/dog.png" alt="dog" align="right">
+                    природную силу и мощь тибетских мастифов —
+                    как физическую, так и ментальную. Даже лай тибетского мастифа считается уникальным и высоко
+                    ценным признаком породы. Самые выдающиеся кинологи, такие, как Мартин, Яатт, Менэн, Бекманн,
+                    Зибер, а также Штребель и Биландт, очарованные происхождением тибетского мастифа и его местом
+                    в тибетской культуре, усиленно занимались его изучением. Существует мнение, на данный момент
+                    не имеющее оснований, что тибетский мастиф является родоначальником всех пород, относящихся
+                    к группе молоссов. Первым известным тибетским мастифом, достигшим берегов Западной Европы,
+                    был пёс, отправленный в 1847 году лордом Хардингом (ставшим впоследствии вице-королём Индии)
+                    королеве Виктории. Позднее, в 80-х годах XIX века Эдуард VII привёз с собой в Англию двух собак.
+                </div>
+            </div>
+
+            <div class="messages-list">
+                <label for="show-first-message" id="first-message-label">
+                    <div class="message labeled-message">
+                        <div class="message-info__left-part">
+                            <input type="checkbox" class="select-message-checkbox checkbox"
+                                   onclick="selectCheckbox(this)">
+                            <div class="message-info__sender-logo">АК</div>
+                            <div class="message-info__sender bold">Антон Копица</div>
+                            <div class="message-info__mark unread-mark"></div>
+                        </div>
+                        <div class="message-info__subject bold">Статья о песиках</div>
+                        <div class="message-info__date-container">
+                            <div class="date-container__date">9 март</div>
+                        </div>
+                    </div>
+                </label>
+
+                <div class="message">
+                    <div class="message-info__left-part">
+                        <input type="checkbox" class="select-message-checkbox checkbox" onclick="selectCheckbox(this)">
+                        <div class="message-info__sender-logo">Я</div>
+                        <div class="message-info__sender bold">Команда Яндекс.Почты</div>
+                        <div class="message-info__mark unread-mark"></div>
+                    </div>
+                    <div class="message-info__subject bold">Как читать почту с мобильного</div>
+                    <div class="message-info__date-container">
+                        <div class="date-container__date">6 июл</div>
+                    </div>
+                </div>
+
+                <div class="message">
+                    <div class="message-info__left-part">
+                        <input type="checkbox" class="select-message-checkbox checkbox" onclick="selectCheckbox(this)">
+                        <div class="message-info__sender-logo">Я</div>
+                        <div class="message-info__sender">Команда Яндекс.Почты</div>
+                        <div class="message-info__mark read-mark"></div>
+                    </div>
+                    <div class="message-info__subject">Как читать почту с мобильного</div>
+                    <div class="message-info__date-container">
+                        <div class="date-container__date">6 июл</div>
+                    </div>
+                </div>
+
+                <div class="message">
+                    <div class="message-info__left-part">
+                        <input type="checkbox" class="select-message-checkbox checkbox" onclick="selectCheckbox(this)">
+                        <div class="message-info__sender-logo">Я</div>
+                        <div class="message-info__sender">Яндекс</div>
+                        <div class="message-info__mark read-mark"></div>
+                    </div>
+                    <div class="message-info__subject">Соберите всю почту в этот ящик</div>
+                    <div class="message-info__date-container">
+                        <div class="date-container__date">6 июл</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer">
+                <a class="footer-link">Помощь и обратная связь</a>
+                <a class="footer-link">Реклама</a>
+                <a class="footer-link">© 2001—2018, Яндекс</a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
