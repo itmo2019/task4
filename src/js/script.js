@@ -23,8 +23,6 @@ let newLetterString = '<li class="message new-message">\n' +
     '</li>\n';
 
 function openMessage(label) {
-    console.log(label.getElementsByClassName("message__sender-picture"));
-    console.log(label);
     document.getElementById("full-message-img")
         .setAttribute("src", label.getElementsByClassName("message__sender-picture")[0].getAttribute("src"));
     document.getElementById("full-message-sender").innerText =
@@ -57,7 +55,6 @@ async function getMail() {
 
 (async function () {
     let result = await getMail();
-    console.log(result);
 })();
 
 function deleteMessages() {
@@ -95,7 +92,6 @@ function parseText(text) {
     if (ind > 0) {
         cleanText = cleanText.substring(0, ind);
     }
-    console.log(cleanText);
     return cleanText;
 }
 
@@ -113,15 +109,11 @@ function newMail() {
     fetch(proxyUrl + endpointRandom)
         .then(response => response.json())
         .then(data => {
-            console.log(data);
             let id = data['query']['random'][0].id;
             return fetch(proxyUrl + endpointPage + id);
         })
         .then(response => response.json())
         .then(data => {
-            console.log(data);
-            console.log(data['parse']['title']);
-            console.log(data['parse']['text']['*']);
             newLetterNode.getElementById("sender-name").innerText = data['parse']['title'];
             newLetterNode.getElementById("message-text").innerText = parseText(data['parse']['text']['*']);
             let today = new Date();
