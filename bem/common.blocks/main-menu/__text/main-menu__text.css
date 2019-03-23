@@ -1,0 +1,20 @@
+.main-menu__text.main-menu__button {
+    width: inherit;
+    height: inherit;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+
+    color: #fff;
+    font-size: 12px;
+}
+
+.main-menu__text.main-menu__item {
+    color: #707070;
+    font-size: 11px;
+}
+
+.main-menu__text {
+    font-family: 'HelveticaNeueCyr', serif;
+    text-decoration: none;
+}

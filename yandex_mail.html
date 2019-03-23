@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="Yandex Mail Project">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Anver Khusainov">
+        <title>Yandex.Mail</title>
+        <link rel="stylesheet" href="yandex_mail.css">
+    </head>
+
+    <body class="yandex-mail">
+        <header class="header yandex-mail__header">
+            <div class="burger-menu header__burger-menu">
+                <div class="burger-menu__rect"> </div>
+                <div class="burger-menu__rect"> </div>
+                <div class="burger-menu__rect"> </div>
+            </div>
+
+            <img class="main-logo header__main-logo" src="img/main-logo.png" alt="Яндекс Почта">
+
+            <input class="search-box header__search-box" type="search" placeholder="Поиск">
+        </header>
+
+        <ul class="main-menu yandex-mail__main-menu">
+
+            <li class="button main-menu__button">
+                <a class="main-menu__text main-menu__button" href="">
+                    Написать
+                </a>
+            </li>
+
+            <li class="main-menu__item">
+                <a class="main-menu__text main-menu__item"
+                   href="">Входящие</a>
+            </li>
+            <li class="main-menu__item">
+                <a class="main-menu__text main-menu__item"
+                   href="">Отправленные</a>
+            </li>
+            <li class="main-menu__item">
+                <a class="main-menu__text main-menu__item"
+                   href="">Удаленные</a>
+            </li>
+            <li class="main-menu__item">
+                <a class="main-menu__text main-menu__item"
+                   href="">Спам</a>
+            </li>
+            <li class="main-menu__item">
+                <a class="main-menu__text main-menu__item"
+                   href="">Черновики</a>
+            </li>
+            <li class="main-menu__item">
+                <a class="main-menu__text main-menu__item"
+                   href="">Создать папку</a>
+            </li>
+        </ul>
+
+        <div class="mail-frame yandex-mail__mail-frame">
+            <ul class="actions mail-frame__actions">
+                <li class="actions__item  mail-frame__actions-item mail-frame__actions-item_order_first">
+                    <label>
+                        <input class="checkbox mail-frame__checkbox" type="checkbox">
+                    </label>
+                </li>
+                <li class="actions__item  mail-frame__actions-item mail-frame__actions-item_order_normal">
+                    <span class="mail-frame__text">
+                        Получить письмо
+                    </span></li>
+                <li class="actions__item  mail-frame__actions-item mail-frame__actions-item_order_normal">
+                    <span class="mail-frame__text">
+                        Переслать
+                    </span></li>
+                <li class="actions__item  mail-frame__actions-item mail-frame__actions-item_order_normal">
+                    <span class="mail-frame__text">
+                        Удалить
+                    </span></li>
+                <li class="actions__item  mail-frame__actions-item mail-frame__actions-item_order_normal">
+                    <span class="mail-frame__text">
+                        Это спам!
+                    </span></li>
+                <li class="actions__item  mail-frame__actions-item mail-frame__actions-item_order_normal">
+                    <span class="mail-frame__text">
+                        Прочитано
+                    </span></li>
+            </ul>
+
+            <ul class="mail-box mail-frame__mail-box">
+            </ul>
+
+            <footer class="footer">
+                <div class="footer__box">
+                    <ul class="footer__list">
+                        <li class="footer__item">
+                            <a href=""  class="footer__text">
+                                Помощь и обратная связь
+                            </a>
+                        </li>
+                        <li class="footer__item">
+                            <a href=""  class="footer__text">
+                                Здесь могла бы быть ваша реклама с очень длинным названием, которое не вмещается в окно
+                            </a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="" class="footer__text">
+                                &copy; 2001-2018, Яндекс
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </footer>
+        </div>
+
+    </body>
+	
+    <script type="module" src="bem/common.blocks/mail-box/__animation/mail-box__animation.mjs"></script>
+
+</html>

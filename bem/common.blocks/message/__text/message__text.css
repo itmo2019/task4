@@ -1,0 +1,10 @@
+.message__text {
+    text-decoration: none;
+    font-family: 'HelveticaNeueCyr', serif;
+    color: black;
+    font-size: 13px;
+}
+
+.message__text.message_unread {
+    font-weight: bold;
+}

@@ -1,0 +1,7 @@
+#mail-show-hide {
+    display: none;
+}
+
+#mail-show-hide:checked + .full-message {
+    display: block;
+}

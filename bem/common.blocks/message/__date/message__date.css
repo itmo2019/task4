@@ -1,0 +1,12 @@
+.message__date {
+    margin-top: 12px;
+
+    float: right;
+    margin-left: 44px;
+    margin-right: 20px;
+
+    max-width: 60px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}

@@ -1,0 +1,58 @@
+@import "fonts/YandexSans/stylesheet.css";
+@import "fonts/HelveticaNeue/style.css";
+
+@import "bem/common.blocks/yandex-mail/yandex-mail.css";
+@import "bem/common.blocks/yandex-mail/__header/yandex-mail__header.css";
+@import "bem/common.blocks/yandex-mail/__main-menu/yandex-mail__main-menu.css";
+@import "bem/common.blocks/yandex-mail/__mail-frame/yandex-mail__mail-frame.css";
+
+@import "bem/common.blocks/checkbox/checkbox.css";
+
+@import "bem/common.blocks/header/__burger-menu/header__burger-menu.css";
+@import "bem/common.blocks/header/__main-logo/header__main-logo.css";
+@import "bem/common.blocks/header/__search-box/header__search_box.css";
+@import "bem/common.blocks/burger-menu/burger-menu.css";
+@import "bem/common.blocks/burger-menu/__rect/burger-menu__rect.css";
+@import "bem/common.blocks/search-box/search-box.css";
+
+@import "bem/common.blocks/main-menu/main-menu.css";
+@import "bem/common.blocks/main-menu/__button/main-menu__button.css";
+@import "bem/common.blocks/main-menu/__item/main-menu__item.css";
+@import "bem/common.blocks/main-menu/__text/main-menu__text.css";
+@import "bem/common.blocks/button/button.css";
+
+@import "bem/common.blocks/mail-frame/__actions/mail-frame__actions.css";
+@import "bem/common.blocks/mail-frame/__actions-item/_order/mail-frame__actions_item-order_first.css";
+@import "bem/common.blocks/mail-frame/__actions-item/_order/mail-frame__actions_item-order_normal.css";
+@import "bem/common.blocks/mail-frame/__actions-item/mail-frame__actions-item.css";
+@import "bem/common.blocks/mail-frame/__checkbox/mail-frame__checkbox.css";
+@import "bem/common.blocks/mail-frame/__text/mail-frame__text.css";
+@import "bem/common.blocks/actions/actions.css";
+@import "bem/common.blocks/actions/__item/actions__item.css";
+@import "bem/common.blocks/mail-box/mail-box.css";
+
+@import "bem/common.blocks/message/message.css";
+@import "bem/common.blocks/message/__checkbox/message__checkbox.css";
+@import "bem/common.blocks/message/__avatar/message__avatar.css";
+@import "bem/common.blocks/message/__sender/message__sender.css";
+@import "bem/common.blocks/message/__topic/message__topic.css";
+@import "bem/common.blocks/message/__unread-dot/message__unread-dot.css";
+@import "bem/common.blocks/message/__date/message__date.css";
+@import "bem/common.blocks/message/__text/message__text.css";
+
+@import "bem/common.blocks/footer/__list/footer__list.css";
+@import "bem/common.blocks/footer/__box/footer__box.css";
+@import "bem/common.blocks/footer/__item/footer__item.css";
+@import "bem/common.blocks/footer/__text/footer__text.css";
+@import "bem/common.blocks/footer/footer.css";
+
+@import "bem/common.blocks/full-message/full-message.css";
+@import "bem/common.blocks/full-message/__picture/full-message__picture.css";
+@import "bem/common.blocks/full-message/__close-button/full-message__close-button.css";
+@import "bem/common.blocks/full-message/__hidden-checkbox/full-message__hidden-checkbox.css";
+@import "bem/common.blocks/full-message/__text/full-message__text.css";
+
+html {
+    height: 97%;
+    width: 97%;
+}

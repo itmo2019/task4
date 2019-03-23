@@ -1,0 +1,8 @@
+.mail-box {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    max-height: 87%;
+    width: 100%;
+    overflow-y: auto;
+}

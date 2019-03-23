@@ -1,0 +1,11 @@
+.message__sender {
+    margin-left: 10px;
+    padding-top: 12px;
+
+    min-width: 155px;
+    width: 25%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    float: left;
+}

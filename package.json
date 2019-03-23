@@ -1,0 +1,9 @@
+{
+  "name": "task4",
+  "version": "1.0.0",
+  "dependencies": {
+    "@jsilvermist/lorem-ipsum-js": "^0.1.0",
+    "lorem-ipsum": "^2.0.0",
+    "node_modules": "latest"
+  }
+}

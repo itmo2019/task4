@@ -1,0 +1,9 @@
+.full-message {
+    display: none;
+    position: absolute;
+    top: 31px;
+
+    height: 80%;
+    background-color: #fff;
+    z-index: 100;
+}
