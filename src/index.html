@@ -56,7 +56,10 @@
           <a class="inbox_header-element" href="#spam">Это спам!</a>
           <a class="inbox_header-element" href="#mark_as_read">Прочитано</a>
         </header>
-        <div class=""></div>
+        <div class="inbox__letter" id="letter">
+          <div onclick="closeMessage()" class="inbox__letter-close-message">x</div>
+          <div class="inbox__letter-content" id="letter-content"></div>
+        </div>
         <div class="inbox__messages" id="messages">
         </div>
         <footer class="inbox__footer">

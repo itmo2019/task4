@@ -5,6 +5,9 @@ const approxTimeShort = approxTime.toLocaleDateString('ru-RU', {day: 'numeric', 
 const maxMainPageMessagesCount = 5;
 let messagesCount = 1;
 const messages = new Set();
+let letter = null;
+let letter_content = null;
+let checkboxAll = null;
 
 const newMessageTimeoutMax = minutesToMillis(5);
 const minNewMessageTimeout = 10;
@@ -13,6 +16,9 @@ const maxNewMessageTimeout = minutesToMillis(10);
 window.onload = function () {
   setTimeout(newMessagePerRandomTime, getRandomFromRange(minNewMessageTimeout, maxNewMessageTimeout));
   messages.add(new Message(1));
+  letter = document.getElementById("letter");
+  letter_content = document.getElementById("letter-content");
+  checkboxAll = document.getElementById("checkbox_all");
 };
 
 function minutesToMillis(minutes) {
@@ -30,6 +36,16 @@ function newMessagePerRandomTime() {
   setTimeout(newMessagePerRandomTime, timeout)
 }
 
+function showMessage(content) {
+  letter.style.display = "block";
+  checkboxAll.disabled = true;
+}
+
+function closeMessage() {
+  letter.style.display = "none";
+  checkboxAll.disabled = false;
+}
+
 function Message(id) {
   let element = document.createElement("div");
   this.id = id;
@@ -42,6 +58,7 @@ function Message(id) {
   element.appendChild(getReadDiv(id));
   element.appendChild(getBody());
   element.appendChild(getDateTime());
+  element.appendChild(getLink(id));
   let messagesDiv = document.getElementById("messages");
   addMessageWithAnimation(messagesDiv, element);
 
@@ -56,6 +73,15 @@ function Message(id) {
   this.getElement = function () {
     return document.getElementById("message_" + this.id.toString())
   };
+
+  function getLink(id) {
+    let link = document.createElement("a");
+    link.classList.add("inbox__message-open-link");
+    link.onclick = function () {
+      showMessage(id);
+    };
+    return link
+  }
 
   function getDateTime() {
     let date = document.createElement("time");
@@ -178,6 +204,9 @@ function newMail() {
 }
 
 function checkAllClicked() {
+  if (letter.style.display === "block") {
+    return;
+  }
   let checkAllCheckboxes = document.getElementById("checkbox_all");
   for (let message of messages) {
     let checkbox = message.getCheckbox();
@@ -188,6 +217,9 @@ function checkAllClicked() {
 }
 
 function removeChecked() {
+  if (letter.style.display === "block") {
+    return;
+  }
   let messagesToRemove = [];
   let messagesDiv = document.getElementById("messages");
   for (let message of messages) {
