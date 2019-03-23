@@ -1,7 +1,0 @@
-.inbox__letter-close-message-checkbox {
-  display: none;
-}
-
-.inbox__letter-close-message-checkbox:checked + .inbox__letter {
-  display: block;
-}
