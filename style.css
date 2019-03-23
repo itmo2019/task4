@@ -216,6 +216,7 @@ body {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    cursor: pointer;
 }
 
 .message-info__left-part {
@@ -321,19 +322,19 @@ body {
     text-overflow: ellipsis;
 }
 
-#show-first-message {
+#show-hidden-message {
     display: none;
 }
 
-#show-first-message:checked ~ .first-message {
+#show-hidden-message:checked ~ .hidden-message {
     display: block;
 }
 
-#show-first-message:checked ~ .messages-list {
+#show-hidden-message:checked ~ .messages-list {
     display: none;
 }
 
-.first-message {
+.hidden-message {
     position: relative;
     display: none;
     min-height: 500px;
@@ -343,7 +344,7 @@ body {
     border-bottom: solid 1px #e2e2e2;
 }
 
-.first-message__text {
+.hidden-message__text {
     overflow:auto;
     padding: 20px;
     font-family: "Helvetica Neue", sans-serif;
@@ -360,7 +361,7 @@ body {
     cursor: pointer;
 }
 
-.first-message__image {
+.hidden-message__image {
     border-radius: 50%;
     shape-outside:circle();
     margin-left: 1.5rem;
@@ -368,7 +369,7 @@ body {
     height: 180px;
 }
 
-#first-message-label:hover {
+.hidden-message__label:hover {
     cursor: pointer;
 }
 
