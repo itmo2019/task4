@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="author" content="Куриленко Влад">
+		<link rel="stylesheet" href="styles.css" charset="utf-8">
+		<title>Яндекс.Почта</title>
+		<script type="text/javascript" src="script.js"></script>
+	</head>
+	<body>
+		<div class="outer_wrapper">
+			<div class="header_wrapper">
+				<div class="header">
+					<div class="header__logo">
+						<div class="header__logo__line"></div>
+						<div class="header__logo__line"></div>
+						<div class="header__logo__line"></div>
+					</div>
+					<div class="header__image_wrapper_yandex">
+						<img src="yandex-icon.svg" class="header__yandex_image">
+					</div>
+					<div class="header__image_wrapper_mail">
+						<img src="mail-icon.svg" class="header__mail_image">
+					</div>
+					<div class="header__search_wrap">
+						<input class="header__search" placeholder="Поиск">
+						<button class="header__search_clear">X</button>
+					</div>
+				</div>
+			</div>
+			<div class="body_wrapper">
+				<div class="folders">
+					<button class="folders__new_letter">Написать</button>
+					<button class="folders__button">Входящие</button>
+					<button class="folders__button">Отправленные</button>
+					<button class="folders__button">Удалённые</button>
+					<button class="folders__button">Спам</button>
+					<button class="folders__button">Черновики</button>
+					<button class="folders__button">Создать папку</button>
+				</div>
+				<div class="letters_wrapper">
+					<div class="letters">
+						<div class="letters__top_row_footer_wrapper">
+							<div class="letters__top_row">
+								<div class="letters__top_row_option">
+									<input class="letters__check_all_checkbox" type="checkbox" onclick="checkOrUncheckAll()">
+								</div>
+								<button class="letters__top_row_option">Переслать</button>
+								<button class="letters__top_row_option" onclick="deleteChecked()">Удалить</button>
+								<button class="letters__top_row_option">Это спам!</button>
+								<button class="letters__top_row_option">Прочитано</button>
+								<button class="letters__top_row_option" onclick="newMail(false)">Получить еще одно письмо (не сбрасывает таймер)</button>
+							</div>
+						</div>
+						<div class="letters__separator"></div>
+						<div class="letters__letterbox_wrapper">
+							<div class="letters__letterbox">
+								<input id="show_article" type="checkbox">
+								<div class="article">
+									<label for="show_article" class="close_article">x</label>
+									<br><br><br>
+									<div class="article__text"></div>
+								</div>
+							</div>
+						</div>
+						<div class="letters__separator"></div>
+						<div class="letters__top_row_footer_wrapper">
+							<div class="letters__footer">
+								<a href="#" class="letters__footer_option">Помощь и обратная связь</a>
+								<a href="#" class="letters__footer_option">Реклама</a>
+								<a href="#" class="letters__footer_option">© 2001-2019, Яндекс</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
