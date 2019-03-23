@@ -1,0 +1,17 @@
+.page__header {
+    margin: 12px 18px;
+}
+
+.page__aside-menu {
+    display: inline-block;
+    margin-top: 8px;
+    margin-left: 18px;
+}
+
+.page__mail-box {
+    position: absolute;
+    display: inline-block;
+    margin-top: 8px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}

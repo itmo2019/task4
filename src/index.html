@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="fonts/yandex-font/stylesheet.css" type="text/css">
+	<link rel="stylesheet" href="css/styles.css" type="text/css">
+	<link rel="stylesheet" href="css/page.css" type="text/css">
+	<link rel="stylesheet" href="css/header.css" type="text/css">
+	<link rel="stylesheet" href="css/hamburger.css" type="text/css">
+	<link rel="stylesheet" href="css/yandex-logo.css" type="text/css">
+	<link rel="stylesheet" href="css/search-form.css" type="text/css">
+	<link rel="stylesheet" href="css/compose-button.css" type="text/css">
+	<link rel="stylesheet" href="css/aside-menu.css" type="text/css">
+	<link rel="stylesheet" href="css/mail-box.css" type="text/css">
+	<link rel="stylesheet" href="css/top-menu.css" type="text/css">
+	<link rel="stylesheet" href="css/message.css" type="text/css">
+	<link rel="stylesheet" href="css/checkbox.css" type="text/css">
+	<link rel="stylesheet" href="css/is-read-mark.css" type="text/css">
+	<link rel="stylesheet" href="css/footer.css" type="text/css">
+	<link rel="stylesheet" href="css/full-message.css" type="text/css">
+	<title>Яндекс Почта</title>
+</head>
+<body>
+<div class="page">
+	<header class="header page__header">
+		<button class="hamburger header__hamburger">
+			<img class="hamburger__img" src="images/hamburger.svg" width="25px" height="25px">
+		</button>
+		<img class="yandex-logo" src="images/yandex-mail-logo.png" width="164px">
+		<div class="search-form">
+			<input class="search-form__text" placeholder="Поиск">
+			<button class="search-form__close">╳</button>
+		</div>
+	</header>
+	<div class="aside-menu page__aside-menu">
+		<button id="compose-button" class="compose-button aside-menu__compose-button">Написать</button>
+		<div class="aside-menu__folder-list">
+			<a class="aside-menu__folder aside-menu__folder_active aside-menu__folder_main">Входящие</a>
+			<a class="aside-menu__folder">Отправленные</a>
+			<a class="aside-menu__folder">Удаленные</a>
+			<a class="aside-menu__folder">Спам</a>
+			<a class="aside-menu__folder">Черновики</a>
+			<a class="aside-menu__folder">Создать папку</a>
+		</div>
+	</div>
+	<main class="mail-box page__mail-box">
+		<div class="top-menu">
+			<div class="checkbox top-menu__checkbox">
+				<label>
+					<input type="checkbox" id="check-all" class="checkbox__input">
+					<span class="checkbox__custom"></span>
+				</label>
+			</div>
+			<div class="top-menu__button-list">
+				<span class="top-menu__button">Переслать</span>
+				<span id="delete-button" class="top-menu__button">Удалить</span>
+				<span class="top-menu__button">Это спам!</span>
+				<span class="top-menu__button">Прочитано</span>
+			</div>
+		</div>
+		<input type="checkbox" id="open-message">
+		<div class="full-message mail-box__full-message">
+			<div class="full-message__content">
+				<div class="full-message__close-container">
+					<label for="open-message">
+						<span class="full-message__close">╳</span>
+					</label>
+				</div>
+				<div class="full-message__header">
+					<div class="full-message__sender">
+						<img id="full-message-img" class="full-message__img" src="images/cat.jpg" width="42" height="42">
+						<div class="full-message__sender-info">
+							<div id="full-message-sender" class="full-message__author">Яндекс</div>
+							<div class="full-message__email">wikipedia@yandex.ru</div>
+						</div>
+					</div>
+					<div id="full-message-date" class="full-message__date"><time datetime="08-06">6 авг</time></div>
+				</div>
+				<p id="full-message-text" class="full-message__text">
+					Многие владельцы кошек наверняка мечтают хотя бы на день очутиться в шкуре своего питомца, чтобы
+					взглянуть на мир его глазами. Хотя органы зрения кошек по строению во многом похожи на человеческие,
+					в процессе эволюции глаза кошек приспосабливались к конкретным условиям, поэтому у кошачьего зрения
+					есть своя специфика. Представители семейства кошачьих научились прекрасно ориентироваться в условиях
+					низкой освещённости и чутко реагировать на малейшие движения, однако ради этого им пришлось
+					пожертвовать тонкостями восприятия цвета и некоторыми другими возможностями.
+				</p>
+			</div>
+		</div>
+		<div class="mail-box__message-list-scroll-container">
+			<div class="mail-box__message-list-container">
+				<ul id="message-list" class="mail-box__message-list">
+					<li class="message">
+						<div class="checkbox message__checkbox">
+							<label>
+								<input type="checkbox" class="checkbox__input">
+								<span class="checkbox__custom"></span>
+							</label>
+						</div>
+						<label for="open-message" onclick="openMessage(this)">
+							<span class="message__content">
+								<span class="message__sender">
+									<img class="message__sender-picture" src="images/yandex-logo.png" width="30">
+									<span class="message__sender-name message__sender-name_not-read">Яндекс.Паспорт</span>
+								</span>
+								<span class="is-read-mark message__is-read-mark is-read-mark_not-read"></span>
+								<span class="message__text">
+									<span class="message__text-inner message__text-inner_not-read">
+										Доступ к аккаунту восстановлен
+									</span>
+								</span>
+								<span class="message__date"><time datetime="08-06">6 авг</time></span>
+							</span>
+						</label>
+					</li>
+					<li class="message">
+						<div class="checkbox message__checkbox">
+							<label>
+								<input type="checkbox" class="checkbox__input">
+								<span class="checkbox__custom"></span>
+							</label>
+						</div>
+						<label for="open-message" onclick="openMessage(this)">
+							<span class="message__content">
+								<span class="message__sender">
+									<img class="message__sender-picture" src="images/yandex-logo.png" width="30">
+									<span class="message__sender-name message__sender-name_not-read">Команда Яндекс.Почты</span>
+								</span>
+								<span class="is-read-mark message__is-read-mark is-read-mark_not-read"></span>
+								<span class="message__text">
+									<span class="message__text-inner message__text-inner_not-read">
+										Как читать почту с мобильного
+									</span>
+								</span>
+								<span class="message__date"><time datetime="08-06">6 июл</time></span>
+							</span>
+						</label>
+					</li>
+					<li class="message">
+						<div class="checkbox message__checkbox">
+							<label>
+								<input type="checkbox" class="checkbox__input">
+								<span class="checkbox__custom"></span>
+							</label>
+						</div>
+						<label for="open-message" onclick="openMessage(this)">
+							<span class="message__content">
+								<span class="message__sender">
+									<img class="message__sender-picture" src="images/yandex-logo.png" width="30">
+									<span class="message__sender-name">Команда Яндекс.Почты</span>
+								</span>
+								<span class="is-read-mark is-read-mark message__is-read-mark is-read-mark_read"></span>
+								<span class="message__text">
+									<span class="message__text-inner">Как читать почту с мобильного</span>
+								</span>
+								<span class="message__date"><time datetime="08-06">6 июл</time></span>
+							</span>
+						</label>
+					</li>
+					<li class="message">
+						<div class="checkbox message__checkbox">
+							<label>
+								<input type="checkbox" class="checkbox__input">
+								<span class="checkbox__custom"></span>
+							</label>
+						</div>
+						<label for="open-message" onclick="openMessage(this)">
+							<span class="message__content">
+								<span class="message__sender">
+									<img class="message__sender-picture" src="images/yandex-logo.png" width="30">
+									<span class="message__sender-name">Яндекс</span>
+								</span>
+								<span class="is-read-mark is-read-mark message__is-read-mark is-read-mark_read"></span>
+								<span class="message__text">
+									<span class="message__text-inner">
+										Соберите всю почту в этот ящик, отсортируйте письма по категории
+									</span>
+								</span>
+								<span class="message__date"><time datetime="08-06">6 июл</time></span>
+							</span>
+						</label>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="footer mail-box__footer">
+			<div class="footer__menu">
+				<a href="" class="footer__item">Помощь и обратная связь</a>
+				<a href="" class="footer__item">Реклама</a>
+				<div class="footer__item copy">&copy;&nbsp;2001—2019,&nbsp;</div>
+				<a href="https://yandex.ru/" class="footer__item footer__item_author">Яндекс</a>
+			</div>
+		</div>
+	</main>
+</div>
+<script src="js/script.js"></script>
+</body>
+</html>

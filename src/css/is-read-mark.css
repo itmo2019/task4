@@ -1,0 +1,13 @@
+.is-read-mark {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+}
+
+.is-read-mark_not-read {
+    background-color: #6287bd;
+}
+
+.is-read-mark_read {
+    background-color: white;
+}

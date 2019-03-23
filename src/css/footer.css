@@ -1,0 +1,37 @@
+.footer {
+    border-top: solid 1px #e2e2e2;
+    height: 40px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.footer__menu {
+    margin: 0 auto;
+    padding-top: 3px;
+    padding-right: 24px;
+    float: right;
+}
+
+.footer__item {
+    display: inline-block;
+    line-height: 35px;
+    text-align: center;
+    padding: auto;
+    font-family: HelveticaNeue, sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    letter-spacing: normal;
+    color: #9b9b9b;
+    border: none;
+    background-color: white;
+    padding-left: 18px;
+    padding-right: 0;
+    text-decoration: none;
+
+}
+
+.footer__item_author {
+    padding-left: 0;
+}

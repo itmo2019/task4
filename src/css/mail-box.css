@@ -1,0 +1,45 @@
+.mail-box {
+    width: calc(100vw - 226px);
+    border-radius: 3px;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.34);
+    background-color: #ffffff;
+    height: 555px;
+    overflow: hidden;
+}
+
+.mail-box__message-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    min-height: 446px;
+}
+
+.mail-box__footer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+}
+
+.mail-box__full-message {
+    display: none;
+    z-index: 1;
+    position: absolute;
+    top: 41px;
+    left: 0;
+}
+
+.mail-box__message-list-scroll-container {
+    height: 474px;
+    overflow-y: scroll;
+    position: absolute;
+    width: calc(100vw - 226px);
+}
+
+.mail-box__message-list-container {
+    position: absolute;
+    width: calc(100vw - 226px);
+    max-height: 1230px;
+    overflow: hidden;
+}

@@ -1,0 +1,36 @@
+.aside-menu__folder-list {
+    margin-top: 9px;
+}
+
+.aside-menu__compose-button {
+    display: block;
+}
+
+.aside-menu__folder {
+    width: 140px;
+    font-size: 11px;
+    color: #707070;
+    border: none;
+    background-color: #e5eaf0;
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-align: left;
+    font-family: HelveticaNeue, sans-serif;
+    padding-left: 10px;
+    margin-top: 2px;
+    padding-top: 4px;
+    padding-bottom: 5px;
+}
+
+.aside-menu__folder_active {
+    border-radius: 3px;
+    background-color: #cdd6e4;
+}
+
+.aside-menu__folder_main {
+    font-weight: bold;
+    color: #555555;
+    margin-bottom: 3px;
+}

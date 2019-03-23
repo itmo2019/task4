@@ -1,0 +1,102 @@
+.message {
+    min-width: 500px;
+    width: initial;
+    height: 40px;
+    padding-left: 20px;
+    border-bottom: solid 1px #e2e2e2;
+}
+
+.message__content {
+    margin-left: 20px;
+}
+
+.message__checkbox {
+    display: inline-block;
+    vertical-align: middle;
+    position: absolute;
+}
+
+.message__sender {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 7px;
+    width: 223px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.message__sender-picture {
+    margin-top: 1px;
+    vertical-align: middle;
+    clip-path: circle(50%);
+}
+
+.message__sender-name {
+    display: inline;
+    margin-left: 6px;
+    font-family: HelveticaNeue, sans-serif;
+    font-size: 13px;
+    line-height: 39px;
+    text-align: left;
+    border: none;
+    background-color: white;
+    vertical-align: middle;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.message__text-inner {
+    position: absolute;
+    padding-top: 12px;
+    min-width: 160px;
+    width: calc(100vw - 590px);
+    margin-left: 6px;
+    font-family: HelveticaNeue, sans-serif;
+    font-size: 13px;
+    text-align: left;
+    border: none;
+    background-color: white;
+    vertical-align: middle;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.message__text-inner_not-read {
+    font-weight: bold;
+}
+
+.message__sender-name_not-read {
+    font-weight: bold;
+}
+
+.message__is-read-mark {
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: 2px;
+}
+
+.message__text {
+    width: 300px;
+    display: inline;
+    vertical-align: middle;
+}
+
+.message__date {
+    float: right;
+    width: 80px;
+    display: inline-block;
+    text-align: right;
+    font-family: HelveticaNeue, sans-serif;
+    color: #9b9b9b;
+    font-size: 13px;
+    font-weight: 100;
+    padding-right: 20px;
+    margin-top: 5px;
+    line-height: 32px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
