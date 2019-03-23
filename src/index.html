@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Egor Galkin">
+    <link rel="stylesheet" href="styles.css">
+    <script src="index.js"></script>
+    <title>Яндекс почта</title>
+</head>
+<body>
+    <header class="header">
+        <img src="yandex-logo.svg" class="header__mail-logo">
+        <form class="search-bar search-bar_position">
+            <input type="text" placeholder="Поиск" class="search-bar__input search-bar__input_view">
+        </form>
+    </header>
+    <main class="page-content">
+        <div class="sidebar sidebar_position">
+            <a href="index.html" class = "_simple-link-view">
+                <button class="sidebar__mail-send sidebar__mail-send_view  _text-overflow-behaviour">
+                    Написать
+                </button>
+            </a>
+            <div class="another-items">
+                <ul class="another-items__list another-items__list_view">
+                    <li class="another-items__item another-items__item_view"><a href="index.html" class="_simple-link-view"><p class="another-items__item-paragraph another-items__item-paragraph_view another-items__item-paragraph_active">Входящие</p></a></li>
+                    <li class="another-items__item another-items__item_view"><a href="index.html" class="_simple-link-view"><p class="another-items__item-paragraph another-items__item-paragraph_view">Отправленные</p></a></li>
+                    <li class="another-items__item another-items__item_view"><a href="index.html" class="_simple-link-view"><p class="another-items__item-paragraph another-items__item-paragraph_view">Удаленны</p></a></li>
+                    <li class="another-items__item another-items__item_view"><a href="index.html" class="_simple-link-view"><p class="another-items__item-paragraph another-items__item-paragraph_view">Спам</p></a></li>
+                    <li class="another-items__item another-items__item_view"><a href="index.html" class="_simple-link-view"><p class="another-items__item-paragraph another-items__item-paragraph_view">Черновики</p></a></li>
+                    <li class="another-items__item another-items__item_view"><a href="index.html" class="_simple-link-view"><p class="another-items__item-paragraph another-items__item-paragraph_view">Создать папку</p></a></li>
+                </ul>
+            </div>
+            <button class="sidebar__add-mail sidebar__add-mail_view _text-overflow-behaviour" id="sidebar__add-mail" onclick="addNewMail()">
+                Получить письмо
+            </button>
+            <button class="sidebar__delete-mail sidebar__delete-mail_view _text-overflow-behaviour" id="sidebar__delete-mail" onclick="deleteTopMail()">
+                Удалить письмо
+            </button>
+        </div>
+        <div class="mail-content mail-content_view">
+            <header class="actions actions_view _bottom-separator-view">
+                <div class="chose chose_view actions_elem-view actions_option-view">
+                    <input class="checkbox" type="checkbox">
+                </div>
+                <div class="actions__resend actions__resend_view actions_elem-view actions_option-view _text-overflow-behaviour">
+                    Переслать
+                </div>
+                <div class="actions__delete actions__delete_view actions_elem-view actions_option-view _text-overflow-behaviour">
+                    Удалить
+                </div>
+                <div class="actions__spam actions__spam_view actions_elem-view actions_option-view _text-overflow-behaviour">
+                    Это спам!
+                </div>
+                <div class="actions__read actions_elem-view actions_option-view _text-overflow-behaviour">
+                    Прочитано
+                </div>
+            </header>
+            <main class="content-main content-main_view">
+                <ul class="mail-list slide-fade" id="mailList">
+                    <li class="mail-list__elem mail-list__elem_view">
+                        <section class="mail _bottom-separator-view">
+                            <div class="chose chose_view mail__elem mail__elem_view">
+                                <input class="checkbox" type="checkbox">
+                            </div>
+                            <a href="index.html" class="_simple-link-view">
+                                <div class="mail__sender-logo mail__yandex-logo_view"><p class="ya">Я</p></div>
+                                <div class="mail__author mail__author_view">
+                                    <p class="mail__yandex-passport mail__yandex-passport_view _message_view">Яндекс.Паспорт</p>
+                                </div>
+                                <div class="read-status read-status_view read-status_not-read"></div>
+                                <div class="mail__message-body mail__message-body_view mail__message-body mail__message-body_view_view">
+                                    <p class="passport-body passport-body_view _message_view _text-overflow-behaviour">Доступ к аккаунту восстановлен</p>
+                                </div>
+                                <div class="message-date message-date_view message-date message-date_view_view">
+                                    <p class="date date_view _message_view">6 авг</p>
+                                </div>
+                            </a>
+                        </section>
+                    </li>
+                    <li class="mail-list__elem mail-list__elem_view">
+                        <section class="mail _bottom-separator-view">
+                            <div class="chose mail__elem mail__elem_view">
+                                <input class="checkbox" type="checkbox">
+                            </div>
+                            <a href="index.html" class="_simple-link-view">
+                                <div class="mail__sender-logo mail__yandex-logo_view"><p class="ya">Я</p></div>
+                                <div class="mail__author mail__author_view">
+                                    <p class="mail__yandex-team mail__yandex-team_view _message_view">Команда Яндекс.Почты</p>
+                                </div>
+                                <div class="read-status read-status_view read-status_not-read"></div>
+                                <div class="mail__message-body mail__message-body_view">
+                                    <p class="team-body team-body_view _message_view _text-overflow-behaviour">Как читать почту с мобильного</p>
+                                </div>
+                                <div class="message-date message-date_view">
+                                    <p class="date date_view _message_view">6 июл</p>
+                                </div>
+                            </a>
+                        </section>
+                    </li>
+                    <li class="mail-list__elem mail-list__elem_view">
+                        <section class="mail _bottom-separator-view">
+                            <div class="chose mail__elem mail__elem_view">
+                                <input class="checkbox" type="checkbox">
+                            </div>
+                            <a href="index.html" class="_simple-link-view">
+                                <div class="mail__sender-logo mail__yandex-logo_view"><p class="ya">Я</p></div>
+                                <div class="mail__author mail__author_view">
+                                    <p class="mail__yandex-team-2 mail__yandex-team-2_view _message_view">Команда Яндекс.Почты</p>
+                                </div>
+                                <div class="read-status read-status_view read-status_read"></div>
+                                <div class="mail__message-body mail__message-body_view">
+                                    <p class="team-body-2 team-body-2_view _message_view _text-overflow-behaviour">Как читать почту с мобильного</p>
+                                </div>
+                                <div class="message-date message-date_view">
+                                    <p class="date date_view _message_view">6 июл</p>
+                                </div>
+                            </a>
+                        </section>
+                    </li>
+                    <li class="mail-list__elem mail-list__elem_view" id="mail-list">
+                        <section class="mail _bottom-separator-view">
+                            <div class="chose mail__elem mail__elem_view">
+                                <input class="checkbox" type="checkbox">
+                            </div>
+                            <a href="index.html" class="_simple-link-view">
+                                <div class="mail__sender-logo mail__yandex-logo_view"><p class="ya">Я</p></div>
+                                <div class="mail__author mail__author_view">
+                                    <p class="yandex yandex_view _message_view">Яндекс</p>
+                                </div>
+                                <div class="read-status read-status_view read-status_read"></div>
+                                <div class="mail__message-body mail__message-body_view">
+                                    <p class="yandex-body yandex-body_view _message_view _text-overflow-behaviour">Соберите всю почту в этот ящик</p>
+                                </div>
+                                <div class="message-date message-date_view">
+                                    <p class="date date_view _message_view">6 июл</p>
+                                </div>
+                            </a>
+                        </section>
+                    </li>
+                </ul>
+                <div id="popup-essay" class="essay essay_view">
+                    <div class="essay-block essay-block_view">
+                        <a class="popup-essay_close" href="#">&times;</a><br>
+                        <header class="popup-essay__header popup-essay__header_view">
+                            <h1 class="popup-essay_h1-view">Эссе на тему: "Чего я жду от курсов по фронтенду"</h1>
+                        </header>
+                        <div class="popup-essay__main popup-essay__main_view">
+                            <article class="popup-essay_article">
+                                <section class="popup-essay__section popup-essay__section_view">
+                                    <h2 class="popup-essay_h2-view">Предыстория</h2>
+                                    <div class="paragraph paragraph_view">
+                                        <img src="avatar.png" alt="It's me, author" class="avatar avatar_view">
+                                        <p class="paragraph__essay paragraph__essay_view paragraph__essay_view">
+                                            Я учусь в <abbr title="Санкт-Петербургский национальный исследовательский университет информационных технологий, механики и оптики"><b>ИТМО</b></abbr>
+                                            уже третий год. И стоит признаться, мое знакомство с фронтендом начиналось и заканчивалось знакомством с <abbr title="HyperText Markup Language"><b>HTML</b></abbr>
+                                            и <abbr title="Cascading Style Sheets"><b>CSS</b></abbr> в 10 классе на уроках информатики.
+                                            Эти темы мне давались тяжело и не сильно цепляли меня. Мне это казалось скучным по сравнению с обычным программирование. Если при решение каких то алгоритмических
+                                            задач тебе приходилось думать над эффективностью алгоритма и как его красивее написать, то верстка же заключалась в обычной рутине. Плюс думаю свое влияние на процесс
+                                            оказало осутствие у меня чувства вкуса, из за чего мои страницы, даже удовлетворяющие поставленным требованиям, выглядели откровенно неочень. После этого я попытался
+                                            забыть об этом и долгое время не сталкивался с фронтом. Также у меня сложилась стойкая неприязнь к верстке, фронту и ко всему, что с этим связано. И сейчас уже я понимаю,
+                                            что в большинтсве своем эта неприязнь не обоснована. Мое отношения к фронту начало меняться относительно недавно, летом, как вступительное испытание на стажировку, мне
+                                            нужно было написать небольшую личную финансовую систему и к ней естественно надо было прикрутить небольшой фронт. Тогда я справился простыми средствами, но опять же получившейся
+                                            результат был далек от идеала. Посже уже на стажировке и работе я сталкивался с необходимостью верстки и использования <abbr title="JavaScript"><b>JS</b></abbr> и его фреймворков. Мое отношение к фронту
+                                            начало потихоньку меняться, я стал понимать, что пусть это и не так интересно как бэк, но без этого сейчас никуда и глупо было бы пропускать мимо себя такой монструозный
+                                            пласт индустрии из-за впечатлений пятилетней давности. И вот, как по велению судьбы, нам предложили пройти курс по фротненду. И я понял, что это и есть мой шанс, поменять
+                                            свое отношение к фронту, ведь как говорил Уинстон Черчиль <q>Глуп тот человек, который никогда не меняет своего мнения</q>.
+                                        </p>
+                                    </div>
+                                </section>
+                                <section class="popup-essay__section popup-essay__section_view">
+                                    <h2 class="popup-essay_h2-view">Ожидание от курса</h2>
+                                    <div class="paragraph paragraph_view">
+                                        <p class="paragraph__essay paragraph__essay_view">
+                                            В первую очередь, от курса я ожидаю целостности. Хочется, чтоб это было не просто сухой пересказ функциональности и спецефикаций, но интересный рассказ об основах фронта, причинах
+                                            почему какая то вещь делается так или иначе и как писать фронт так, чтобы не было стыдно. И судя по первой лекции, и тому, что до ИТМО этот курс долгое время читался
+                                            в <abbr title="Уральский федеральный университет"><b>УрФУ</b></abbr>, с этим
+                                            все будт в порядке. Также было бы очень круто если какую то часть времени посвятили бы новым языкам во фронте, на подобии
+                                            <a class="_programming-language-link-view" href="https://www.dartlang.org/" target="_blank">Dart</a>
+                                            или <a class="_programming-language-link-view" href="https://www.typescriptlang.org/" target="_blank">TypeScript</a>. А также, на мой взгляд, проблеме сильного
+                                            разброса технологий во фронте. Если в бэкэнд языках есть плюс минус стабильные стеки технологий, то в мире <abbr title="JavaScript"><b>JS</b></abbr> все гораздо сложнее. Я на работе столкнулся с тем, что в одной команде
+                                            используют Vue.js, в другой React. Фрейморков несчетное множество и хотелось бы услышать, на что вообще обращать внимание при выборе технологий и есть ли на данный момент, какие то
+                                            технологии о которых в той или иной мере можно сказать, что они будут актуальны еще пару лет. Возможно некоторые интересующие меня вопросы могут показаться глупыми, но это мой взгляд
+                                            без опыта и фундаментальных знаний о фронте.
+                                        </p>
+                                    </div>
+                                </section>
+                                <section class="popup-essay__section popup-essay__section_view">
+                                    <h2 class="popup-essay_h2-view">Заключение</h2>
+                                    <div class="paragraph paragraph_view">
+                                        <p class="paragraph__essay paragraph__essay_view">Хорошо это или плохо, но сейчас без хотя бы базовых знаний о фронте не обойтись даже бэкенд разработчику. Я уверен, что курс в любом случае будет интересным и его прослушивание,
+                                            позволит мне пересмотреть свой взгляд на фронтенд. И даже если я не полюблю фронт всей душой, старания во время курса не пропадут даром и позволят мне стать хотя бы чуть более хорошим
+                                            разработчиком.</p>
+                                    </div>
+                                </section>
+                            </article>
+                        </div>
+                        <footer class="popup-essay__footer">
+                            <hr>
+                            <p class="timestamp timestamp_view">Последнее изменение:<time>2019-02-21</time></p>
+                            <address>Author: <a class="popup-essay__link popup-essay__link_view" href="mailto:egor.galkin99@yandex.ru" target="_blank">egor.galkin99@yandex.ru</a></address>
+                        </footer>
+                    </div>
+                </div>
+            </main>
+            <footer class="footer footer_view">
+                <p class="footer__site-information footer__site-information_view">
+                    Помощь и обратная связь      Реклама      &copy; 2001 &mdash; 2018, Яндекс
+                </p>
+            </footer>
+        </div>
+    </main>
+</body>
+</html>
