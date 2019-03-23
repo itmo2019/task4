@@ -45,7 +45,7 @@ function addNewMail() {
     let firstElem = document.getElementsByClassName("mail-list__elem")[0];
     if (firstElem != null) {
         let ref = firstElem.childNodes[1].childNodes[3];
-        ref.setAttribute("href", "index.html");
+        // ref.setAttribute("href", "index.html");
         firstElem.childNodes[1].childNodes[3].replaceWith(ref);
     }
     list.insertBefore(newItem, list.childNodes[0]);
@@ -54,9 +54,9 @@ function addNewMail() {
     }, 10);
 }
 
-function deleteTopMail() {
-    let list = document.getElementById("mail-list");
-    let childToDelete = document.getElementsByClassName("mail-list__elem")[0];
-    if (childToDelete != null)
-        list.removeChild(childToDelete);
+
+function generateRandomTime(leftBorder, rightBorder) {
+    return Math.random() * (rightBorder - leftBorder) + leftBorder
 }
+
+setInterval(addNewMail, generateRandomTime(10, 10000));
