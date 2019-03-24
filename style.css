@@ -65,7 +65,7 @@ body {
     padding-left: 16px;
     padding-right: 10px;
 
-    font: 15px "Helvetica Neue", sans-serif ;
+    font: 15px "Helvetica Neue", sans-serif;
     line-height: 2;
     color: #000;
     background: rgba(242, 244, 247, 1);
@@ -86,7 +86,7 @@ body {
 .mail-page__main-block {
     min-height: 100%;
     min-width: 800px;
-    margin-top: 13px;
+    padding-top: 13px;
 }
 
 .main-block__left-menu {
@@ -185,17 +185,19 @@ body {
     cursor: pointer;
     width: 16px;
     height: 16px;
+    margin-top: 0;
+    margin-bottom: 0;
+    display: inline-block;
+
     border-radius: 3px;
     border: 1px solid rgba(0, 0, 0, 0.2);
     background-color: #fff;
-
-    display: inline-block;
-    vertical-align: top;
 }
 
 .select-message-checkbox {
     margin-left: 20px;
     margin-right: 10px;
+    vertical-align: middle;
 }
 
 .messages-list {
@@ -205,37 +207,23 @@ body {
 }
 
 .message {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 300px;
-    padding-right: 90px;
-
+    cursor: pointer;
     font-family: "Helvetica Neue", sans-serif;
     font-size: 13px;
-    border-bottom: solid 1px #e2e2e2;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    cursor: pointer;
-}
-
-.message-info__left-part {
-    margin: 0;
-    display: inline-block;
-
-    width: 300px;
-    position: relative;
-    float: left;
-    margin-left: -300px;
+    border-bottom: solid 1px #e2e2e2;
 }
 
 .message-info__sender-logo {
     display: inline-block;
-    margin-top: -5px;
-    margin-bottom: -5px;
+    margin-top: 5px;
+    vertical-align: middle;
     width: 30px;
     height: 30px;
     line-height: 30px;
+
     border-radius: 100px;
     background-color: #f33;
     color: #fff;
@@ -247,23 +235,25 @@ body {
 }
 
 .message-info__sender {
+    display: inline-block;
+    vertical-align: middle;
+    width: 175px;
+    margin-left: 10px;
+    line-height: 30px;
+    color: #000;
+
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-
-    display: inline-block;
-    width: 175px;
-    margin-left: 10px;
-    color: #000;
 }
 
 .message-info__mark {
     display: inline-block;
+    vertical-align: middle;
     width: 10px;
     height: 10px;
     margin-left: 10px;
     margin-right: 10px;
-    margin-bottom: 4px;
 }
 
 .unread-mark {
@@ -273,10 +263,8 @@ body {
 
 .message-info__subject {
     display: inline-block;
-    float: left;
-    width: 100%;
-    margin: 0;
-
+    vertical-align: middle;
+    width: calc(100% - 375px);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -285,12 +273,8 @@ body {
 
 .message-info__date-container {
     display: inline-block;
-    position: relative;
-    float: left;
-    margin-right: -70px;
+    vertical-align: middle;
     margin-left: 0;
-
-    line-height: 20px;
     width: 70px;
     white-space: nowrap;
     overflow: hidden;
@@ -300,7 +284,6 @@ body {
 
 .date-container__date {
     float: right;
-
 }
 
 .footer {
@@ -322,18 +305,6 @@ body {
     text-overflow: ellipsis;
 }
 
-#show-hidden-message {
-    display: none;
-}
-
-#show-hidden-message:checked ~ .hidden-message {
-    display: block;
-}
-
-#show-hidden-message:checked ~ .messages-list {
-    display: none;
-}
-
 .hidden-message {
     position: relative;
     display: none;
@@ -345,7 +316,7 @@ body {
 }
 
 .hidden-message__text {
-    overflow:auto;
+    overflow: auto;
     padding: 20px;
     font-family: "Helvetica Neue", sans-serif;
     font-size: 14px;
@@ -363,7 +334,7 @@ body {
 
 .hidden-message__image {
     border-radius: 50%;
-    shape-outside:circle();
+    shape-outside: circle();
     margin-left: 1.5rem;
     width: 190px;
     height: 180px;

@@ -71,17 +71,19 @@ function newMail() {
     messagesList.insertBefore(newMessage, messagesList.children[0]);
 
     let animationDuration = 1000;
-    let height = 22;
+    let height = 40;
     let durationPerPixel = animationDuration / height;
 
     var startTime = performance.now();
     requestAnimationFrame(function animate(currentTime) {
         var timePassed = currentTime - startTime;
         if (timePassed > animationDuration) timePassed = animationDuration;
+
         function draw(timePassed) {
             var shift = (timePassed / durationPerPixel);
             newMessage.style.height = shift + 'px';
         }
+
         draw(timePassed);
         if (timePassed < animationDuration) {
             requestAnimationFrame(animate);
@@ -144,9 +146,6 @@ function buildNewMessage(newMessage) {
     newMessage.id = id;
     newMessage.classList.add('message');
 
-    let leftPart = document.createElement('div');
-    leftPart.classList.add('message-info__left-part');
-
     let checkbox = document.createElement('input');
     checkbox.type = 'checkbox';
     checkbox.classList.add('select-message-checkbox');
@@ -154,27 +153,25 @@ function buildNewMessage(newMessage) {
     checkbox.onclick = function () {
         selectCheckbox(this);
     };
-    leftPart.appendChild(checkbox);
+    newMessage.appendChild(checkbox);
 
     let senderName = senders[Math.floor(Math.random() * senders.length)];
 
     let senderLogo = document.createElement('div');
     senderLogo.classList.add('message-info__sender-logo');
     senderLogo.textContent = senderName[0];
-    leftPart.appendChild(senderLogo);
+    newMessage.appendChild(senderLogo);
 
     let sender = document.createElement('div');
     sender.classList.add('message-info__sender');
     sender.classList.add('bold');
     sender.textContent = senderName;
-    leftPart.appendChild(sender);
+    newMessage.appendChild(sender);
 
     let unreadMark = document.createElement('div');
     unreadMark.classList.add('message-info__mark');
     unreadMark.classList.add('unread-mark');
-    leftPart.appendChild(unreadMark);
-
-    newMessage.appendChild(leftPart);
+    newMessage.appendChild(unreadMark);
 
     let subject = document.createElement('div');
     subject.classList.add('message-info__subject');
@@ -192,7 +189,7 @@ function buildNewMessage(newMessage) {
 
     let date = document.createElement('div');
     date.classList.add('date-container__date');
-    date.textContent = day + ' ' + month.substr(0,3);
+    date.textContent = day + ' ' + month.substr(0, 3);
 
     dateContainer.appendChild(date);
     newMessage.appendChild(dateContainer);
