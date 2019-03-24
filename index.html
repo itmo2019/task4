@@ -43,59 +43,12 @@
                                                                href="#">Прочитано</a></li>
         </ul>
     </div>
+    <div class="hidden-box">
+        <div class="hidden-box__cancel-btn" onclick="closeMessage()">X</div>
+        <div class="hidden-box__content"></div>
+    </div>
     <div class="messages-box">
-        <div class="message message_bold">
-            <input class="message__checkbox" type="checkbox" id="show-page-checkbox">
-            <div class="hidden-page">
-                <label class="hidden-page__cancel-btn" for="show-page-checkbox">X</label>
-                Золотистый ретривер — это собака гармоничного телосложения, с крепкими и мускулистыми конечностями и
-                округлыми лапами.
-                <img class="hidden-page__dog-image" src="resources/retriver.jpg" align="right" alt="Dog"
-                     width="250" height="200">
-                Голова пропорциональна корпусу, теменная часть широкая.
-                Хорошо выражен переход ото лба к морде. Мочка носа чёрная. Глаза тёмно-коричневого цвета, широко
-                расставлены, с тёмными краями век.
-                Уши среднего размера, висячие, посажены примерно на уровне глаз.
-                Шея мускулистая, довольно длинная. Грудь широкая. Хвост длинный, никогда не загибается. Шерсть
-                прямая или волнистая, толстый подшёрсток плохо пропускает воду. Окрас может состоять из любого
-                оттенка золотого или кремового цвета.
-                Иногда на груди могут быть небольшие белые пятна. Если золотистый ретривер белого цвета, то это
-                считается племенным браком.
-                Высота в холке составляет от 56 до 61 см у кобелей, и от 51 до 56 см у сук. Масса: у кобелей —
-                26—41,5 кг, у сук — 25—37 кг.
-            </div>
-            <label for="show-page-checkbox">
-                <img class="message__ya-img" src="resources/ya-default.png">
-                <span class="message__sender">Яндекс.Животные</span>
-                <span class="message__unread-circle"></span>
-                <span class="message__theme">Сегодня у нас в подборке золотистый ретривер</span>
-                <time class="message__date">6 авг</time>
-            </label>
-        </div>
-        <div class="message message_bold">
-            <input class="message__checkbox" type="checkbox">
-            <img class="message__ya-img" src="resources/ya-default.png">
-            <div class="message__sender">Команда Яндекс.Почты</div>
-            <span class="message__unread-circle"></span>
-            <div class="message__theme">Как читать почту с мобильного</div>
-            <div class="message__date">6 июл</div>
-        </div>
-        <div class="message">
-            <input class="message__checkbox" type="checkbox">
-            <img class="message__ya-img" src="resources/ya-default.png">
-            <div class="message__sender">Команда Яндекс.Почты</div>
-            <span class="message__unread-circle"></span>
-            <div class="message__theme">Как читать почту с мобильного</div>
-            <div class="message__date">6 июл</div>
-        </div>
-        <div class="message">
-            <input class="message__checkbox" type="checkbox">
-            <img class="message__ya-img" src="resources/ya-default.png">
-            <div class="message__sender">Яндекс</div>
-            <span class="message__unread-circle"></span>
-            <div class="message__theme">Соберите всю почту в ящик</div>
-            <div class="message__date">6 июл</div>
-        </div>
+
     </div>
     <footer class="footer main-block__footer">
         <nav class="footer__bar">
@@ -106,5 +59,6 @@
     </footer>
 </main>
 <script src="scripts/letter-worker.js"></script>
+<script src="scripts/message-templates.js"></script>
 </body>
 </html>

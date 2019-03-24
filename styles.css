@@ -159,6 +159,7 @@
 
 .messages-box {
     position: relative;
+    display: block;
     min-height: 500px;
 }
 
@@ -234,29 +235,18 @@
     display: block;
 }
 
-.hidden-page {
-    position: absolute;
-    top: 0;
-    background-color: white;
-    z-index: 1;
-    word-spacing: 3px;
-    font-size: 20px;
-    font-weight: normal;
-    padding: 20px;
+.hidden-box {
     display: none;
-    height: 90%;
 }
 
-.hidden-page__dog-image {
-    shape-outside: circle();
-    border-radius: 50%;
-    margin-left: 1.5rem;
+.hidden-box__content {
+    margin: 5px;
+    min-height: 500px;
 }
 
-.hidden-page__cancel-btn {
+.hidden-box__cancel-btn {
     float: right;
     font-size: 30px;
-    margin-top: -25px;
     font-family: YandexSansThin, serif;
     color: gray;
     cursor: pointer;

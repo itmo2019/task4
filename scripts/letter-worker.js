@@ -1,22 +1,61 @@
-var counter = 1;
-
 let messagesContainer = document.getElementsByClassName('messages-box');
+let messagesBox = document.getElementsByClassName('messages-box')[0];
+let hiddenBox = document.getElementsByClassName('hidden-box')[0];
+let hiddenBoxContent = document.getElementsByClassName('hidden-box__content')[0];
+let localStorage = new Map();
 
-function createMessage() {
-    return      '            <input class="message__checkbox" type="checkbox">\n' +
-        '            <img class="message__ya-img" src="resources/ya-default.png">\n' +
-        '            <div class="message__sender">Команда Яндекс.Почты</div>\n' +
-        '            <span class="message__unread-circle"></span>\n' +
-        '            <div class="message__theme">Сообщение №' + counter++ + '</div>\n' +
-        '            <div class="message__date">6 июл</div>\n';
+function getRandomArbitrary(min, max) {
+    return Math.random() * (max - min) + min;
+}
+
+setTimeout(newMail, getRandomArbitrary(10, 10 * 60 * 1000));
+
+function newMail() {
+    let newGeneratedMessage = document.createElement('div');
+    newGeneratedMessage.className = 'message';
+    let newMessage = generateMessage(newGeneratedMessage);
+    newMessage.onclick = function () {
+        openMessage(this, event);
+    };
+    messagesContainer[0].insertBefore(newMessage, messagesContainer[0].firstChild);
+    let animationDuration = 1500;
+    let fps = animationDuration / 30;
+    animate(newMessage, fps, animationDuration, false);
+    setTimeout(newMail, getRandomArbitrary(5 * 60 * 1000, 10 * 60 * 1000))
+}
+
+function generateMessage(message) {
+    let id = new Date().getTime();
+    message.id = id;
+
+    [theme, text] = getRandomThemeAndText();
+    localStorage.set(id.toString(), text);
+
+    message.appendChild(generateInput());
+    message.appendChild(document.createTextNode("\n"));
+    message.appendChild(generateSenderLogo());
+    message.appendChild(document.createTextNode("\n"));
+    message.appendChild(generateSenderDiv());
+    message.appendChild(document.createTextNode("\n"));
+    message.appendChild(generateUnreadCircle());
+    message.appendChild(document.createTextNode("\n"));
+    message.appendChild(generateThemeDiv(theme));
+    message.appendChild(document.createTextNode("\n"));
+    message.appendChild(generateDateDiv());
+
+    console.log(message.outerHTML);
+
+    return message;
 }
 
 function addMessage() {
     let newMessage = document.createElement('div');
     newMessage.className = 'message';
-    newMessage.innerHTML = createMessage();
+    newMessage = generateMessage(newMessage);
+    newMessage.onclick = function () {
+        openMessage(this, event);
+    };
     messagesContainer[0].insertBefore(newMessage, messagesContainer[0].firstChild);
-
     let animationDuration = 1000;
     let fps = animationDuration / 30;
     animate(newMessage, fps, animationDuration, false);
@@ -52,6 +91,66 @@ function removeElement(el) {
     let animationDuration = 1000;
     let fps = animationDuration / 30;
     animate(el, fps, animationDuration, true);
+}
+
+function openMessage(messageOuter, messageInner) {
+    let message = localStorage.get(messageOuter.id);
+    if (messageInner.target.className !== 'message__checkbox') {
+        hiddenBoxContent.innerHTML = message;
+        messagesBox.style.display = "none";
+        hiddenBox.style.display = "block";
+        console.log(message);
+    }
+}
+
+function closeMessage() {
+    messagesBox.style.display = "block";
+    hiddenBox.style.display = "none"
+}
+
+function generateDateDiv() {
+    let today = new Date();
+    let options = {month: 'long', day: 'numeric'};
+    let formattedDate = today.toLocaleDateString("ru-RU", options);
+    console.log(formattedDate);
+    let date = document.createElement('div');
+    date.className = 'message__date';
+    date.innerText = formattedDate;
+    return date;
+}
+
+function generateThemeDiv(theme) {
+    let themeDiv = document.createElement('div');
+    themeDiv.className = 'message__theme';
+    themeDiv.innerText = theme;
+    return themeDiv;
+}
+
+function generateSenderDiv() {
+    let senderDiv = document.createElement('div');
+    senderDiv.className = 'message__sender';
+    senderDiv.innerText = getRandomSender() + " ";
+    return senderDiv;
+}
+
+function generateSenderLogo() {
+    let senderLogoDiv = document.createElement('img');
+    senderLogoDiv.className = 'message__ya-img';
+    senderLogoDiv.src = 'resources/ya-default.png';
+    return senderLogoDiv;
+}
+
+function generateInput() {
+    let input = document.createElement('input');
+    input.className = 'message__checkbox';
+    input.type = 'checkbox';
+    return input;
+}
+
+function generateUnreadCircle() {
+    let unreadCircle = document.createElement('span');
+    unreadCircle.className = 'message__unread-circle';
+    return unreadCircle;
 }
 
 
