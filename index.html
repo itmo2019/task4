@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Яндекс.Почта</title>
+    <link href="styles/header.css" rel="stylesheet">
+    <link href="styles/mainBodyAndLeftButtons.css" rel="stylesheet">
+    <link href="styles/lettersWindow.css" rel="stylesheet">
+    <link href="styles/letterView.css" rel="stylesheet">
+    <link href="styles/contentLetter.css" rel="stylesheet">
+</head>
+<body>
+<header class="header">
+    <svg xmlns="http://www.w3.org/2000/svg" class="svgicon-menu">
+        <svg viewBox="0 0 16 16" id="svgicon-mail--Pancakes" width="100%" height="100%">
+            <path d="M0 0h16v2H0V0zm0 7h16v2H0V7zm0 7h16v2H0v-2z" fill="currentColor" fill-rule="evenodd"></path>
+        </svg>
+        <rect height="100%" width="100%" style="fill: transparent;"></rect>
+    </svg>
+    <div class="logo-container">
+        <svg xmlns="http://www.w3.org/2000/svg" class="logo-container__svgicon-Yandex">
+            <svg class="" viewBox="0 0 75 32" width="100%" height="100%">
+                <g xmlns="http://www.w3.org/2000/svg" fill-rule="nonzero" fill="currentColor">
+                    <path d="M9.35 4.394h-1.3c-1.965 0-3.866 1.3-3.866 5.071 0 3.645 1.743 4.818 3.866 4.818h1.3V4.394zM7.322 16.311l-3.867 8.684H.634l4.247-9.287c-1.997-1.013-3.328-2.852-3.328-6.243 0-4.754 3.011-7.13 6.593-7.13h3.644v22.66H9.35v-8.684H7.322z"></path>
+                    <path d="M59.059 17.009c0-5.008 1.934-8.21 5.674-8.21 1.426 0 2.25.382 2.947.825l-.349 2.346c-.666-.57-1.616-1.11-2.63-1.11-1.775 0-3.042 1.997-3.042 6.022 0 3.993.95 6.275 2.947 6.275 1.204 0 2.123-.475 2.693-.982l.571 1.838c-.856.728-1.87 1.204-3.328 1.204-3.422 0-5.483-2.757-5.483-8.208zm-7.226.03v7.956h-2.471V9.023h2.471v7.383l3.835-7.383h2.504l-3.962 7.51 4.533 8.462h-2.695l-4.215-7.955zm-11.63-1.488h4.087c0-2.726-.443-4.723-1.869-4.723-1.521 0-2.06 1.87-2.218 4.723zm2.725 9.666c-3.296 0-5.324-2.63-5.324-7.543 0-5.134 1.426-8.874 4.817-8.874 2.662 0 4.406 1.997 4.406 7.416v1.363H40.17c0 3.614 1.015 5.515 2.98 5.515 1.394 0 2.504-.634 3.138-1.078l.57 1.902c-1.014.792-2.346 1.299-3.93 1.299zM32.406 11.019h-2.757v.285c0 3.359-.158 8.272-1.489 11.663h4.246V11.019zm3.708 17.114h-2.218v-3.138H27.05v3.138h-2.219v-5.166h.983c1.458-3.391 1.616-8.335 1.616-12.582V9.023h7.416v13.944h1.268v5.166zM23.406 9.023v15.972h-2.441v-7.162h-3.677v7.162h-2.471V9.023h2.471v6.782h3.677V9.023h2.441z"></path>
+                </g>
+            </svg>
+            <rect height="100%" width="100%" style="fill: transparent;"></rect>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" class="logo-container__svgicon-mail">
+            <svg viewBox="0 0 54 32" width="100%" height="100%">
+                <path fill-rule="nonzero" fill="currentColor"
+                      d="M32.68 24.98V9H31v6.861s-1.157 1.237-2.9 1.237c-1.49 0-2.41-.92-2.41-3.202V9H24.2v4.864c0 3.012 1.427 4.502 3.646 4.502 1.902 0 3.154-1.015 3.154-1.015v7.629h1.68zM43.656 10.4V9H34.68v1.4h3.71v14.58h1.69V10.4h3.576zM8.337 24.666h1.585V2H0v22.666h1.585V3.3h6.752v21.366zm43.466.293h1.363c-.19-.602-.349-1.838-.349-2.948v-8.717c0-3.17-1.49-4.628-4.12-4.628-1.808 0-3.139.792-3.773 1.616l.412 1.427c.76-1.11 1.997-1.744 3.36-1.744 1.744 0 2.663 1.046 2.663 3.487v1.997h-1.743c-3.456 0-5.326 1.776-5.326 5.2 0 2.916 1.49 4.627 3.646 4.627 1.585 0 2.726-.95 3.487-2.472.095 1.14.253 1.743.38 2.155zm-34.241.024c2.758 0 4.882-3.107 4.882-8.401 0-5.484-2.124-8.21-4.882-8.21-2.758 0-4.882 3.075-4.882 8.4 0 5.453 2.124 8.21 4.882 8.21zm0-1.205c-1.87 0-3.392-2.124-3.392-7.1 0-4.851 1.522-7.07 3.392-7.07 1.87 0 3.392 2.06 3.392 7.07 0 4.818-1.522 7.1-3.392 7.1zm30.692.294c-1.521 0-2.504-1.3-2.504-3.55 0-2.79 1.268-3.995 3.9-3.995h1.71v4.406c-.57 1.712-1.616 3.139-3.106 3.139z"></path>
+            </svg>
+            <rect height="100%" width="100%" style="fill: transparent;"></rect>
+        </svg>
+    </div>
+    <div class="search-container">
+        <input class="search-container__search" type="search" placeholder="Поиск">
+    </div>
+</header>
+<main class="main-body">
+    <div class="buttons">
+        <button class="button-write">Написать</button>
+        <div class="folders">
+            <button class="folders__button">Входящие</button>
+            <button class="folders__button">Отправленные</button>
+            <button class="folders__button">Удаленные</button>
+            <button class="folders__button">Спам</button>
+            <button class="folders__button">Черновики</button>
+            <button class="folders__button">Создать папку</button>
+        </div>
+    </div>
+    <div id="letters">
+        <header class="header-letters">
+            <!--<div>
+                <input id="header-letters__checkbox" type="checkbox">
+                <label class="header-letters-checkbox__label" for="header-letters__checkbox"></label>
+            </div>-->
+            <label>
+                <input id="mainCheckbox" type="checkbox" onclick="mainCheckBoxClicked(event)">
+            </label>
+            <button class="headerLetters__button">Переслать</button>
+            <button class="headerLetters__button" onclick="removeCheckedLetters()">Удалить</button>
+            <button class="headerLetters__button">Это спам!</button>
+            <button class="headerLetters__button">Прочитано</button>
+        </header>
+        <div class="line"></div>
+        <div class="body-letters"></div>
+        <div class="line"></div>
+        <footer class="footerLetters">
+            <a class="footerLetters__a" target="_blank">Помощь и обратная связь</a>
+            <a class="footerLetters__a" target="_blank">Реклама</a>
+            <a class="footerLetters__a" target="_blank" href="https://yandex.ru/">&copy; 2001 - 2018, Яндекс</a>
+        </footer>
+    </div>
+</main>
+</body>
+<script src="scripts/addNewLetter.js"></script>
+<script src="scripts/createLetter.js"></script>
+<script src="scripts/removeLetters.js"></script>
+</html>

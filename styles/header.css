@@ -1,0 +1,97 @@
+@font-face {
+    font-family: "Yandex Sans Medium";
+    src: url(../fonts/YandexSansText-Medium.woff2);
+}
+
+@font-face {
+    font-family: "Yandex Sans Light";
+    src: url(../fonts/YandexSansText-Light.woff2);
+}
+
+html {
+    width: 100%;
+    height: 100%;
+    min-width: 1000px;
+    min-height: 600px;
+}
+
+body {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(229, 234, 240);
+}
+
+.header {
+    height: 60px;
+    width: 100%;
+}
+
+.header:before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+}
+
+.svgicon-menu {
+    vertical-align: middle;
+    margin-left: 16px;
+    width: 16px;
+    height: 16px;
+}
+
+.logo-container {
+    margin-left: 10px;
+    vertical-align: middle;
+    display: inline-block;
+    word-spacing: -4px;
+    width: 128px;
+    height: 32px;
+}
+
+.logo-container__svgicon-Yandex {
+    width: 75px;
+    height: 32px;
+}
+
+.logo-container__svgicon-mail {
+    width: 52px;
+    height: 32px;
+}
+
+.search-container {
+    margin-left: 88px;
+    vertical-align: middle;
+    display: inline-block;
+    width: calc(100% - 290px);
+    height: 32px;
+    text-align: center;
+}
+
+.search-container__search {
+    min-width: 500px;
+    height: 100%;
+    background: rgba(244, 249, 255, 0.77);
+    border-style: none;
+    border-radius: 4px;
+    padding-left: 4%;
+    font-family: "Yandex Sans Light", serif;
+    font-size: 15px;
+
+}
+
+.search-container__search::-webkit-input-placeholder {
+    font-family: "Yandex Sans Light", serif;
+    font-size: 15px;
+    color: #cccccc;
+}
+
+.search-container__search::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    display: block;
+    height: 10px;
+    width: 10px;
+    background-image: url(../images/cross.jpg);
+    background-size: contain;
+}

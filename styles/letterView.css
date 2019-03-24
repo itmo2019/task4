@@ -1,0 +1,153 @@
+.letter {
+    margin-left: 20px;
+    height: calc(10% - 1px);
+    word-spacing: -4px;
+}
+
+.letter:before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+}
+
+.sender-info-container {
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+    width: 30%;
+    
+    cursor: pointer;
+}
+
+.sender-info-container:before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+}
+
+.sender-info-container__photo {
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    background-image: url(../images/myPhoto.svg);
+    margin-left: 16px;
+    margin-right: 16px;
+    pointer-events: none;
+}
+
+.sender-info-container__author {
+    display: inline-block;
+    vertical-align: middle;
+    overflow: hidden;
+    font-family: "Yandex Sans Light", serif;
+    font-size: 15px;
+    width: 60%;
+    min-width: 135px;
+    height: 20px;
+    margin-left: 3px;
+    word-spacing: normal;
+    pointer-events: none;
+    
+}
+
+.wrapper-readed {
+    display: inline-block;
+    vertical-align: middle;
+    width: 3%;
+    height: 100%;
+}
+
+.wrapper-readed:before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+}
+
+.readed {
+    display: inline-block;
+    vertical-align: middle;
+    width: 10px;
+    height: 10px;
+    background: rgb(98, 135, 189);
+    border-radius: 50%;
+}
+
+.letter-info-container {
+    
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+    width: 65%;
+    cursor: pointer;
+}
+
+.letter-info-container:before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+}
+
+.letter-info-container__theme {
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: middle;
+    width: 30%;
+    height: 20px;
+    
+    font-family: "Yandex Sans Light", serif;
+    font-size: 15px;
+    word-spacing: normal;
+    margin-left: 10px;
+    pointer-events: none;
+}
+
+.letter-info-container__begin-of-letter {
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: middle;
+    width: 45%;
+    height: 20px;
+    font-family: "Yandex Sans Light", serif;
+    font-size: 15px;
+    word-spacing: normal;
+    margin-left: 10px;
+    pointer-events: none;
+    opacity: 0.5;
+    
+}
+
+.letter-info-container__data {
+    
+    display: inline-block;
+    vertical-align: middle;
+    width: 15%;
+    height: 20px;
+    font-family: "Yandex Sans Light", serif;
+    font-size: 15px;
+    text-align: right;
+    color: rgb(155, 155, 155);
+    word-spacing: normal;
+    margin-left: 10px;
+    pointer-events: none;
+}
+
+.trashcan {
+    display: inline-block;
+    vertical-align: middle;
+    width: 16px;
+    height: 20px;
+    margin-left: 20px;
+    background-image: url(../images/trashcan.svg);
+    cursor: pointer;
+}
+
+.trashcan:hover {
+    animation: swing 1s ease;
+    animation-iteration-count: 1;
+}

@@ -1,0 +1,37 @@
+.content-letter {
+    height: 83.34%;
+    width: 100%;
+}
+
+.content-letter__header {
+    margin-left: 5%;
+    width: 90%;
+    height: 20%;
+}
+
+.content-letter__body {
+    margin-left: 5%;
+    width: 90%;
+    height: 80%;
+    white-space: pre-wrap;
+    overflow-y: auto;
+}
+
+.content-letter__header__theme {
+    width: 100%;
+    height: 50%;
+}
+
+.content-letter__header__author {
+    width: 100%;
+    height: 50%;
+}
+
+.content-letter__close {
+    width: 16px;
+    height: 16px;
+    background: url(../images/cross.jpg);
+    background-size: cover;
+    cursor: pointer;
+    float: right;
+}
