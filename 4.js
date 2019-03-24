@@ -84,7 +84,7 @@ function addLetter(isTemplate) {
     newLetter.classList.add("block-inner__bottom-borders");
     newLetter.classList.add("msg-added");
     let checkboxes = document.querySelectorAll('.block-inner__checkbox');
-    if (numOfLetters >= 10) { 
+    if (numOfLetters >= 30) { 
         checkboxes[checkboxes.length - last].parentElement.classList.add("hidden");
         last++;
     }
@@ -114,7 +114,7 @@ function deleteMsgs(toDelete) {
     for (var i = 0; i < toDelete.length; i++) {
         toDelete[i].remove();
         numOfLetters--;
-        if (numOfLetters >= 10) {
+        if (numOfLetters >= 30) {
             last--;
             let checkboxes = document.querySelectorAll('.block-inner__checkbox');
             checkboxes[checkboxes.length - last].parentElement.classList.remove("hidden");
@@ -148,7 +148,7 @@ function newMail() {
     }, 300000);
 }
 
-document.onload = newMail;
+window.onload = newMail;
 document.getElementById('actions__button-write').addEventListener("click", addLetter);
 document.getElementById('block-inner__delete').addEventListener("click", deleteLetter);
 document.getElementById('block-inner__highlight').addEventListener("click", selectAll);
