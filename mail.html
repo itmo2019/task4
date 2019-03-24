@@ -42,33 +42,14 @@
         <div class="action"><div class="text action__readed">Прочитано</div></div>
     </div>
     <div class="letters">
-    <div class="letter letter_focused" tabindex="0">
-        <input type="checkbox" class="checkbox">
-        <img src="yandex_cyr_icon-icons.com_59870.svg" height="100%" class="letter__contact" alt="yaicon">
-        <div class="from"><div class="text_overflow">ЯндексПаспорт</div></div>
-        <div class="letter__checked"></div>
-        <div class="theme"><div class="text_overflow">Доступ к аккаунту восстановлён</div></div>
-        <div class="data"><div class="text_overflow">6 авг</div></div>
-    </div>
-    <article class="article">
-        <div class="cancel cancel_focused" tabindex="1"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Fairytale_button_cancel.png" width="34px" alt="cancel" class="cancel__button"></div>
-        <section class="first-section">
-            <div class="shaped"></div>
-            <p class="paragrah">
-                <span class="paragraph__first-letter">Ф</span><b>роненд разаработчик</b> является одной из самых востребованных профессией по версии сайта <a href="https://insights.stackoverflow.com/survey/2018/#developer-roles">StackOverflow</a>.
-                Но так же существует и большая конкуренция, поскольку в сети множество курсов, обучающих созданию сайтов.
-                А значит для получения высокооплачиваемой работы необходимо обладать качественными знаниями (о них говорится на изображении).
-                Я надеюсь, что курс фронтенда даст мне знания, которых хватит для создания простейших веб-приложений.
-            </p>
-        </section>
-    </article>
-        <div class="letter">
+        <div class="letter letter_focused" tabindex="0">
             <input type="checkbox" class="checkbox">
             <img src="yandex_cyr_icon-icons.com_59870.svg" height="100%" class="letter__contact" alt="yaicon">
             <div class="from"><div class="text_overflow">ЯндексПаспорт</div></div>
             <div class="letter__checked"></div>
             <div class="theme"><div class="text_overflow">Доступ к аккаунту восстановлён</div></div>
             <div class="data"><div class="text_overflow">6 авг</div></div>
+            <div class="text letter__text"></div>
         </div>
         <div class="letter">
             <input type="checkbox" class="checkbox">
@@ -77,6 +58,7 @@
             <div class="letter__checked"></div>
             <div class="theme"><div class="text_overflow">Доступ к аккаунту восстановлён</div></div>
             <div class="data"><div class="text_overflow">6 авг</div></div>
+            <div class="text letter__text"></div>
         </div>
         <div class="letter">
             <input type="checkbox" class="checkbox">
@@ -85,6 +67,16 @@
             <div class="letter__checked"></div>
             <div class="theme"><div class="text_overflow">Доступ к аккаунту восстановлён</div></div>
             <div class="data"><div class="text_overflow">6 авг</div></div>
+            <div class="text letter__text"></div>
+        </div>
+        <div class="letter">
+            <input type="checkbox" class="checkbox">
+            <img src="yandex_cyr_icon-icons.com_59870.svg" height="100%" class="letter__contact" alt="yaicon">
+            <div class="from"><div class="text_overflow">ЯндексПаспорт</div></div>
+            <div class="letter__checked"></div>
+            <div class="theme"><div class="text_overflow">Доступ к аккаунту восстановлён</div></div>
+            <div class="data"><div class="text_overflow">6 авг</div></div>
+            <div class="text letter__text"></div>
         </div>
     </div>
     <div class="footer">
@@ -94,16 +86,6 @@
     </div>
 </div>
 </div>
+<script src="script.js"></script>
 </body>
 </html>
-
-<script>
-    var button_write = document.getElementsByClassName('menu__button_write')[0];
-    button_write.addEventListener("click", () => {var letters = document.getElementsByClassName('letter');
-                                                  var newLetter = letters[letters.length - 1].cloneNode(true);
-                                                  document.getElementsByClassName('letters')[0].insertBefore(newLetter, letters[0]);});
-    var letters = document.getElementsByClassName('letter');
-    for (var i = 0; i < letters.length; i++) {
-        letters[i].addEventListener("click", () => {this.parrentNode.removeChild(this);})
-    }
-</script>
