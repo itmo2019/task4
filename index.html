@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Почта</title>
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="css/animations.css">
+        <script type="text/javascript" src="js/gen.js"></script>
+        <script type="text/javascript" src="js/app.js"></script>
+    </head>
+    
+    <body>
+        <header>
+            <div class="hamburger header__inline-element">
+                <div class="hamburger__div"></div>
+                <div class="hamburger__div"></div>
+                <div class="hamburger__div"></div>
+            </div>
+            <div class="logo header__inline-element">
+                <img src="assets/logo.png" width=153 height=31></img>
+            </div>
+            
+            <div class="search header__search header__inline-element">
+                <div class="search__text">
+                    Поиск
+                </div>
+                <div class="search__close">
+                    ×
+                </div>
+            </div>
+        </header>
+        <main>    
+            <div class="side-panel">
+                <button class="side-panel__button side-panel__button_primary">
+                    Написать
+                </button>
+                <button class="side-panel__button side-panel__button_secondary side-panel__button_active">
+                    Входящие
+                </button>
+                <button class="side-panel__button side-panel__button_secondary">
+                    Отправленные
+                </button>
+                <button class="side-panel__button side-panel__button_secondary">
+                    Удалённые
+                </button>
+                <button class="side-panel__button side-panel__button_secondary">
+                    Спам
+                </button>
+                <button class="side-panel__button side-panel__button_secondary">
+                    Черновики
+                </button>
+                <button class="side-panel__button side-panel__button_secondary">
+                    Создать папку
+                </button>
+            </div>
+            <div class="mailbox">
+                <div class="mailbox__header">
+                    <label class="checkbox">
+                        <input type="checkbox" class="checkbox__input"/>
+                        <span class="checkbox__span"></span>
+                    </label>
+                    <button class="mailbox__header-element">
+                        Переслать
+                    </button>
+                    <button class="mailbox__header-element" onclick="deleteSelected();">
+                        Удалить
+                    </button>
+                    <button class="mailbox__header-element">
+                        Это спам
+                    </button>
+                    <button class="mailbox__header-element">
+                        Прочитано
+                    </button>
+                </div>
+
+                <input class="mailbox__trigger" type="checkbox" id="mailbox__trigger"/>
+                <div class="mailbox__mail-list">
+                    
+                </div>
+                <div class="mailbox__mail-contents">
+                    <label class="mailbox__msg-close" for="mailbox__trigger">
+                        ×
+                    </label>
+                    <div class="mail-contents__html">
+
+                    </div>
+                </div>
+
+                <div class="footer">
+                    <div class="footer__inline-element">
+                        © 2019 – 2019, Ямдекс
+                    </div>
+                    <div class="footer__inline-element">
+                        <a class="footer__link" href="http://www.milliondollarhomepage.com/">Реклама</a>
+                    </div>
+                    <div class="footer__inline-element">
+                        <a class="footer__link" href="mailto:yakovlev.ilya.v@gmail.com?Subject=Help" target="_top">Помощь и обратная связь</a>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>

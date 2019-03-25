@@ -1,0 +1,30 @@
+@keyframes deletion {
+    to {
+        height: 0px;
+        border: none;
+    }
+}
+
+.mailbox__mail[state="deleted"] {
+    animation: deletion 0.4s 1 ease-out forwards;
+}
+
+.mailbox__mail[state="hidden"] {
+    height: 0px;
+    border-width: 0px;
+}
+
+@keyframes appearance {
+    from {
+        height: 0px;
+        background-color: #6287bd;
+    }
+    to {
+        height: 40px;
+        background-color: white;
+    }
+}
+
+.mailbox__mail[state="showing"] {
+    animation: appearance 0.4s 1 ease-out forwards;
+}
