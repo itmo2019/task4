@@ -3,8 +3,7 @@ const maxWordsInLetter = 200;
 const minWordsInSentence = 2;
 const maxWordsInSentence = 15;
 const messagesPerPage = 5;
-const pixelsPerSecond = 5;
-const rightPosition = 500;
+const opacityPerSecond = 0.005;
 
 /*
 Монотонно неуменьшающееся время системы, логические часы.
@@ -138,18 +137,19 @@ function createMessage(id, messageBody) {
 
   element.appendChild(createFullMessageShortcut(messageBody));
 
-  let pos = rightPosition;
-  element.style.left = pos + 'px';
+  let op = 0.0;
+  element.style.opacity = '0';
   let messagesHolder = document.getElementById("messages-wrapper");
   messagesHolder.insertBefore(element, messagesHolder.firstChild);
 
-  let intervalId = setInterval(moveElementFromRightToLeft, 5);
-  function moveElementFromRightToLeft() {
-    if (pos === 0) {
+  let intervalId = setInterval(changeOpacity, 5);
+  function changeOpacity() {
+    if (op >= 1.0) {
       clearInterval(intervalId);
+      element.style.opacity = '1.0';
     } else {
-      pos -= pixelsPerSecond;
-      element.style.left = pos + 'px';
+      op += opacityPerSecond;
+      element.style.opacity = op + '';
     }
   }
 }
@@ -196,22 +196,6 @@ function removeLetters() {
     }
   }
 
-  let letterPosition = 0;
-  function moveElementFromLeftToRight() {
-    if (letterPosition === rightPosition) {
-      clearInterval(intervalId);
-      for (let i = 0; i < removedMessages.length; i++) {
-        document.getElementById("messages-wrapper").removeChild(removedMessages[i])
-      }
-    } else {
-      letterPosition += pixelsPerSecond;
-      for (let i = 0; i < removedMessages.length; i++) {
-        removedMessages[i].style.left = letterPosition + 'px';
-      }
-    }
-  }
-  let intervalId = setInterval(moveElementFromLeftToRight, 1);
-
   function addNewMessages() {
     messages = notRemovedMessages;
     let messagesAsArray = Array.from(messages);
@@ -219,7 +203,23 @@ function removeLetters() {
       getMessageById(messagesAsArray[i].getId()).style.display = "block"
     }
   }
-  setTimeout(addNewMessages, 2000 / pixelsPerSecond);
+
+  let op = 1.0;
+  function changeOpacity() {
+    if (op <= 0.0) {
+      clearInterval(intervalId);
+      for (let i = 0; i < removedMessages.length; i++) {
+        document.getElementById("messages-wrapper").removeChild(removedMessages[i])
+      }
+      addNewMessages()
+    } else {
+      op -= opacityPerSecond;
+      for (let i = 0; i < removedMessages.length; i++) {
+        removedMessages[i].style.opacity = op + '';
+      }
+    }
+  }
+  let intervalId = setInterval(changeOpacity, 5);
 }
 
 let citations = ['Им', 'нужны', 'великие', 'потрясения', 'нам', 'нужна', 'великая', 'Россия', 'Родина', 'требует', 'себе', 'служения', 'настолько', 'жертвенно', 'чистого', 'что', 'малейшая', 'мысль', 'о', 'личной', 'выгоде', 'омрачает', 'душу', 'и', 'парализует', 'работу', 'Каждое', 'утро', 'когда', 'я', 'просыпаюсь', 'и', 'творю', 'молитву', 'я', 'смотрю', 'на', 'предстоящий', 'день', 'как', 'на', 'последний', 'в', 'жизни', 'и', 'готовлюсь', 'выполнить', 'все', 'свои', 'обязанности', 'уже', 'устремляя', 'взор', 'в', 'вечность', 'А', 'вечером', 'когда', 'я', 'опять', 'возвращаюсь', 'в', 'свою', 'комнату', 'то', 'говорю', 'себе', 'что', 'должен', 'благодарить', 'Бога', 'за', 'лишний', 'дарованный', 'мне', 'в', 'жизни', 'день', 'Это', 'единственное', 'следствие', 'моего', 'постоянного', 'сознания', 'близости', 'смерти', 'как', 'расплата', 'за', 'свои', 'убеждения', 'И', 'порой', 'я', 'ясно', 'чувствую', 'что', 'должен', 'наступить', 'день', 'когда', 'замысел', 'убийцы', 'наконец', 'удастся', 'На', 'очереди', 'главная', 'наша', 'задача', 'укрепить', 'низы', 'В', 'них', 'вся', 'сила', 'страны', 'Их', 'более', 'миллионов', 'и', 'будут', 'здоровы', 'и', 'крепки', 'корни', 'у', 'государства', 'поверьте', 'и', 'слова', 'Русского', 'Правительства', 'совсем', 'иначе', 'зазвучат', 'перед', 'Европой', 'и', 'перед', 'целым', 'миром', 'Дружная', 'общая', 'основанная', 'на', 'взаимном', 'доверии', 'работа', 'вот', 'девиз', 'для', 'нас', 'всех', 'Русских', 'Дайте', 'Государству', 'лет', 'покоя', 'внутреннего', 'и', 'внешнего', 'и', 'вы', 'не', 'узнаете', 'нынешней', 'ииВерховная', 'власть', 'является', 'хранительницей', 'идеи', 'русского', 'государства', 'она', 'олицетворяет', 'собой', 'е', 'силу', 'и', 'цельность', 'и', 'если', 'быть', 'России', 'то', 'лишь', 'при', 'усилии', 'всех', 'сынов', 'е', 'охранять', 'оберегать', 'эту', 'Власть', 'сковавшую', 'Россию', 'и', 'оберегающую', 'е', 'от', 'распада', 'Самодержавие', 'московских', 'Царей', 'не', 'походит', 'на', 'самодержавие', 'Петра', 'точно', 'так', 'же', 'как', 'и', 'самодержавие', 'Петра', 'не', 'походит', 'на', 'самодержавие', 'Екатерины', 'Второй', 'и', 'Царя', 'Освободителя', 'Ведь', 'русское', 'государство', 'росло', 'развивалось', 'из', 'своих', 'собственных', 'русских', 'корней', 'и', 'вместе', 'с', 'ним', 'конечно', 'видоизменялась', 'и', 'развивалась', 'и', 'Верховная', 'Царская', 'Власть', 'Нельзя', 'к', 'нашим', 'русским', 'корням', 'к', 'нашему', 'русскому', 'стволу', 'прикреплять', 'какойто', 'чужой', 'чужестранный', 'цветок', 'Пусть', 'расцветет', 'наш', 'родной', 'русский', 'цвет', 'пусть', 'он', 'расцветет', 'и', 'развернется', 'под', 'влиянием', 'взаимодействия', 'Верховной', 'Власти', 'и', 'дарованного', 'Ею', 'нового', 'представительного', 'строя', 'Правительство', 'должно', 'избегать', 'лишних', 'слов', 'но', 'есть', 'слова', 'выражающие', 'чувства', 'от', 'которых', 'в', 'течение', 'столетий', 'усиленно', 'бились', 'сердца', 'русских', 'людей', 'Эти', 'чувства', 'эти', 'слова', 'должны', 'быть', 'запечатлены', 'в', 'мыслях', 'и', 'отражаться', 'в', 'делах', 'правителей', 'Слова', 'эти', 'неуклонная', 'приверженность', 'к', 'русским', 'историческим', 'началам', 'в', 'противовес', 'беспочвенному', 'социализму', 'Это', 'желание', 'это', 'страстное', 'желание', 'обновить', 'просветить', 'и', 'возвеличить', 'родину', 'в', 'противность', 'тем', 'людям', 'которые', 'хотят', 'её', 'распада'];
