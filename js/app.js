@@ -19,9 +19,7 @@ var mails = [
 
 const maxMails = 30;
 
-window.onload = function() {
-    init();
-}
+window.onload = init;
 
 function init() {
     var mailList = document.getElementsByClassName("mailbox__mail-list")[0];

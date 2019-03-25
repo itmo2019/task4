@@ -1,3 +1,16 @@
+function sendRequest(link) {
+    var xhttp = new XMLHttpRequest();
+    var res = "";
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            res = this.responseText;
+        }
+     };
+    xhttp.open("GET", link, false);
+    xhttp.send();
+    return res;
+}
+
 function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min) ) + min;
 }
@@ -25,11 +38,11 @@ function getImg() {
 }
 
 function getTitle() {
-    return "Очень новое сообщение";
+    return sendRequest("https://baconipsum.com/api/?type=all-meat&sentences=1&start-with-lorem=0&format=text");
 }
 
 function getText() {
-    return "Очень новое сообщение";
+    return sendRequest("https://baconipsum.com/api/?type=all-meat&paragraphs=5&start-with-lorem=1&format=text");
 }
 
 function generateMail() {
