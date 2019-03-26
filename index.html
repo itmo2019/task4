@@ -24,7 +24,7 @@
             </header>
             <div class="main-page">
                 <ul class="menu">
-                    <li class="write-letter">Написать
+                    <li class="write-letter" id="write-letter">Написать
                     <li class="menu-item">Входящие
                     <li class="menu-item">Отправленные
                     <li class="menu-item">Удаленные
@@ -189,7 +189,7 @@
 
             var letterMaintainance = document.getElementsByClassName("letters-maintainance")[0];
             var mailCounter = 2;
-            function mailAdd(sender, title, body) {
+            function constructMailOnPage(sender, title, body) {
 
                 var mailID = mailCounter++;
 
@@ -217,12 +217,12 @@
                 letterMaintainance.insertBefore(res, letterMaintainance.children[1]);
                 var letter = getLetter(res);
                 setTimeout(() => {
-                    letter.removeAttribute("delete");
-                    letter.setAttribute("changing", "true");
+                        letter.removeAttribute("delete");
+                        letter.setAttribute("changing", "true");
                 }, 100);
                 setTimeout(() => { 
-                    var letter = getLetter(res);
-                    letter.removeAttribute("changing");
+                        var letter = getLetter(res);
+                        letter.removeAttribute("changing");
                     }, 300);
                 mails.add(res);
             }
@@ -242,21 +242,26 @@
             });
 
             var requestsCounter = 0
-            setInterval(() => {
+            function addMail() {
                 if (mails.size < 30) {
                     var xhr = new XMLHttpRequest();
                     xhr.open('GET', `http://numbersapi.com/${requestsCounter}`, false);
                     xhr.send();
                     if (xhr.status != 200) {
-                        mailAdd("mysterious stranger", "Что говорить, когда нечего говорить?", 
+                        constructMailOnPage("mysterious stranger", "Что говорить, когда нечего говорить?", 
                             `Нет соединения. 
                             Inception - ЧБУ YouTube`);
                     } else {
-                        mailAdd("mysterious stranger", `Did ya know?.. About ${requestsCounter}`, xhr.responseText);
+                        constructMailOnPage("mysterious stranger", `Did ya know?.. About ${requestsCounter}`, xhr.responseText);
                         requestsCounter++;
                     }
                 }
-            }, 60000);
+            }
+
+            setInterval(addMail, 60000);
+
+            document.getElementsByClassName("write-letter")[0].addEventListener("click", addMail);
+            
         </script>
     </body>
 </html>
