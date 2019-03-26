@@ -41,16 +41,16 @@
 				</div>
 				<div class="letters_wrapper">
 					<div class="letters">
-						<div class="letters__top_row_footer_wrapper">
-							<div class="letters__top_row">
-								<div class="letters__top_row_option">
+						<div class="letters__options_footer_wrapper">
+							<div class="letters__options">
+								<div class="letters__option">
 									<input class="letters__check_all_checkbox" type="checkbox" onclick="checkOrUncheckAll()">
 								</div>
-								<button class="letters__top_row_option">Переслать</button>
-								<button class="letters__top_row_option" onclick="deleteChecked()">Удалить</button>
-								<button class="letters__top_row_option">Это спам!</button>
-								<button class="letters__top_row_option">Прочитано</button>
-								<button class="letters__top_row_option" onclick="newMail(false)">Получить еще одно письмо (не сбрасывает таймер)</button>
+								<button class="letters__option">Переслать</button>
+								<button class="letters__option" onclick="deleteChecked()">Удалить</button>
+								<button class="letters__option">Это спам!</button>
+								<button class="letters__option">Прочитано</button>
+								<button class="letters__option" onclick="newMail(false)">Получить еще одно письмо (не сбрасывает таймер)</button>
 							</div>
 						</div>
 						<div class="letters__separator"></div>
@@ -65,7 +65,7 @@
 							</div>
 						</div>
 						<div class="letters__separator"></div>
-						<div class="letters__top_row_footer_wrapper">
+						<div class="letters__options_footer_wrapper">
 							<div class="letters__footer">
 								<a href="#" class="letters__footer_option">Помощь и обратная связь</a>
 								<a href="#" class="letters__footer_option">Реклама</a>
@@ -76,5 +76,7 @@
 				</div>
 			</div>
 		</div>
+
+		<template id="letter_template"><div class="letters__single_letter"><div class="letters__letter_element"><input class="letters__checkbox" type="checkbox" onclick="uncheckAllCheckbox(this)"></div><div class="letters__letter_element"><img class="ya_logo" src="https://yastatic.net/mail/socialavatars/socialavatars/v4/ya-default.svg"></div><div class="letters__letter_element letters__letter_header letters__highlighted"><a href="#"></a></div><div class="letters__letter_element"><div class="bullet_unread"></div></div><div class="letters__letter_element letters__letter_header letters__letter_text letters__highlighted"><a href="#"><label for="show_article" onclick="removeHighlight(this); updateArticle(this)"></label></a></div><div class="letters__letter_element letters__letter_date"></div></div></template>
 	</body>
 </html>
