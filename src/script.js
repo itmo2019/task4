@@ -2,7 +2,7 @@ const minWordsInLetter = 100;
 const maxWordsInLetter = 200;
 const minWordsInSentence = 2;
 const maxWordsInSentence = 15;
-const messagesPerPage = 5;
+const messagesPerPage = 30;
 const opacityPerSecond = 0.005;
 
 /*
@@ -25,7 +25,9 @@ window.onload = function () {
 function markOrUnmarkAll() {
   let mainCheckbox = document.getElementById("checkbox_all").checked;
   for (let message of messages) {
-    getMessageCheckboxById(message.getId()).checked = mainCheckbox;
+    if (getMessageById(message.getId()).style.display !== "none") {
+      getMessageCheckboxById(message.getId()).checked = mainCheckbox;
+    }
   }
 }
 
@@ -66,11 +68,13 @@ function createReceiveDate() {
   return receiveDate;
 }
 
+let senderPics = ["../resources/stolipin.png", "../resources/stolypin-2.png", "../resources/coat-of-arms.png"];
+
 function createSenderPic() {
   let senderPicture = document.createElement("img");
   senderPicture.classList.add("mailbox-content__message-sender-picture");
   senderPicture.setAttribute("alt", "Пётр Аркадиевич Столыпин");
-  senderPicture.setAttribute("src", "../resources/stolipin.png");
+  senderPicture.setAttribute("src", senderPics[getRandomFromRange(0, senderPics.length - 1)]);
   return senderPicture
 }
 
@@ -82,7 +86,6 @@ function createChooserBox(id) {
   chooserBoxImpl.classList.add("checkbox");
   chooserBoxImpl.setAttribute("type", "checkbox");
   chooserBoxImpl.id = chooserBoxId;
-  chooserBoxImpl.checked = document.getElementById("checkbox_all").checked;
   chooserBox.appendChild(chooserBoxImpl);
   let chooserBoxLabel = document.createElement("label");
   chooserBoxLabel.classList.add("checkbox__label");
@@ -172,7 +175,7 @@ function Letter(id) {
   this.id = id;
   let body = generateLetter();
   createMessage(id, body);
-  getMessageCheckboxById(this.id).checked = document.getElementById("checkbox_all").checked;
+  getMessageCheckboxById(this.id).checked = false;
 }
 
 function newMail() {
@@ -181,7 +184,9 @@ function newMail() {
   messages.add(message);
   if (messages.size > messagesPerPage) {
     getMessageById(Array.from(messages)[messages.size - messagesPerPage - 1].getId()).style.display = "none";
+    getMessageCheckboxById(Array.from(messages)[messages.size - messagesPerPage - 1].getId()).checked = false;
   }
+  document.getElementById("checkbox_all").checked = false;
 }
 
 function removeLetters() {
@@ -220,6 +225,7 @@ function removeLetters() {
     }
   }
   let intervalId = setInterval(changeOpacity, 5);
+  document.getElementById("checkbox_all").checked = false;
 }
 
 let citations = ['Им', 'нужны', 'великие', 'потрясения', 'нам', 'нужна', 'великая', 'Россия', 'Родина', 'требует', 'себе', 'служения', 'настолько', 'жертвенно', 'чистого', 'что', 'малейшая', 'мысль', 'о', 'личной', 'выгоде', 'омрачает', 'душу', 'и', 'парализует', 'работу', 'Каждое', 'утро', 'когда', 'я', 'просыпаюсь', 'и', 'творю', 'молитву', 'я', 'смотрю', 'на', 'предстоящий', 'день', 'как', 'на', 'последний', 'в', 'жизни', 'и', 'готовлюсь', 'выполнить', 'все', 'свои', 'обязанности', 'уже', 'устремляя', 'взор', 'в', 'вечность', 'А', 'вечером', 'когда', 'я', 'опять', 'возвращаюсь', 'в', 'свою', 'комнату', 'то', 'говорю', 'себе', 'что', 'должен', 'благодарить', 'Бога', 'за', 'лишний', 'дарованный', 'мне', 'в', 'жизни', 'день', 'Это', 'единственное', 'следствие', 'моего', 'постоянного', 'сознания', 'близости', 'смерти', 'как', 'расплата', 'за', 'свои', 'убеждения', 'И', 'порой', 'я', 'ясно', 'чувствую', 'что', 'должен', 'наступить', 'день', 'когда', 'замысел', 'убийцы', 'наконец', 'удастся', 'На', 'очереди', 'главная', 'наша', 'задача', 'укрепить', 'низы', 'В', 'них', 'вся', 'сила', 'страны', 'Их', 'более', 'миллионов', 'и', 'будут', 'здоровы', 'и', 'крепки', 'корни', 'у', 'государства', 'поверьте', 'и', 'слова', 'Русского', 'Правительства', 'совсем', 'иначе', 'зазвучат', 'перед', 'Европой', 'и', 'перед', 'целым', 'миром', 'Дружная', 'общая', 'основанная', 'на', 'взаимном', 'доверии', 'работа', 'вот', 'девиз', 'для', 'нас', 'всех', 'Русских', 'Дайте', 'Государству', 'лет', 'покоя', 'внутреннего', 'и', 'внешнего', 'и', 'вы', 'не', 'узнаете', 'нынешней', 'ииВерховная', 'власть', 'является', 'хранительницей', 'идеи', 'русского', 'государства', 'она', 'олицетворяет', 'собой', 'е', 'силу', 'и', 'цельность', 'и', 'если', 'быть', 'России', 'то', 'лишь', 'при', 'усилии', 'всех', 'сынов', 'е', 'охранять', 'оберегать', 'эту', 'Власть', 'сковавшую', 'Россию', 'и', 'оберегающую', 'е', 'от', 'распада', 'Самодержавие', 'московских', 'Царей', 'не', 'походит', 'на', 'самодержавие', 'Петра', 'точно', 'так', 'же', 'как', 'и', 'самодержавие', 'Петра', 'не', 'походит', 'на', 'самодержавие', 'Екатерины', 'Второй', 'и', 'Царя', 'Освободителя', 'Ведь', 'русское', 'государство', 'росло', 'развивалось', 'из', 'своих', 'собственных', 'русских', 'корней', 'и', 'вместе', 'с', 'ним', 'конечно', 'видоизменялась', 'и', 'развивалась', 'и', 'Верховная', 'Царская', 'Власть', 'Нельзя', 'к', 'нашим', 'русским', 'корням', 'к', 'нашему', 'русскому', 'стволу', 'прикреплять', 'какойто', 'чужой', 'чужестранный', 'цветок', 'Пусть', 'расцветет', 'наш', 'родной', 'русский', 'цвет', 'пусть', 'он', 'расцветет', 'и', 'развернется', 'под', 'влиянием', 'взаимодействия', 'Верховной', 'Власти', 'и', 'дарованного', 'Ею', 'нового', 'представительного', 'строя', 'Правительство', 'должно', 'избегать', 'лишних', 'слов', 'но', 'есть', 'слова', 'выражающие', 'чувства', 'от', 'которых', 'в', 'течение', 'столетий', 'усиленно', 'бились', 'сердца', 'русских', 'людей', 'Эти', 'чувства', 'эти', 'слова', 'должны', 'быть', 'запечатлены', 'в', 'мыслях', 'и', 'отражаться', 'в', 'делах', 'правителей', 'Слова', 'эти', 'неуклонная', 'приверженность', 'к', 'русским', 'историческим', 'началам', 'в', 'противовес', 'беспочвенному', 'социализму', 'Это', 'желание', 'это', 'страстное', 'желание', 'обновить', 'просветить', 'и', 'возвеличить', 'родину', 'в', 'противность', 'тем', 'людям', 'которые', 'хотят', 'её', 'распада'];
