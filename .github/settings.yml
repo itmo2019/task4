@@ -1,0 +1,7 @@
+labels:
+  - name: accepted
+    color: 049f10
+  - name: deadline-expired
+    color: fcd2c7
+  - name: half-accepted
+    color: ffe100
