@@ -11,6 +11,7 @@ function selectAll() {
     for (var i = 1 + (curPage - 1) * MAX_MAIL_LIST_SIZE; i < size; i++) {
         checkboxes[i].checked = checkAll.checked;
     }
+
 }
 
 function _selectMain(checkbox) {
@@ -76,6 +77,21 @@ function LetterGenerator() {
         return authorLogoImg
     }
 
+    function _getAuthorLogoDiv(authorName) {
+        var authorLogoDiv = document.createElement('div');
+        authorLogoDiv.className = 'letter__author_no-logo';
+        authorLogoDiv.textContent = authorName[0];
+        return authorLogoDiv;
+    }
+
+    function _getAuthorLogo(authorName) {
+        if (authorLogoNames[authorName] === undefined) {
+            return _getAuthorLogoDiv(authorName)
+        } else {
+            return _getAuthorLogoImg(authorName)
+        }
+    }
+
     function _getDate() {
         return _getInt(1, 29) + ' ' + months[_getInt(0, 12)];
     }
@@ -129,12 +145,11 @@ function LetterGenerator() {
         var letterBody = document.createElement('div');
         letterBody.className = 'letter__body';
         letterBody.textContent = res;
-        letterBody.hidden = true;
         return letterBody;
     }
 
     function _getTopicName() {
-        return topicNames[_getInt(0, topicNames.length)];
+        return document.createTextNode(topicNames[_getInt(0, topicNames.length)]);
     }
 
     this.getLetter = function () {
@@ -143,10 +158,9 @@ function LetterGenerator() {
         letter.className = 'letter letter-box__letter letter_unread';
         letter.innerHTML = defaultLetter;
         letter.querySelector('.letter__author-name').textContent = authorName;
-        letter.querySelector('.letter__author').appendChild(_getAuthorLogoImg(authorName));
+        letter.querySelector('.letter__author').appendChild(_getAuthorLogo(authorName));
         letter.querySelector('.letter__date').textContent = _getDate();
-        var topicName = document.createTextNode(_getTopicName());
-        letter.querySelector('.letter__topic').appendChild(topicName);
+        letter.querySelector('.letter__topic').appendChild(_getTopicName());
         letter.querySelector('.letter__topic').appendChild(_getLetterBody());
         return letter;
     };
