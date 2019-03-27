@@ -2,27 +2,12 @@ const MIN_TIMER_ADD_MAIL = 300000;
 const MAX_TIMER_ADD_MAIL = 600001;
 const MAX_MAIL_LIST_SIZE = 30;
 
-let defaultLetter =
-        `<ul class="letter__line">
-        <li class="check">
-            <label><input class="check__input" type="checkbox">
-            <span class="check__box"></span>
-        </label></li>
-        <li class="letter__author"></li>
-        <li class="letter__author-name"></li>
-        <li class="letter__read-mark letter__read-mark_unread"></li>
-        <li class="letter__topic"></li>
-        <li class="letter__date"></li>
-     </ul>
-     <a class="letter__open-letter"></a>
-     <hr class="letter-box__hr">`,
-
-    curPage = 1;
+let curPage = 1;
 
 function selectAll() {
-    let checkboxes = document.body.querySelectorAll('.check__input');
-    let checkAll = checkboxes[0];
-    let size = Math.min(checkboxes.length, curPage * MAX_MAIL_LIST_SIZE + 1);
+    var checkboxes = document.body.querySelectorAll('.check__input'),
+        checkAll = checkboxes[0],
+        size = Math.min(checkboxes.length, curPage * MAX_MAIL_LIST_SIZE + 1);
     for (var i = 1 + (curPage - 1) * MAX_MAIL_LIST_SIZE; i < size; i++) {
         checkboxes[i].checked = checkAll.checked;
     }
@@ -40,7 +25,22 @@ function selectLetter(event) {
 }
 
 function LetterGenerator() {
-    var months = ['янв', 'фев', 'мар', 'апр', 'май', 'июн', 'июл', 'авг', 'сен', 'окт', 'ноя', 'дек'],
+    var defaultLetter =
+            `<ul class="letter__line">
+                 <li class="check">
+                     <label><input class="check__input" type="checkbox">
+                     <span class="check__box"></span>
+                 </label></li>
+                 <li class="letter__author"></li>
+                 <li class="letter__author-name"></li>
+                 <li class="letter__read-mark letter__read-mark_unread"></li>
+                 <li class="letter__topic"></li>
+                 <li class="letter__date"></li>
+             </ul>
+             <a class="letter__open-letter"></a>
+             <hr class="letter-box__hr">`,
+
+        months = ['янв', 'фев', 'мар', 'апр', 'май', 'июн', 'июл', 'авг', 'сен', 'окт', 'ноя', 'дек'],
         nounWords = ['собака', 'кошка', 'казимаки', 'казинаки', 'пивасик', 'Чебурашка', 'крокодил Гена',
             'Шапокляк', 'устрица', 'человечек', 'Чика Чика'],
         verbWords = ['сделал', 'съел', 'упал', 'изучил', 'погладил', 'узнал', 'обидел', 'зацепил',
@@ -53,6 +53,8 @@ function LetterGenerator() {
             'Королева of England': 'england-queen',
             'UberProductionTV': 'uber',
         },
+        topicNames = ['В Яндексе разработан новый мем', 'Город охватила страшная эпидемия',
+            'Обновление генератора писем', 'Случайный прохожий спас маленькую девочку'],
 
         SENTENCE_COUNT_MIN = 5,
         SENTENCE_COUNT_MAX = 10,
@@ -116,14 +118,22 @@ function LetterGenerator() {
         return res + _getSign();
     }
 
-    function _getBody() {
+    function _getLetterBody() {
         var sentenceCount = _getInt(SENTENCE_COUNT_MIN, SENTENCE_COUNT_MAX),
             res = '';
         while (sentenceCount-- > 0) {
             res += _getSentence();
             res += ' ';
         }
-        return res;
+        var letterBody = document.createElement('div');
+        letterBody.className = 'letter__body';
+        letterBody.textContent = res;
+        letterBody.hidden = true;
+        return letterBody;
+    }
+
+    function _getTopicName() {
+        return topicNames[_getInt(0, topicNames.length)];
     }
 
     this.getLetter = function () {
@@ -134,7 +144,9 @@ function LetterGenerator() {
         letter.querySelector('.letter__author-name').textContent = authorName;
         letter.querySelector('.letter__author').appendChild(_getAuthorLogoImg(authorName));
         letter.querySelector('.letter__date').textContent = _getDate();
-        letter.querySelector('.letter__topic').textContent = _getBody();
+        var topicName = document.createTextNode(_getTopicName());
+        letter.querySelector('.letter__topic').appendChild(topicName);
+        letter.querySelector('.letter__topic').appendChild(_getLetterBody());
         return letter;
     };
 }
@@ -250,7 +262,7 @@ setTimeout(function run() {
 
 function openLetterBody(letter) {
     var letterDialog = document.querySelector('.letter-dialog');
-    var letterBody = letter.querySelector('.letter__topic');
+    var letterBody = letter.querySelector('.letter__body');
 
     letterDialog.querySelector('.letter-dialog__content').innerHTML = letterBody.textContent;
     letterDialog.style.zIndex = '2';
