@@ -3,31 +3,21 @@ const MAX_TIMER_ADD_MAIL = 600001;
 const MAX_MAIL_LIST_SIZE = 30;
 
 let defaultLetter =
-    `<ul class="letter__line">
+        `<ul class="letter__line">
         <li class="check">
             <label><input class="check__input" type="checkbox">
             <span class="check__box"></span>
         </label></li>
-        <li class="letter__author"><img class="letter__author_has-logo" src="images/ya-default.svg" alt="Я"></li>
-        <li class="letter__author-name">Яндекс Мемер №</li>
+        <li class="letter__author"></li>
+        <li class="letter__author-name"></li>
         <li class="letter__read-mark letter__read-mark_unread"></li>
-        <li class="letter__topic">Свежий мем из Яндекса! Успей орнуть первым.</li>
-        <li class="letter__date">16 фев</li>
+        <li class="letter__topic"></li>
+        <li class="letter__date"></li>
      </ul>
      <a class="letter__open-letter"></a>
-     <hr class="letter-box__hr">`;
+     <hr class="letter-box__hr">`,
 
-let memerId = 0;
-let curPage = 1;
-let months = [ 'янв', 'фев', 'мар', 'апр', 'май', 'июн', 'июл', 'авu', 'сен', 'окт', 'ноя', 'дек' ];
-
-var nounWords = [ 'собака', 'кошка', 'казимаки', 'казинаки', 'пивасик', 'Чебурашка', 'крокодил Гена', 'Шапокляк',
-    'устрица', 'человечек', 'Чика Чика'];
-var verbWords = [ 'сделал', 'съел', 'упал', 'изучил', 'погладил', 'узнал', 'обидел', 'зацепил',
-    'обманул', 'ударил'];
-var sign = [ '.', '?', '!', '!?'];
-var delim = [ 'a', 'но', 'однако', 'даже', 'хотя', 'к сожалению' ];
-
+    curPage = 1;
 
 function selectAll() {
     let checkboxes = document.body.querySelectorAll('.check__input');
@@ -49,69 +39,112 @@ function selectLetter(event) {
     _selectMain(event.target);
 }
 
-function _getDate() {
-    return _getInt(1, 29) + ' ' + months[_getInt(0, 12)];
-}
+function LetterGenerator() {
+    var months = ['янв', 'фев', 'мар', 'апр', 'май', 'июн', 'июл', 'авг', 'сен', 'окт', 'ноя', 'дек'],
+        nounWords = ['собака', 'кошка', 'казимаки', 'казинаки', 'пивасик', 'Чебурашка', 'крокодил Гена',
+            'Шапокляк', 'устрица', 'человечек', 'Чика Чика'],
+        verbWords = ['сделал', 'съел', 'упал', 'изучил', 'погладил', 'узнал', 'обидел', 'зацепил',
+            'обманул', 'ударил'],
+        sign = ['.', '?', '!', '!?'],
+        separators = ['a', 'но', 'однако', 'даже', 'хотя', 'к сожалению'],
+        authorLogoNames = {
+            'Володя Путин': 'putin',
+            'Ярослав Балашов': 'ya',
+            'Королева of England': 'england-queen',
+            'UberProductionTV': 'uber',
+        },
 
-function _getWord(type) {
-    if (type === 1) {
-        return nounWords[_getInt(0, nounWords.length)];
-    } else {
-        return verbWords[_getInt(0, verbWords.length)];
+        SENTENCE_COUNT_MIN = 5,
+        SENTENCE_COUNT_MAX = 10,
+        WORD_COUNT_MIN = 5,
+        WORD_COUNT_MAX = 10;
+
+    function _getAuthorName() {
+        var authorNames = Object.keys(authorLogoNames);
+        return authorNames[_getInt(0, authorNames.length)]
     }
-}
 
-function _getDelim() {
-    return delim[_getInt(0, delim.length)];
-}
+    function _getAuthorLogoImg(authorName) {
+        var authorLogoImg = document.createElement('img'),
+            authorLogoName = authorLogoNames[authorName];
+        authorLogoImg.className = 'letter__author_has-logo';
+        authorLogoImg.src = `images/authors-logo/${authorLogoName}-logo.png`;
+        authorLogoImg.alt = authorLogoName;
+        return authorLogoImg
+    }
 
-function _getFirstWord(type) {
-    var str = _getWord(type);
-    return str[0].toUpperCase() + str.slice(1);
-}
+    function _getDate() {
+        return _getInt(1, 29) + ' ' + months[_getInt(0, 12)];
+    }
 
-function _getSentence() {
-    var wordCount = _getInt(5, 10);
-    var res = _getFirstWord(1) + ' ';
-    var type = 0;
-    while (wordCount-- > 0) {
-        res += _getWord(type);
-        if (wordCount !== 0) {
-            if (type === 0) {
-                res += ', ' + _getDelim() + ' ';
-            } else {
-                res += ' ';
-            }
+    function _getSign() {
+        return sign[_getInt(0, sign.length)]
+    }
+
+    function _getSeparator() {
+        return separators[_getInt(0, separators.length)];
+    }
+
+    function _getWord(type) {
+        if (type === 1) {
+            return nounWords[_getInt(0, nounWords.length)];
+        } else {
+            return verbWords[_getInt(0, verbWords.length)];
         }
-        type = 1 - type;
     }
-    return res + sign[_getInt(0, sign.length)];
+
+    function _getFirstWord(type) {
+        var str = _getWord(type);
+        return str[0].toUpperCase() + str.slice(1);
+    }
+
+    function _getSentence() {
+        var wordCount = _getInt(WORD_COUNT_MIN, WORD_COUNT_MAX),
+            res = _getFirstWord(1) + ' ',
+            type = 0;
+        while (wordCount-- > 0) {
+            res += _getWord(type);
+            if (wordCount !== 0) {
+                if (type === 0) {
+                    res += ', ' + _getSeparator() + ' ';
+                } else {
+                    res += ' ';
+                }
+            }
+            type = 1 - type;
+        }
+        return res + _getSign();
+    }
+
+    function _getBody() {
+        var sentenceCount = _getInt(SENTENCE_COUNT_MIN, SENTENCE_COUNT_MAX),
+            res = '';
+        while (sentenceCount-- > 0) {
+            res += _getSentence();
+            res += ' ';
+        }
+        return res;
+    }
+
+    this.getLetter = function () {
+        var letter = document.createElement('li'),
+            authorName = _getAuthorName();
+        letter.className = 'letter letter-box__letter letter_unread';
+        letter.innerHTML = defaultLetter;
+        letter.querySelector('.letter__author-name').textContent = authorName;
+        letter.querySelector('.letter__author').appendChild(_getAuthorLogoImg(authorName));
+        letter.querySelector('.letter__date').textContent = _getDate();
+        letter.querySelector('.letter__topic').textContent = _getBody();
+        return letter;
+    };
 }
 
-function _getBody() {
-    var sentenceCount = _getInt(5, 10);
-    var res = '';
-    while (sentenceCount-- > 0) {
-        res += _getSentence();
-        res += ' ';
-    }
-    return res;
-}
-
-function _getLetter() {
-    var letter = document.createElement('li');
-    letter.className = 'letter letter-box__letter letter_unread';
-    letter.innerHTML = defaultLetter;
-    letter.querySelector('.letter__author-name').textContent += memerId++;
-    letter.querySelector('.letter__date').textContent = _getDate();
-    letter.querySelector('.letter__topic').textContent = _getBody();
-    return letter;
-}
+var letterGenerator = new LetterGenerator();
 
 function newMail() {
-    var letters = document.getElementById('letter-box__letters');
-    var newLetter = _getLetter();
-    var mails = letters.children;
+    var letters = document.getElementById('letter-box__letters'),
+        newLetter = letterGenerator.getLetter(),
+        mails = letters.children;
     if (curPage * MAX_MAIL_LIST_SIZE <= mails.length) {
         mails[curPage * MAX_MAIL_LIST_SIZE - 1].hidden = true;
     }
