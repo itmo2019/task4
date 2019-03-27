@@ -5,6 +5,12 @@ const maxWordsInSentence = 15;
 const messagesPerPage = 30;
 const opacityPerSecond = 0.005;
 
+const timeWindowSize = minutesToMillis(5);
+const minNewLetterTiming = 10;
+const maxNewLetterTiming = minutesToMillis(10);
+
+var lastTimingWasLessThanWindowSize = false;
+
 /*
 Монотонно неуменьшающееся время системы, логические часы.
 Каждое получение сообщения увеличивает его.
@@ -12,14 +18,16 @@ const opacityPerSecond = 0.005;
 let lamportClock = 0;
 let messages = new Set();
 
+function minutesToMillis(minutes) {
+  return 1000 * 60 * minutes
+}
+
 function getRandomFromRange(min, max) {
   return Math.round(Math.random() * (max - min) + min);
 }
 
-let messagesTimeout = getRandomFromRange(60000 * 5, 60000 * 10);
-
 window.onload = function () {
-  setTimeout(newLetterArrivedEvent, messagesTimeout);
+  setTimeout(newLetterArrivedEvent, getRandomFromRange(minNewLetterTiming, maxNewLetterTiming));
 };
 
 function markOrUnmarkAll() {
@@ -33,7 +41,18 @@ function markOrUnmarkAll() {
 
 function newLetterArrivedEvent() {
   newMail();
-  setTimeout(newLetterArrivedEvent, messagesTimeout)
+  let randomTiming = getRandomFromRange(minNewLetterTiming, maxNewLetterTiming);
+  if (randomTiming < timeWindowSize) {
+    if (lastTimingWasLessThanWindowSize) {
+      lastTimingWasLessThanWindowSize = false;
+      randomTiming = getRandomFromRange(timeWindowSize, maxNewLetterTiming);
+    } else {
+      lastTimingWasLessThanWindowSize = true;
+    }
+  } else {
+    lastTimingWasLessThanWindowSize = false;
+  }
+  setTimeout(newLetterArrivedEvent, randomTiming)
 }
 
 function removeAllSelection(checkbox) {
