@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>ya-default</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard-3-Copy" transform="translate(-114.000000, -1238.000000)">
+            <g id="ya-default" transform="translate(114.000000, 1238.000000)">
+                <circle id="Oval-9" fill="#FF3333" cx="15" cy="15" r="15"></circle>
+                <path d="M17.1572727,15.1477273 L16.0254545,15.1477273 C14.3277273,15.1477273 12.7245455,13.9686364 12.7245455,10.9504545 C12.7245455,7.83818182 14.2804545,6.565 15.8368182,6.565 L17.1572727,6.565 L17.1572727,15.1477273 Z M18.8331818,5 L15.9090909,5 C13.0322727,5 10.6022727,7.08363636 10.6022727,11.1863636 C10.6022727,13.6386364 11.7813636,15.4777273 13.8563636,16.3736364 L9.54545455,23.6363636 L11.8181818,23.6363636 L15.8368182,16.7040909 L17.11,16.7040909 L17.11,23.6363636 L19.0909091,23.6363636 L19.0909091,5.19727273 C19.0909091,5.05590909 19.0218182,5 18.8331818,5 L18.8331818,5 Z" id="Fill-154" fill="#FFFFFF"></path>
+            </g>
+        </g>
+    </g>
+</svg>

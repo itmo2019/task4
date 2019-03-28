@@ -10,88 +10,89 @@
     <div class="content__page_wrapper">
         <header class="content__header">
             <div class="logo content_inline content__ya-services-popup">
-                <img src="static/menu-512.png" width="20" height="14" alt="">
+                <img src="static/burger-menu.png" width="25" height="29" alt="">
             </div>
-            <div class="logo content_inline content__ya-mail-logo">
-                <span class="logo__logo-ya">Яндекс</span>
-                <span class="logo__logo-mail">Почта</span>
-            </div>
+            <img class="content__ya-mail-logo" src="static/ya-mail-logo.png" width="153" height="31" alt="">
+            <input class="content__top-search" type="search" placeholder="Поиск">
         </header>
-        <input class="content__top-search" type="search" placeholder="Поиск">
         <div class="actions-bar content__actions-bar">
             <ul class="actions-bar__nav-bar">
-                <li class="actions-bar__write-message-action"><a href="">Написать</a></li>
-                <li><a href="">Входящие</a></li>
-                <li><a href="">Отправленные</a></li>    
-                <li><a href="">Удаленные</a></li>
-                <li><a href="">Спам</a></li>
-                <li><a href="">Черновики</a></li>
-                <li><a href="">Создать папку</a></li>
+                <li class="actions-bar__write-message-action content_text-overflow_hidden"><a href="">Написать</a></li>
+                <li class="content_text-overflow_hidden"><a href="">Входящие</a></li>
+                <li class="content_text-overflow_hidden"><a href="">Отправленные</a></li>
+                <li class="content_text-overflow_hidden"><a href="">Удаленные</a></li>
+                <li class="content_text-overflow_hidden"><a href="">Спам</a></li>
+                <li class="content_text-overflow_hidden"><a href="">Черновики</a></li>
+                <li class="content_text-overflow_hidden"><a href="">Создать папку</a></li>
             </ul>
         </div>
         <div class="mail-box content__mail-box">
             <div class="mail-box__actions">
-                <input class="mail-box__select-all" type="checkbox">
                 <ul>
-                    <li class="mail-box__get-message">Получить письмо</li>
-                    <li class="mail-box__resend">Переслать</li>
-                    <li class="mail-box__delete">Удалить</li>
-                    <li class="mail-box__strike">Это спам!</li>
-                    <li class="mail-box__mark-as-read">Прочитано</li>
+                    <li class="mail-box__action mail-box__select-all">
+                        <input class="content_checkbox" type="checkbox">
+                    </li>
+                    <li class="mail-box__action content_text-overflow_hidden">Переслать</li>
+                    <li class="mail-box__action mail-box__delete content_text-overflow_hidden">Удалить</li>
+                    <li class="mail-box__action content_text-overflow_hidden">Это спам!</li>
+                    <li class="mail-box__action content_text-overflow_hidden">Прочитано</li>
+                    <li class="mail-box__get-message content_text-overflow_hidden">Получить письмо</li>
                 </ul>
             </div>
             <div class="mail-box-content">
                 <input type="checkbox" id="first-message-click"></input>
                 <div class="article mail-box-content__article">
                     <label class="article__cross" for="first-message-click">X</label>
-                    <img class="article__moon" src="/static/moon.png" width="150" height="150" alt="">
+                    <img class="article__moon" src="static/moon.png" width="150" height="150" alt="moon">
                     После Солнца Луна является самым заметным космическим телом на небосводе, поэтому люди всегда проявляли к ней повышенный интерес. Сегодня ночное светило – объект самого пристального изучения.
                     Благодаря исследованиям астрономов мы знаем о нем практически всё, но некоторые люди до сих пор задаются вопросом, что такое Луна – спутник, звезда или планета. Чтобы дать однозначный ответ, необходимо, прежде всего, разобраться в понятиях этих небесных тел.
-                    Звездами во Вселенной называют массивные газовые шары, которые излучают свет и удерживают равновесие благодаря силам собственного притяжения. В их недрах происходят реакции термоядерного синтеза, а температура измеряется миллионами кельвинов. 
+                    Звездами во Вселенной называют массивные газовые шары, которые излучают свет и удерживают равновесие благодаря силам собственного притяжения. В их недрах происходят реакции термоядерного синтеза, а температура измеряется миллионами кельвинов.
                     В большинстве случаев звезды имеют большой диаметр и высокую массу. Их химический состав представляет собой набор легких элементов, которые обычно имеют вес меньше гелия.
                 </div>
                 <ul class="messages-list">
                     <li class="message-snippet messages-list__message-snippet messages-snippet_bold">
-                        <input class="message-snippet__message-tick" type="checkbox">
+                        <input class="message-snippet__part message-snippet__message-tick content_checkbox" type="checkbox">
                         <label class="first-message-label" for="first-message-click">
-                            <img class="message-snippet__avatar" width="30" height="30" alt="">
-                            <span class="message-snippet__sender-name">Яндекс.Почта</span>
-                            <div class="message-snippet__message-item"></div>
-                            <span class="message-snippet__message-topic">Доступ к аккаунту восстановлен</span>
-                            <time class="message-snippet__message-time" datetime="2018-08-06">6 авг</time>
+                            <img class="message-snippet__part message-snippet__avatar" src="static/ya-default.svg" width="30" height="30" alt="">
+                            <span class="message-snippet__part message-snippet__sender-name content_text-overflow_hidden">Яндекс.Почта</span>
+                            <div class="message-snippet__part message-snippet__message-item"></div>
+                            <span class="message-snippet__part message-snippet__message-topic content_text-overflow_hidden">Доступ к аккаунту восстановлен</span>
+                            <time class="message-snippet__part message-snippet__message-time content_text-overflow_hidden" datetime="2018-08-06">6 авг</time>
                         </label>
                     </li>
                     <li class="message-snippet messages-list__message-snippet messages-snippet_bold">
-                        <input class="message-snippet__message-tick" type="checkbox">
-                        <img class="message-snippet__avatar" width="30" height="30" alt="">
-                        <span class="message-snippet__sender-name">Яндекс.Почта</span>
-                        <div class="message-snippet__message-item"></div>
-                        <span class="message-snippet__message-topic">Доступ к аккаунту восстановлен</span>
-                        <time class="message-snippet__message-time" datetime="2018-07-06">6 июл</time>
+                        <input class="message-snippet__part message-snippet__message-tick content_checkbox" type="checkbox">
+                        <img class="message-snippet__part message-snippet__avatar" src="static/ya-default.svg" width="30" height="30" alt="">
+                        <span class="message-snippet__part message-snippet__sender-name content_text-overflow_hidden">Яндекс.Почта</span>
+                        <div class="message-snippet__part message-snippet__message-item"></div>
+                        <span class="message-snippet__part message-snippet__message-topic content_text-overflow_hidden">Доступ к аккаунту восстановлен</span>
+                        <time class="message-snippet__part message-snippet__message-time content_text-overflow_hidden" datetime="2018-07-06">6 июл</time>
                     </li>
                     <li class="message-snippet messages-list__message-snippet">
-                        <input class="message-snippet__message-tick" type="checkbox">
-                        <img class="message-snippet__avatar" width="30" height="30" alt="">
-                        <span class="message-snippet__sender-name">Яндекс.Почта</span>
-                        <span class="message-snippet__message-topic">Доступ к аккаунту восстановлен</span>
-                        <time class="message-snippet__message-time" datetime="2018-06-06">6 июн</time>
+                        <input class="message-snippet__part message-snippet__message-tick content_checkbox" type="checkbox">
+                        <img class="message-snippet__part message-snippet__avatar" src="static/ya-default.svg" width="30" height="30" alt="">
+                        <span class="message-snippet__part message-snippet__sender-name content_text-overflow_hidden">Яндекс.Почта</span>
+                        <div class="message-snippet__part message-snippet__message-item content_visibility_hidden"></div>
+                        <span class="message-snippet__part message-snippet__message-topic content_text-overflow_hidden">Доступ к аккаунту восстановлен</span>
+                        <time class="message-snippet__part message-snippet__message-time content_text-overflow_hidden" datetime="2018-06-06">6 июн</time>
                     </li>
                     <li class="message-snippet messages-list__message-snippet">
-                        <input class="message-snippet__message-tick" type="checkbox">
-                        <img class="message-snippet__avatar" width="30" height="30" alt="">
-                        <span class="message-snippet__sender-name">Яндекс.Почта</span>
-                        <span class="message-snippet__message-topic">Доступ к аккаунту восстановлен</span>
-                        <time class="message-snippet__message-time" datetime="2018-03-06">6 мар</time>
+                        <input class="message-snippet__part message-snippet__message-tick content_checkbox" type="checkbox">
+                        <img class="message-snippet__part message-snippet__avatar" src="static/ya-default.svg" width="30" height="30" alt="">
+                        <span class="message-snippet__part message-snippet__sender-name content_text-overflow_hidden">Яндекс.Почта</span>
+                        <div class="message-snippet__part message-snippet__message-item content_visibility_hidden"></div>
+                        <span class="message-snippet__part message-snippet__message-topic content_text-overflow_hidden">Доступ к аккаунту восстановлен</span>
+                        <time class="message-snippet__part message-snippet__message-time content_text-overflow_hidden" datetime="2018-03-06">6 мар</time>
                     </li>
                 </ul>
             </div>
             <div class="content__footer-wrapper">
                 <footer>
                     <nav class="content_inline">
-                        <a href="">Помощь и обратная связь</a>
-                        <a href="">Реклама</a>
+                        <a class="content_text-overflow_hidden" href="">Помощь и обратная связь</a>
+                        <a class="content_text-overflow_hidden" href="">Реклама</a>
                     </nav>
-                    <span>
+                    <span class="content_text-overflow_hidden">
                         © 2001&mdash;2018, Яндекс
                     </span>
                 </footer>

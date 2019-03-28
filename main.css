@@ -18,32 +18,98 @@
     src: url("static/fonts/HelveticaNeueCyr-Light.otf");
 }
 
+.content__page_wrapper {
+    /* background-color: white;  */
+    width: 80%;
+    min-width: 800px;
+    min-height: 100%;
+    position: relative;
+    margin: 0 auto;
+}
+
 .content__header {
-    width: 184px;
+    display: inline-block;
+    width: 100%;
     height: 31px;
-    position: absolute;
-    left: 22px;
-    top: 12px;
+    position: relative;
+    margin-top: 13px;
+    margin-bottom: 13px;
 }
 
-.ya-mail-logo {
-    font-size: 25px;
+.content__ya-services-popup {
+    margin-left: 22px;
 }
 
-.logo__logo-ya {
-    width: 100%;
-    font-family: YandexSansBold, sans-serif;
-    margin-right: 4px;
-    margin-left: 3px;
+.content__ya-services-popup img {
+    vertical-align: bottom;
+    position: relative;
+    bottom: 3px;
 }
 
-.logo__logo-mail {
-    width: 100%;
-    font-family: YandexSansThin, sans-serif;
+.content__ya-mail-logo {
+    display: inline-block;
+    position: relative;
+    vertical-align: bottom;
+}
+
+.content__top-search {
+    display: inline-block;
+    min-width: 301px;
+    width: 38%;
+    height: 32px;
+    padding-left: 16px;
+    position: relative;
+    left: 18%;
+    opacity: 0.5;
+    font-size: 15px;
+    font-family: YandexSanThin, sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 2.13;
+    letter-spacing: normal;
+    color: var(--black);
+}
+
+.content__actions-bar {
+    display: inline-block;
+    width: 200px;
+    position: relative;
+    vertical-align: top;
+    font-family: HelveticaNeue, sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    color: #707070;
+}
+
+.content__mail-box {
+    display: inline-block;
+    min-width: 589px;
+    width: 74%;
+    min-height: 530px;
+    position: relative;
+    border-radius: 3px;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.34);
+    background-color: #ffffff;
 }
 
 .content_inline {
     display: inline;
+}
+
+.content_text-overflow_hidden {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.content_visibility_hidden {
+    visibility: hidden;
+}
+
+.content_checkbox {
+    width: 16px;
+    height: 16px;
 }
 
 ul {
@@ -60,30 +126,6 @@ html, body {
     height: 100%;
     margin: 0;
     background-color: #e5eaf0;
-}
-
-.content__page_wrapper {
-    width: 800px;
-    min-height: 100%;
-    position: relative;
-    margin: 0 auto;
-}
-
-.content__top-search {
-    width: 301px;
-    height: 32px;
-    position: absolute;
-    left: 320px;
-    top: 11px;
-    vertical-align: middle;
-    padding-left: 16px;
-
-    opacity: 0.5;
-    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.2);
-    background-color: #ffffff;
-    font: 15px YandexSanThin;
-    line-height: 2.13;
-    color: #000;
 }
 
 .actions-bar__nav-bar {
@@ -121,72 +163,53 @@ html, body {
     margin-bottom: 8px;
 }
 
-.content__actions-bar {
-    width: 200px;
-    position: absolute;
-    left: 0;
-    top: 56px;
-    font-family: HelveticaNeue, sans-serif;
-    font-size: 11px;
-    font-weight: 500;
-    color: #707070;
-}
-
-.content__mail-box {
-    width: 589px;
-    min-height: 530px;
-    position: absolute;
-    left: 191px;
-    top: 56px;
-    border-radius: 3px;
-    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.34);
-    background-color: #ffffff;
-    margin-bottom: 30px;
-}
-
 .mail-box__actions {
     position: relative;
+    padding: 0;
+    margin: 0;
     width: 100%;
     height: 37px;
+    line-height: 37px;
+    vertical-align: middle;
     font-family: HelveticaNeue, sans-serif;
     font-size: 13px;
     font-weight: 500;
     color: #cccccc;
 }
 
-.mail-box__actions * {
-    position: absolute;
-    top: 11px;
-}
-
 .mail-box__actions ul {
-    position: unset;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    margin-left: 0;
     cursor: pointer;
 }
 
 .mail-box__select-all {
-    left: 20px;
+    display: inline-block;
+    height: 100%;
+    width: 30px;
+    margin-left: 20px;
 }
 
-.mail-box__resend {
-    left: 56px;
+.mail-box__select-all input {
+    height: 100%;
+    margin: 0;
 }
 
-.mail-box__delete {
-    left: 150px;
-}
-
-.mail-box__strike {
-    left: 228px;
-}
-
-.mail-box__mark-as-read {
-    left: 315px;
+.mail-box__action {
+    display: inline-block;
+    position: relative;
+    width: fit-content;
+    max-width: 85px;
+    margin-left: 20px;
 }
 
 .mail-box-content {
     width: 100%;
-    min-height: 463px;
+    min-height: 456px;
+    height: fit-content;
     border-top: solid 1px #e2e2e2;
     border-bottom: solid 1px #e2e2e2;
 }
@@ -199,107 +222,62 @@ html, body {
 .messages-list__message-snippet {
     position: relative;
     height: 37px;
+    line-height: 37px;
+    vertical-align: middle;
 
     font: 13px HelveticaNeue;
     color: #000;
     border-bottom: solid 1px #e2e2e2;
 }
 
-.messages-list__message-snippet_deleted {
-    animation: deleting 500ms ease-in forwards !important;
-}
-
-@keyframes deleting {
-    from {
-        opacity: 1;
-        height: 37px;
-    }
-    75% {
-        transform: translateX(100%);
-        opacity: 0;
-        height: 37px;
-    }
-    to {
-        transform: translateX(100%);
-        opacity: 0;
-        height: 0;
-        border: 0;
-    }
-}
-
-.message_snippet_added {
-    animation: adding 500ms ease-in;
-}
-
-@keyframes adding {
-    from {
-        height: 0;
-        opacity: 0;
-    }
-    50% {
-        height: 37px;
-        opacity: 0;
-    }
-    to {
-        height: 37px;
-        opacity: 1;
-    }
-}
-
-.mail-box__get-message {
-    position: absolute;
-    right: 20px;
-}
-
 .messages-snippet_bold {
     font-weight: bold;
 }
 
-.messages-list__message-snippet * {
-    display: inline;
-    position: absolute;
-    top: 12px;
+.message-snippet__part {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 37px;
+    height: 37px;
 }
 
 .message-snippet__message-tick {
-    left: 20px;
+    margin: 0;
+    margin-left: 20px;
 }
 
 .message-snippet__avatar {
+    margin-left: 10px;
+    margin-right: 10px;
     width: 30px;
     height: 30px;
-    left: 46px;
-    top: 4px;
-    background-image: url(//yastatic.net/mail/socialavatars/socialavatars/v4/ya-default.svg);
     border-radius: 15px;
 }
 
 .message-snippet__sender-name {
-    left: 86px;
-    max-width: 170px;
-    max-height: 16px;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    width: 26%;
 }
 
 .message-snippet__message-item {
+    margin-left: 15px;
+    margin-right: 10px;
     width: 10px;
     height: 10px;
     background-color: #6287bd;
     border-radius: 10px;
-    left: 261px;
 }
 
 .message-snippet__message-topic {
-    left: 281px;
-    max-width: 250px;
-    max-height: 16px;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    width: 37%;
 }
 
 .message-snippet__message-time {
+    position: absolute;
     right: 20px;
+    float: right;
+    clear: both;
+    width: fit-content;
+    max-width: 60px;
     text-align: right;
     color: #9b9b9b;
     font-weight: normal;
@@ -312,25 +290,25 @@ html, body {
 }
 
 footer {
-    width: 345px;
-    height: 12px;
-    position: absolute;
-    right: 20px;
-    bottom: 10px;
+    text-align: right;
     font: 11px HelveticaNeueLight;
     color: #9b9b9b;
 }
 
 footer nav a, footer span {
-    margin-left: 15px;
+    display: inline-block;
+    width: fit-content;
+    max-width: 150px;
+    margin-right: 20px;
+    line-height: 30px;
+    vertical-align: middle;
 }
 
 .mail-box-content__article {
-    box-sizing: border-box;
-    width: 100%;    
-    min-height: 463px;
     position: absolute;
-    top: 51px;
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 455px;
     background-color: white;
     z-index: 1;
     font-family: sans-serif;
@@ -375,4 +353,54 @@ footer nav a, footer span {
 
 .first-message-label {
     position: unset;
+}
+
+.mail-box__get-message {
+    float: right;
+    margin-right: 20px;
+}
+
+/* animation */
+
+.message_snippet_added {
+    animation: adding 500ms ease-in;
+}
+
+@keyframes adding {
+    from {
+        height: 0;
+        opacity: 0;
+    }
+    50% {
+        height: 37px;
+        opacity: 0;
+    }
+    to {
+        height: 37px;
+        opacity: 1;
+    }
+}
+
+.messages-list__message-snippet_deleted {
+    animation: deleting 500ms ease-in forwards !important;
+}
+
+@keyframes deleting {
+    from {
+        opacity: 1;
+        height: 38px;
+        box-sizing: border-box;
+    }
+    75% {
+        transform: translateX(100%);
+        opacity: 0;
+        height: 38px;
+        box-sizing: border-box;
+    }
+    to {
+        transform: translateX(100%);
+        opacity: 0;
+        height: 0;
+        border: 0;
+    }
 }

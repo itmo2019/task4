@@ -2,11 +2,11 @@ clear = function(deletedMessages) {
     deletedMessages.forEach(
     function(currentValue, currentIndex, listObj) {
         currentValue.remove();
-    }); 
+    });
 }
 
 var deleteAction = document.getElementsByClassName("mail-box__delete")[0];
-deleteAction.addEventListener("click", 
+deleteAction.addEventListener("click",
     function() {
         var selectedMessages = document.querySelectorAll(".message-snippet__message-tick:checked");
         selectedMessages.forEach(
