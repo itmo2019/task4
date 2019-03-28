@@ -19,8 +19,22 @@ function setLetter(letter, eventOnLetter){
         messageBox.style.display = "none";
         hiddenCat.style.display = "block";
         hiddenCatText.innerHTML = content;
+        setToRead(letter)
     }
 }
+function setToRead(letter) {
+    let leftSide = letter.firstElementChild;
+    let rightSide = letter.lastElementChild;
+    let readName = leftSide.lastElementChild;
+    readName.classList.remove("unread-name");
+    readName.classList.add("read-name");
+    let toDelete = rightSide.getElementsByClassName("unread-marker")[0];
+    toDelete.remove();
+    let read = rightSide.firstElementChild;
+    read.classList.remove("unread");
+    read.classList.add("read");
+}
+
 function closePage() {
     console.log(messageBox);
     console.log(hiddenCat);

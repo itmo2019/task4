@@ -150,6 +150,7 @@ body {
     margin: 0;
 }
 .message-box__element {
+    cursor: pointer;
     display: block;
     height: 40px;
     border-bottom: solid 1px #e2e2e2;
