@@ -151,7 +151,8 @@ body {
     box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.34);
     /*min-width: 800px;*/
     min-height: 500px;
-    min-width: max-content;
+    min-width: 1000px;
+    overflow: hidden;
     height: auto;
     padding-bottom: 31px;
 }
@@ -160,6 +161,7 @@ body {
     height: 40px;
     padding: 0;
     display: block;
+    position: relative;
     /*transition-property: transform, opacity, height;
     transition-duration: 1000ms, 1000ms, 1000ms;*/
 }
@@ -263,7 +265,7 @@ body {
     font-family: YandexBold;
 }
 
-.central-row__point {
+.message-block__central-row_unread .central-row__point {
     vertical-align: top;
     margin-left: 20px;
     margin-top: 15px;
@@ -271,6 +273,17 @@ body {
     width: 10px;
     height: 10px;
     background-color: #6287bd;
+    border-radius: 50%;
+}
+
+.message-block__central-row_read .central-row__point {
+    vertical-align: top;
+    margin-left: 20px;
+    margin-top: 15px;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: transparent;
     border-radius: 50%;
 }
 
@@ -403,7 +416,42 @@ body {
     transition-duration: 1s;
     transform: scaleY(1);
     opacity: 1;
+}
 
+.central-row__open-message_button {
+    position: absolute;
+    width: calc(100% - 40px);
+    right: 0;
+    height: 100%;
+    background-color: transparent;
+}
 
+.message-block__message-list {
+    visibility: visible;
+    position: relative;
+}
 
+.message-block__message-list_hidden {
+    position: absolute;
+    visibility: hidden;
+
+}
+
+.message-block__message-text {
+    display: none;
+}
+
+.message-block__message-text_visible {
+    display: block;
+    background-color: white;
+    margin: 20px;
+}
+
+.message-text__hide_button {
+    height: 32px;
+    width: 100px;
+    background-color: #6287bd;
+    color: white;
+    border: 0;
+    border-radius: 3px;
 }

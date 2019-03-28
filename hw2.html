@@ -5,23 +5,52 @@
     <title>Входящие - Яндекс.Почта</title>
     <link href="hw2.css" rel="stylesheet">
 </head>
-<body onload="sender();">
+<body onload="initSender();">
 
+<script src="jquery-3.3.1.min.js">
+    /*
+    */
+
+
+</script>
 <script>
     n = 4;
+    k = 4;
+    letterMap = new Map();
+    lettersGlobal = [];
 
-    function sender() {
+    function initSender() {
 
+        var letters
+
+        $.getJSON("./letter.json", function (json) {
+
+            letters = json;
+            lettersGlobal = json;
+            //console.log("JSON Data received, name is " + letters[0]);
+
+            letterMap.set("1", 1);
+            letterMap.set("2", 2);
+            letterMap.set("3", 3);
+            letterMap.set("4", 4);
+
+            sender(letters);
+        });
+
+
+    }
+
+    function sender(letters) {
         let r = Math.floor(Math.random() * 590 + 10);
         console.log(r + " " + n);
         setTimeout(function () {
-            sender();
+            sender(letters);
             if (n < 30) {
                 n++;
-                myScrippp();
+                k++;
+                addMessage(letters);
             }
         }, r * 1000);
-
     }
 </script>
 
@@ -39,16 +68,15 @@
     </label>
     <script>
         function deleteMessages() {
-            //document.getElementById("will-be-deleted").className = "message-block__deleted message-block__row message-block__central-row message-block_central-row-unread";
-            var checks = document.querySelectorAll(".check__regular.check__input:checked");
+            let checks = document.querySelectorAll(".check__regular.check__input:checked");
             console.log(checks.length);
-            var msgs = [];
+            let msgs = [];
             checks.forEach(function (element) {
 
                     console.log(element);
                     msgs.unshift(element.parentElement);
-                    if (!element.parentElement.parentElement.matches(".message-block__deleted")) {
 
+                    if (!element.parentElement.parentElement.matches(".message-block__deleted")) {
                         deleteMsg(element.parentElement.parentElement);
                         n -= 1;
                     }
@@ -61,34 +89,42 @@
             msg.className = "message-block__deleted message-block__row message-block__central-row message-block_central-row-unread";
         }
 
-        function addMes() {
-            var newMessage = document.createElement('label');
-            newMessage.htmlFor = "hidden-message__chb";
-            //newMessage.className = "message-block__row message-block__new-message message-block__central-row message-block__central-row_unread  flag";
+        function addMessageHtml(letterNum) {
+
+            letterMap.set("" + k, letterNum)
+
+            var newMessage = document.createElement('div');
+            //newMessage.htmlFor = "hidden-message__chb";
+            newMessage.className = "message-block__row message-block__new-message message-block__central-row message-block__central-row_unread  flag";
             newMessage.innerHTML = "\n" +
-                "            <div class=\"message-block__row message-block__new-message message-block__central-row message-block__central-row_unread  flag\">\n" +
-                "                <label class=\"check\">\n" +
+                //             "            <div class=\"message-block__row message-block__new-message message-block__central-row message-block__central-row_unread  flag\">\n" +
+                "                \n" +
+                "                <div class=\"central-row__open-message_button\" id=\"" + k + "\" onclick=\"showMessage(this.id)\"></div>" +
+                "<label class=\"check\">\n" +
                 "                    <input class=\"check__input check__regular\" type=\"checkbox\">\n" +
                 "                </label>\n" +
                 "                <div class=\"central-row__avatar-frame\">\n" +
                 "                    <div class=\"central-row__ya-circle\"><a class=\"ya-circle__ya-letter\">Я</a></div>\n" +
                 "                </div>\n" +
-                "                <div class=\"central-row__msg-sender\">Яндекс Паспорт</div>\n" +
+                "                <div class=\"central-row__msg-sender\">Фридрих Ницше</div>\n" +
                 "                <div class=\"central-row__point\"></div>\n" +
-                "                <div class=\"central-row__msg-theme\">Доступ к аккаунту восстановлен</div>\n" +
-                "                <div class=\"central-row__date\">6 авг</div>\n" +
-                "            </div>";
-            let list = document.getElementsByClassName('main__message-block');
-            let msgs = document.getElementsByClassName("message-block__central-row");
-            list[0].insertBefore(newMessage, msgs[0].parentElement);
+                "                <div class=\"central-row__msg-theme\">Глава " + (k + 1) + "</div>\n" +
+                "                <div class=\"central-row__date\">6 авг</div>\n";
+            // "            </div>";
+            let list = document.getElementsByClassName('message-block__message-list');
+            list[0].prepend(newMessage);
+
+
         }
 
         function animAdd() {
             document.getElementsByClassName("flag")[0].className = "new-message__appear  message-block__new-message message-block__row message-block__central-row message-block__central-row_unread message-block__new-message";
         }
 
-        function myScrippp() {
-            addMes();
+        function addMessage() {
+
+            let letterNum = Math.floor(Math.random() * 29);
+            addMessageHtml(letterNum);
             animAdd();
         }
 
@@ -98,6 +134,37 @@
             Array.from(boxes).forEach(function (box) {
                 box.checked = topBox.checked;
             })
+        }
+
+        function showMessage(id) {
+            // hide message list
+            let mesList = document.getElementsByClassName("message-block__message-list")[0];
+            mesList.classList.add("message-block__message-list_hidden");
+
+            // if message was unread- change class to read
+            let messageRow = document.getElementById(id).parentElement;
+            if (messageRow.classList.contains("message-block__central-row_unread")) {
+                messageRow.classList.remove("message-block__central-row_unread");
+                messageRow.classList.add("message-block__central-row_read")
+            }
+
+            // open message text
+            let mesText = document.getElementsByClassName("message-block__message-text")[0];
+            mesText.innerHTML = "<button class=\"message-text__hide_button\" onclick=\"showMessageList()\">Hide</button>" + "<div class='message-text__inner-text'>" + lettersGlobal[letterMap.get(id)] + "</div>";
+            mesText.classList.add("message-block__message-text_visible");
+        }
+
+        function showMessageList() {
+
+            // open message list
+            let mesList = document.getElementsByClassName("message-block__message-list")[0];
+            mesList.classList.remove("message-block__message-list_hidden");
+
+            // hide message text
+            let mesText = document.getElementsByClassName("message-block__message-text")[0];
+            mesText.classList.remove("message-block__message-text_visible");
+
+
         }
     </script>
 
@@ -131,8 +198,15 @@
             <button class="upper-row__btn tooltip">Прочитано
                 <span class="tooltip-text">Прочитано</span></button>
         </div>
-        <label for="hidden-message__chb">
+
+        <div class="message-block__message-text">
+            <button class="message-text__hide_button" onclick="showMessageList()">Hide</button>
+        </div>
+
+        <div class="message-block__message-list">
+
             <div class="message-block__row message-block__central-row message-block__central-row_unread">
+                <div class="central-row__open-message_button" id="1" onclick="showMessage(this.id)"></div>
                 <label class="check">
                     <input class="check__input check__regular" type="checkbox">
                 </label>
@@ -144,40 +218,10 @@
                 <div class="central-row__msg-theme">Доступ к аккаунту восстановлен</div>
                 <div class="central-row__date">6 авг</div>
             </div>
-        </label>
-        <input type="checkbox" id="hidden-message__chb">
-        <div class="hidden-message">
-            <label for="hidden-message__chb">
-                <span class="hidden-message__cross">X</span>
-            </label>
-            <div class="hidden-message__text">
-                Британцы – это кошки среднего размера, с крепким приземистым корпусом и массивными короткими лапами.
-                У них массивная округлая голова, а мордочка слегка сглажена (но не приплюснута, как у персов).
-                <img class="hidden-message__img" src="cat.jpg" alt="alt-img">
-                Визитной карточкой британцев являются их пушистые толстые щечки, а также кожные складочки на животе
-                и на
-                короткой толстой шее.
-                Глаза круглые, выразительные, чаще всего янтарно-желтого цвета, но могут встречаться голубой или
-                изумрудный цвет.
-                Средней длины толстый хвост слегка закруглен на конце.
 
-                Отличительной особенностью породы является их плюшевая шерстка – такой эффект достигается за счет
-                того,
-                что остевой волос одинаковый по длине с подшерстком.
-                Шерсть короткая, очень густая, не очень прилегает к телу. Что касается окрасов, то всего
-                насчитывается
-                около 60 вариантов:
-                голубой, лиловый, черный, шоколадный, бежевый (циннамон или фавн), кремовый, черепаховый,
-                шиншилловый
-                (серебристый и золотистый),
-                табби (пятнистый, тигровый, мраморный) и многие другие.
-            </div>
-        </div>
-
-
-        <label for="hidden-message__chb">
             <div class="message-block__row message-block__central-row message-block__central-row_unread"
                  id="will-be-deleted">
+                <div class="central-row__open-message_button" id="2" onclick="showMessage(this.id)"></div>
                 <label class="check">
                     <input class="check__input check__regular" type="checkbox">
                 </label>
@@ -190,10 +234,9 @@
                 <div class="central-row__date">6 июл</div>
 
             </div>
-        </label>
 
-        <label for="hidden-message__chb">
             <div class="message-block__row message-block__central-row message-block__central-row_read">
+                <div class="central-row__open-message_button" id="3" onclick="showMessage(this.id)"></div>
                 <label class="check">
                     <input class="check__input check__regular" type="checkbox">
                 </label>
@@ -205,10 +248,10 @@
                 <div class="central-row__msg-theme">Как читать почту с мобильного</div>
                 <div class="central-row__date">6 июл</div>
             </div>
-        </label>
 
-        <label for="hidden-message__chb">
             <div class="message-block__row message-block__central-row message-block__central-row_read">
+
+                <div class="central-row__open-message_button" id="4" onclick="showMessage(this.id)"></div>
                 <label class="check">
                     <input class="check__input check__regular" type="checkbox">
                 </label>
@@ -220,8 +263,7 @@
                 <div class="central-row__msg-theme">Соберите всю почту в этот ящик</div>
                 <div class="central-row__date">6 июл</div>
             </div>
-
-        </label>
+        </div>
         <div class="message-block__lower-row">
             <div class="lower-row__item">Помощь и обратная связь</div>
             <div class="lower-row__item">Реклама</div>
