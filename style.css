@@ -137,7 +137,7 @@ body {
     box-sizing: border-box;
 }
 .message-box__list-wrap {
-    overflow: auto;
+    /*overflow: auto;*/
     min-height: 420px;
 }
 .message-box__list {
@@ -216,6 +216,10 @@ body {
     display:inline-block;
 }
 .unread {
+    width: calc(100% - 200px);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
     font-size: 13px;
     margin-top: 12px;
     margin-left: 30px;
@@ -232,8 +236,6 @@ body {
     float: left;
     background-color: #6287bd;
     margin-top: 14px;
-    /*margin-left: 10px;*/
-    /*margin-right: 10px;*/
     border-radius: 50%;
 }
 .date {

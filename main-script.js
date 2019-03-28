@@ -9,8 +9,14 @@ window.onload = function() {
     start();
 };
 
+let timeConst = 5000;
+
 function start() {
-    setInterval(newMail, 10000);
+    let oneAt5Secs = Math.random() * (timeConst - 10) + 10;
+    setTimeout(newMail, oneAt5Secs);
+    setTimeout(() => {
+        start();
+    }, timeConst - oneAt5Secs);
 }
 
 function setLetter(letter, eventOnLetter){
@@ -36,8 +42,8 @@ function setToRead(letter) {
 }
 
 function closePage() {
-    console.log(messageBox);
-    console.log(hiddenCat);
+    // console.log(messageBox);
+    // console.log(hiddenCat);
     messageBox.style.display = "table";
     hiddenCat.style.display = "none";
 }
@@ -61,26 +67,19 @@ function deleteSelectedChecks() {
                 counter++;
             }
         }
-        setTimeout(function() {
-            console.log(counter);
-            console.log(listOfLetters.length);
-            console.log(listOfLetters[0]);
-            console.log(listOfLetters[0].firstElementChild.firstElementChild);
-            while(listOfLetters.length > 0 && counter !== 0) {
-                let list = document.querySelector(".message-box__list");
-                let letterToGetBack = listOfLetters.pop();
-                let toAdd = document.createElement('li');
-                toAdd.classList.add("message-box__element");
-                toAdd.innerHTML = letterToGetBack.innerHTML;
-                toAdd.classList.add("message-box__list-add");
-                toAdd.addEventListener("animationend", () => {
-                    toAdd.classList.remove("message-box__list-add");
-                });
-                list.appendChild(toAdd);
-                counter--;
-            }
-        }, 1000);
-
+        while(listOfLetters.length > 0 && counter !== 0) {
+            let list = document.querySelector(".message-box__list");
+            let letterToGetBack = listOfLetters.pop();
+            let toAdd = document.createElement('li');
+            toAdd.classList.add("message-box__element");
+            toAdd.innerHTML = letterToGetBack.innerHTML;
+            toAdd.classList.add("message-box__list-add");
+            toAdd.addEventListener("animationend", () => {
+                toAdd.classList.remove("message-box__list-add");
+            });
+            list.appendChild(toAdd);
+            counter--;
+        }
     }
 }
 
@@ -121,8 +120,8 @@ function addNewMessage() {
 function newMail() {
     let letter = generateLetter();
     let viewedLetters = document.querySelectorAll(".message-box__element");
-    if(viewedLetters.length >= 10) {
-        let movedLetter = viewedLetters[9];
+    if(viewedLetters.length >= 30) {
+        let movedLetter = viewedLetters[29];
         listOfLetters.push(movedLetter);
         deleteSingleLetter(movedLetter);
     }
@@ -176,7 +175,9 @@ function generateRightSide() {
     date.classList.add("date");
     let titleRead = document.createElement('div');
     titleRead.classList.add("unread");
-    titleRead.innerText = phrases[Math.round(Math.random() * (phrases.length - 1))];
+    let randoms = Math.round(Math.random() * (phrases.length - 1));
+    console.log(randoms);
+    titleRead.innerText = phrases[randoms];
     common.appendChild(circle);
     common.appendChild(titleRead);
     common.appendChild(date);
