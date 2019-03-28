@@ -91,6 +91,7 @@ async function newMail() {
     }
     let label = newLetterNode.getElementById("open-message-label");
     label.addEventListener('click', () => {openMessage(label)});
+
     let messagesList = document.getElementById("message-list");
     messagesList.insertBefore(newLetterNode, messagesList.firstChild);
 }
