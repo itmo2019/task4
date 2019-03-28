@@ -1,0 +1,66 @@
+.container__content {
+    width: calc(100% - 169px);
+    height: calc(100vh - 100px);
+    min-height: 400px;
+    margin-bottom: 22px;
+    float: right;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.34);
+    border-radius: 3px;
+    background-color: #fff;
+    position: relative;
+}
+
+.check {
+    width: 16px;
+    height: 16px;
+    border-radius: 3px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    background-color: #fff;
+    margin-left: 3.7%;
+    float: left;
+}
+
+.container__content-navigation {
+    padding: 11px 0 8px 0;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.15);
+}
+
+.container__content-checkbox {
+    width: 6%;
+    display: block;
+    float: left;
+    padding-left: 3.7%;
+}
+
+.container__content-menu {
+    width: 93.3%;
+    float: right;
+    overflow: scroll;
+    max-height: 60px;
+    min-height: 21px;
+
+}
+
+.container__content-item {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    list-style: none;
+    float: left;
+    margin-left: 8px;
+    width: 70px;
+    font: 500 0.8em "HelveticaNeue", sans-serif;
+    color: #ccc;
+    height: 17px;
+    text-align: center;
+}
+
+.container__content-link {
+    text-decoration: none;
+    color: #ccc;
+
+}
+
+.container__content-link:hover {
+    border-bottom: 2px solid #e2e2e2;
+}

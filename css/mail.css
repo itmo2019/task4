@@ -1,0 +1,87 @@
+.mail {
+    overflow: scroll;
+    height: calc(100vh - 169px);
+}
+
+.mail__conatainer {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  height: 100%;
+}
+
+.mail__message {
+    border-bottom: 2px solid #e2e2e2;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    height: 40px;
+}
+
+.mail__logo-yandex {
+    float: left;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-left: 2%;
+    margin-top: -9px;
+    min-height: 30px;
+    min-width: 30px;
+}
+
+.mail__message-type {
+    float: left;
+    font: 0.8em "HelveticaNeue", sans-serif;
+    height: 16px;
+    margin-left: 2%;
+    width: 29%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+.mail__marker-letter {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #6287bd;
+    margin-left: 10px;
+    margin-top: 2px;
+    float: left;
+}
+
+.mail__marker-letter_hidden {
+    visibility: hidden;
+}
+
+.mail__letter {
+    color: #000000;
+    font: 0.8em "HelveticaNeue", sans-serif;
+    margin-left: 2%;
+    margin-right: 5%;
+    width: 30%;
+    height: 16px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    float: left;
+}
+
+.mail__message_bold {
+    font-weight: 700;
+}
+
+.mail__latter-date {
+    color: #9b9b9b;
+    font: 0.8em "HelveticaNeue", sans-serif;
+    float: right;
+    margin-right: 3.7%;
+    width: 45px;
+    height: 16px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.mail__input_top {
+    margin-top: 13px;
+}

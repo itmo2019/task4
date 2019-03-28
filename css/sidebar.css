@@ -1,0 +1,40 @@
+.container__sidebar {
+    width: 147px;
+    float: left;
+}
+.container__button-write {
+    width: 147px;
+    height: 32px;
+    color: #fff;
+    font: 500 0.8em "HelveticaNeue", sans-serif;
+    background: #6287bd;
+    border: none;
+    border-radius: 3px;
+    margin-bottom: 8px;
+}
+
+.container__button-write:hover {
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+.menu__item {
+    list-style: none;
+    height: 22px;
+    margin-bottom: 2px;
+}
+
+.menu__link {
+    text-decoration: none;
+    color: #555555;
+    font: 700 0.7em "HelveticaNeue", sans-serif;
+    padding: 4px 10px;
+    height: 100%;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.menu__item:hover {
+    background: #cdd6e4;
+    border-radius: 3px;
+}

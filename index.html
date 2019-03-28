@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Почта</title>
+    <link rel="stylesheet" href="css/mail.css">
+    <link rel="stylesheet" href="css/content.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/animation-letter.css">
+    <link rel="stylesheet" href="css/my-letter.css">
+        <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+    <div class="wrapper">
+        <header class="header clearfix">
+            <div class="header__burger">
+                <div class="header__line"></div>
+                <div class="header__line"></div>
+                <div class="header__line"></div>
+            </div>
+            <img src="img/Shape.png" alt="logo" class="logo">
+            <form action="" method="post" class="search-form">
+                <input type="text" placeholder="Поиск" class="form-search__input">
+                <button type="reset" class="form-search__button">
+                    <img src="img/reset.png" alt="reset">
+                </button>
+            </form>
+        </header>
+        <div class="container clearfix">
+            <div class="container__sidebar">
+                <button class="container__button-write">
+                    Написать
+                </button>
+                <ul class="menu">
+                    <li class="menu__item">
+                        <a href="#" class="menu__link">Входящие</a>
+                    </li>
+                    <li class="menu__item">
+                        <a href="#" class="menu__link">Отправленные</a>
+                    </li>
+                    <li class="menu__item">
+                        <a href="#" class="menu__link" >Удаленные</a>
+                    </li>
+                    <li class="menu__item">
+                        <a href="#" class="menu__link">Спам</a>
+                    </li>
+                    <li class="menu__item">
+                        <a href="#" class="menu__link">Черновики</a>
+                    </li>
+                    <li class="menu__item">
+                        <a href="#" class="menu__link">Создать папку</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="container__content">
+                <div class="container__content-navigation clearfix">
+                    <div class="container__content-checkbox">
+                        <input type="checkbox" class="check" id="check-all">
+                    </div>
+
+                    <ul class="container__content-menu">
+                       <li class="container__content-item">
+                            <a href="#" class="container__content-link" id="addElement">Добавить</a>
+                        </li>
+                        <li class="container__content-item">
+                            <a href="#" class="container__content-link">Переслать</a>
+                        </li>
+                        <li class="container__content-item" id="delete-messeges">
+                            <a href="#" class="container__content-link"  id="delete-letter">Удалить</a>
+                        </li>
+                        <li class="container__content-item">
+                            <a href="#" class="container__content-link">Это спам!</a>
+                        </li>
+                        <li class="container__content-item">
+                            <a href="#" class="container__content-link">Прочитано</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="mail">
+                    <div class="mail__conatainer">
+                        
+                    </div> 
+                </div>    
+                <footer class="footer">
+                   <div class="footer__block">
+                        <span class="footer__item">
+                           <a href="#" class="footer__link">Помощь и обратная связь</a>
+                           <a href="#" class="footer__link">Реклама</a>
+                        </span>
+                        <span>
+                            &copy; 2001&mdash;2018, Яндекс
+                        </span>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+</html>

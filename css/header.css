@@ -1,0 +1,71 @@
+.header__burger, .logo, .search-form {
+    float: left;
+    margin: 0;
+}
+
+.header__burger {
+    margin-top: 12px;
+}
+
+.header__line {
+    width: 20px;
+    height: 3px;
+    background-color: #000;
+    margin-top: 4px;
+}
+
+.header {
+    margin-top: 7px;
+    margin-left: 22px;
+
+}
+
+.logo {
+    margin-left: 11px;    
+    margin-top: 7px;
+}
+
+.search-form {
+    width: 37%;
+    margin-left: 114px;
+    height: 32px;
+    margin-top: 11px;
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.2);
+    background: #f2f5f8;
+
+}
+
+.form-search__input {
+    border: none;
+    width: calc(100% - 50px);
+    margin-left: 16px;
+    height: 27px;
+    outline:none;
+    background: #f2f5f8;
+}
+
+.form-search__button {
+    margin-top: 10px;
+    margin-right: 9px;
+    border: none;
+    background: #f2f5f8;
+}
+
+input[type=text]::-webkit-input-placeholder {
+    font: 1em "YS Text - Regular", sans-serif;
+    opacity: 0.7;
+
+}
+input[type=text]::-moz-placeholder {
+    font: 1.1em "YS Text - Regular", sans-serif;
+    opacity: 0.7;
+
+}/* Firefox 19+ */
+input[type=text]:-moz-placeholder           {
+    font: 1em "YS Text - Regular", sans-serif;
+    opacity: 0.7;
+}/* Firefox 18- */
+input[type=text]:-ms-input-placeholder      {
+    font: 1em "YS Text - Regular", sans-serif;
+    opacity: 0.7;
+}

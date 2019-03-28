@@ -1,0 +1,44 @@
+.mail__my-letter {
+    display: none;
+    height: 100%;
+    position: absolute;
+    background: #fff;
+    padding: 10px 2%; 
+    shape-outside: circle();
+    float: left;
+    color: #555555;
+    font: 0.8em "HelveticaNeue", sans-serif;
+    font-weight: 700;
+    height: calc(100% - 80px);
+    padding-bottom: 40px;
+    overflow: scroll;
+}
+
+.mail__letter-text {
+    margin-top: 10px;
+}
+
+
+.mail__checkbox_hidden {
+    display: none;
+}
+
+.mail__checkbox_hidden:checked ~ .mail__my-letter {
+    display: block;
+}
+
+.mail__checkbox_hidden:checked ~ .mail__message {
+    display: none;
+} 
+
+
+.monkey {
+    border-radius: 50%;
+    shape-outside: ellipse();
+    float: right;
+}
+
+.mail__letter-close {
+    width: 100%;
+    margin-bottom: 10px;    
+}
