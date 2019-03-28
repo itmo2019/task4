@@ -1,4 +1,4 @@
-.checkbox__custom {
+.check__box {
     width: 15px;
     height: 15px;
     position: absolute;
@@ -9,21 +9,21 @@
     background-color: #ffffff;
 }
 
-.checkbox input:checked ~ .checkbox__custom {
+.check input:checked ~ .check__box {
     background-color: #999999;
 }
 
-.checkbox__custom:after {
+.check__box:after {
     content: "";
     position: absolute;
     display: none;
 }
 
-.checkbox input:checked ~ .checkbox__custom:after {
+.check input:checked ~ .check__box:after {
     display: block;
 }
 
-.checkbox .checkbox__custom:after {
+.check .check__box:after {
     left: 5px;
     top: 1px;
     width: 3px;
@@ -35,7 +35,7 @@
     transform: rotate(45deg);
 }
 
-.checkbox__input {
+.check__input {
     position: absolute;
     -webkit-appearance: none;
 }

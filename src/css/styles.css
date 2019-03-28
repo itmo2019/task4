@@ -27,7 +27,7 @@ body {
 
 .delete-message {
 	animation-name: delete-message;
-	animation-duration: 1s;
+	animation-duration: 0.5s;
 	animation-fill-mode: forwards;
 }
 
@@ -36,6 +36,6 @@ body {
 		transform: scale(0.5);
 	}
 	to {
-		transform: scale(0.5) translateX(150vw);
+		transform: scale(0.5) translateX(125vw);
 	}
 }
