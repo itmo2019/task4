@@ -1,0 +1,10 @@
+.footer {
+  position: absolute;
+  white-space: nowrap;
+  overflow: hidden;
+  right: 20px;
+  bottom: 9px;
+  outline: none;
+  color: #9b9b9b;
+  font-size: 11px;
+}

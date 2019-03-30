@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <title> Яндекс Почта </title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="body">
+
+  <header id="main-header" class="main-header">
+    <a href="#popup-menu" class="main-header__box-popup-menu"> </a>
+    <img src="images/logo.png" class="main-header__logo-picture" alt="Логотип Яндекс Почты">
+
+    <input class="search-line" type="search" placeholder="Поиск">
+  </header>
+
+  <div class="menu-zone">
+
+    <button id="create-message-button" class="action-message-button" type="button" name="create-message-button"> Написать </button>
+
+    <ul class="folders-list">
+      <li class="folders-list__item_active"> Входящие </li>
+      <li class="folders-list__item"> Отправленные </li>
+      <li class="folders-list__item"> Удаленные </li>
+      <li class="folders-list__item"> Спам </li>
+      <li class="folders-list__item"> Черновики </li>
+      <li class="folders-list__item"> Создать папку </li>
+    </ul>
+
+    <button type="button" id="add-message-button" class="action-message-button" name="add-message-button"> Получить сообщение </button>
+
+  </div>
+
+  <div class="mail-box">
+
+    <div id="mail-box-action-list">
+      <input id="select-all" type="checkbox" class="mail-box__input" style="width: 16px; height: 16px">
+      <ul class="mail-box-actions">
+        <li id="resend" class="mail-box-actions__item">Переслать</li>
+        <li id="delete" class="mail-box-actions__item">Удалить</li>
+        <li id="strike" class="mail-box-actions__item">Это спам!</li>
+        <li id="mark-as-read" class="mail-box-actions__item">Прочитано</li>
+      </ul>
+    </div>
+
+    <input type="checkbox" id="open-message" class="mail-box__input openable-message" role="button">
+
+    <section id="messages-section" class="messages-section">
+      <!-- to allow increasing in height without overlapping with footer -->
+      <div style="height: 50px" id="messages-section-end"></div>
+    </section>
+
+    <div class="essay">
+      <label for="open-message" onclick="">
+        <div class="close-cross">X</div>
+      </label>
+      <div id="content-div">
+        <iframe src="essay.html" class="message-content"></iframe>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <nav class="footer__nav">
+        <a href="" class="footer__a">Помощь и обратная связь</a>
+        <a href="" class="footer__a">Реклама</a>
+      </nav>
+      <span>
+        © 2001&mdash;2019, Яндекс
+      </span>
+    </footer>
+
+  </div>
+
+  <script src="scripts/task.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,19 @@
+/*
+
+  SearchLine width depends on size width
+  According to the sketch:
+  Width of page: 800
+  Distance from searchline left border to start of the page: 206
+  Distance from searchline left border to the end of logo: 114
+  SearchLine width: 301
+  Distance from searchline right border to the end of the page: 179
+
+*/
+
+.search-line {
+  margin-left: calc(114/800*100%);
+  width: calc(301/(800 - 206 - 179)*(100% - 206px - 179px));
+  height: 32px;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.2);
+  background-color: #ffffff;
+}

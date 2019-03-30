@@ -1,0 +1,9 @@
+.message-item {
+  transition: opacity 400ms linear;
+  -webkit-transition: opacity 400ms linear;
+  opacity: 1;
+
+  border-top: 1px solid #e5eaf0;
+  border-bottom: 1px solid #e5eaf0;
+  height: 42px;
+}

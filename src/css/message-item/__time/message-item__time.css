@@ -1,0 +1,13 @@
+.message-item__time {
+  padding: 0;
+  float: right;
+  margin: auto 10px auto 10px;
+  color: #9b9b9b;
+  font-size: 13px;
+  line-height: 42px;
+  vertical-align: middle;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}

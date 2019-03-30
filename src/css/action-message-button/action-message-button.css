@@ -1,0 +1,11 @@
+.action-message-button {
+  width: 147px;
+  height: 32px;
+  border-radius: 3px;
+  border-width: 0px;
+  background-color: #6287bd;
+  font-size: 15px;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 500;
+}

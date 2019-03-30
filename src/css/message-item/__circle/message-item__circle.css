@@ -1,0 +1,18 @@
+.message-item__circle {
+  display: inline-block;
+  height: 32px;
+  width: 32px;
+  vertical-align: middle;
+  text-align: center;
+  line-height: 32px;
+  border-radius: 50%;
+  background: red;
+  color: white;
+  font-size: 19px;
+}
+
+.message-item__circle > img {
+  position: relative;
+  top: 3px;
+  right: 1px;
+}

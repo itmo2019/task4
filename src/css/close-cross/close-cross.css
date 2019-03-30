@@ -1,0 +1,8 @@
+.close-cross {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  font-weight: 100;
+  text-align: center;
+  padding-right: 10px;
+}

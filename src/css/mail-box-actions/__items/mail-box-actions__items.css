@@ -1,0 +1,13 @@
+.mail-box-actions__item {
+  vertical-align: middle;
+  margin: 11px 11px;
+  color: #cccccc;
+  font-size: 13px;
+  font-weight: 500;
+  display: inline;
+  cursor: pointer;
+}
+
+.mail-box-actions__item:hover {
+  color: #cccc1c;
+}

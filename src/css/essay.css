@@ -1,0 +1,95 @@
+* { margin: 0 }
+
+body {background-color: #fff}
+
+.intro {
+  margin-left: 300px;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 20px;
+}
+
+.midsection {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 18px;
+  width: 100%;
+}
+
+.container {
+  margin: auto;
+  vertical-align: middle;
+	align-items: center;
+}
+
+.container > img {
+  width: 100%;
+  user-select: none;
+  pointer-events: none;
+}
+
+.container > section {
+  float: left;
+  width: 100%;
+  margin: 20px auto 20px;
+  user-select: none;
+  border-top: solid;
+}
+
+.card {
+  float: left;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  width: 40%;
+  max-width: 250px;
+  transition: 0.3s;
+  border-radius: 20px;
+  padding: 1px;
+  margin-right: 20px;
+  margin-left: 5px;
+  background-color: #ffff33;
+}
+
+.card > img {
+  width: 100%;
+  border-radius: 20px 20px 0 0;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.card_container {
+  padding: 2px 16px;
+}
+
+.interface-table-class {
+  margin: auto;
+  border: 1px solid blue;
+  display: inline-table;
+}
+
+.interface-table-class > th, td {
+  border: 1px solid #000;
+}
+
+.interface-table-class ul {
+  list-style-type: none;
+}
+
+.table-div-class {
+  margin: 10px auto 20px;
+  text-align: center;
+}
+
+.cat-column {
+  min-width: 320px;
+  min-height: 252px;
+  float: left;
+  overflow: hidden;
+  font: 16px;
+}
+
+.cat-right {
+  left: 0;
+  top: 0;
+  background: url(http://effects1.ru/png/kartinka/1/koty/1/kitten_cat_4-320.png) no-repeat left top;
+  text-align: justify;
+}

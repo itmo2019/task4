@@ -1,0 +1,37 @@
+/*
+
+    Message's theme and text preview sizes depend on the mail box size.
+    According to the sketch:
+    Width of mail box zone : 589
+
+    Format:
+    Component: leftMargin - width - rightMargin
+
+    Checkbox component  : 20 - 16 - 10
+    LogoCircle component: 10 - 30 - 10
+    ThemeText component : 10 - 155 - 40
+    Text component      : 40 - 204 - 48
+    Date component      : 48 - 36 - 20
+
+    Assume that all margins are with fixed lengths;
+    Assume that width of Checkbox, logoCircle, Date is fixed too;
+
+    Total fixed width: 20 + 16 + 10 + 30 + 10 + 40 + 48 + 36 + 20 = 230
+
+    ThemeText width = 155 / (155 + 204) * (100% - 320px)
+    Text width = 155 / (155 + 204) * (100% - 320px)
+
+*/
+
+.message-item__text_theme {
+  display: inline-block;
+  vertical-align: middle;
+  height: 16px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  color: #000000;
+  font-size: 13px;
+  width: calc(180px + (100% - 589px) / 10);
+  margin-right: 30px auto 4px;
+}

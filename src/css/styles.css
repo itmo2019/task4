@@ -1,0 +1,68 @@
+@import "main-header/main-header.css";
+@import "main-header/__box-popup-menu/main-header__box-popup-menu.css";
+@import "main-header/__logo-picture/main-header__logo-picture.css";
+
+@import "search-line/search-line.css";
+
+@import "action-message-button/action-message-button.css";
+
+@import "folders-list/folders-list.css";
+@import "folders-list/__item/folders-list__item.css";
+@import "folders-list/__item/folders-list__item_active.css";
+
+@import "menu-zone/menu-zone.css";
+
+@import "mail-box/mail-box.css";
+@import "mail-box/__input/mail-box__input.css";
+
+@import "mail-box-actions/mail-box-actions.css";
+@import "mail-box-actions/__items/mail-box-actions__items.css";
+
+@import "message-item/message-item.css";
+@import "message-item/__checkbox/message-item__checkbox.css";
+@import "message-item/__circle/message-item__circle.css";
+@import "message-item/__circle/message-item__unread-circle.css";
+@import "message-item/__text/message-item__text_theme.css";
+@import "message-item/__text/message-item__text_content.css";
+@import "message-item/__time/message-item__time.css";
+
+@import "message-content/message-content.css";
+@import "close-cross/close-cross.css";
+
+@import "footer/footer.css";
+@import "footer/__a/footer__a.css";
+@import "footer/__nav/footer__nav.css";
+
+.body {
+  font-family: "Helvetica Neue", "Arial" "Serif";
+  min-width: 800px;
+  position: relative;
+  margin: 0 auto;
+  background-color: #e5eaf0;
+}
+
+.body > .mail-box {
+  position: absolute;
+  left: 191px;
+  top: 56px;
+}
+
+.openable-message {
+  display: none;
+}
+
+.openable-message:checked ~ .messages-section {
+   display: none;
+}
+
+.openable-message:checked ~ .essay {
+   display: block;
+}
+
+.essay {
+   display: none;
+}
+
+.bold-text {
+  font-weight: 700;
+}
