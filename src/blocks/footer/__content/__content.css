@@ -1,0 +1,8 @@
+.footer__content {
+	box-sizing: border-box;
+	padding: 0 20px;
+	width: inherit;
+	height: inherit;
+
+	text-align: right;
+} 

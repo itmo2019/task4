@@ -1,0 +1,18 @@
+.menu__item {
+	display: block;
+
+	width: inherit;
+	height: 22px;
+
+	box-sizing: border-box;
+}
+
+.menu__item:hover {
+	background-color: #cdd6e4;
+	border-radius: 3px;
+}
+
+.menu__item:hover .menu__link {
+	color: #555;
+	font-weight: bold;
+}

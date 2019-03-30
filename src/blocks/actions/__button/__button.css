@@ -1,0 +1,22 @@
+.actions__button {
+	border: none;
+
+	height: inherit;
+	background-color: inherit;
+
+	box-sizing: border-box;
+	padding: 0 10px;
+
+	font: 500 13px/37px "Helvetica Neue";
+	color: #000;
+	cursor: pointer;
+}
+
+.actions__button:enabled:hover {
+	background: rgba(0, 0, 0, 0.05);
+}
+
+.actions__button:disabled {
+	cursor: initial;
+	color: #ccc;
+}

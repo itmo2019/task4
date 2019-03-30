@@ -1,0 +1,43 @@
+@font-face {
+    font-family: Yandex Sans;
+    src: url(/../fonts/YandexSansText-Light.woff) format("woff"),
+         url(/../fonts/YandexSansText-Light.ttf) format("truetype");
+
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: Yandex Sans;
+    src: url(/../fonts/YandexSansText-Regular.woff) format("woff"),
+         url(/../fonts/YandexSansText-Regular.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: Yandex Sans;
+    src: url(/../fonts/YandexSansText-Medium.woff) format("woff"),
+         url(/../fonts/YandexSansText-Medium.ttf) format("truetype");
+
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: Helvetica Neue;
+    src: url(/../fonts/HelveticaNeue-Bold.woff) format("woff"),
+         url(/../fonts/HelveticaNeue-Bold.ttf) format("truetype");
+
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: Helvetica Neue;
+    src: url(/../fonts/HelveticaNeue-Medium.woff) format("woff"),
+         url(/../fonts/HelveticaNeue-Medium.ttf) format("truetype");
+
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: Helvetica Neue;
+    src: url(/../fonts/HelveticaNeue.woff) format("woff"),
+         url(/../fonts/HelveticaNeue.ttf) format("truetype");
+}

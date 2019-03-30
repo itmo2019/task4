@@ -1,0 +1,6 @@
+.letter__link {
+	display: block;
+	text-decoration: none;
+
+	height: inherit;
+} 

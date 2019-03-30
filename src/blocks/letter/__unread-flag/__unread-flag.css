@@ -1,0 +1,4 @@
+.letter__unread-flag {
+	display: inline-block;
+	visibility: hidden;
+} 

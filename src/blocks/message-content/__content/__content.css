@@ -1,0 +1,13 @@
+.message-content__content {
+	width: 100%;
+	height: auto;
+
+	box-sizing: border-box;
+
+	white-space: normal;
+	text-align: justify;
+
+	font: 16px/30px "Helvetica Neue";
+
+	padding-bottom: 30px;
+}

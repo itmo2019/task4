@@ -1,0 +1,10 @@
+.menu__link {
+	display: block;
+	box-sizing: border-box;
+	padding: 0 10px;
+
+	text-decoration: none;
+	
+	color: #707070;
+	font: 500 11px/22px "Helvetica Neue";
+}

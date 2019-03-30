@@ -1,0 +1,6 @@
+.header__search-wrapper {
+	display: inline-block;
+
+	height: 32px;
+	width: calc(80% - 250px);
+}

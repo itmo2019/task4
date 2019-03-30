@@ -1,0 +1,31 @@
+.checkbox__real-checkbox {
+	position: absolute;
+
+	-webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.checkbox__real-checkbox:active + .checkbox__checkbox-view {
+    background-color: #f6f5f3;
+}
+
+.checkbox__real-checkbox:checked + .checkbox__checkbox-view {
+    background-color: #ffeba0;
+    border-color: #c2b275;
+}
+
+.checkbox__real-checkbox:checked + .checkbox__checkbox-view::after {
+    visibility: visible;
+}
+
+.checkbox__real-checkbox:focus + .checkbox__checkbox-view {
+    border-color: #e4c23b;
+    box-shadow: 0 0 15px 1px #e4c23b;
+}
+
+.checkbox__real-checkbox:disabled + .checkbox__checkbox-view {
+    opacity: 0.3;
+    background-color: #fff;
+    cursor: initial;
+}

@@ -1,0 +1,7 @@
+.mail-page__header {
+	box-sizing: border-box;
+
+	height: 56px;
+	padding-top: 11px;
+	padding-bottom: 13px;
+}

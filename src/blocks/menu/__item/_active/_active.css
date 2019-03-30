@@ -1,0 +1,9 @@
+.menu__item_active {
+	background-color: #cdd6e4;
+	border-radius: 3px;
+}
+
+.menu__item_active .menu__link {
+	color: #555;
+	font-weight: bold;
+}

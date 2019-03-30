@@ -1,0 +1,25 @@
+.letter_deleted {
+	animation: delete-letter-animation 1s cubic-bezier(.5, 0, 0, 0);
+}
+
+@keyframes delete-letter-animation {
+	0% {
+		opacity: 1.0;
+		transform: translateX(0%);
+	}
+
+	30% {
+		opacity: 0.0;
+		transform: translateX(100%);
+	}
+
+	50% {
+		height: 40px;
+	}
+
+	100% {
+		opacity: 0.0;
+		transform: translateX(100%);
+		height: 0px;
+	}
+}

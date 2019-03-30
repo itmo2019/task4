@@ -1,0 +1,10 @@
+.message-content__date {
+	display: inline-block;
+	text-align: right;
+	float: right;
+
+	width: 70px;
+
+	vertical-align: middle;
+	line-height: 60px;
+}

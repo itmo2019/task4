@@ -1,0 +1,9 @@
+.mail-page {
+	box-sizing: border-box;
+
+	padding: 0 22px 0 20px;
+	margin: 0;
+	width: 100%;
+
+	background-color: #e5eaf0;
+}

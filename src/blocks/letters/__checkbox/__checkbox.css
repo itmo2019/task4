@@ -1,0 +1,9 @@
+.letters__checkbox {
+	box-sizing: border-box;
+
+	display: inline-block;
+	width: 46px;
+
+	padding-left: 20px;
+	padding-right: 10px;
+}

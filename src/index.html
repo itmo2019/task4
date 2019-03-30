@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Входящие - Яндекс.Почта</title>
+	
+	<link rel="shortcut icon" type="image/x-icon" href="img/favicon.png"/>
+
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+
+	<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+	<script defer type="text/javascript" src="js/index.js"></script>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body class="mail-page">
+	<header class="header mail-page__header">
+		<div class="logo header__logo">
+				<a href="#" class="header__link">
+					<img src="img/hamburger.svg" width="20" height="17" alt="Pop-up menu">
+				</a>
+				<a href="#" class="header__link">
+					<img src="img/mail-yandex.svg" width="153" height="31" alt="Yandex Mail">
+				</a>
+		</div>
+
+		<div class="header__search-wrapper">
+			<div class="search header__search">
+				<input type="text" class="search__input" placeholder="Поиск">
+				<img src="img/cross-icon.svg" width="9" height="9" alt="Clear input" class="search__clear-icon">
+			</div>
+		</div>
+	</header>
+
+	<div class="content">
+		<aside class="mail-page__sidebar">
+			<button class="main-button sidebar__main-button new-letter-button text_with-ellipsis">Написать</button>
+			<nav class="menu">
+				<ul class="menu__list">
+					<li class="menu__item menu__item_active"><a href="/" class="menu__link  text_with-ellipsis">Входящие</a></li>
+					<li class="menu__item"><a href="#" class="menu__link text_with-ellipsis">Отправленные</a></li>
+					<li class="menu__item"><a href="#" class="menu__link text_with-ellipsis">Удалённые</a></li>
+					<li class="menu__item"><a href="#" class="menu__link text_with-ellipsis">Спам</a></li>
+					<li class="menu__item"><a href="#" class="menu__link text_with-ellipsis">Черновики</a></li>
+					<li class="menu__item"><a href="#" class="menu__link text_with-ellipsis">Создать папку</a></li>
+				</ul>
+			</nav>
+		</aside>
+
+		<div class="letters content__letters">
+			<header class="letters__actions">
+				<div class="checkbox letters__checkbox">
+					<label class="checkbox__label letters__checkbox-label">
+						<input type="checkbox" class="checkbox__real-checkbox letters__checkbox actions__checkbox" disabled>
+						<span class="checkbox__checkbox-view"></span>
+					</label>
+				</div>
+
+				<ul class="actions__list">
+					<li class="actions__item"><button class="actions__button text_with-ellipsis" disabled>Переслать</button></li>
+					<li class="actions__item"><button class="actions__button delete-letters-button text_with-ellipsis" disabled>Удалить</button></li>
+					<li class="actions__item"><button class="actions__button text_with-ellipsis" disabled>Это спам!</button></li>
+					<li class="actions__item"><button class="actions__button text_with-ellipsis" disabled>Прочитано</button></li>
+				</ul>
+			</header>
+
+			<div class="letters__content">
+				<ul class="letters__list">
+					<template id="new-letter-template">
+                        <li class="letter letters__letter">
+                            <a href="#" class="letter__link">
+                                <div class="letter__preview">
+                                    <div class="checkbox letters__checkbox">
+                                        <label class="checkbox__label letters__checkbox-label">
+                                            <input type="checkbox" class="checkbox__real-checkbox letter__checkbox">
+                                            <span class="checkbox__checkbox-view"></span>
+                                        </label>
+                                    </div>
+
+                                    <span class="letter__profile-image profile-image" style=""></span>
+                                    <span class="profile-name letter__profile-name text_with-ellipsis"></span>
+                                    <span class="letter__unread-flag unread-flag"></span>
+                                    <span class="content-preview letter__content-preview text_with-ellipsis"></span>
+                                    <span class="letter__content"></span>
+                                    <time class="date letter__date text_with-ellipsis" datetime=""></time>
+                                </div>
+                            </a>
+                        </li>
+                    </template>
+				</ul>
+
+				<template id="message-content-template">
+					<div class="message-content letters__message-content">
+						<header class="message-content__header">
+							<h1 class="message-content__subject text_with-ellipsis"></h1>
+							<div class="message-content__info">
+								<span class="profile-image message-content__profile-image"></span>
+								<span class="profile-name message-content__profile-name text_with-ellipsis"></span>
+								<time class="date message-content__date text_with-ellipsis"></time>
+							</div>
+						</header>
+						<main class="message-content__content"></main>
+					</div>
+				</template>
+			</div>
+			
+			<footer class="letters__footer">
+				<div class="footer__content">
+					<a href="" class="footer__link footer__text footer__item text_with-ellipsis">Помощь и обратная связь</a>
+					<a href="" class="footer__link footer__text footer__item text_with-ellipsis">Реклама</a>
+					<span class="footer__text footer__item text_with-ellipsis">© 2001—2018, Яндекс</span>
+				</div>
+			</footer>
+		</div>
+	</div>
+</body>
+</html>

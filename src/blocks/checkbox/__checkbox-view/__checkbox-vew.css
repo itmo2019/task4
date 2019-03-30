@@ -1,0 +1,29 @@
+.checkbox__checkbox-view {
+	display: block;
+
+	width: 16px;
+    height: 16px;
+
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+}
+
+.checkbox__checkbox-view::after {
+    content: '';
+
+    position: absolute;
+	bottom: 4px;
+	left: 1px;
+
+
+    width: 18px;
+    height: 18px;
+
+    background-image: url(checkbox.svg);
+    visibility: hidden;
+}
+
+.checkbox__checkbox-view:hover {
+    border-color: : #999;
+}

@@ -1,0 +1,11 @@
+.letter_unread .profile-name {
+	font-weight: bold;
+} 
+
+.letter_unread .content-preview {
+	font-weight: bold;
+} 
+
+.letter_unread .unread-flag {
+	visibility: visible;
+}

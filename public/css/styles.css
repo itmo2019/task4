@@ -1,0 +1,585 @@
+.checkbox {
+  position: relative;
+}
+
+.content {
+  white-space: nowrap;
+}
+
+.content-preview {
+  color: #000;
+  font: 13px "Helvetica Neue";
+}
+
+.date {
+  color: #9b9b9b;
+  font: 13px "Helvetica Neue";
+}
+
+@font-face {
+  font-family: Yandex Sans;
+  src: url("/../fonts/YandexSansText-Light.woff") format("woff"),
+         url("/../fonts/YandexSansText-Light.ttf") format("truetype");
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: Yandex Sans;
+  src: url("/../fonts/YandexSansText-Regular.woff") format("woff"),
+         url("/../fonts/YandexSansText-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: Yandex Sans;
+  src: url("/../fonts/YandexSansText-Medium.woff") format("woff"),
+         url("/../fonts/YandexSansText-Medium.ttf") format("truetype");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: Helvetica Neue;
+  src: url("/../fonts/HelveticaNeue-Bold.woff") format("woff"),
+         url("/../fonts/HelveticaNeue-Bold.ttf") format("truetype");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: Helvetica Neue;
+  src: url("/../fonts/HelveticaNeue-Medium.woff") format("woff"),
+         url("/../fonts/HelveticaNeue-Medium.ttf") format("truetype");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: Helvetica Neue;
+  src: url("/../fonts/HelveticaNeue.woff") format("woff"),
+         url("/../fonts/HelveticaNeue.ttf") format("truetype");
+}
+
+.header {
+  width: 100%;
+  white-space: nowrap;
+}
+
+.letters {
+  background-color: #fff;
+  border-radius: 3px;
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.34);
+}
+
+.logo {
+  white-space: nowrap;
+}
+
+.mail-page {
+  box-sizing: border-box;
+  padding: 0 22px 0 20px;
+  margin: 0;
+  width: 100%;
+  background-color: #e5eaf0;
+}
+
+.main-button {
+  display: block;
+  padding: 0;
+  cursor: pointer;
+  width: inherit;
+  height: 32px;
+  border: none;
+  border-radius: 3px;
+  background-color: #6287bd;
+  font: 500 12px/32px "Helvetica Neue";
+  color: #fff;
+}
+
+.menu {
+  width: inherit;
+}
+
+.message-content {
+  box-sizing: border-box;
+  padding: 0 15%;
+  width: 100%;
+  height: auto;
+}
+
+.profile-image {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  text-align: center;
+  font: 500 16px/32px 'Yandex Sans';
+  color: white;
+  background-size: cover;
+}
+
+.profile-name {
+  color: #000;
+  font: 13px "Helvetica Neue";
+}
+
+.search {
+  position: relative;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.unread-flag {
+  width: 10px;
+  height: 10px;
+  background-color: #6287bd;
+  border-radius: 50%;
+}
+
+.actions__button {
+  border: none;
+  height: inherit;
+  background-color: inherit;
+  box-sizing: border-box;
+  padding: 0 10px;
+  font: 500 13px/37px "Helvetica Neue";
+  color: #000;
+  cursor: pointer;
+}
+
+.actions__button:enabled:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.actions__button:disabled {
+  cursor: initial;
+  color: #ccc;
+}
+
+.actions__item {
+  display: inline-block;
+  height: inherit;
+}
+
+.actions__list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: inline-block;
+  height: inherit;
+}
+
+.checkbox__checkbox-view {
+  display: block;
+  width: 16px;
+  height: 16px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+}
+
+.checkbox__checkbox-view::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 1px;
+  width: 18px;
+  height: 18px;
+  background-image: url("/../img/checkbox.svg");
+  visibility: hidden;
+}
+
+.checkbox__checkbox-view:hover {
+  border-color: : #999;
+}
+
+.checkbox__label {
+  position: relative;
+  cursor: pointer;
+}
+
+.checkbox__real-checkbox {
+  position: absolute;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.checkbox__real-checkbox:active + .checkbox__checkbox-view {
+  background-color: #f6f5f3;
+}
+
+.checkbox__real-checkbox:checked + .checkbox__checkbox-view {
+  background-color: #ffeba0;
+  border-color: #c2b275;
+}
+
+.checkbox__real-checkbox:checked + .checkbox__checkbox-view::after {
+  visibility: visible;
+}
+
+.checkbox__real-checkbox:focus + .checkbox__checkbox-view {
+  border-color: #e4c23b;
+  box-shadow: 0 0 15px 1px #e4c23b;
+}
+
+.checkbox__real-checkbox:disabled + .checkbox__checkbox-view {
+  opacity: 0.3;
+  background-color: #fff;
+  cursor: initial;
+}
+
+.content__letters {
+  min-width: 800px;
+  margin-left: 172px;
+  margin-bottom: 30px;
+}
+
+.footer__content {
+  box-sizing: border-box;
+  padding: 0 20px;
+  width: inherit;
+  height: inherit;
+  text-align: right;
+}
+
+.footer__item {
+  display: inline-block;
+  margin-left: 30px;
+  vertical-align: middle;
+}
+
+.footer__link {
+  text-decoration: none;
+}
+
+.footer__text {
+  font: 11px/31px "Helvetica Neue";
+  color: #9b9b9b;
+}
+
+.header__link {
+  display: inline-block;
+  text-decoration: none;
+  vertical-align: middle;
+  margin-right: 11px;
+}
+
+.header__logo {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 50px;
+}
+
+@media screen and (max-width: 600px) {
+  .header__search {
+    margin-left: 0;
+  }
+}
+
+.header__search {
+  height: inherit;
+  min-width: 300px;
+  max-width: 60%;
+  width: 60%;
+  margin: 0 auto;
+}
+
+.header__search-wrapper {
+  display: inline-block;
+  height: 32px;
+  width: calc(80% - 250px);
+}
+
+.letter_active {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.letter_deleted {
+  animation: delete-letter-animation 1s cubic-bezier(.5, 0, 0, 0);
+}
+
+@keyframes delete-letter-animation {
+  0% {
+    opacity: 1.0;
+    transform: translateX(0%);
+  }
+
+  30% {
+    opacity: 0.0;
+    transform: translateX(100%);
+  }
+
+  50% {
+    height: 40px;
+  }
+
+  100% {
+    opacity: 0.0;
+    transform: translateX(100%);
+    height: 0px;
+  }
+}
+
+.letter_new {
+  animation: new-letter-animation 1s cubic-bezier(1, 1, .5, 1);
+}
+
+@keyframes new-letter-animation {
+  0% {
+    opacity: 0.0;
+    transform: translateX(100%);
+    height: 0px;
+  }
+
+  50% {
+    height: 40px;
+  }
+
+  60% {
+    opacity: 0.0;
+    transform: translateX(100%);
+  }
+
+  100% {
+    opacity: 1.0;
+    transform: translateX(0%);
+  }
+}
+
+.letter_unread .profile-name {
+  font-weight: bold;
+}
+
+.letter_unread .content-preview {
+  font-weight: bold;
+}
+
+.letter_unread .unread-flag {
+  visibility: visible;
+}
+
+.letter__content-preview {
+  display: inline-block;
+  box-sizing: border-box;
+  line-height: 40px;
+  vertical-align: middle;
+  width: calc(100% - 360px);
+  padding-left: 10px;
+  padding-right: 20px;
+}
+
+.letter__date {
+  display: inline-block;
+  box-sizing: border-box;
+  line-height: 40px;
+  vertical-align: middle;
+  text-align: right;
+  width: 70px;
+  padding-right: 20px;
+}
+
+.letter__link {
+  display: block;
+  text-decoration: none;
+  height: inherit;
+}
+
+.letter__preview {
+  height: inherit;
+  white-space: nowrap;
+}
+
+.letter__profile-image {
+  display: inline-block;
+  box-sizing: border-box;
+  vertical-align: middle;
+}
+
+.letter__profile-name {
+  display: inline-block;
+  box-sizing: border-box;
+  line-height: 40px;
+  vertical-align: bottom;
+  padding-left: 10px;
+  padding-right: 20px;
+  width: 185px;
+}
+
+.letter__unread-flag {
+  display: inline-block;
+  visibility: hidden;
+}
+
+.letters__actions {
+  height: 40px;
+  border-bottom: 1px solid #e2e2e2;
+}
+
+.letters__checkbox {
+  box-sizing: border-box;
+  display: inline-block;
+  width: 46px;
+  padding-left: 20px;
+  padding-right: 10px;
+}
+
+.letters__checkbox-label {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.letters__content {
+  min-height: calc(100vh - 160px);
+}
+
+.letters__footer {
+  height: 31px;
+  width: 100%;
+  border-top: 1px solid #e2e2e2;
+}
+
+.letters__letter {
+  height: 40px;
+  border-bottom: 1px solid #e2e2e2;
+}
+
+.letters__list {
+  min-height: 460px;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+.mail-page__header {
+  box-sizing: border-box;
+  height: 56px;
+  padding-top: 11px;
+  padding-bottom: 13px;
+}
+
+.mail-page__sidebar {
+  float: left;
+  width: 150px;
+}
+
+.menu__item {
+  display: block;
+  width: inherit;
+  height: 22px;
+  box-sizing: border-box;
+}
+
+.menu__item:hover {
+  background-color: #cdd6e4;
+  border-radius: 3px;
+}
+
+.menu__item:hover .menu__link {
+  color: #555;
+  font-weight: bold;
+}
+
+.menu__link {
+  display: block;
+  box-sizing: border-box;
+  padding: 0 10px;
+  text-decoration: none;
+  color: #707070;
+  font: 500 11px/22px "Helvetica Neue";
+}
+
+.menu__list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  width: inherit;
+}
+
+.message-content__content {
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+  white-space: normal;
+  text-align: justify;
+  font: 16px/30px "Helvetica Neue";
+  padding-bottom: 30px;
+}
+
+.message-content__date {
+  display: inline-block;
+  text-align: right;
+  float: right;
+  width: 70px;
+  vertical-align: middle;
+  line-height: 60px;
+}
+
+.message-content__header {
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.message-content__info {
+  height: 60px;
+}
+
+.message-content__profile-image {
+  display: inline-block;
+  background-size: cover;
+  width: 45px;
+  height: 45px;
+  font-size: 25px;
+  line-height: 45px;
+}
+
+.message-content__profile-name {
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 700;
+  max-width: 300px;
+  vertical-align: top;
+  margin-left: 10px;
+  font-family: "Yandex Sans";
+}
+
+.message-content__subject {
+  box-sizing: border-box;
+  width: 100%;
+  height: 80px;
+  margin: 0;
+  font: 400 24px/80px "Yandex Sans";
+}
+
+.search__clear-icon {
+  position: absolute;
+  top: calc(50% - 5px);
+  right: 11px;
+}
+
+.search__input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  box-sizing: border-box;
+  padding-left: 15px;
+  padding-right: 30px;
+  opacity: 0.5;
+  font: 15px/32px "Yandex Sans";
+}
+
+.sidebar__main-button {
+  margin-bottom: 8px;
+}
+
+.text_with-ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.menu__item_active {
+  background-color: #cdd6e4;
+  border-radius: 3px;
+}
+
+.menu__item_active .menu__link {
+  color: #555;
+  font-weight: bold;
+}

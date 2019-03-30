@@ -1,0 +1,11 @@
+.letter__profile-name {
+	display: inline-block;
+	box-sizing: border-box;
+
+	line-height: 40px;
+	vertical-align: bottom;
+
+	padding-left: 10px;
+	padding-right: 20px;
+	width: 185px;
+} 

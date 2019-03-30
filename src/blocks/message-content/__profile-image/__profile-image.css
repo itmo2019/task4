@@ -1,0 +1,11 @@
+.message-content__profile-image {
+	display: inline-block;
+
+	background-size: cover;  
+
+	width: 45px; 
+	height: 45px;
+	
+	font-size: 25px;
+	line-height: 45px;
+}

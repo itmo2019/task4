@@ -1,0 +1,6 @@
+.search__clear-icon {
+	position: absolute;
+
+	top: calc(50% - 5px);
+	right: 11px;
+}
