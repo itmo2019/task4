@@ -23,26 +23,24 @@
 		<a class="body__newbox-refl">Написать</a>
 	</div>
 	<div class="menu body__menu">
-		<ul class="menu__list-of-options">
-			<li class="menu__list-in">
-				<a>Входящие</a>
-			</li>
-			<li class="menu__list-send">
-				<a>Отправленные</a>
-			</li>
-			<li class="menu__list-del">
-				<a>Удаленные</a>
-			</li>
-			<li class="menu__list-spam">
-				<a>Спам</a>
-			</li>
-			<li class="menu__list-draft">
-				<a>Черновики</a>
-			</li>
-			<li class="menu__list-makedir">
-				<a>Создать папку</a>
-			</li>
-		</ul>
+		<div class="menu__item">
+			Входящие
+		</div>
+		<div class="menu__item">
+			Отправленные
+		</div>
+		<div class="menu__item">
+			Удаленные
+		</div>
+		<div class="menu__item">
+			Спам
+		</div>
+		<div class="menu__item">
+			Черновики
+		</div>
+		<div class="menu__item">
+			Создать папку
+		</div>
 	</div>	
 	<div class="window body__window">
 		<div class="header window__header">
@@ -52,7 +50,6 @@
 				<input type="submit" name="spam" class="header__item" value="Это спам!">
 				<input type="submit" name="read" class="header__item" value="Прочитано">
 		</div>
-		<div id = "firstLine" class="window__firstline"></div>
 		<div id = "letters-context">
 			<input type="checkbox" id="show-letter1">
 			<article id = "essay">
@@ -70,14 +67,12 @@
 					<div class="firstletter__date">6 авг</div>
 					<div class="firstletter__unreaded"></div>
 				</label>
-				<div class="letters__line"></div>
 			</div>
 			<div class="letters__emptypart"></div>
 		</div>
 		<div class="allright window__allright" id = 'allright'>
-				<div class="allright__line"></div>
 				<p class="allright__foot">Помощь и обратноя связь &nbsp; &nbsp; &nbsp; Реклама &nbsp; &nbsp; &nbsp;  &#169; 2001-2018, Яндекс</p>
-			</div>
+		</div>
 
 	</div>
 	<script type="text/javascript" src="markov.js">
@@ -87,17 +82,7 @@
 		var allTexts = document.getElementById("letters-context")
 		var cntletters = 1
 		var nonDeletedLetters = 1 
-		function genNewLine() {
-			var newLine = document.createElement('div');
-			newLine.id = "newLine"
-			newLine.class = "letters__line"
-			newLine.style.position = 'relative'
-			newLine.style.marginTop = '4px'
-			newLine.style.width = '100%'
-			newLine.style.height = '2px'
-			newLine.style.border = 'solid 1px #e2e2e2'
-			return newLine;
-		}
+
 		function genAuthtor() {
 			i =  Math.random() * authors.length
   			return authors[~~i]
@@ -167,7 +152,7 @@
 			newDiv.appendChild (genNewLetter())
 
 
-			newDiv.appendChild(genNewLine())
+			// newDiv.appendChild(genNewLine())
 			var lofl = document.getElementById("list-of-letters")
 			lofl.insertBefore(newDiv, lofl.firstChild)
 		}
@@ -212,12 +197,10 @@
 					}
 					nonDeletedLetters--
 					d[i].className+=" deleted";
-					d[i].nextElementSibling.className+=" deleted";
 					d[i].parentElement.className+=" deleted";
 					d[i].firstElementChild.checked = false;
 				}
 			}
-
 
 			var setAll = document.getElementById("set-all-box")
 			if (setAll.checked) {
@@ -229,7 +212,7 @@
 
 	<script type="text/javascript">
 		var f1 = function() {			
-			var t2 =  Math.floor(Math.random() * (600000 - 300000 + 1) + 300000)
+			var t2 = Math.floor(Math.random() * (600000 - 300000 + 1) + 300000)
 			newButton.click()
 			var p = setTimeout(f1, t2)
 		}
