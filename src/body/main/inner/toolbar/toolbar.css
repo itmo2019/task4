@@ -1,0 +1,24 @@
+/*TOOLBAR*/
+.toolbar {
+    position: relative;
+    line-height: 37px;
+    margin-left: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: hidden;
+    font-weight: 500;
+    box-sizing: border-box;
+}
+
+.toolbar__button {
+    padding: 10px 12px;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    text-decoration: none;
+    color: #707070;
+}
+
+.toolbar__button:hover {
+    background-color: #f0f0f0;
+}

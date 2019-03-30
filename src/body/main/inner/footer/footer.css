@@ -1,0 +1,15 @@
+/*FOOTER*/
+.footer {
+    display: inline-block;
+    bottom: 0;
+    width: 100%;
+    text-align: right;
+}
+
+.footer_link-decoration {
+    font-size: 11px;
+    line-height: 30px;
+    color: #9b9b9b;
+    padding-right: 15px;
+    text-decoration: none;
+}

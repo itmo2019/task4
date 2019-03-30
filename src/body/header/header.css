@@ -1,0 +1,19 @@
+/*HEADER*/
+.header {
+    padding: 11px 0;
+}
+
+.header__pancakes {
+    display: inline-block;
+    background-color: transparent;
+    border-color: transparent;
+    padding-left: 0;
+    cursor: pointer;
+    height: 32px;
+}
+
+.header__logo {
+    display: inline-block;
+    margin-right: 114px;
+    content: url('header__logo.svg');
+}

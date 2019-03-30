@@ -1,0 +1,15 @@
+/*MESSAGES*/
+.message-list {
+    min-height: 491px;
+    max-height: 1363px;
+    overflow-y: hidden;
+    position: relative;
+}
+
+#message-list__cutter {
+    display: none;
+}
+
+#message-list__cutter:checked + .message__content {
+    display: block;
+}

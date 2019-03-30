@@ -1,0 +1,99 @@
+.message {
+    display: inline-block;
+    width: 100%;
+    height: 40px;
+    line-height: 100%;
+    transition: opacity 0.5s;
+    opacity: 0;
+}
+
+.message__content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 100%;
+    display: none;
+    z-index: 5;
+    background-color: #ffffff;
+    min-height: 490px;
+    height: 100%;
+}
+
+.message__logo {
+    margin: 6px 10px 0 0;
+    display: block;
+    float: left;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+}
+
+.message__contact {
+    display: block;
+    width: 175px;
+    padding-top: 14px;
+    float: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.message_not-read {
+    font-weight: bold;
+}
+
+.message__read-icon {
+    display: inline-block;
+    background-color: #6287bd;
+    border-radius: 100px;
+    float: left;
+    height: 10px;
+    width: 10px;
+    margin-top: 16px;
+    margin-right: 10px;
+}
+
+.message__read-icon_invisible {
+    visibility: hidden;
+}
+
+.message__subject {
+    display: block;
+    width: 44%;
+    margin-top: 14px;
+    float: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.message__date {
+    display: inline-block;
+    margin-top: 14px;
+    float: right;
+    margin-right: 15px;
+    text-align: right;
+    color: #9b9b9b;
+    font-weight: normal;
+}
+
+.message__page {
+    padding: 10px 24px;
+    white-space: normal;
+}
+
+.message__image {
+    shape-outside: url('message__image.png');
+    shape-image-threshold: 0.7;
+    float: right;
+}
+
+.message__close-button {
+    padding: 10px;
+    float: right;
+    cursor: pointer;
+}
+
+.message_show {
+    opacity: 1;
+}

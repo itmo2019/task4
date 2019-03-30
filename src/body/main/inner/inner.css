@@ -1,0 +1,16 @@
+.inner {
+    position: relative;
+    width: 79%;
+    min-height: 530px;
+    border-radius: 3px;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.34);
+    background-color: #ffffff;
+    font-size: 13px;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.hr {
+    opacity: 0.2;
+    margin: 0;
+}

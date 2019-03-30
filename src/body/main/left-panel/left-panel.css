@@ -1,14 +1,4 @@
 /*LEFT PANEL*/
-.main {
-    white-space: nowrap;
-    font-family: HelveticaNeue, sans-serif;
-}
-
-.left-panel a {
-    text-decoration: none;
-    color: #707070 !important;
-}
-
 .left-panel {
     float: left;
     width: 147px;
@@ -34,27 +24,26 @@
     box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.34);
 }
 
-.folders {
+.folders-panel {
     font-size: 11px;
     margin-top: 8px;
-    list-style-type: none;
-}
-
-.folders > ul {
     padding-left: 0;
 }
 
-.folders > ul > li {
-    list-style-type: none;
+.folders-panel__folder {
     padding: 5px 10px;
-    color: #707070;
     position: relative;
     display: block;
 }
 
-.folders > ul > li:hover {
+.folders-panel__folder:hover {
     border-radius: 3px;
     background-color: #cdd6e4;
     font-weight: bold;
     color: #555555;
+}
+
+.folders-panel__folder_link-decoration {
+    color: #707070 !important;
+    text-decoration: none;
 }

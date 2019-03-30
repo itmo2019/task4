@@ -1,0 +1,23 @@
+.checkbox {
+    position: relative;
+    float: left;
+    width: 16px;
+    height: 16px;
+    border-radius: 3px;
+    margin: 10px;
+    padding: 2px;
+    border: solid 1px rgba(0, 0, 0, 0.15);
+    background-color: #ffffff;
+    -webkit-appearance: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.checkbox:checked {
+    background: #e2e2e2;
+    background-clip: content-box;
+}
+
+.checkbox_message {
+    margin-top: 14px;
+}
