@@ -1,6 +1,6 @@
 function checkAll(toolbarCheckbox) {
-    let checkboxes = document.querySelectorAll('.checkbox_message');
-    for (let i = 0; i < checkboxes.length; i++) {
+    let checkboxes = document.querySelectorAll('.checkbox');
+    for (let i = 1; i < checkboxes.length; i++) {
         checkboxes[i].checked = toolbarCheckbox.checked;
     }
 }
@@ -20,8 +20,8 @@ function newMailIncoming() {
 }
 
 function deleteMail() {
-    let checkboxes = document.querySelectorAll('.checkbox_message');
-    for (let i = 0; i < checkboxes.length; i++) {
+    let checkboxes = document.querySelectorAll('.checkbox');
+    for (let i = 1; i < checkboxes.length; i++) {
         if ((checkboxes[i].checked === true) && (i < 30)) {
             let container = checkboxes[i].parentElement.parentElement;
             container.classList.remove("message_show");
@@ -30,6 +30,8 @@ function deleteMail() {
             }, 500);
         }
     }
+    checkboxes[0].checked = false;
+    checkAll(checkboxes[0]);
 }
 
 function randomMailIncoming() {
@@ -39,3 +41,4 @@ function randomMailIncoming() {
 }
 
 randomMailIncoming();
+
