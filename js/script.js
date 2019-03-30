@@ -91,29 +91,24 @@ function genText() {
 }
 
 function myText() {
-    return "<p>\n" +
-        "                    Первое мое знакомство с <abbr title=\"HyperText Markup Language\">HTML</abbr>/<abbr\n" +
-        "                        title=\"Cascading Style Sheets\">CSS</abbr>\n" +
-        "                    случилось еще в школе, на уроках информатики. Полученные на них знания, позволили мне создать\n" +
-        "                    простой сайт с версткой на таблицах.\n" +
-        "                    Это было около 4 лет назад, после этого я не имел дел с\n" +
-        "                    <abbr title=\"HyperText Markup Language\">HTML</abbr>/<abbr\n" +
-        "                        title=\"Cascading Style Sheets\">CSS</abbr>,\n" +
-        "                    поэтому многое уже не помню и в первую очередь, курс по фронтенду позолит мне вспомнить давно\n" +
-        "                    забытое.\n" +
-        "                </p>\n" +
-        "                <p>\n" +
-        "                    Во-вторых, этот курс практический, и я ожидаю, что будут различные интересные задания, которые\n" +
-        "                    позволят\n" +
-        "                    <img class=\"letter__image\" src=\"images/itmo.png\" alt=\"itmo\">\n" +
-        "                    проверить полученные знания в <i>\"боевых условиях\"</i>.\n" +
-        "                </p>\n" +
-        "                <p>\n" +
-        "                    В-третьих, я ожидаю знакомства с новыми технологиями, такими как <a href=\"https://reactjs.org/\">React</a>\n" +
-        "                    и\n" +
-        "                    <a href=\"https://redux.js.org\">Redux</a>, которые позволят мне создать\n" +
-        "                    web-приложение.\n" +
-        "                </p>";
+    return `
+        <p>
+            Первое мое знакомство с <abbr title=\"HyperText Markup Language\">HTML</abbr>/<abbr 
+            title=\"Cascading Style Sheets\">CSS</abbr> случилось еще в школе, на уроках информатики. Полученные на них 
+            знания, позволили мне создать простой сайт с версткой на таблицах. Это было около 4 лет назад, после этого 
+            я не имел дел с <abbr title=\"HyperText Markup Language\">HTML</abbr>/<abbr 
+            title=\"Cascading Style Sheets\">CSS</abbr>, поэтому многое уже не помню и в первую очередь, курс по 
+            фронтенду позолит мне вспомнить давно забытое.
+        </p>
+        <p>
+            Во-вторых, этот курс практический, и я ожидаю, что будут различные интересные задания, которые позволят
+            <img class="letter__image" src="images/itmo.png" alt="itmo"> проверить полученные знания в 
+            <i>\"боевых условиях\"</i>.
+        </p>
+        <p>
+            В-третьих, я ожидаю знакомства с новыми технологиями, такими как <a href="https://reactjs.org/">React</a> и
+            <a href="https://redux.js.org">Redux</a>, которые позволят мне создать web-приложение.
+        </p>`;
 }
 
 function genAuthorName() {
@@ -153,23 +148,30 @@ function genLetterHeadHtml(id) {
     let firstSentence = letterIdToLetter.get(id);
     firstSentence = firstSentence.substr(3, firstSentence.length - 3);
     let date = new Date();
-    return "<label>\n" +
-        "                    <input class=\"page__my-input letters__my-checkbox\" type=\"checkbox\">\n" +
-        "                </label>\n" +
-        "                <a href=\"#\" class=\"letter-head letter-head_unread\"'>\n" +
-        "                    <img class=\"letter-head__author-image\" src=\"" + genAuthorImage() + "\" alt=\"author logo\">\n" +
-        "                    <div class=\"letter-head__author-name\">\n" +
-        "                        <p class=\"page__my-text\">"+ genAuthorName() +"</p>\n" +
-        "                    </div>\n" +
-        "                    <div class=\"letter-head__read\"></div>\n" +
-        "                    <div class=\"letter-head__text\">\n" +
-        "                        <p class=\"page__my-text\">"+ firstSentence.split("\.")[0] + "</p>\n" +
-        "                    </div>\n" +
-        "                    <div class=\"letter-head__date\">\n" +
-        "                        <time datetime=\"" + getDate(date) + "\"><p>" + getHeadDate(date) + "</p></time>\n" +
-        "                    </div>\n" +
-        "                </a>\n" +
-        "                <div class=\"page__line\"></div>"
+    let authorImage = genAuthorImage();
+    let authorName = genAuthorName();
+    let headSentence = firstSentence.split(".")[0];
+    let headTagDate = getDate(date);
+    let headDate = getHeadDate(date);
+    return `
+        <label>
+            <input class="page__my-input letters__my-checkbox" type="checkbox">
+        </label>
+        <a href="#" class="letter-head letter-head_unread">
+            <img class="letter-head__author-image" src="${authorImage}" alt="author logo">
+            <div class="letter-head__author-name">
+                <p class="page__my-text">${authorName}</p>
+            </div>
+            <div class="letter-head__read"></div>
+            <div class="letter-head__text">
+                <p class="page__my-text">${headSentence}</p>
+            </div>
+            <div class="letter-head__date">
+                <time datetime="${headTagDate}"><p>${headDate}</p></time>
+            </div>
+        </a>
+        <div class=\"page__line\"></div>
+        `
 }
 
 function addOpenLetterListener(element, id) {
@@ -185,20 +187,23 @@ function addOpenLetterListener(element, id) {
     );
 }
 
-function addNewLetter() {
+function newMail() {
     let letters = Array.from(document.getElementsByClassName("letters"))[0];
     let newElement = document.createElement("li");
-    newElement.className = "letters__animated-add-line";
+    newElement.className = "";
     newElement.id = "letter-id-" + count++;
     letterIdToLetter.set(newElement.id, genText());
     newElement.innerHTML = genLetterHeadHtml(newElement.id);
-    newElement.addEventListener("webkitAnimationEnd", function () {
-        newElement.className = "";
-    });
     addOpenLetterListener(newElement.getElementsByClassName("letter-head").item(0), newElement.id);
     letters.insertBefore(newElement, letters.firstChild);
+
     array.push(newElement.id);
-    size++;
+    let elements = Array.from(newElement.children);
+    newElement.classList.add("letters__animated-add-line");
+    setTimeout(function () {
+        newElement.classList.add("letters__animated-add-line_visible");
+    }, 0);
+    // newElement.classList.add("letters__animated-add-line_visible");
     if (size > 30) {
         for (let i = 0; i < array.length; i++) {
             let element = document.getElementById(array[i]);
@@ -223,7 +228,7 @@ function deleteMessage() {
     for (let i = 0; i < elements.length; i++) {
         if (elements[i].children[0].children[0].checked) {
             elements[i].className += " letters__animated-delete-line";
-            elements[i].addEventListener("webkitAnimationEnd", function () {
+            setTimeout( function () {
                 letters.removeChild(elements[i]);
                 letterIdToLetter.delete(elements[i].id);
                 size--;
@@ -235,7 +240,7 @@ function deleteMessage() {
                         break;
                     }
                 }
-            });
+            }, 2000);
         }
     }
 }
@@ -251,16 +256,18 @@ function selectAll() {
 let last = 0;
 
 function rec() {
-    addNewLetter();
+    newMail();
     const fiveMinute = 300000;
     const maxTime = 600000;
     const minTime = 10;
-    let time =  Math.max(fiveMinute, Math.floor(Math.random() * (maxTime - minTime) + minTime));
+    let time =  Math.max(fiveMinute - last, Math.floor(Math.random() * (maxTime - minTime) + minTime));
+    // console.log(new Date());
+    // console.log(time);
     last = time;
     setTimeout(rec, time);
 }
 
-function newLetter() {
+function initialize() {
     array.push("letter-id-0", "letter-id-1", "letter-id-2", "letter-id-3");
     letterIdToLetter.set("letter-id-0", genText());
     addOpenLetterListener(document.getElementById("letter-id-0").getElementsByClassName("letter-head").item(0), "letter-id-0");
@@ -277,7 +284,9 @@ function newLetter() {
     const maxTime = 600000;
     const minTime = 10;
     let time = Math.floor(Math.random() * (maxTime - minTime) + minTime);
-    last = time;
+    // console.log(new Date());
+    // console.log(time);
+    last = 300000;
     setTimeout(rec, time);
 
 }
