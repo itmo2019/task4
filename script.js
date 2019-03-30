@@ -1,11 +1,10 @@
 let SEC = 1000;
 let MINUTE = 60 * SEC;
 
-setInterval(newMail, 3000);
-/*newMail();
+setTimeout(newMail, 1000);
 setInterval(function () {
     setTimeout(newMail, Math.random() * (10 * MINUTE) + 10);
-}, 5 * MINUTE);*/
+}, 5 * MINUTE);
 
 var letters = [];
 
@@ -18,7 +17,7 @@ function createMail(from = "Яндекс.Почта", theme = "Тестовое 
         "            <input type=\"checkbox\" class=\"letter__checkbox hidden-checkbox\">\n" +
         "            <span class=\"decorative-checkbox letter__decorative-checkbox\"></span>\n" +
         "            <label class=\"letter__label\" for=\"check-label\" id=\"letter" + nextLetterId + "\">" +
-        "            <img class=\"letter__img\" src=\"images/ya.jpg\">\n" +
+        "            <img class=\"letter__img\" src=\"https://thispersondoesnotexist.com/image?randomSeed=" + nextLetterId + "\">\n" +
         "            <h2 class=\"letter__from bold hide-overflow\">" + from + "</h2>\n" +
         "            <div class=\"letter__read-status unchecked\"></div>\n" +
         "            <p class=\"letter__date hide-overflow\">" + date + "</p>\n" +
@@ -33,7 +32,7 @@ function changeCheckboxesStatus() {
     let mainCheckbox = document.getElementById("main-checkbox");
     let newStatus = mainCheckbox.checked;
     let checkboxes = document.getElementsByClassName("letter__checkbox");
-    for (var i = 0; i < checkboxes.length; i++) {
+    for (var i = 0; i < checkboxes.length && i < 30; i++) {
         checkboxes.item(i).checked = newStatus;
     }
 }
