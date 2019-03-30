@@ -55,42 +55,18 @@ function addMessage() {
     newMessage.onclick = function () {
         openMessage(this, event);
     };
+    newMessage.classList.add("add-message-animation");
     messagesContainer[0].insertBefore(newMessage, messagesContainer[0].firstChild);
-    let animationDuration = 1000;
-    let fps = animationDuration / 30;
-    animate(newMessage, fps, animationDuration, false);
-}
-
-function animate(el, fps, animationDuration, isRemove) {
-    var startTime = performance.now();
-    requestAnimationFrame(function animate(curTime) {
-        var timePassed = curTime - startTime;
-        if (timePassed > animationDuration) timePassed = animationDuration;
-
-        function draw(timePassed) {
-            var shift = (timePassed / fps);
-            el.style.height = isRemove ? (30 - shift) + 'px' : shift + 'px';
-            el.style.opacity = isRemove ? 1 - shift / 30 : shift / 30;
-        }
-
-        draw(timePassed);
-        if (timePassed < animationDuration) {
-            requestAnimationFrame(animate);
-        }
+    newMessage.addEventListener("animationend", () => {
+        newMessage.classList.remove("add-message-animation");
     });
-    if (isRemove) {
-        el.style.paddingTop = '0px';
-        el.style.paddingBottom = '0px';
-        setTimeout(function () {
-            el.parentNode.removeChild(el);
-        }, animationDuration);
-    }
 }
 
 function removeElement(el) {
-    let animationDuration = 1000;
-    let fps = animationDuration / 30;
-    animate(el, fps, animationDuration, true);
+    el.classList.add("delete-message-animation");
+    el.addEventListener("animationend", () => {
+        el.remove();
+    });
 }
 
 function openMessage(messageOuter, messageInner) {

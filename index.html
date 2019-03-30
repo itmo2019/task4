@@ -8,8 +8,8 @@
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body class="page">
-<header class="header page__header">
-    <div class="hamburger header_hamburger">
+<header class="header">
+    <div class="hamburger header__hamburger">
         <div class="hamburger__single-strip"></div>
         <div class="hamburger__single-strip"></div>
         <div class="hamburger__single-strip"></div>
@@ -17,30 +17,30 @@
     <img class="ya-logo header__ya-logo" src="resources/yandex-mail.png" alt="yandex" height="25" width="150">
     <input class="search-box header__search-box" type="search" placeholder="Поиск"/>
 </header>
-<aside class="aside-block page__aside-block">
-    <button class="button-aside-menu">Написать</button>
-    <button class="button-aside-menu" id="button-add-message" onclick="">Добавить письмо</button>
-    <ul class="aside-block aside-block-menu">
-        <li class="aside-block-menu__item aside-block-menu__item_active"><a class="menu-link" href="#">Входящие</a></li>
-        <li class="aside-block-menu__item"><a class="menu-link" href="#">Отправленные</a></li>
-        <li class="aside-block-menu__item"><a class="menu-link" href="#">Удалённые</a></li>
-        <li class="aside-block-menu__item"><a class="menu-link" href="#">Спам</a></li>
-        <li class="aside-block-menu__item"><a class="menu-link" href="#">Черновики</a></li>
-        <li class="aside-block-menu__item"><a class="menu-link" href="#">Создать папку</a></li>
+<aside class="menu">
+    <button class="menu__button">Написать</button>
+    <button class="menu__button menu__button_action_add-message" id="button-add-message">Добавить письмо</button>
+    <ul class="menu__items">
+        <li class="menu__item menu__item_active"><a class="menu-link" href="#">Входящие</a></li>
+        <li class="menu__item"><a class="menu-link" href="#">Отправленные</a></li>
+        <li class="menu__item"><a class="menu-link" href="#">Удалённые</a></li>
+        <li class="menu__item"><a class="menu-link" href="#">Спам</a></li>
+        <li class="menu__item"><a class="menu-link" href="#">Черновики</a></li>
+        <li class="menu__item"><a class="menu-link" href="#">Создать папку</a></li>
     </ul>
 </aside>
 <main class="main-block page__main-block">
     <div class="top-bar">
         <input class="checkbox top-bar__checkbox" type="checkbox" id="select-all-checkbox"/>
-        <ul class="horizontal-nav-panel top-bar__horizontal-nav-panel-main">
-            <li class="top-bar__horizontal-nav-panel__item"><a class="top-bar__horizontal-nav-panel__link menu-link"
-                                                               href="#">Переслать</a></li>
-            <li class="top-bar__horizontal-nav-panel__item"><a class="top-bar__horizontal-nav-panel__link menu-link"
-                                                               href="#" id="button-remove-message">Удалить</a></li>
-            <li class="top-bar__horizontal-nav-panel__item"><a class="top-bar__horizontal-nav-panel__link menu-link"
-                                                               href="#">Это спам!</a></li>
-            <li class="top-bar__horizontal-nav-panel__item"><a class="top-bar__horizontal-nav-panel__link menu-link"
-                                                               href="#">Прочитано</a></li>
+        <ul class="horizontal-nav-panel">
+            <li class="horizontal-nav-panel__item"><a class="horizontal-nav-panel__link menu-link"
+                                                      href="#">Переслать</a></li>
+            <li class="horizontal-nav-panel__item"><a class="horizontal-nav-panel__link menu-link"
+                                                      href="#" id="button-remove-message">Удалить</a></li>
+            <li class="horizontal-nav-panel__item"><a class="horizontal-nav-panel__link menu-link"
+                                                      href="#">Это спам!</a></li>
+            <li class="horizontal-nav-panel__item"><a class="horizontal-nav-panel__link menu-link"
+                                                      href="#">Прочитано</a></li>
         </ul>
     </div>
     <div class="hidden-box">
@@ -50,11 +50,11 @@
     <div class="messages-box">
 
     </div>
-    <footer class="footer main-block__footer">
-        <nav class="footer__bar">
-            <div class="footer__item"><a href="#">Помощь и обратная связь</a></div>
-            <div class="footer__item"><a href="#">Реклама</a></div>
-            <div class="footer__item"><a href="#">&#9400; 2001—2018, Яндекc</a></div>
+    <footer class="footer">
+        <nav class="footer-bar">
+            <a class="footer-link footer-bar__item" href="#">Помощь и обратная связь</a>
+            <a class="footer-link footer-bar__item" href="#">Реклама</a>
+            <a class="footer-link footer-bar__item" href="#">&#9400; 2001—2018, Яндекc</a>
         </nav>
     </footer>
 </main>
