@@ -1,0 +1,10 @@
+.mail__checkbox:checked + .mail-title_unread,
+.mail__checkbox:checked + .mail-title_read,
+.mail__checkbox {
+    display: none;
+}
+
+.mail__checkbox:checked + .mail-title_unread + .mail-article,
+.mail__checkbox:checked + .mail-title_read   + .mail-article {
+    display: block;
+}

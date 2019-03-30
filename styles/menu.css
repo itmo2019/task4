@@ -1,0 +1,32 @@
+.menu__write-mail {
+    overflow-wrap: break-word;
+    cursor: pointer;
+    color: #fff;
+    background: #6287bd;
+    border-radius: 3px;
+    width: 88%;
+    min-height: 13px;
+    padding: 9px 0 10px;
+    text-align: center;
+    font-size: 12px;
+    margin: auto auto 10px 0; 
+}
+
+.menu__item {
+    overflow-wrap: break-word;
+    cursor: pointer;
+    margin: auto;
+    margin-left: 0;
+    width: 88%;
+    min-height: 14px;
+
+    color: #555555;
+    padding: 4px 0 4px 10px;
+    font-size: 11px;
+}
+
+.menu__item:hover {
+    font-weight: bold;
+    border-radius: 3px;
+    background-color: #cdd6e4;
+}

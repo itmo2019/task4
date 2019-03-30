@@ -1,0 +1,95 @@
+.mail-title {
+    overflow-y: hidden;
+    line-height: 39px;
+
+    /* no explicit locating - meets BEM demands */
+    position: relative;
+}
+
+.mail-title[toDelete],
+.mail-title[toAppear] {
+    transition-duration: 200ms;
+}
+
+.mail-title[fromDelete],
+.mail-title[toDelete] {
+    height: 0;
+    border: 0;
+}
+
+.mail-title[toAppear],
+.mail-title {
+    height: 39px;
+    border-bottom: 1px solid #e2e2e2;
+}
+
+.mail-title__img-wrapper {
+    width: 30px;
+    height: 30px;
+
+    display: inline-block;
+    vertical-align: middle;
+    margin: auto 5px;
+}
+
+.mail-title__sender {
+    display: inline-block;
+    vertical-align: middle;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+    max-width: 25%;
+    margin: auto 5px;
+    font-size: 13px;
+    text-overflow: ellipsis;
+}
+
+.mail-title_unread .mail-title__sender,
+.mail-title_unread .mail-title__title {
+    font-weight: bold;
+}
+
+.mail-title__unread-flag {
+    display: inline-block;
+    min-width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    margin: auto 0;
+}
+
+.mail-title_unread .mail-title__unread-flag {
+    background: #6287bd;
+}
+
+.mail-title__date {
+    line-height: normal;
+    overflow: hidden;
+    text-overflow: clip;
+    width: 48px;
+    text-align: right;
+    position: absolute;
+    top: 13px;
+    right: 20px;
+    font-size: 13px;
+    white-space: nowrap;
+    color: #9b9b9b;
+}
+
+.mail-title__title {
+    vertical-align: middle;
+    cursor: pointer;
+    width: 100%;
+    max-width: calc(75% - 193px);
+    display: inline-block;
+    font-size: 13px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: auto auto auto 10px;
+}
+
+.mail-title__checkbox {
+    display: inline-block;
+    vertical-align: middle;
+    margin: auto 7px auto 20px;
+}

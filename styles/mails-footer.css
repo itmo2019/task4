@@ -1,0 +1,15 @@
+.mails-footer {
+    text-align: right;
+    color: #9b9b9b;
+    font-size: 12px;
+    height: 22px;
+    padding: 9px 0 0;
+    border-top: 1px solid #e2e2e2;
+}
+
+.mails-footer__element {
+    display: inline-block;
+    margin-left: 10px;
+    margin-right: 20px;
+    font-size: 11px;
+}

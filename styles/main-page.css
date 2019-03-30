@@ -1,0 +1,11 @@
+.main-page__mails-maintainance-wrapper {
+    display: inline-block;
+    width: 79%;
+}
+
+.main-page__menu-wrapper {
+    vertical-align: top;
+    display: inline-block;
+    max-width: 168px;
+    width: 20%;
+}

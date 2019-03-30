@@ -1,0 +1,13 @@
+.article0__float-img {
+    background: #fff;
+    float: left;
+    shape-outside: circle();
+}
+
+.article0__p0 {
+    margin: 10px;
+}
+
+.article0__footer {
+    text-align: right;
+}

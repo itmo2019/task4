@@ -5,147 +5,182 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,initial-scale=1">
 
-        <link rel="stylesheet" href="styles.css" charset="utf-8">
-        <link rel="icon" href="favicon.png">
+        <link rel="stylesheet" href="styles/styles.css"             charset="utf-8">
+        
+        <link rel="stylesheet" href="styles/header.css"             charset="utf-8">
+        <link rel="stylesheet" href="styles/logo.css"               charset="utf-8">
+        <link rel="stylesheet" href="styles/search.css"             charset="utf-8">
+        <link rel="stylesheet" href="styles/menu.css"               charset="utf-8">
+        
+        <link rel="stylesheet" href="styles/main-page.css"          charset="utf-8">
+        
+        <link rel="stylesheet" href="styles/mails-maintainance.css" charset="utf-8">
+        <link rel="stylesheet" href="styles/mails-header.css"       charset="utf-8">
+        <link rel="stylesheet" href="styles/mails-menu.css"         charset="utf-8">
+        <link rel="stylesheet" href="styles/mails-footer.css"       charset="utf-8">
+        <link rel="stylesheet" href="styles/mail.css"               charset="utf-8">
+
+        <link rel="stylesheet" href="styles/mail-title.css"         charset="utf-8">
+        <link rel="stylesheet" href="styles/mail-article.css"       charset="utf-8">
+
+
+        <link rel="stylesheet" href="styles/specific/article0.css"  charset="utf-8">
+        <link rel="stylesheet" href="styles/specific/article1.css"  charset="utf-8">
+        
+        <link rel="icon" href="resources/favicon.png">
 
         <title>Яндекс.ВидимостьПочты</title>
     </head>
 
     <body id="background">
-        <div class="content">
+        <div class="background__content">
             <header class="header">
-                <div class="burger">
-                    <div class="burger-1"></div>
+                <div class="logo">
+                    <div class="logo__burger">
+                        <div class="logo__burger-1"></div>
+                    </div>
+                    <img class="logo__title" alt="логотип" src="resources/logo.png" width="153" height="31">
                 </div>
-                <img class="logo" alt="логотип" src="logo.png" width="153" height="31">
-                <div class="search-wrapper">
-                    <input type="text" class="search-field" value="Поиск">
+                <div class="search">
+                    <input type="text" class="search__field" value="Поиск">
                 </div>
             </header>
             <div class="main-page">
-                <ul class="menu">
-                    <li class="write-letter" id="write-letter">Написать
-                    <li class="menu-item">Входящие
-                    <li class="menu-item">Отправленные
-                    <li class="menu-item">Удаленные
-                    <li class="menu-item">Спам
-                    <li class="menu-item">Черновики
-                    <li class="menu-item">Создать папку
-                </ul>
-                <div class="letters-maintainance">
-                    <div class="letters-menu">
-                        <input type="checkbox" class="check-box" id="select-all">
-                        <ul class="horizontal-list">
-                            <li class="letter-menu-item">Переслать
-                            <li><input class="letter-menu-item" id="delete-button" type="button" value="Удалить">
-                            <li class="letter-menu-item">Это бан!
-                            <li class="letter-menu-item">Прочитано
-                        </ul>
-                    </div>
-                    <div class="letter-wrapper">
-                        <input class="letter-trigger" id="letter-trigger0" type="checkbox">
-                        <div class="unread-letter-header">
-                            <div class=letter-title-aligner-left>
-                                <input type="checkbox" class="check-box">
-                                <img class="avatar" src="avatar.png" width="30px" height="30px">
+                <div class="main-page__menu-wrapper">
+                    <ul class="menu">
+                        <li class="menu__write-mail" id="write-mail">Написать
+                        <li class="menu__item">Входящие
+                        <li class="menu__item">Отправленные
+                        <li class="menu__item">Удаленные
+                        <li class="menu__item">Спам
+                        <li class="menu__item">Черновики
+                        <li class="menu__item">Создать папку
+                    </ul>
+                </div>
+                <div class="main-page__mails-maintainance-wrapper">
+                    <div class="mails-maintainance">
+                        <div class="mails-header">
+                            <input type="checkbox" class="mails-header__checkbox" id="select-all">
+                            <div class="mails-header__mails-menu-wrapper">
+                                <ul class="mails-menu">
+                                    <li class="mails-menu__item-wrapper"><input class="mails-menu__item" id="forward-button" type="button" value="Переслать">
+                                    <li class="mails-menu__item-wrapper"><input class="mails-menu__item" id="delete-button"  type="button" value="Удалить">
+                                    <li class="mails-menu__item-wrapper"><input class="mails-menu__item" id="smap-button"    type="button" value="Это бан!">
+                                    <li class="mails-menu__item-wrapper"><input class="mails-menu__item" id="read-button"    type="button" value="Прочитано">
+                                </ul>
                             </div>
-                            <div class="sender">Яндекс.Паспорт</div>
-                            <div class="unread-flag"></div>
-                            <label class="letter-title" for="letter-trigger0">Доступ к аккаунту восстановлен</label>
-                            <time class="letter-date">6 авг</time>
                         </div>
-                        <article class="letter-article">
-                            <label class="letter-cross" for="letter-trigger0">
-                                <img src="letter_cross.png" alt="quiting cross" width="18px" height="18px">
-                            </label>
-                            <img src="button.png" class="float-img" alt="Пуговица" width="200px" height="200px">
-                            <p>
-                                Здравствуйте, девочки, здравствуйте, мальчики, <br>
-                                Смотрите на меня в окно и мне кидайте свои пальчики, да-а <br>
-                            </p>
-                            <p> 
-                                Ведь я сажаю алюминиевые огурцы, а-а на брезентовом поле <br>
-                                Я сажаю алюминиевые огурцы, а-а на брезентовом поле. <br>
-                            </p>
-                            <p> 
-                                Три чукотских мудреца твердят, твердят мне без конца: <br>
-                                "Металл не принесёт плода, игра не стоит свеч, а результат - труда", <br>
-                            </p>
-                            <p> 
-                                Но я сажаю алюминиевые огурцы, а-а На брезентовом поле <br>
-                                Я сажаю алюминиевые огурцы, а-а на брезентовом поле. <br>
-                            </p>
-                            <p> 
-                                Злое белое колено пытается меня достать, <br>
-                                Колом колено колет вены в надежде тайну разгадать, <br>
-                            </p>
-                            <p> 
-                                Зачем я сажаю алюминиевые огурцы, а-а на брезентовом поле <br>
-                                Я сажаю алюминиевые огурцы, а-а на брезентовом поле. <br>
-                            </p>
-                            <p> 
-                                Кнопки, скрепки, клёпки, дырки, булки, вилки, <br>
-                                Здесь тракторы пройдут мои и упадут в копилку, упадут туда, <br>
-                            </p>
-                            <p> 
-                                Где я сажаю алюминиевые огурцы, а-а на брезентовом поле <br>
-                                Я сажаю алюминиевые огурцы, а-а на брезентовом поле <br> 
-                                Я сажаю алюминиевые огурцы, а-а на брезентовом поле <br>
-                                Я сажаю алюминиевые огурцы, а-а на брезентовом поле. <br>
-                            </p>
-                            <footer class="letter-ending clearfix">Алюминевые огурцы - В.Цой</footer> 
-                        </article>
-                    </div>
-                    <div class="letter-wrapper">
-                        <input class="letter-trigger" id="letter-trigger1" type="checkbox">
-                        <div class="unread-letter-header">
-                            <div class=letter-title-aligner-left>
-                                <input type="checkbox" class="check-box">
-                                <img class="avatar" src="avatar.png" width="30px" height="30px">
+                        <div class="mail">
+                            <input class="mail__checkbox" id="mail-trigger0" type="checkbox">
+                            <div class="mail-title mail-title_unread">
+                                <input type="checkbox" class="mail-title__checkbox">
+                                <div class="mail-title__img-wrapper">
+                                    <img src="resources/avatar.png" width="30px" height="30px">
+                                </div>
+                                <div   class="mail-title__sender">Яндекс.Паспорт</div>
+                                <div   class="mail-title__unread-flag"></div>
+                                <label class="mail-title__title" for="mail-trigger0">Доступ к аккаунту восстановлен</label>
+                                <time  class="mail-title__date">6 авг</time>
                             </div>
-                            <div class="sender">Команда Яндекс.Почты</div>
-                            <div class="unread-flag"></div>
-                            <label class="letter-title" for="letter-trigger1">Как читать почту с мобильного</label>
-                            <time class="letter-date">6 июл</time>
+                            <article class="mail-article">
+                                <label class="mail-article__cross" for="mail-trigger0">
+                                    <img src="resources/mail_cross.png" alt="quiting cross" width="18px" height="18px">
+                                </label>
+                                <div class="article0">
+                                    <img src="resources/button.png" class="article0__float-img" alt="Пуговица" width="200px" height="200px">
+                                    <p class="article0__p0">
+                                        Здравствуйте, девочки, здравствуйте, мальчики, <br>
+                                        Смотрите на меня в окно и мне кидайте свои пальчики, да-а <br>
+                                    </p>
+                                    <p class="article0__p0"> 
+                                        Ведь я сажаю алюминиевые огурцы, а-а на брезентовом поле <br>
+                                        Я сажаю алюминиевые огурцы, а-а на брезентовом поле. <br>
+                                    </p>
+                                    <p class="article0__p0"> 
+                                        Три чукотских мудреца твердят, твердят мне без конца: <br>
+                                        "Металл не принесёт плода, игра не стоит свеч, а результат - труда", <br>
+                                    </p>
+                                    <p class="article0__p0"> 
+                                        Но я сажаю алюминиевые огурцы, а-а На брезентовом поле <br>
+                                        Я сажаю алюминиевые огурцы, а-а на брезентовом поле. <br>
+                                    </p>
+                                    <p class="article0__p0"> 
+                                        Злое белое колено пытается меня достать, <br>
+                                        Колом колено колет вены в надежде тайну разгадать, <br>
+                                    </p>
+                                    <p class="article0__p0"> 
+                                        Зачем я сажаю алюминиевые огурцы, а-а на брезентовом поле <br>
+                                        Я сажаю алюминиевые огурцы, а-а на брезентовом поле. <br>
+                                    </p>
+                                    <p class="article0__p0"> 
+                                        Кнопки, скрепки, клёпки, дырки, булки, вилки, <br>
+                                        Здесь тракторы пройдут мои и упадут в копилку, упадут туда, <br>
+                                    </p>
+                                    <p class="article0__p0"> 
+                                        Где я сажаю алюминиевые огурцы, а-а на брезентовом поле <br>
+                                        Я сажаю алюминиевые огурцы, а-а на брезентовом поле <br> 
+                                        Я сажаю алюминиевые огурцы, а-а на брезентовом поле <br>
+                                        Я сажаю алюминиевые огурцы, а-а на брезентовом поле. <br>
+                                    </p>
+                                    <footer class="article0__footer">Алюминевые огурцы - В.Цой</footer>
+                                </div> 
+                                <footer class="mail-article__clearfix"></footer>
+                            </article>
                         </div>
-                        <article class="letter-article">
-                            <label class="letter-cross" for="letter-trigger1">
-                                <img src="letter_cross.png" alt="quiting cross" width="18px" height="18px">
-                            </label>
-                            Ниже - письма из прошлых дз. Они не открываются. Это фича. 
-                            (Не, правда - сделать их открываемыми проще, чем обрабатывать неоткрываемые.)
-                        </article>
-                    </div>
-                    <div class="letter-wrapper">
-                        <div class="read-letter-header">
-                            <div class=letter-title-aligner-left>
-                                <input type="checkbox" class="check-box">
-                                <img class="avatar" src="avatar.png" width="30px" height="30px">
+                        <div class="mail">
+                            <input class="mail__checkbox" id="mail-trigger1" type="checkbox">
+                            <div class="mail-title mail-title_unread">
+                                <input type="checkbox" class="mail-title__checkbox">
+                                <div class="mail-title__img-wrapper">
+                                    <img src="resources/avatar.png" width="30px" height="30px">
+                                </div>
+                                <div   class="mail-title__sender">Команда Яндекс.Почты</div>
+                                <div   class="mail-title__unread-flag"></div>
+                                <label class="mail-title__title" for="mail-trigger1">Как читать почту с мобильного</label>
+                                <time  class="mail-title__date">6 июл</time>
                             </div>
-                            <div class="sender">Команда Яндекс.Почты</div>
-                            <div class="unread-flag"></div>
-                            <div class="letter-title">Как читать почту с мобильного</div>
-                            <time class="letter-date">6 июл</time>
+                            <article class="mail-article">
+                                <label class="mail-article__cross" for="mail-trigger1">
+                                    <img src="resources/mail_cross.png" alt="quiting cross" width="18px" height="18px">
+                                </label>
+                                Ниже - письма из прошлых дз. Они не открываются. Это фича. 
+                                (Не, правда - сделать их открываемыми проще, чем обрабатывать неоткрываемые.)
+                                <footer class="mail-article__clearfix"></footer>
+                            </article>
                         </div>
-                    </div>
-                    <div class="letter-wrapper">
-                        <div class="read-letter-header">
-                            <div class=letter-title-aligner-left>
-                                <input type="checkbox" class="check-box">
-                                <img class="avatar" src="avatar.png" width="30px" height="30px">
+                        <div class="mail">
+                            <div class="mail-title mail-title_read">
+                                <input type="checkbox" class="mail-title__checkbox">
+                                <div class="mail-title__img-wrapper">
+                                    <img src="resources/avatar.png" width="30px" height="30px">
+                                </div>
+                                <div  class="mail-title__sender">Команда Яндекс.Почты</div>
+                                <div  class="mail-title__unread-flag"></div>
+                                <div  class="mail-title__title">Как читать почту с мобильного</div>
+                                <time class="mail-title__date">6 июл</time>
                             </div>
-                            <div class="sender">Яндекс</div>
-                            <div class="unread-flag"></div>
-                            <div class="letter-title">Соберите всю почту в этот ящик</div>
-                            <time class="letter-date">6 июл</time>
+                        </div>
+                        <div class="mail">
+                            <div class="mail-title mail-title_read">
+                                <input type="checkbox" class="mail-title__checkbox">
+                                <div class="mail-title__img-wrapper">
+                                    <img src="resources/avatar.png" width="30px" height="30px">
+                                </div>
+                                <div  class="mail-title__sender">Яндекс</div>
+                                <div  class="mail-title__unread-flag"></div>
+                                <div  class="mail-title__title">Соберите всю почту в этот ящик</div>
+                                <time class="mail-title__date">6 июл</time>
+                            </div>
+                        </div>
+                        <div class="mails-maintainance__pillar"></div>
+                        <div class="mails-maintainance__mails-footer-wrapper">
+                            <footer class="mails-footer">
+                                <div class="mails-footer__element">Помощь и обратная связь</div>
+                                <div class="mails-footer__element">Реклама</div>
+                                <div class="mails-footer__element" title="права на оригинальный макет">© 2001—2018, Яндекс</div>
+                            </footer>  
                         </div>
                     </div>
-                    <div class="pillar"></div>
-                    <footer class="letters-footer">
-                        <div>Помощь и обратная связь</div>
-                        <div>Реклама</div>
-                        <div title="права на оригинальный макет">© 2001—2018, Яндекс</div>
-                    </footer>  
                 </div>
             </div>
         </div>
@@ -153,33 +188,16 @@
         <script lang="javascript">
             
             function getLetter(mail) {
-                for (i = 0; i < 3; i++) {
-                    if (mail.children[i].className == "read-letter-header" || 
-                        mail.children[i].className == "unread-letter-header") {
-                            return mail.children[i];
-                    }
-                }
+                return Array.from(mail.children)
+                    .map(m => m.className.startsWith("mail-title") ? m : null)
+                    .reduce((n, m) => n || m);
             }
 
             function getCheckBox(mail) {
-                return getLetter(mail).children[0].children[0];
+                return getLetter(mail).children[0];
             }
 
-            function getAll(className) {
-                return Array.from(document.getElementsByClassName(className));
-            }
-
-            mails = new Set(getAll("read-letter-header")
-                                .concat(getAll("unread-letter-header"))
-                                .map(m => m.parentElement));
-
-            function mailDelete(mail) {
-                mails.delete(mail);
-                var letter = getLetter(mail);
-                letter.setAttribute("changing", "true");
-                letter.setAttribute("delete", "true");
-                setTimeout(() => mail.parentElement.removeChild(mail), 200);
-            }
+            mails = new Set(Array.from(document.getElementsByClassName("mail")));
 
             var month = ['янв.', 'фев.', 'март.', 'апр.', 'май.', 'июн.', 'июл.', 'авг.', 'сен.', 'окт.', 'ноя.', 'дек.'];
             function getDate() {
@@ -187,80 +205,88 @@
                 return temp.getDate() + ' ' + month[temp.getMonth()];                
             }
 
-            var letterMaintainance = document.getElementsByClassName("letters-maintainance")[0];
+            var mailMaintainance = document.getElementsByClassName("mails-maintainance")[0];
             var mailCounter = 2;
             function constructMailOnPage(sender, title, body) {
-
                 var mailID = mailCounter++;
 
                 var res = document.createElement('div');
-                res.className = "letter-wrapper";
+                res.className = "mail";
                 res.innerHTML = `
-                        <input class="letter-trigger" id="letter-trigger${mailID}" type="checkbox">
-                        <div class="unread-letter-header" delete="true">
-                            <div class=letter-title-aligner-left>
-                                <input type="checkbox" class="check-box">
+                        <input class="mail__checkbox" id="mail-trigger${mailID}" type="checkbox">
+                        <div class="mail-title mail-title_unread" fromDelete>
+                            <input type="checkbox" class="mail-title__checkbox">
+                            <div class="mail-title__img-wrapper">
                             </div>
-                            <div class="sender">${sender}</div>
-                            <div class="unread-flag"></div>
-                            <label class="letter-title" for="letter-trigger${mailID}">${title}</label>
-                            <time class="letter-date">${getDate()}</time>
+                            <div class="mail-title__sender">${sender}</div>
+                            <div class="mail-title__unread-flag"></div>
+                            <label class="mail-title__title" for="mail-trigger${mailID}">${title}</label>
+                            <time class="mail-title__date">${getDate()}</time>
                         </div>
-                        <article class="letter-article">
-                            <label class="letter-cross" for="letter-trigger${mailID}">
-                                <img src="letter_cross.png" alt="quiting cross" width="18px" height="18px">
+                        <article class="mail-article">
+                            <label class="mail-article__cross" for="mail-trigger${mailID}">
+                                <img src="resources/mail_cross.png" alt="quiting cross" width="18px" height="18px">
                             </label>
-                            ${body}
-                            <footer class="letter-ending"><a href="http://numbersapi.com" target="_blank">NUMBERSAPI</a></footer>
+                            <div class="article1">
+                                ${body}
+                                <footer class="article1__footer"><a href="http://numbersapi.com" target="_blank">NUMBERSAPI</a></footer>
+                            </div>
+                            <footer class="mail-article__clearfix"></footer>
                         </article>`;
 
-                letterMaintainance.insertBefore(res, letterMaintainance.children[1]);
-                var letter = getLetter(res);
+                mailMaintainance.insertBefore(res, mailMaintainance.children[1]);
+                var mail = getLetter(res);
                 setTimeout(() => {
-                        letter.removeAttribute("delete");
-                        letter.setAttribute("changing", "true");
+                    mail.setAttribute("toAppear", "");
                 }, 100);
                 setTimeout(() => { 
-                        var letter = getLetter(res);
-                        letter.removeAttribute("changing");
-                    }, 300);
+                    mail.removeAttribute("fromDelete");
+                    mail.removeAttribute("toAppear");
+                }, 300);
                 mails.add(res);
             }
 
-            function deleteSelected() {
+            document.getElementById("delete-button").addEventListener("click", () => {
                 Array.from(mails)
-                    .filter(a => getCheckBox(a).checked)
-                    .forEach(mailDelete);
-            }
-
-            document.getElementById("delete-button").addEventListener("click", deleteSelected);
+                    .filter(mail => getCheckBox(mail).checked)
+                    .forEach(mail => { 
+                        mails.delete(mail);
+                        getLetter(mail).setAttribute("toDelete", "");
+                        setTimeout(() => mail.parentElement.removeChild(mail), 200);
+                    });
+            });
 
             var selectAllCheckBox = document.getElementById("select-all");
-            selectAllCheckBox.addEventListener("click", () => {
-                var setTo = selectAllCheckBox.checked;
-                mails.forEach(mail => getCheckBox(mail).checked = setTo)
-            });
+            selectAllCheckBox.addEventListener("click", () => 
+                mails.forEach(mail => getCheckBox(mail).checked = selectAllCheckBox.checked));
 
             var requestsCounter = 0
             function addMail() {
                 if (mails.size < 30) {
                     var xhr = new XMLHttpRequest();
-                    xhr.open('GET', `http://numbersapi.com/${requestsCounter}`, false);
+                    xhr.open('GET', `http://numbersapi.com/${requestsCounter}`, true);
                     xhr.send();
-                    if (xhr.status != 200) {
-                        constructMailOnPage("mysterious stranger", "Что говорить, когда нечего говорить?", 
-                            `Нет соединения. 
-                            Inception - ЧБУ YouTube`);
-                    } else {
-                        constructMailOnPage("mysterious stranger", `Did ya know?.. About ${requestsCounter}`, xhr.responseText);
-                        requestsCounter++;
+                    xhr.onreadystatechange = function() {
+                        if (xhr.readyState != xhr.DONE) {return} 
+                        if (xhr.status != 200) {
+                            constructMailOnPage("mysterious stranger", "Что говорить, когда нечего говорить?", "Нет соединения. Inception - ЧБУ YouTube");
+                        } else {
+                            constructMailOnPage("mysterious stranger", `Did ya know?.. About ${requestsCounter}`, xhr.responseText);
+                            requestsCounter++;
+                        }
                     }
                 }
             }
 
-            setInterval(addMail, 60000);
+            function newMailTimeoutSetup() {
+                setTimeout(() => {
+                    addMail(); 
+                    newMailTimeoutSetup()
+                }, (Math.random() + 1) * 5*60*1000);
+            }
+            newMailTimeoutSetup();
 
-            document.getElementsByClassName("write-letter")[0].addEventListener("click", addMail);
+            document.getElementById("write-mail").addEventListener("click", addMail);
             
         </script>
     </body>
