@@ -139,6 +139,7 @@ function onContainerClick(e) {
                 break;    
             }
             target = target.parentElement;
+            checkCountLetter();
         }   
         _displayBlock(target.querySelector('.mail__shortcut-info'));
     } 
