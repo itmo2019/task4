@@ -1,0 +1,34 @@
+@keyframes swing {
+    15% {
+        transform: translateX(6px);
+    }
+    30% {
+        transform: translateX(-6px);
+    }
+    50% {
+        transform: translateX(4px);
+    }
+    65% {
+        transform: translateX(-4px);
+    }
+    80% {
+        transform: translateX(3px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes growing {
+    0% {
+        width: 65%;
+    }
+    100% {
+        width: 95%;
+    }
+}
+
+
+.start-transition {
+    opacity: 0;
+}

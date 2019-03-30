@@ -4,21 +4,23 @@
     <meta charset="UTF-8">
     <title>Яндекс.Почта</title>
     <link href="styles/header.css" rel="stylesheet">
-    <link href="styles/mainBodyAndLeftButtons.css" rel="stylesheet">
+    <link href="styles/mailBody.css" rel="stylesheet">
     <link href="styles/lettersWindow.css" rel="stylesheet">
     <link href="styles/letterView.css" rel="stylesheet">
-    <link href="styles/contentLetter.css" rel="stylesheet">
+    <link href="styles/checkBox.css" rel="stylesheet">
+    <link href="styles/animation.css" rel="stylesheet">
+    <link href="styles/letterContent.css" rel="stylesheet">
 </head>
 <body>
-<header class="header">
-    <svg xmlns="http://www.w3.org/2000/svg" class="svgicon-menu">
+<header class="mail-header">
+    <svg xmlns="http://www.w3.org/2000/svg" class="mail-header__svgicon-menu">
         <svg viewBox="0 0 16 16" id="svgicon-mail--Pancakes" width="100%" height="100%">
             <path d="M0 0h16v2H0V0zm0 7h16v2H0V7zm0 7h16v2H0v-2z" fill="currentColor" fill-rule="evenodd"></path>
         </svg>
         <rect height="100%" width="100%" style="fill: transparent;"></rect>
     </svg>
-    <div class="logo-container">
-        <svg xmlns="http://www.w3.org/2000/svg" class="logo-container__svgicon-Yandex">
+    <div class="mail-header__logo-container">
+        <svg xmlns="http://www.w3.org/2000/svg" class="mail-header__logo-container__svgicon-Yandex">
             <svg class="" viewBox="0 0 75 32" width="100%" height="100%">
                 <g xmlns="http://www.w3.org/2000/svg" fill-rule="nonzero" fill="currentColor">
                     <path d="M9.35 4.394h-1.3c-1.965 0-3.866 1.3-3.866 5.071 0 3.645 1.743 4.818 3.866 4.818h1.3V4.394zM7.322 16.311l-3.867 8.684H.634l4.247-9.287c-1.997-1.013-3.328-2.852-3.328-6.243 0-4.754 3.011-7.13 6.593-7.13h3.644v22.66H9.35v-8.684H7.322z"></path>
@@ -27,7 +29,7 @@
             </svg>
             <rect height="100%" width="100%" style="fill: transparent;"></rect>
         </svg>
-        <svg xmlns="http://www.w3.org/2000/svg" class="logo-container__svgicon-mail">
+        <svg xmlns="http://www.w3.org/2000/svg" class="mail-header__logo-container__svgicon-mail">
             <svg viewBox="0 0 54 32" width="100%" height="100%">
                 <path fill-rule="nonzero" fill="currentColor"
                       d="M32.68 24.98V9H31v6.861s-1.157 1.237-2.9 1.237c-1.49 0-2.41-.92-2.41-3.202V9H24.2v4.864c0 3.012 1.427 4.502 3.646 4.502 1.902 0 3.154-1.015 3.154-1.015v7.629h1.68zM43.656 10.4V9H34.68v1.4h3.71v14.58h1.69V10.4h3.576zM8.337 24.666h1.585V2H0v22.666h1.585V3.3h6.752v21.366zm43.466.293h1.363c-.19-.602-.349-1.838-.349-2.948v-8.717c0-3.17-1.49-4.628-4.12-4.628-1.808 0-3.139.792-3.773 1.616l.412 1.427c.76-1.11 1.997-1.744 3.36-1.744 1.744 0 2.663 1.046 2.663 3.487v1.997h-1.743c-3.456 0-5.326 1.776-5.326 5.2 0 2.916 1.49 4.627 3.646 4.627 1.585 0 2.726-.95 3.487-2.472.095 1.14.253 1.743.38 2.155zm-34.241.024c2.758 0 4.882-3.107 4.882-8.401 0-5.484-2.124-8.21-4.882-8.21-2.758 0-4.882 3.075-4.882 8.4 0 5.453 2.124 8.21 4.882 8.21zm0-1.205c-1.87 0-3.392-2.124-3.392-7.1 0-4.851 1.522-7.07 3.392-7.07 1.87 0 3.392 2.06 3.392 7.07 0 4.818-1.522 7.1-3.392 7.1zm30.692.294c-1.521 0-2.504-1.3-2.504-3.55 0-2.79 1.268-3.995 3.9-3.995h1.71v4.406c-.57 1.712-1.616 3.139-3.106 3.139z"></path>
@@ -35,48 +37,45 @@
             <rect height="100%" width="100%" style="fill: transparent;"></rect>
         </svg>
     </div>
-    <div class="search-container">
+    <div class="mail-header__search-container">
         <input class="search-container__search" type="search" placeholder="Поиск">
     </div>
 </header>
-<main class="main-body">
-    <div class="buttons">
-        <button class="button-write">Написать</button>
-        <div class="folders">
-            <button class="folders__button">Входящие</button>
-            <button class="folders__button">Отправленные</button>
-            <button class="folders__button">Удаленные</button>
-            <button class="folders__button">Спам</button>
-            <button class="folders__button">Черновики</button>
-            <button class="folders__button">Создать папку</button>
+<main class="mail-body">
+    <div class="mail-body__folders-menu">
+        <button class="mail-body__folders-menu__button-write">Написать</button>
+        <div class="mail-body__folders-menu__folders-list">
+            <button class="mail-body__folders-menu__folders-list__button selected">Входящие</button>
+            <button class="mail-body__folders-menu__folders-list__button">Отправленные</button>
+            <button class="mail-body__folders-menu__folders-list__button">Удаленные</button>
+            <button class="mail-body__folders-menu__folders-list__button">Спам</button>
+            <button class="mail-body__folders-menu__folders-list__button">Черновики</button>
+            <button class="mail-body__folders-menu__folders-list__button">Создать папку</button>
         </div>
     </div>
-    <div id="letters">
-        <header class="header-letters">
-            <!--<div>
-                <input id="header-letters__checkbox" type="checkbox">
-                <label class="header-letters-checkbox__label" for="header-letters__checkbox"></label>
-            </div>-->
-            <label>
-                <input id="mainCheckbox" type="checkbox" onclick="mainCheckBoxClicked(event)">
+    <div id="letters" class="mail-body__letters-window">
+        <header class="mail-body__letters-window__header">
+            <label class="check">
+                <input id="mainCheckbox" class="check__input" type="checkbox">
+                <span class="check__box" onclick='mainCheckBoxClicked(event)'></span>
             </label>
-            <button class="headerLetters__button">Переслать</button>
-            <button class="headerLetters__button" onclick="removeCheckedLetters()">Удалить</button>
-            <button class="headerLetters__button">Это спам!</button>
-            <button class="headerLetters__button">Прочитано</button>
+            <button class="mail-body__letters-window__header__button">Переслать</button>
+            <button class="mail-body__letters-window__header__button" onclick="removeCheckedLetters()">Удалить</button>
+            <button class="mail-body__letters-window__header__button">Это спам!</button>
+            <button class="mail-body__letters-window__header__button">Прочитано</button>
         </header>
         <div class="line"></div>
-        <div class="body-letters"></div>
+        <div class="mail-body__letters-window__body"></div>
         <div class="line"></div>
-        <footer class="footerLetters">
-            <a class="footerLetters__a" target="_blank">Помощь и обратная связь</a>
-            <a class="footerLetters__a" target="_blank">Реклама</a>
-            <a class="footerLetters__a" target="_blank" href="https://yandex.ru/">&copy; 2001 - 2018, Яндекс</a>
+        <footer class="mail-body__letters-window__footer">
+            <a class="mail-body__letters-window__footer__a" target="_blank">Помощь и обратная связь</a>
+            <a class="mail-body__letters-window__footer__a" target="_blank">Реклама</a>
+            <a class="mail-body__letters-window__footer__a" target="_blank" href="https://yandex.ru/">&copy; 2001 - 2018, Яндекс</a>
         </footer>
     </div>
 </main>
 </body>
+<script src="scripts/letterCreation.js"></script>
 <script src="scripts/addNewLetter.js"></script>
-<script src="scripts/createLetter.js"></script>
-<script src="scripts/removeLetters.js"></script>
+<script src="scripts/lettersRemoving.js"></script>
 </html>

@@ -10,26 +10,28 @@ function addNewLetter() {
         removeLastLetter();
     }
     let letters = document.getElementById("letters");
-    let nameThemeBody = createLetter();
+    let nameThemeContent = letterCreation();
     let bodyLetters = letters.children[2];
     let letter = createElementFromHTML(letterHTML);
-    letter.children[1].children[1].innerHTML = "От кого: " + nameThemeBody[0];
-    letter.children[3].children[0].innerHTML = "Тема: " + nameThemeBody[1];
-    letter.children[3].children[1].innerHTML = nameThemeBody[2];
+    letter.children[2].innerHTML = nameThemeContent[0];
+    letter.children[4].innerHTML = nameThemeContent[1];
+    letter.children[5].innerHTML = nameThemeContent[2];
     bodyLetters.insertAdjacentElement("beforeend", letter);
     bodyLetters.insertAdjacentHTML("beforeend", lineHTML);
     letterCounter++;
 }
 
 function openContentLetter(event) {
-    let letter = event.target.parentNode;
+    let letter = event.target;
+    letter.style.animation = 'none';
+    console.log(letter);
     let letters = document.getElementById("letters");
     let bodyLetters = letters.children[2];
     let contentLetter = createElementFromHTML(contentLetterHTML);
     console.log(contentLetter);
-    contentLetter.children[1].children[1].innerHTML = letter.children[1].children[1].innerHTML;
-    contentLetter.children[1].children[0].innerHTML = letter.children[3].children[0].innerHTML;
-    contentLetter.children[3].innerHTML = letter.children[3].children[1].innerHTML;
+    contentLetter.children[1].children[1].innerHTML = letter.children[2].innerHTML;
+    contentLetter.children[1].children[0].innerHTML = letter.children[4].innerHTML;
+    contentLetter.children[3].innerHTML = letter.children[5].innerHTML;
     bodyLetters.style.display = 'none';
     bodyLetters.insertAdjacentElement("afterend", contentLetter);
 }
@@ -47,32 +49,32 @@ function createElementFromHTML(htmlString) {
     return div.firstChild;
 }
 
-const letterHTML = "<div class='letter'>\n" +
-    "                <label>\n" +
-    "                    <input type='checkbox'>\n" +
-    "                </label>\n" +
-    "                <div class='sender-info-container' onclick='openContentLetter(event)'>\n" +
-    "                    <div class='sender-info-container__photo'></div>\n" +
-    "                    <div class='sender-info-container__author'></div>\n" +
-    "                </div>\n" +
-    "                <div class='readed'></div>\n" +
-    "                <div class='letter-info-container' onclick='openContentLetter(event)'>\n" +
-    "                    <div class='letter-info-container__theme'></div>\n" +
-    "                    <div class='letter-info-container__begin-of-letter'></div>\n" +
-    "                    <div class='letter-info-container__data'>\n" +
-    "                        <time datetime='2019-03-01'>03.03.2019</time>\n" +
-    "                    </div>\n" +
-    "                </div>\n" +
-    "            </div>\n";
+const letterHTML =
+    "<div class='mail-body__letters-window__body__letter' onclick='openContentLetter(event)'>\n" +
+    "    <label class='check'>\n" +
+    "        <input class='check__input' type='checkbox'>\n" +
+    "        <span class='check__box'></span>\n" +
+    "    </label>\n" +
+    "    <div class='mail-body__letters-window__body__letter__photo'></div>\n" +
+    "    <div class='mail-body__letters-window__body__letter__author'></div>\n" +
+    "    <div class='mail-body__letters-window__body__letter__readed'></div>\n" +
+    "    <div class='mail-body__letters-window__body__letter__theme'></div>\n" +
+    "    <div class='mail-body__letters-window__body__letter__content'></div>\n" +
+    "    <div class='mail-body__letters-window__body__letter__data'>\n" +
+    "        <time datetime='2019-03-01'>3 мар</time>\n" +
+    "    </div>\n" +
+    "</div>\n" +
+    "<div class='line'></div>";
 
 const lineHTML = "<div class='line'></div>";
 
-const contentLetterHTML = "<div class='content-letter'>\n" +
-    "            <div class='content-letter__close' onclick='closeContentLetter()'></div>\n" +
-    "            <header class='content-letter__header'>\n" +
-    "                <div class='content-letter__header__theme'></div>\n" +
-    "                <div class='content-letter__header__author'></div>\n" +
-    "            </header>\n" +
-    "            <div class='line'></div>\n" +
-    "            <div class='content-letter__body'></div>\n" +
-    "        </div>";
+const contentLetterHTML =
+    "<div class='content-letter'>\n" +
+    "    <div class='content-letter__close' onclick='closeContentLetter()'></div>\n" +
+    "    <header class='content-letter__header'>\n" +
+    "        <div class='content-letter__header__theme'></div>\n" +
+    "        <div class='content-letter__header__author'></div>\n" +
+    "    </header>\n" +
+    "    <div class='line'></div>\n" +
+    "    <div class='content-letter__body'></div>\n" +
+    "</div>";
