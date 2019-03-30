@@ -132,6 +132,8 @@ function onContainerClick(e) {
     target = event.CurrentTarget || event.srcElement;
     if (target.tagName === 'INPUT' && target.type === 'checkbox') {
         
+    } else if (target.classList.contains('mail__conatainer')) {
+         
     } else if (target.dataset.closeLetter === 'close') {
         _displayNone(target.parentElement);
          while (!target.classList.contains('mail__conatainer')) {
@@ -142,7 +144,7 @@ function onContainerClick(e) {
             checkCountLetter();
         }   
         _displayBlock(target.querySelector('.mail__shortcut-info'));
-    } 
+    }
     else {
        while (!target.classList.contains('mail__conatainer')) {
             if (target.dataset.methodClick == 'positive') {
@@ -153,7 +155,6 @@ function onContainerClick(e) {
         _displayNone(target.querySelector('.mail__shortcut-info'));
         _displayBlock(target.querySelector('.mail__random-letter'));
         hideAllLettersExpectThis(target);
-
     }    
 }
 
