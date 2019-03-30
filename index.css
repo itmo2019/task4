@@ -7,16 +7,13 @@ body {
     background-color: #e5eaf0;
 }
 
-.header {
+.header__search-box {
     display: inline-block;
-}
-
-.search-box {
     vertical-align: top;
     margin: 10px 10px 10px 114px;
 }
 
-.search-box-text {
+.search-box__input {
     opacity: 0.5;
     background-color: #fff;
     height: 31px;
@@ -29,7 +26,7 @@ body {
     border-width: thin;
 }
 
-.search-box-text::placeholder{
+.search-box__input::placeholder {
     color: #000;
 }
 
@@ -37,7 +34,7 @@ input[type="search"]::-webkit-search-cancel-button {
     -webkit-appearance: none;
 }
 
-.search-box-cross {
+.search-box__cross {
     opacity: 0.3;
     height: 15px;
     position: relative;
@@ -45,22 +42,30 @@ input[type="search"]::-webkit-search-cancel-button {
     vertical-align: middle;
 }
 
-.yandex-logo {
-    color: #010101;
-    margin: 10px;
+.header__menu-icon {
+    display: inline-block;
 }
 
 .menu-icon {
     margin: 10px 10px 10px 22px;
 }
 
-.yandex-icon-svg {
-    height: 31px;
-    width: 153px;
+.menu-icon__img {
+    width: 31px;
 }
 
-.menu-icon-svg {
-    width: 31px;
+.header__yandex-logo {
+    display: inline-block;
+}
+
+.yandex-logo {
+    color: #010101;
+    margin: 10px;
+}
+
+.yandex-logo__img {
+    height: 31px;
+    width: 153px;
 }
 
 .left-menu {
@@ -68,7 +73,7 @@ input[type="search"]::-webkit-search-cancel-button {
     float: left;
 }
 
-.left-menu-button {
+.left-menu__button {
     vertical-align: top;
     width: 147px;
     height: 32px;
@@ -82,11 +87,11 @@ input[type="search"]::-webkit-search-cancel-button {
     cursor: pointer;
 }
 
-.left-menu-button:hover {
+.left-menu__button:hover {
     background-color: #6b90c7;
 }
 
-.left-menu-line {
+.left-menu__line {
     font-size: 11px;
     vertical-align: center;
     margin: 6px 0;
@@ -101,11 +106,11 @@ input[type="search"]::-webkit-search-cancel-button {
     border-radius: 3px;
 }
 
-.left-menu-line:hover {
+.left-menu__line:hover {
     background-color: #d7e0ee;
 }
 
-.left-menu-line-light {
+.left-menu__line_light {
     width: 137px;
     height: 22px;
     border-radius: 3px;
@@ -117,11 +122,11 @@ input[type="search"]::-webkit-search-cancel-button {
     text-overflow: unset;
 }
 
-.left-menu-line-light:hover {
+.left-menu__line_light:hover {
     background: #d2dbe9;
 }
 
-.left-menu-link {
+.left-menu__link {
     display: inline-block;
     vertical-align: middle;
 }
@@ -131,12 +136,12 @@ main {
     border-radius: 3px;
     box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.34);
     background-color: #fff;
-    min-height: 600px;
+    height: 1420px;
     min-width: 800px;
     overflow: hidden;
 }
 
-.main-header-button {
+.letters__control-panel-button {
     display: inline-block;
     vertical-align: top;
     height: 16px;
@@ -146,7 +151,7 @@ main {
     margin: 11px 13px;
 }
 
-.main-header-button:hover {
+.letters__control-panel-button:hover {
     color: #555;
 }
 
@@ -163,11 +168,11 @@ main {
     cursor: pointer;
 }
 
-.hidden-checkbox:checked + .checkbox {
-    background-image: url(icons16.svg);
+.hidden-checkbox:checked + .decorative-checkbox {
+    background-image: url(images/icons16.svg);
 }
 
-.checkbox {
+.decorative-checkbox {
     width: 16px;
     height: 16px;
     border-radius: 3px;
@@ -176,18 +181,55 @@ main {
     cursor: pointer;
 }
 
-.mail-discription {
+.letter__checkbox {
     display: inline-block;
     vertical-align: middle;
     margin: 5px 13px;
 }
 
-img.mail-discription {
+.letter__decorative-checkbox {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 5px 13px;
+}
+
+.letter__img {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 5px 13px;
     height: 30px;
     border-radius: 30px;
 }
 
-h2.mail-discription, h3.mail-discription, p {
+.letter__from {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 5px 13px;
+}
+
+.letter__read-status {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 5px 13px;
+}
+
+.letter__date {
+    display: inline-block;
+    vertical-align: middle;
+    color: #9b9b9b;
+    float: right;
+    margin: 12px 12px 12px 30px;
+}
+
+.letter__theme {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 11px;
+    font-weight: bold;
+    float: right;
+}
+
+.hide-overflow {
     font-size: 13px;
     font-weight: normal;
     color: #000;
@@ -197,34 +239,31 @@ h2.mail-discription, h3.mail-discription, p {
     text-overflow: unset;
 }
 
-h2.bold, h3.bold {
+.letters-list{
+    max-height: 1301px;
+    overflow: hidden;
+}
+
+.bold {
     font-weight: bold;
-
 }
 
-h3.mail-discription {
-    float: right;
-}
-
-div.unchecked {
+.unchecked {
     width: 10px;
     height: 10px;
     background-color: #6287bd;
     border-radius: 10px;
 }
 
-p.mail-discription {
-    color: #9b9b9b;
-    float: right;
-    margin-left: 30px;
-}
-
 footer {
+    position: absolute;
     text-align: right;
-    margin-top: 350px;
+    top: 1435px;
+    right: 8px;
+    width: calc(100% - 207px);
 }
 
-.footer {
+.footer__button {
     display: inline-block;
     margin: 10px 20px;
 }
@@ -247,8 +286,8 @@ a {
     display: none;
 }
 
-.mail-content {
-    height: 300px;
+.open-letter__content {
+    height: 1280px;
 }
 
 label {
@@ -262,23 +301,23 @@ label {
 #check-label:checked ~ .hidden-text {
     display: block;
     position: absolute;
-    height: 300px;
     background: #fff;
     right: 10px;
     left: 200px;
     padding: 5px 10px 0 10px;
+    z-index: 2;
 }
 
-.mail-header {
+.open-letter__header {
     display: inline-block;
 }
 
-.mail-text-header {
+.open-letter__header-text {
     display: inline-block;
     margin: 0;
 }
 
-.close-button {
+.cross__button {
     position: absolute;
     height: 20px;
     width: 20px;
@@ -287,12 +326,12 @@ label {
     right: 0;
 }
 
-.mail-content::-webkit-scrollbar {
+.open-letter__content::-webkit-scrollbar {
     background: white;
     width: 20px;
 }
 
-.mail-content::-webkit-scrollbar-thumb {
+.open-letter__content::-webkit-scrollbar-thumb {
     min-height: 20px;
     border-width: 1px 3px;
     border-radius: 6px;
@@ -327,5 +366,22 @@ label {
         transform: rotateX(30deg);
     }
     100% {
+    }
+}
+
+.letter-deletion-animation {
+    animation-name: disappearance;
+    animation-duration: 500ms;
+    transition-timing-function: cubic-bezier(0, 0, 1, 1);
+    transition-delay: 500ms;
+}
+
+@keyframes disappearance {
+    0% {
+    }
+    100% {
+        opacity: 0;
+        background-color: #e5eaf0;
+        transform: rotateX(30deg);
     }
 }

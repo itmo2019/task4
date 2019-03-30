@@ -6,138 +6,132 @@
     <meta name="author" content="Кирилл Вахрушев">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="index.css">
-
     <title>Яндекс.Почта</title>
 </head>
 <body>
-<header>
-    <div class="header menu-icon">
-        <img class="menu-icon-svg" src="menu-icon.png">
+<header class="header">
+    <div class="menu-icon header__menu-icon">
+        <img class="menu-icon__img" src="images/menu-icon.png">
     </div>
-    <div class="header yandex-logo">
-        <img class="yandex-icon-svg" src="yamail.png">
+    <div class="yandex-logo header__yandex-logo">
+        <img class="yandex-logo__img" src="images/yamail.png">
     </div>
-    <div class="header search-box">
-        <input class="header search-box-text" placeholder="Поиск" type="search">
+    <div class="search-box header__search-box">
+        <input class="search-box__input" placeholder="Поиск" type="search">
         <a href="#">
-            <img class="header search-box-cross" src="33.png" alt="delete search text">
+            <img class="search-box__cross" src="images/33.png" alt="delete search text">
         </a>
     </div>
 </header>
 <nav class="left-menu">
-    <button class="left-menu-button">Написать</button>
-    <div class="left-menu-line left-menu-line-light"><a class="left-menu-link" href="#">Входящие</a></div>
-    <div class="left-menu-line"><a class="left-menu-link" href="#">Отправленные</a></div>
-    <div class="left-menu-line"><a class="left-menu-link" href="#">Удаленные</a></div>
-    <div class="left-menu-line"><a class="left-menu-link" href="#">Спам</a></div>
-    <div class="left-menu-line"><a class="left-menu-link" href="#">Черновики</a></div>
-    <div class="left-menu-line"><a class="left-menu-link" href="#">Создать папку</a></div>
+    <button class="left-menu__button">Написать</button>
+    <div class="left-menu__line left-menu__line_light"><a class="left-menu__link" href="#">Входящие</a></div>
+    <div class="left-menu__line"><a class="left-menu__link" href="#">Отправленные</a></div>
+    <div class="left-menu__line"><a class="left-menu__link" href="#">Удаленные</a></div>
+    <div class="left-menu__line"><a class="left-menu__link" href="#">Спам</a></div>
+    <div class="left-menu__line"><a class="left-menu__link" href="#">Черновики</a></div>
+    <div class="left-menu__line"><a class="left-menu__link" href="#">Создать папку</a></div>
 </nav>
-<main>
-    <header>
-        <div class="checkbox main-header-button">
-            <input type="checkbox" class="main-header-button main-checkbox hidden-checkbox">
-        </div>
-        <div class="main-header-button"><a class="header-menu-link" href="#">Переслать</a></div>
-        <div class="main-header-button"><a class="header-menu-link" href="#">Удалить</a></div>
-        <div class="main-header-button"><a class="header-menu-link" href="#">В спам!</a></div>
-        <div class="main-header-button"><a class="header-menu-link" href="#">Прочитано</a></div>
+<main class="letters">
+    <header class="letters__header">
+
+        <input type="checkbox" class="letters__main-checkbox hidden-checkbox letters__control-panel-button"
+               onclick="changeCheckboxesStatus()" id="main-checkbox">
+        <span class="decorative-checkbox letters__control-panel-button"></span>
+
+        <div class="letters__control-panel-button"><a class="mails-control-panel__link" href="#">Переслать</a></div>
+        <div class="letters__control-panel-button"><a class="mails-control-panel__link" href="#"
+                                                      onclick="deleteCheckedLetters()">Удалить</a></div>
+        <div class="letters__control-panel-button"><a class="mails-control-panel__link" href="#">В спам!</a></div>
+        <div class="letters__control-panel-button"><a class="mails-control-panel__link" href="#">Прочитано</a></div>
     </header>
     <div class="line"></div>
+    <div class="letters-list" id="letters-list">
+        <section>
+            <input type="checkbox" id="check-label">
+            <div class="open-letter hidden-text">
+                <div class="open-letter__header">
+                    <h3 class="open-letter__header-text" id="letter-theme">
+                        Собака
+                    </h3>
+                    <label for="check-label" class="cross">
+                        <img class="cross__button" src="images/33.png" alt="close">
+                    </label>
+                </div>
+                <div class="open-letter__content clearfix" id="letter-text">
+                    <img class="dog" src="images/dog.png" alt="Рисунок жёлтого ехидного колобка">
+                    <div class="dog-text">
+                        Собака – животное очень преданное и необычайно умное. Даже бродячий пес зачастую ведет
+                        себя сдержанно и
+                        достойно. Он не бросается к ногам и не выпрашивает угощение. Если добрый человек поделится с
+                        дворнягой
+                        куском
+                        хлеба, то пес добродушно завиляет хвостом в знак благодарности.<br>
+                        Собака, у которой есть уютный дом и хороший хозяин, конечно, бесконечно преданна ему и готова
+                        пожертвовать
+                        своей жизнью ради спасения человека. Например, пес может годами преданно ждать возвращения
+                        своего
+                        хозяина,
+                        который уехал в другой город или страну и, по сути, бросил его.<br>
 
-    <input type="checkbox" name="text" id="check-label">
-    <div class="hidden-text">
-        <div class="mail-header">
-            <h3 class="mail-text-header">
-                Собака
-            </h3>
-            <label for="check-label" class="cross">
-                <img class="close-button" src="33.png" alt="close">
-            </label>
-        </div>
-        <div class="mail-content clearfix">
-            <img class="dog" src="dog.png" alt="Рисунок жёлтого ехидного колобка">
-            <div class="dog-text">
-                Собака – животное очень преданное и необычайно умное. Даже бродячий пес зачастую ведет
-                себя сдержанно и
-                достойно. Он не бросается к ногам и не выпрашивает угощение. Если добрый человек поделится с дворнягой
-                куском
-                хлеба, то пес добродушно завиляет хвостом в знак благодарности.<br>
-                Собака, у которой есть уютный дом и хороший хозяин, конечно, бесконечно преданна ему и готова
-                пожертвовать
-                своей жизнью ради спасения человека. Например, пес может годами преданно ждать возвращения своего
-                хозяина,
-                который уехал в другой город или страну и, по сути, бросил его.<br>
+                        В нашем городке был случай, когда хозяина овчарки увезли в больницу с сердечным приступом прямо
+                        с
+                        прогулки.
+                        Собака бежала за машиной до самой больницы и потом, до самой ночи, металась на обледеневшем
+                        крыльце
+                        за
+                        закрытой дверью. Дежурный врач пожалел ее и постелил старое больничное одеяло в углу вестибюля у
+                        батареи.<br>
 
-                В нашем городке был случай, когда хозяина овчарки увезли в больницу с сердечным приступом прямо с
-                прогулки.
-                Собака бежала за машиной до самой больницы и потом, до самой ночи, металась на обледеневшем крыльце за
-                закрытой дверью. Дежурный врач пожалел ее и постелил старое больничное одеяло в углу вестибюля у
-                батареи.<br>
-
-                По утрам овчарка уходила на улицу и кружила вокруг больницы. В надежде увидеть своего хозяина, она
-                разглядывала безмолвные окна и тихонько скулила. Вечером собака возвращалась в свой уголок, ложила
-                большую
-                голову на вытянутые лапы и грустно провожала глазами ноги прохожих, бегающих по длинному коридору.<br>
+                        По утрам овчарка уходила на улицу и кружила вокруг больницы. В надежде увидеть своего хозяина,
+                        она
+                        разглядывала безмолвные окна и тихонько скулила. Вечером собака возвращалась в свой уголок,
+                        ложиларазглядывала безмолвные окна и тихонько скулила.
+                        голову на вытянутые лапы и грустно провожала глазами ноги прохожих, бегающих по длинному
+                        коридору.<br>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-    <label for="check-label">
-        <section class="letter-creation-animation">
-            <input type="checkbox" class="mail-discription hidden-checkbox">
-            <span class="checkbox mail-discription"></span>
-            <img class="mail-discription" src="ya.jpg">
-            <h2 class="mail-discription bold">
-                Яндекс.Паспорт
-            </h2>
-            <div class="mail-discription unchecked"></div>
-            <p class="mail-discription">6 авг.</p>
-            <h3 class="mail-discription bold">Доступ к аккаунту восстановлен</h3>
-            <div class="line"></div>
         </section>
-    </label>
-    <section>
-        <input type="checkbox" class="mail-discription hidden-checkbox">
-        <span class="checkbox mail-discription"></span>
-        <img class="mail-discription" src="ya.jpg">
-        <h2 class="mail-discription bold">Команды Яндекс.Почты</h2>
-        <div class="mail-discription unchecked"></div>
-        <p class="mail-discription">6 июл.</p>
-        <h3 class="mail-discription bold">Как читать почту с мобильного</h3>
-        <div class="line"></div>
-    </section>
-    <section>
-        <input type="checkbox" class="mail-discription hidden-checkbox">
-        <span class="checkbox mail-discription"></span>
-        <img class="mail-discription" src="ya.jpg">
-        <h2 class="mail-discription">Команды Яндекс.Почты</h2>
-        <div class="mail-discription"></div>
-        <p class="mail-discription">6 июл.</p>
-        <h3 class="mail-discription">Как читать почту с мобильного</h3>
-        <div class="line"></div>
-    </section>
-    <section>
-        <input type="checkbox" class="mail-discription hidden-checkbox">
-        <span class="checkbox mail-discription"></span>
-        <img class="mail-discription" src="ya.jpg">
-        <h2 class="mail-discription">Яндекс</h2>
-        <div class="mail-discription"></div>
-        <p class="mail-discription">6 июл.</p>
-        <h3 class="mail-discription">Соберите всю почту в этот ящик</h3>
-        <div class="line"></div>
-    </section>
-    <footer>
-        <div class="line"></div>
-        <p class="footer">
-            <small><a href="#">Помощь и обратная связь</a></small>
-        </p>
-        <p class="footer">
-            <small><a href="#">Реклама</a></small>
-        </p>
-        <p class="footer">
-            <small><a href="#">2001-2018, Яндекс</a></small>
-        </p>
-    </footer>
+        <section class="letter">
+            <input type="checkbox" class="letter__checkbox hidden-checkbox" id="id1">
+            <span class="decorative-checkbox letter__decorative-checkbox"></span>
+            <label class="letter__label" for="check-label" id="letter1">
+                <img class="letter__img" src="images/ya.jpg">
+                <h2 class="letter__from bold hide-overflow">Команды Яндекс.Почты</h2>
+                <div class="letter__read-status unchecked"></div>
+                <p class="letter__date hide-overflow">6 июл.</p>
+                <h3 class="letter__theme bold hide-overflow">Как читать почту с мобильного</h3>
+                <div class="line letter__line"></div>
+            </label>
+        </section>
+        <section class="letter">
+            <input type="checkbox" class="letter__checkbox hidden-checkbox">
+            <span class="decorative-checkbox letter__decorative-checkbox"></span>
+            <label class="letter__label" for="check-label" id="letter2">
+                <img class="letter__img" src="images/ya.jpg">
+                <h2 class="letter__from bold hide-overflow">Яндекс</h2>
+                <div class="letter__read-status unchecked"></div>
+                <p class="letter__date hide-overflow">6 июл.</p>
+                <h3 class="letter__theme bold hide-overflow">Соберите всю почту в этот ящик</h3>
+                <div class="line letter__line"></div>
+            </label>
+        </section>
+        <footer>
+            <div class="line"></div>
+            <p class="footer__button">
+                <small><a href="#">Помощь и обратная связь</a></small>
+            </p>
+            <p class="footer__button">
+                <small><a href="#">Реклама</a></small>
+            </p>
+            <p class="footer__button">
+                <small><a href="#">2001-2018, Яндекс</a></small>
+            </p>
+        </footer>
+    </div>
 </main>
 </body>
+
+<script src="script.js"></script>
 </html>
