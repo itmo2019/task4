@@ -1,8 +1,6 @@
-let messageTextArray = ["Fusce tempus justo convallis risus tincidunt suscipit.", "Nunc venenatis aliquet velit quis lobortis.", "Duis eget pretium lorem, ac auctor nisl.", "Proin ac urna id libero vulputate vulputate nec et massa.", "",
-    "Nullam lobortis, neque id suscipit maximus, turpis leo fermentum massa, vitae mollis elit lectus ultrices dolor.", "Nunc interdum ligula lorem, in tempor tellus convallis ut.", "Sed rhoncus cursus sollicitudin.", "Nunc.",
-    "Nullam consectetur egestas nulla ac molestie.", "Nunc consequat congue turpis, vel maximus sapien elementum id.", "In tincidunt, diam quis vulputate varius, massa turpis efficitur enim, ut facilisis tortor risus in.",
-    "Cras maximus vehicula pretium.", "In tincidunt justo ac tellus rhoncus accumsan.", "Suspendisse quis ex tortor.", "Curabitur imperdiet pellentesque mi vel vulputate.", "Aliquam sit amet dignissim mauris.", "Fusce in purus nibh.", "" +
-    "Aenean in dui id nisl bibendum aliquam.", "Curabitur semper, eros in commodo pharetra, lectus nunc sollicitudin nunc, at lobortis mi ex eget justo.", "Quisque hendrerit, mauris porttitor aliquet semper, massa."];
+let messageTextArray = ['Водопад звонит из города, в котором никогда не слышно ветра.', 'Голос прерывается, плачет.', 'Мое горло моментально перехватывает.', '«Что случилось?» Треск в трубке, потом абсолютная тишина и опустошающие слова: «Мама умерла».', 'Для меня эта сцена происходит в другой декорации – я по-субботнему расслаблен, гуляю по заброшенной стройке недалеко от дома, мелкие камни осыпаются из-под ног, и солнце светит мне прямо в глаза.', 'Но то, что случилось, равняет наши условия.', 'Тети Эльзы больше нет.\n' +
+'Две недели назад у нее случился инсульт, сразу после традиционного утреннего чая с гвоздикой.', 'Но она быстро пришла в себя.', 'Будучи в больнице, развлекала соседей по палате еврейскими анекдотами и требовала у дочери хумуса с солеными огурцами.', 'Водопад рассказывала мне о капризах нашей любимицы, я хохотал, скучал по тете Эльзе.', '«Если хумуса хочет, значит, точно оклемается! Тем более у нее речь восстановилась, только нога отнялась».', 'Я дал слово, что скоро приеду и мы все вместе пойдем к морю.', 'Будем там есть сочные нектарины, запивать их вином из шиповника, собирать ракушки.', 'Я собирался к самой мудрой женщине моей жизни – она не дождалась.', 'Время пришло, а человека нет.', 'Остались воспоминания, главный ингредиент человеческой судьбы, и ее письма.\n' +
+'Тетя Эльза часто писала мне.', 'Размашистый, мелкий почерк.', 'Чуть ли не через каждое предложение еврейский мат.', 'Я всегда удивлялся, как виртуозно соединяет тетя язык ученых книг с языком подворотен.', 'Необычны были строки из последнего письма – о том, что мир, который для нас привычен, не более чем оболочка, и здесь на всех одни законы.', 'Мы родились в этом мире, выросли, даже счастливыми бываем.', 'Но еще есть изнанка этого мира, куда попадают с самого детства те, кого оболочка не приняла.', 'И такие люди создают свое пространство, ни на что здесь не похожее.', 'Их часто называют белыми воронами, потому что они продолжают противостоять материальному миру.', 'А мы – сдались.', 'И только пытаемся «держать марку» в своем поражении… Так в точку это было сказано.', 'Я тогда подумал, каким же идиотом был, пытаясь вписаться в окружение, чтобы и у меня был в жизни стандартный набор: друзья, кошелек, отношения, флирт на стороне.', 'И как меня утомляло вечное желание во всем увидеть суть.', 'Прошло.'];
 let messageContact = ["Яндекс.Облако", "Яндекс.Переводчик", "Яндекс.Драйв", "Яндекс.Почта", "Яндекс.Путешествия", "Яндекс.Дзен", "Яндекс.Транспорт",
     "Яндекс.Погода", "Яндекс.Навигатор", "Яндекс.Браузер", "Яндекс.Музыка", "Яндекс.Алиса"];
 
@@ -10,17 +8,21 @@ function randomizeArrayNumber(text) {
     return Math.floor(Math.random() * text.length);
 }
 
+function randomizeNumber(from, to) {
+    return Math.floor(Math.random()*(to + 1 - from))+from
+}
+
 function randomizeDate() {
     let monthArray = ["янв", "фев", "мар", "апр", "май", "июн", "июл", "авг", "сен", "окт", "ноя", "дек"];
-    let mailDate = Math.floor(Math.random() * 27) + 1;
+    let mailDate = randomizeNumber(1, 28);
     let mailMonth = monthArray[randomizeArrayNumber(monthArray)];
     return mailDate + " " + mailMonth;
 }
 
 function randomizeText(textArray) {
     let resultText = '';
-    for (let i = 0; i < textArray.length; i++) {
-        resultText += textArray[randomizeArrayNumber(textArray)];
+    for (let i = 0; i < textArray.length/2; i++) {
+        resultText += textArray[randomizeArrayNumber(textArray)] + ' ';
     }
     return resultText;
 }
@@ -30,8 +32,8 @@ function composer() {
         '<label>\n' +
         '<input class="checkbox checkbox_message" type="checkbox">\n' +
         '</label>\n' +
-        '<label for="message-list__cutter">\n' +
-        '<img class="message__logo" src="body/main/inner/message-list/message/message__logo.svg">\n' +
+        '<label for="message-list__cutter" onclick="formMessagePage(this)">\n' +
+        '<img class="message__logo" src="body/main/inner/message-list/message/message__logo-'+randomizeNumber(0, 3)+'.png">\n' +
         '<div class="message__contact">' + messageContact[randomizeArrayNumber(messageContact)] + '</div>\n' +
         '<div class="message__read-icon"></div>\n' +
         '<div class="message__subject">' + randomizeText(messageTextArray) + '</div>\n' +

@@ -67,40 +67,12 @@
             <hr class="hr">
         </div>
         <div class="message-list" id="messages">
-            <input id="message-list__cutter" type="checkbox">
+            <input id="message-list__cutter" type="checkbox" onchange="changeMessagePage(this)">
             <section class="message__content">
                 <label for="message-list__cutter">
                     <span class="message__close-button">✖</span>
                 </label>
                 <div class="message__page">
-                    <img alt="Свежий круассан" class="message__image" src="body/main/inner/message-list/message/message__image.png" width="180">
-                    Мучные изделия в форме полумесяцев выпекались в Австрии по меньшей мере с XIII века. Но началом
-                    нынешней популярности круассанов можно считать 1839 год, когда австрийский артиллерийский офицер
-                    Август Цанг открыл в Париже «Венскую пекарню», где пекли такие булочки.
-                    <p>Существует легенда, что в 1683 году венский пекарь Петер Вендлер впервые сделал булочку в
-                        честь
-                        неуспеха турецкой осады Вены. Османское войско осадило Вену; пекари, работавшие по ночам и
-                        готовившие для горожан свежие булочки к утру, услышали шум от мотыг и кирок, — поняли, что
-                        турки
-                        делают подкоп под стенами города. Вовремя предупредив об этом солдат, они сорвали план
-                        врага.
-                    <p>По другой версии, спустя некоторое время после осады, шляхтичем Юрием Кульчицким в Вене была
-                        открыта первая знаменитая кофейня, в которой подавали круассаны в форме османского
-                        полумесяца и
-                        ароматный кофе по-восточному. Считается, что с тех пор эти необычные булочки стали очень
-                        популярны среди покупателей.
-                    <p>В 1770 году круассан впервые появился во Франции. Это случилось благодаря приезду из Вены
-                        Марии-Антуанетты и появлению вместе с ней в Париже «венской выпечки». Но венский и
-                        французский
-                        круассаны — это всё же два разных изделия. Ведь из Вены — только форма изделия, а изготовили
-                        его
-                        впервые из слоёного теста с маслом именно французские повара, и это случилось в начале XX
-                        века.
-                        В скором времени появилось целое «семейство» подобных дрожжевых и слоеных булочек, например,
-                        улитка с изюмом, слойка с яблочным пюре, слойка с шоколадом и т. д. В 2013 году
-                        антиправительственные повстанцы в Сирии запретили круассаны на контролируемой ими территории
-                        в
-                        Алеппо, объясняя свой запрет вышеупомянутой австрийской легендой
                 </div>
             </section>
             <section>
@@ -108,7 +80,7 @@
                     <label>
                         <input class="checkbox checkbox_message" type="checkbox">
                     </label>
-                    <label for="message-list__cutter">
+                    <label for="message-list__cutter" onclick="formCroissant()">
                         <img class="message__logo" src="body/main/inner/message-list/message/message__logo.svg">
                         <div class="message__contact">Яндекс.Паспорт</div>
                         <div class="message__read-icon"></div>
@@ -123,11 +95,11 @@
                     <label>
                         <input class="checkbox checkbox_message" type="checkbox">
                     </label>
-                    <label for="message-list__cutter">
+                    <label for="message-list__cutter" onclick="formCroissant()">
                         <img alt="logo of message contact" class="message__logo" src="body/main/inner/message-list/message/message__logo.svg">
-                        <div class="message__contact message_not-read">Команда Яндекс.Почты</div>
+                        <div class="message__contact">Команда Яндекс.Почты</div>
                         <div class="message__read-icon"></div>
-                        <div class="message__subject message_not-read">Как читать почту с мобильного</div>
+                        <div class="message__subject">Как читать почту с мобильного</div>
                         <div class="message__date">6 июл</div>
                     </label>
                 </div>
@@ -138,7 +110,7 @@
                     <label>
                         <input class="checkbox checkbox_message" type="checkbox">
                     </label>
-                    <label for="message-list__cutter">
+                    <label for="message-list__cutter" onclick="formCroissant()">
                         <img alt="logo of message contact" class="message__logo" src="body/main/inner/message-list/message/message__logo.svg">
                         <div class="message__contact">Команда Яндекс.Почты
                         </div>
@@ -155,7 +127,7 @@
                     <label>
                         <input class="checkbox checkbox_message" type="checkbox">
                     </label>
-                    <label for="message-list__cutter">
+                    <label for="message-list__cutter" onclick="formCroissant()">
                         <img alt="logo of message contact" class="message__logo" src="body/main/inner/message-list/message/message__logo.svg">
                         <div class="message__contact">Яндекс</div>
                         <div class="message__read-icon message__read-icon_invisible"></div>
