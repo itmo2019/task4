@@ -173,14 +173,14 @@ body {
     opacity: 1;
 }
 
-#letter-box {
+#mail-box {
     width: 100%;
     min-height: 420px;
     height: calc(100% - 80px);
     overflow: scroll;
 }
 
-.letter {
+.mail {
     width: 100%;
     height: 40px;
     border-bottom: solid #d8d8d8;
@@ -189,7 +189,7 @@ body {
     opacity: 0;
 }
 
-.letter__check {
+.mail__check {
     display: inline-block;
     margin-top: 13px;
     margin-left: 20px;
@@ -202,25 +202,27 @@ body {
     opacity: 1;
 }
 
-.letter:hover {
+.mail:hover {
     cursor: pointer;
 }
 
-.letter_will-be-removed {
+.mail_will-be-removed {
     animation-name: remove-animation;
     animation-duration: 1.5s;
 }
 
-.letter__sender-logo {
+.mail__sender-logo {
     display: inline-block;
     margin-top: 4px;
     margin-left: 5px;
     width: 30px; 
     height: 30px;
     vertical-align: middle;
+    shape-outside: circle(50%);
+    clip-path: circle(50%);
 }
 
-.letter__sender-name {
+.mail__sender-name {
     display: inline-block;
     margin-top: 10px;
     margin-left: 10px;
@@ -232,15 +234,15 @@ body {
 	vertical-align: middle;
 }
 
-.letter__sender-name_unread {
+.mail__sender-name_unread {
     font-weight: 550;
 }
 
-.letter__sender-name_read {
+.mail__sender-name_read {
     font-weight: 100;
 }
 
-.letter__mark {
+.mail__mark {
     display: inline-block;
     margin-top: 13px;
     margin-left: 5px;
@@ -249,12 +251,12 @@ body {
     vertical-align: middle;
 }
 
-.letter__mark_unread {
+.mail__mark_unread {
     background-color: #6287bd;
     border-radius: 50%;
 }
 
-.letter__title {
+.mail__title {
     display: inline-block;
     margin-top: 10px;
     margin-left: 10px;
@@ -266,21 +268,31 @@ body {
     text-overflow: ellipsis;
 }
 
-.letter__title_unread {
+.mail__title_unread {
     font-weight: 550;
 }
 
-.letter__title_read {
+.mail__title_read {
     font-weight: 100;
 }
 
-.letter__date {
+.mail__date {
     float: right;
     margin-top: 10px;
     margin-right: 15px;
     vertical-align: middle;
     font-size: 14px;
     color: #9b9b9b;
+}
+
+.mail__text {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    background-color: #ffffff;
+    white-space: normal;
+    width: 100px;
+    height: 100px;
 }
 
 .footer {
