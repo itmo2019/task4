@@ -1,3 +1,10 @@
+var count = 0;
+var countLetterOnPage = 0;
+var authors = ['рядовой', 'боец', 'прапор', 'яндекс', 'Зенон', 'Зураб', 'Зигмут', 'Жигер', 'Платон', 'Орландо', 'разработчик'];
+var verbs = ['написал', 'проверил', 'удалил', 'призвал', 'высказал', 'закрыл', 'заметил', 'вспомнил', 'посмотрел', 'организовал', 'передал',];
+var nouns = ['двигатель', 'ресторан', 'художник', 'эксперт', 'попытку', 'дедлайн', 'полосу', 'редактор', 'программист',]
+var adjectives = ['жизненный', 'идеальный', 'прямой', 'обратной', 'постоянный', 'великолепный', 'рядовой', 'почетный', 'исключительный'];
+
 function selectAllLetter() {
     elements = document.querySelectorAll('.check');
     main = elements[0];
@@ -27,7 +34,6 @@ function getCurrentDate() {
     return String(date.getDay()) + ' ' + String(month[date.getMonth()]);
 }
 
-var count = 0;
 
 function addLetter() {
     let letter = randomTextGenerator();
@@ -54,79 +60,49 @@ function addLetter() {
     elements = document.getElementsByClassName('mail__conatainer')[0];
     letter = document.createElement('div');
     letter.classList.add('mail__message', 'clearfix','animation-letter');
-    letter.setAttribute('data-method-click', 'positive');
-    
-//    letter.setAttribute('onclick', 'openMessage(this)');
-    
-    letter.innerHTML = templateLetter;    
-    delayDeleteClass(letter);
+    letter.setAttribute('data-method-click', 'positive');    
+    letter.innerHTML = templateLetter; 
     elements.insertBefore(letter, elements.childNodes[1]);
-    
-    
+    letter.addEventListener('animationend', _deleteClass);
+    countLetterOnPage++;
+    checkCountLetter();
+    let messages = document.querySelectorAll('.mail__message');    
 }
-
-function openMessage(obj) {
-    hideAllLettersExpectThis(obj);
-}
-
-
-function delay(f, ms) {
-  return function() {
-    let savedThis = this;
-    let savedArgs = arguments;
-
-    setTimeout(function() {
-      f.apply(savedThis, savedArgs);
-    }, ms);
-  };
-}
-
-
-
-
-var authors = ['рядовой', 'боец', 'прапор', 'яндекс', 'Зенон', 'Зураб', 'Зигмут', 'Жигер', 'Платон', 'Орландо', 'разработчик'];
-var verbs = ['написал', 'проверил', 'удалил', 'призвал', 'высказал', 'закрыл', 'заметил', 'вспомнил', 'посмотрел', 'организовал', 'передал',];
-var nouns = ['двигатель', 'ресторан', 'художник', 'эксперт', 'попытку', 'дедлайн', 'полосу', 'редактор', 'программист',]
-var adjectives = ['жизненный', 'идеальный', 'прямой', 'обратной', 'постоянный', 'великолепный', 'рядовой', 'почетный', 'исключительный'];
 
 
 function randomTextGenerator() {
     let name = authors[randomInteger(0, (authors.length)-1)];
     name = name.charAt(0).toUpperCase() + name.slice(1);
-    console.log((authors.length)-1);
-    let randomText = 'Привет, ' + name + '!<br>' +
+    let randomText = 'Привет, ' + name + " " + count +'!<br>' +
                      authors[randomInteger(0, (authors.length)-1)] + ' ' + verbs[randomInteger(0, (verbs.length)-1)] + ' ' + adjectives[randomInteger(0, (adjectives.length)-1)] + ' ' + nouns[randomInteger(0, (nouns.length)-1)] + '.';
-    console.log(randomText);
     return [name, randomText];
 }
 
 
-
-
-
-function _deleteClass(obj) {
-    obj.classList.remove('animation-letter');
+function _deleteClass() {
+    this.classList.remove('animation-letter');
 }
 
 
-function _deleteLetter(letter) {
-    letter.parentElement.remove();
+function _deleteLetter() {
+    this.parentElement.remove();
 }
 
-
-var delayDeleteLetter = delay(_deleteLetter, 500);
-var delayDeleteClass = delay(_deleteClass, 500);
 
 function deleteLetters() {
     elements = document.body.querySelectorAll('.check');
     for (let i = 1; i < elements.length; i++) {
-        if (elements[i].checked) {  
-            elements[i].parentElement.classList.add('animation-letter');
-            delayDeleteLetter(elements[i].parentElement);            
+        if (elements[i].checked) {
+            let elm = elements[i].parentElement;
+            elm.classList.add('animation-letter');
+            elm.addEventListener('animationend', _deleteLetter)            
+            countLetterOnPage--;
+            checkCountLetter();
         }
     }
     elements[0].checked = false;
 }
+
 
 function randomInteger(min, max) {
     return Math.round(Math.random() * (max - min) + min);;
@@ -140,32 +116,44 @@ function randomLetterGenerator() {
     setTimeout(randomLetterGenerator, 300000+randomTime);
 }
 
-
-
-
-
-
-//Доделать
-document.querySelector('.mail__conatainer').addEventListener('click', onContainerClick);
-
         
-        
+function _displayNone(obj) {
+    obj.style.display = 'none';
+}        
+
+
+function _displayBlock(obj) {
+    obj.style.display = 'block';
+}
+
+
 function onContainerClick(e) {
-    var event = e || window.event, 
+    let event = e || window.event, 
     target = event.CurrentTarget || event.srcElement;
-    
-    if (target.dataset.methodClick == 'positive') {
-        target.style.position = 'absolut';
-        target.querySelector('.mail__shortcut-info').style.display = 'none';
-        target.querySelector('.mail__random-letter').style.display = 'block';
-        hideAllLettersExpectThis(target);
-    } else if (target.dataset.closeLetter == 'close') {
+    if (target.tagName === 'INPUT' && target.type === 'checkbox') {
         
-        showAllLetters(target.parentElement);
-    }
-    
-//    console.log(target);
-    
+    } else if (target.dataset.closeLetter === 'close') {
+        _displayNone(target.parentElement);
+         while (!target.classList.contains('mail__conatainer')) {
+            if (target.classList.contains('mail__message')) {
+                break;    
+            }
+            target = target.parentElement;
+        }   
+        _displayBlock(target.querySelector('.mail__shortcut-info'));
+    } 
+    else {
+       while (!target.classList.contains('mail__conatainer')) {
+            if (target.dataset.methodClick == 'positive') {
+                break;    
+            }
+            target = target.parentElement;
+        }   
+        _displayNone(target.querySelector('.mail__shortcut-info'));
+        _displayBlock(target.querySelector('.mail__random-letter'));
+        hideAllLettersExpectThis(target);
+
+    }    
 }
 
 
@@ -179,68 +167,19 @@ function hideAllLettersExpectThis(letter) {
 }
 
 
-function showAllLetters(letter) {
-    obj = document.querySelectorAll('.mail__message');
-    mail_letter = letter.parentElement;
-    mail_letter.querySelector('.mail__shortcut-info').style.display = 'block';
-    mail_letter.querySelector('.mail__random-letter').style.display = 'none';
-    for (let i = 0; i < obj.length; i++) {
-        if (obj[i] === letter.parentElement){
-            continue;
-        }
-        obj[i].style.display = 'block';
-    }   
-    
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-function comebackOnListLetters(el) {
-    console.log(1);
-    
-//    this.parentElement.display = 'none';
-//    showAllLetters();
-}
-
-
-
-
-
-function countLetters() {
+function checkCountLetter() {
     let messages = document.querySelectorAll('.mail__message');
-    if (messages.length > 30) {
-        for (let i = 31; i < messages.length; i++) {
+    if (countLetterOnPage > 29) {
+        for (let i = 30; i < messages.length; i++) {
             messages[i].style.display = 'none';
+            messages[i].firstChild.querySelector('.check').checked = false;
         }
     } else {
         for (let i = 0; i < messages.length; i++) {
             messages[i].style.display = 'block';
         }
     }
-    console.log(messages.length);
-    setTimeout(countLetters, 500);
 }
-
-
-
-
-var myEventCheckCountLetter = new CustomEvent("customCheckCountLetters");
-var myElement = document.body;
-myElement.addEventListener("customCheckCountLetters", countLetters);
-//myElement.dispatchEvent(myEventCheckCountLetter);
-
-
 
 
 var myEventAdd = new CustomEvent("customAddLetters");
@@ -248,8 +187,7 @@ var myElement = document.body;
 myElement.addEventListener("customAddLetters", randomLetterGenerator);
 myElement.dispatchEvent(myEventAdd);
 
-//document.querySelector('.mail__close-letter').addEventListener("click", comebackOnListLetters);
-
+document.querySelector('.mail__conatainer').addEventListener('click', onContainerClick);
 document.getElementById('addElement').addEventListener("click", addLetter);
 document.getElementById('check-all').addEventListener('click', selectAllLetter);
 document.getElementById('delete-letter').addEventListener("click", deleteLetters);
