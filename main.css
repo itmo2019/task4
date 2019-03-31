@@ -206,8 +206,10 @@ html, body {
 }
 
 .mail-box-content {
+    position: relative;
     width: 100%;
     min-height: 456px;
+    max-height: 1140px;
     height: fit-content;
     border-top: solid 1px #e2e2e2;
     border-bottom: solid 1px #e2e2e2;
@@ -305,9 +307,10 @@ footer nav a, footer span {
 
 .mail-box-content__article {
     position: absolute;
+    top: 0;
+    bottom: 1px;
     box-sizing: border-box;
     width: 100%;
-    min-height: 455px;
     background-color: white;
     z-index: 1;
     font-family: sans-serif;
@@ -342,21 +345,16 @@ footer nav a, footer span {
     background-color: #cdd6e4;
 }
 
-#first-message-click:checked + .mail-box-content__article {
+#message-click:checked + .mail-box-content__article {
     display: block;
 }
 
-#first-message-click {
+#message-click {
     display: none;
 }
 
-.first-message-label {
+.message-clickable-area {
     position: unset;
-}
-
-.mail-box__get-message {
-    float: right;
-    margin-right: 20px;
 }
 
 /* animation */
