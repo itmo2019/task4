@@ -66,15 +66,13 @@ body {
 }
 
 .main-block__mail-functions {
+    height: 40px;
     border-bottom: 2px solid rgba(0, 0, 0, 0.15);
 }
 
 .main-block__all-function {
+    padding-top: 3px;
     margin: 0;
-}
-
-.main-block__mail-checkbox {
-    margin: 11px 12px;
 }
 
 .main-block__func {
@@ -95,19 +93,12 @@ body {
     border-bottom: 2px solid #cccccc;
 }
 
-
-#get-letter {
-
-}
-
-#remove {
-
-}
-
 /*End Container*/
 
 /*Start letters*/
 .main-block__all-letters {
+    margin: 0;
+    padding: 0;
     height: calc(100vh - 14px);
     overflow: scroll;
 }
@@ -127,11 +118,12 @@ body {
 }
 
 .main-block__letter {
+    list-style: none;
     border-bottom: 2px solid #e2e2e2;
     height: 40px;
 }
 
-.main-block__img-ya {
+.main-block__img {
     text-align: center;
     float: left;
     margin-left: 2%;
@@ -183,36 +175,25 @@ body {
 /*End letter*/
 
 /*Start My letter*/
-.main-block__my-letter {
+.main-block__letter-content {
     display: none;
     position: absolute;
-    background: rgb(199, 216, 226);
-    padding: 10px 2%;
-    shape-outside: circle();
+    background: #ffffff;
+    width: 100%;
+    padding: 0;
     float: left;
     color: #000000;
     font-family: "HelveticaNeue", sans-serif;
     font-size: 0.8em;
     font-weight: 700;
-    height: calc(100% - 80px);
+    height: calc(100% - 70px);
+    top: 42px;
     overflow: scroll;
 }
 
 .main-block__paragraph {
+    padding: 10px;
     margin-top: 10px;
-}
-
-
-input[type=checkbox]:checked + label {
-    display: none;
-}
-
-input[type=checkbox]:checked ~ .main-block__letter {
-    display: none;
-}
-
-input[type=checkbox]:checked ~ .main-block__my-letter {
-    display: block;
 }
 
 .main-block__letter-img {
@@ -222,6 +203,7 @@ input[type=checkbox]:checked ~ .main-block__my-letter {
 }
 
 .close {
+    padding: 15px;
     float: right;
 }
 
@@ -233,7 +215,8 @@ input[type=checkbox]:checked ~ .main-block__my-letter {
     position: absolute;
     left: 0;
     bottom: 0;
-    height: 31px;
+    height: 26px;
+    padding-top: 5px;
     width: 100%;
     color: #9b9b9b;
     font-family: "HelveticaNeue", sans-serif;
