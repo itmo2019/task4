@@ -6,8 +6,14 @@ setInterval(function () {
     setTimeout(newMail, Math.random() * (10 * MINUTE) + 10);
 }, 5 * MINUTE);
 
-var letters = [];
+//setInterval(newMail, 3000);
+//setTimeout(newMail, 1000);
+//setTimeout(newMail, 2000);
+//setTimeout(newMail, 3000);
 
+var letters = [];
+var letterTexts = [];
+var letterThemes = [];
 var nextLetterId = 3;
 
 function createMail(from = "Яндекс.Почта", theme = "Тестовое письмо", date = "6 июл.") {
@@ -37,6 +43,20 @@ function changeCheckboxesStatus() {
     }
 }
 
+
+function setRandomText(id) {
+    $.getJSON('https://baconipsum.com/api/?callback=?',
+        {'type': 'meat-and-filler', 'start-with-lorem': '3', 'paras': '4'},
+        function (respponse) {
+            if (respponse && respponse.length > 0) {
+                for (var i = 0; i < respponse.length; i++)
+                    letterTexts[id] += '<p>' + respponse[i] + '</p>';
+            }
+            letterThemes[id] = respponse[3];
+            document.getElementById("letter" + id).children[4].innerHTML = respponse[2];
+        });
+}
+
 let months = ["янв", "фев", "мар", "апр", "май", "июн", "июл", "авг", "сен", "окт", "ноя", "дек"];
 let lastNames = ["Александр", "Марк", "Георгий", "Артемий"
     , "Дмитрий", "Константин", "Давид", "Эмиль"
@@ -56,13 +76,16 @@ function newMail() {
     var from = first_names[Math.floor(Math.random() * (first_names.length - 1))]
         + " "
         + lastNames[Math.floor(Math.random() * (lastNames.length - 1))];
-    var theme = "theme";
     var date = (Math.floor(Math.random() * 29)) + " " + months[Math.floor(Math.random() * 11)] + ".";
-    var text = "text";
+    let curLetterId = nextLetterId;
+    letterTexts[curLetterId] = "";
+    letterThemes[curLetterId] = "";
+    setRandomText(curLetterId);
+    var theme = "...";
     mailsList.insertBefore(createMail(from, theme, date), mailsList.firstChild.nextSibling.nextSibling);
-    document.getElementById("letter" + (nextLetterId - 1)).addEventListener("click", function () {
-        document.getElementById("letter-theme").innerHTML = theme;
-        document.getElementById("letter-text").innerHTML = text;
+    document.getElementById("letter" + curLetterId).addEventListener("click", function () {
+        document.getElementById("letter-theme").innerHTML = letterThemes[curLetterId];
+        document.getElementById("letter-text").innerHTML = letterTexts[curLetterId];
     });
 }
 

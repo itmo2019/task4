@@ -1,6 +1,7 @@
 html {
     font-family: 'Open Sans', sans-serif;
     min-width: 1048px;
+    max-height: 1400px;
 }
 
 body {
@@ -287,7 +288,7 @@ a {
 }
 
 .open-letter__content {
-    height: 1280px;
+    height: 1000px;
 }
 
 label {
@@ -314,6 +315,7 @@ label {
 
 .open-letter__header-text {
     display: inline-block;
+    padding-right: 30px;
     margin: 0;
 }
 
