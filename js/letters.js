@@ -74,12 +74,11 @@ function buildLetter(avatar, sender, title, date) {
 }
 
 function getLetterTemplate(letterNumber) {
-    let link = document.querySelector('link[href="template/letter_template.html"]');
-    let content = link.import.cloneNode(true);
+    let template = document.querySelector('#letter_template');
+    let letterMail = document.importNode(template.content.querySelector(".letters_mail"), true);
 
     let letterId = "letter_open" + letterNumber;
 
-    let letterMail = content.querySelector('.letters_mail');
     letterMail.querySelector("#letter_open_").setAttribute("id", letterId);
     letterMail.querySelectorAll('label[for="letter_open_"]')
         .forEach((elem) => elem.setAttribute("for", letterId));
