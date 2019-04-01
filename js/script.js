@@ -200,10 +200,8 @@ function newMail() {
     array.push(newElement.id);
     let elements = Array.from(newElement.children);
     newElement.classList.add("letters__animated-add-line");
-    setTimeout(function () {
-        newElement.classList.add("letters__animated-add-line_visible");
-    }, 0);
-    // newElement.classList.add("letters__animated-add-line_visible");
+    newElement.offsetHeight;
+    newElement.classList.add("letters__animated-add-line_visible");
     if (size > 30) {
         for (let i = 0; i < array.length; i++) {
             let element = document.getElementById(array[i]);
