@@ -247,6 +247,9 @@ function animate(draw, duration, complete) {
 
 function removeLetters() {
     _doActionWithLetters(_removeAnimateLetter);
+    setTimeout(() => {
+        document.body.querySelector('.check__input').checked = false;
+    }, 700)
 }
 
 function _removeClass(letter, className) {
