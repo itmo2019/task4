@@ -277,21 +277,21 @@ a {
 }
 
 .bullet_unread {
+	background-color: #ffffff;
+}
+
+.letters__unread_letter .bullet_unread {
 	width: 10px;
 	height: 10px;
 	background-color: #6287bd;
 	border-radius: 10px;
 }
 
-.empty {
-	background-color: #ffffff;
-}
-
 .letters__letter_text {
 	width: 100%;
 }
 
-.letters__highlighted {
+.letters__unread_letter .letters__letter_header {
 	font-family: "Helvetica Neue";
 }
 
@@ -335,9 +335,13 @@ a {
 
 .close_article {
 	float: right;
-	padding-top: 20px;
-	padding-right: 30px;
+	padding-top: 10px;
+	padding-right: 20px;
 	font-size: 40px;
+}
+
+.article__text {
+	padding-right: 40px;
 }
 
 #show_article:checked + .article {

@@ -3,16 +3,33 @@ const MAX_MESSAGES = 30
 
 const MAX_MESSAGE_TIMEOUT = 600000
 const MIN_MESSAGE_TIMEOUT = 10
+const MESSAGE_FREQUENCY_TIMEOUT = 300000
+
+var firstMessageTime = undefined
+var secondMessageTime = undefined
 
 window.onload = function () {
 	var to = getRandomFromRange(MIN_MESSAGE_TIMEOUT, MAX_MESSAGE_TIMEOUT)
 	setTimeout(sendMessage, to)
+	document.querySelector('.letters__check_all_checkbox').addEventListener('click', (event) => {
+		checkOrUncheckAll()
+	})
+	document.querySelector('.letters__option_delete').addEventListener('click', (event) => {
+		deleteChecked()
+	})
+	document.querySelector('.letters__option_newmail').addEventListener('click', (event) => {
+		newMail(false)
+	})
 }
 
 function sendMessage() {
 	newMail(false)
 	var to = getRandomFromRange(MIN_MESSAGE_TIMEOUT, MAX_MESSAGE_TIMEOUT)
-	to = Math.max(to, 300000)
+	if (firstMessageTime != undefined) {
+		to = Math.max(to, MESSAGE_FREQUENCY_TIMEOUT - new Date().getTime() + firstMessageTime)
+	}
+	firstMessageTime = secondMessageTime
+	secondMessageTime = new Date().getTime()
 	setTimeout(sendMessage, to)
 }
 
@@ -74,55 +91,14 @@ function loadLetters(num) {
 
 function newMail(toEnd, msg) {
 	var letters = document.querySelector('.letters__letterbox')
-	var newMessage
-	if (msg == undefined) {
-		newMessage = new Message()
-	} else {
-		newMessage = msg
-	}
+	var newMessage = (msg == undefined ? new Message() : msg)
+	var newLetter = generateTemplate()
+	fillTemplate(newLetter, newMessage)
 	if (!toEnd) {
 		messages.unshift(newMessage)
-	}
-	var newLetter = undefined
-	if ('content' in document.createElement('template')) {
-		var template = document.querySelector('#letter_template')
-		newLetter = document.importNode(template.content, true)
-		newLetter = newLetter.querySelector('.letters__single_letter')
-		var sender = newLetter.querySelector('.letters__letter_header')
-		var theme = newLetter.querySelector('.letters__letter_text')
-		if (!newMessage.unread) {
-			sender.classList.remove('letters__highlighted')
-			theme.classList.remove('letters__highlighted')
-			var bullet = newLetter.querySelector('.bullet_unread')
-			bullet.classList.remove('bullet_unread')
-			bullet.classList.add('empty')
-		}
-		sender.querySelector('a').innerHTML = newMessage.sender
-		theme.querySelector('label').innerHTML = newMessage.theme
-		newLetter.querySelector('.letters__letter_date').innerHTML = newMessage.date
-	} else {
-		newLetter.className = "letters__single_letter"
-		newLetter.innerHTML = '<div class="letters__letter_element">' + 
-								  '<input class="letters__checkbox" type="checkbox" onclick="uncheckAllCheckbox(this)">' +
-						  	  '</div>' + 
-							  '<div class="letters__letter_element">' +
-								  '<img class="ya_logo" src="https://yastatic.net/mail/socialavatars/socialavatars/v4/ya-default.svg">' +
-							  '</div>' + 
-							  '<div class="letters__letter_element letters__letter_header' + ((newMessage.unread) ? ' letters__highlighted' : '') + '">' +
-								  '<a href="#">' + newMessage.sender + '</a>' +
-							  '</div>' +
-							  '<div class="letters__letter_element">' +
-								  '<div class="' + ((newMessage.unread) ? 'bullet_unread' : ' empty') + '"></div>' +
-							  '</div>' +
-							  '<div class="letters__letter_element letters__letter_header letters__letter_text' + ((newMessage.unread) ? ' letters__highlighted' : '') + '">' +
-								  '<a href="#"><label for="show_article" onclick="removeHighlight(this); updateArticle(this)">' + newMessage.theme + '</label></a>' +
-							  '</div>' +
-							  '<div class="letters__letter_element letters__letter_date">' + newMessage.date + '</div>'
-	}
-	if (!toEnd) {
 		newLetter.classList.add('zeroOpacity')
 		var firstLetter = letters.querySelector('.letters__single_letter')
-		letters.insertBefore(newLetter, letters.childNodes[Array.prototype.indexOf.call(letters.childNodes, firstLetter)])
+		letters.prepend(newLetter)
 		if (messages.length > MAX_MESSAGES) {
 			var letters = document.querySelectorAll('.letters__single_letter')
 			letters[MAX_MESSAGES].remove()
@@ -134,22 +110,59 @@ function newMail(toEnd, msg) {
 	}
 }
 
+function generateTemplate() {
+	var newLetter
+	if ('content' in document.createElement('template')) {
+		var template = document.querySelector('#letter_template')
+		newLetter = document.importNode(template.content, true)
+		newLetter = newLetter.querySelector('.letters__single_letter')
+	} else {
+		newLetter = document.createElement("div")
+		newLetter.className = "letters__single_letter"
+		newLetter.innerHTML = '<div class="letters__letter_element">' + 
+								  '<input class="letters__checkbox" type="checkbox">' +
+						  	  '</div>' + 
+							  '<div class="letters__letter_element">' +
+								  '<img class="ya_logo" src="https://yastatic.net/mail/socialavatars/socialavatars/v4/ya-default.svg">' +
+							  '</div>' + 
+							  '<div class="letters__letter_element letters__letter_header">' +
+								  '<a href="#"></a>' +
+							  '</div>' +
+							  '<div class="letters__letter_element">' +
+								  '<div class="bullet_unread"></div>' +
+							  '</div>' +
+							  '<div class="letters__letter_element letters__letter_header letters__letter_text">' +
+								  '<a href="#"><label for="show_article" class="article_label"></label></a>' +
+							  '</div>' +
+							  '<div class="letters__letter_element letters__letter_date"></div>'
+	}
+	return newLetter
+}
+
+function fillTemplate(newLetter, newMessage) {
+	var sender = newLetter.querySelector('.letters__letter_header')
+	var theme = newLetter.querySelector('.letters__letter_text')
+	if (newMessage.unread) {
+		newLetter.classList.add('letters__unread_letter')
+	}
+	sender.querySelector('a').innerHTML = newMessage.sender
+	theme.querySelector('label').innerHTML = newMessage.theme
+	newLetter.querySelector('.letters__letter_date').innerHTML = newMessage.date
+	newLetter.querySelector('.article_label').addEventListener('click', (event) => {
+		removeHighlight(event.target)
+		updateArticle(event.target)
+	})
+	newLetter.querySelector('.letters__checkbox').addEventListener('click', (event) => {
+		uncheckAllCheckbox(event.target)
+	})
+}
+
 function removeHighlight(elem) {
 	var allLetters = document.querySelectorAll('.letters__single_letter')
-	while (!elem.classList.contains('letters__single_letter')) {
-		elem = elem.parentElement
-	}
+	elem = elem.closest('.letters__single_letter')
 	var id = Array.prototype.indexOf.call(allLetters, elem);
 	messages[id].unread = false;
-	var highlighted = elem.querySelectorAll('.letters__highlighted')
-	for (var i = 0; i < highlighted.length; i++) {
-		highlighted[i].classList.remove('letters__highlighted')
-	}
-	var bullet = elem.querySelector('.bullet_unread')
-	if (bullet != undefined) {
-		bullet.classList.remove('bullet_unread')
-		bullet.classList.add('empty')
-	}
+	elem.classList.remove('letters__unread_letter')
 }
 
 function updateArticle(elem) {
