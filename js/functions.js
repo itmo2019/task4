@@ -28,15 +28,15 @@ function selectLetter(event) {
 function LetterGenerator() {
     var defaultLetter =
             `<ul class="letter__line">
-                 <li class="check">
+                 <li class="letter__item check">
                      <label><input class="check__input" type="checkbox">
                      <span class="check__box"></span>
                  </label></li>
-                 <li class="letter__author"></li>
-                 <li class="letter__author-name"></li>
-                 <li class="letter__read-mark letter__read-mark_unread"></li>
-                 <li class="letter__topic"></li>
-                 <li class="letter__date"></li>
+                 <li class="letter__item letter__author"></li>
+                 <li class="letter__item letter__author-name"></li>
+                 <li class="letter__item letter__read-mark letter__read-mark_unread"></li>
+                 <li class="letter__item letter__topic"></li>
+                 <li class="letter__item letter__date"></li>
              </ul>
              <a class="letter__open-letter"></a>
              <hr class="letter-box__hr">`,
@@ -201,15 +201,17 @@ function _removeAnimateLetter(letter, newLetterIndex) {
         mails[newLetterIndex].hidden = false;
     }
 
-    let fps = 1000 / 42;
+    var time = 300;
+    var startShift = 42;
+    var fps = time / startShift;
     letter.style.zIndex = '0';
     animate(
         timePassed => {
             var shift = (timePassed / fps);
-            letter.style.height = (42 - shift) + 'px';
-            letter.style.top = -shift + 'px';
+            letter.style.height = `${startShift - shift}px`;
+            letter.style.top = `${-shift}px`;
         },
-        1000,
+        time,
         () => {
             _removeLetter(letter);
         }
@@ -217,16 +219,18 @@ function _removeAnimateLetter(letter, newLetterIndex) {
 }
 
 function animateAddingLetter(newLetter) {
+    var time = 300;
+    var startShift = 42;
+    var fps = time / startShift;
     newLetter.style.height = '0';
-    newLetter.style.top = '-42px';
-    let fps = 1000 / 42;
+    newLetter.style.top = `${-startShift}px`;
     animate(
         (timePassed) => {
             var shift = (timePassed / fps);
-            newLetter.style.height = shift + 'px';
-            newLetter.style.top = (-42 + shift) + 'px';
+            newLetter.style.height = `${shift}px`;
+            newLetter.style.top = `${-startShift + shift}px`;
         },
-        1000
+        time
     );
 }
 

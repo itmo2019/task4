@@ -3,13 +3,9 @@
     height: 17px;
 }
 
-.menu > div {
+.menu__hr {
     margin-top: 4px;
     width: 20px;
     height: 2px;
     background-color: #393a3b;
-}
-
-.header__menu {
-    margin-top: -6px;
 }

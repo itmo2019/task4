@@ -1,0 +1,25 @@
+.mail-header {
+    height: 32px;
+    letter-spacing: -1em;
+    position: relative;
+}
+
+.mail-header__menu, .mail-header__logo, .mail-header__search {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.mail-header__menu {
+    margin-top: -6px;
+}
+
+.mail-header__logo {
+    margin-left: 11px;
+}
+
+.mail-header__search {
+    margin-left: 114px;
+    position: absolute;
+    left: 184px;
+    right: 179px;
+}

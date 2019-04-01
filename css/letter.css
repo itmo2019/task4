@@ -2,30 +2,32 @@
     position: relative;
 }
 
+.letter_unread {
+    font-weight: 700;
+}
+
 .letter__line {
     position: relative;
+    margin: 0;
     padding: 10px 20px;
     font-size: 13px;
     height: 20px;
     background-color: #fff;
 }
 
-.letter__line > li {
+.letter__item {
     display: inline-block;
     overflow: hidden;
     text-overflow: ellipsis;
     vertical-align: middle;
+    list-style-type: none;
 }
 
-.letter__line > li:first-child {
+.letter__item:first-child {
     vertical-align: initial;
 }
 
-.letter_unread {
-    font-weight: 700;
-}
-
-.letter__line > li:last-child {
+.letter__item:last-child {
     font-weight: initial;
 }
 
@@ -95,4 +97,5 @@
     right: 0;
     top: -2px;
     bottom: 2px;
+    cursor: pointer;
 }

@@ -4,7 +4,7 @@
     font: 11px 'Helvetica Neue Light', sans-serif;
 }
 
-.support-line > * {
+.support-line__item {
     display: inline-block;
     vertical-align: center;
     margin-left: 25px;
@@ -12,6 +12,6 @@
     font-weight: 700;
 }
 
-.support-line > *:hover {
+.support-line__item:hover {
     color: #000;
 }

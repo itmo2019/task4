@@ -1,0 +1,30 @@
+.mail-main {
+    margin-top: 13px;
+    position: absolute;
+    top: 42px;
+    left: 18px;
+    right: 10px;
+    bottom: 4px;
+}
+
+.mail-main__nav, .mail-main__letter-box {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.mail-main__write-button, .mail-main__nav-list {
+    white-space: normal;
+}
+
+.mail-main__nav-item-link, .mail-main__support-line-link {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.mail-main__support-line-link {
+    color: #9e9e9e;
+}
+
+.mail-main__letter-line_has-cursor {
+    cursor: pointer;
+}

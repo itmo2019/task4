@@ -4,64 +4,85 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Яндекс Почта</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/font.css">
     <link rel="stylesheet" href="css/menu.css">
     <link rel="stylesheet" href="css/logo.css">
     <link rel="stylesheet" href="css/menu.css">
     <link rel="stylesheet" href="css/nav.css">
     <link rel="stylesheet" href="css/search.css">
     <link rel="stylesheet" href="css/letter-box.css">
-    <link rel="stylesheet" href="css/letter-dialog.css">
-    <link rel="stylesheet" href="css/letter-toolbar.css">
+    <link rel="stylesheet" href="css/toolbar.css">
     <link rel="stylesheet" href="css/support-line.css">
     <link rel="stylesheet" href="css/letter.css">
+    <link rel="stylesheet" href="css/letter-dialog.css">
     <link rel="stylesheet" href="css/check.css">
+    <link rel="stylesheet" href="css/mail.css">
+    <link rel="stylesheet" href="css/mail-header.css">
+    <link rel="stylesheet" href="css/mail-main.css">
+    <link rel="stylesheet" href="css/link-block.css">
 </head>
-<body>
-<header>
-    <div class="menu header__menu">
-        <div></div>
-        <div></div>
-        <div></div>
+<body class="mail">
+<header class="mail-header">
+    <div class="menu mail-header__menu">
+        <div class="menu__hr"></div>
+        <div class="menu__hr"></div>
+        <div class="menu__hr"></div>
     </div>
 
-    <div class="logo header__logo">
+    <div class="logo mail-header__logo">
         <img src="images/YandexLogo.svg" alt="Яндекс Почта"/>
         <a class="logo__yandex" href="https://yandex.ru"></a>
         <a class="logo__mail" href="https://mail.yandex.ru"></a>
     </div>
 
-    <div class="search header__search">
-        <input type="text" placeholder="Поиск"/>
-        <div class="search__clear inline-middle">×</div>
+    <div class="search mail-header__search">
+        <input class="search__input" type="text" placeholder="Поиск"/>
+        <div class="search__clear-background">
+            <div class="search__clear-text">×</div>
+        </div>
     </div>
 </header>
-<main>
-    <nav class="nav main__nav">
-        <a href="index.html">
-            <button class="write-button">Написать</button>
-        </a>
-        <ul class="nav__list">
-            <li class="nav__list-li_select"><a href="index.html">Входящие</a></li>
-            <li><a href="index.html">Отправленные</a></li>
-            <li><a href="index.html">Удалённые</a></li>
-            <li><a href="index.html">Спам</a></li>
-            <li><a href="index.html">Черновики</a></li>
-            <li><a href="index.html">Создать папку</a></li>
+<main class="mail-main">
+    <nav class="nav mail-main__nav">
+        <button class="mail-main__write-button link-block">Написать</button>
+        <ul class="mail-main__nav-list nav__list">
+            <li class="nav__item nav__item_select">
+                <a class ="nav__item-link mail-main__nav-item-link" href="index.html">Входящие</a>
+            </li>
+            <li class="nav__item">
+                <a class ="nav__item-link mail-main__nav-item-link" href="index.html">Отправленные</a>
+            </li>
+            <li class="nav__item">
+                <a class ="nav__item-link mail-main__nav-item-link" href="index.html">Удалённые</a>
+            </li>
+            <li class="nav__item">
+                <a class ="nav__item-link mail-main__nav-item-link" href="index.html">Спам</a>
+            </li>
+            <li class="nav__item">
+                <a class ="nav__item-link mail-main__nav-item-link" href="index.html">Черновики</a>
+            </li>
+            <li class="nav__item">
+                <a class ="nav__item-link mail-main__nav-item-link" href="index.html">Создать папку</a>
+            </li>
         </ul>
     </nav>
 
-    <div class="letter-box">
-        <ul class="letter-toolbar">
-            <li class="check"><label>
+    <div class="letter-box mail-main__letter-box">
+        <ul class="toolbar">
+            <li class="toolbar__item check"><label>
                 <input class="check__input" type="checkbox">
                 <span class="check__box"></span>
             </label></li>
-            <li><input type="button" id="get-letter" value="Получить сообщение"></li>
-            <li><input type="button" id="forward-letter" value="Переслать"></li>
-            <li><input type="button" id="remove-letter" value="Удалить"></li>
-            <li><input type="button" id="spam-letter" value="Это спам!"></li>
-            <li><input type="button" id="mark-read-letter" value="Прочитано"></li>
+            <li class="toolbar__item">
+                <input class ="toolbar__button" type="button" id="get-letter" value="Получить сообщение"></li>
+            <li class="toolbar__item">
+                <input class ="toolbar__button" type="button" id="forward-letter" value="Переслать"></li>
+            <li class="toolbar__item">
+                <input class ="toolbar__button" type="button" id="remove-letter" value="Удалить"></li>
+            <li class="toolbar__item">
+                <input class ="toolbar__button" type="button" id="spam-letter" value="Это спам!"></li>
+            <li class="toolbar__item">
+                <input class ="toolbar__button" type="button" id="mark-read-letter" value="Прочитано"></li>
         </ul>
         <hr class="letter-box__hr">
 
@@ -71,18 +92,18 @@
         </section>
 
         <ul id="letter-box__letters">
-            <li class="letter letter_added letter-box__letter letter_unread">
+            <li class="letter letter-box__letter letter_unread">
                 <ul class="letter__line">
-                    <li class="check"><label>
+                    <li class="letter__item check"><label>
                         <input class="check__input" type="checkbox">
                         <span class="check__box"></span>
                     </label></li>
-                    <li class="letter__author">
+                    <li class="letter__item letter__author">
                         <img class="letter__author_has-logo" src="images/ya-default.svg" alt="Я">
                     </li>
-                    <li class="letter__author-name">Яндекс.Паспорт</li>
-                    <li class="letter__read-mark letter__read-mark_unread"></li>
-                    <li class="letter__topic">Про яблоки (apples)
+                    <li class="letter__item letter__author-name">Яндекс.Паспорт</li>
+                    <li class="letter__item letter__read-mark letter__read-mark_unread"></li>
+                    <li class="letter__item letter__topic">Про яблоки (apples)
                         <div class="letter__body">
                         Яблоко — плод яблони, который употребляется в пищу в свежем виде, служит сырьём в
                         кулинарии и
@@ -113,7 +134,7 @@
                         климатических условиях.
                         </div>
                     </li>
-                    <li class="letter__date">6 авг</li>
+                    <li class="letter__item letter__date">6 июл</li>
                 </ul>
                 <a class="letter__open-letter"></a>
                 <hr class="letter-box__hr">
@@ -123,9 +144,13 @@
         <div class="letter-box__support-line">
             <hr class="letter-box__hr">
             <div class="support-line">
-                <a href="https://yandex.ru/support/mail/">Помощь и обратная связь</a>
-                <a href="https://yandex.ru/adv/">Реклама</a>
-                <div>© 2001&mdash;2019, <a href="https://yandex.ru">Яндекс</a></div>
+                <a class="support-line__item mail-main__support-line-link" href="https://yandex.ru/support/mail/">
+                    Помощь и обратная связь
+                </a>
+                <a class="support-line__item mail-main__support-line-link" href="https://yandex.ru/adv/">Реклама</a>
+                <div class="support-line__item" >© 2001&mdash;2019,
+                    <a class="mail-main__support-line-link" href="https://yandex.ru">Яндекс</a>
+                </div>
             </div>
         </div>
     </div>

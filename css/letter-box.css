@@ -1,5 +1,5 @@
 .letter-box {
-    margin: 0 10px 10px 10px;
+    margin: 0 10px 10px;
     position: absolute;
     left: 159px;
     right: 0;
@@ -21,6 +21,8 @@
     bottom: 25px;
     background-color: #fff;
     overflow: auto;
+    margin: 0;
+    padding: 0;
 }
 
 .letter-box__hr {
@@ -30,6 +32,7 @@
 
 .letter-box__letter {
     z-index: 1;
+    list-style-type: none;
 }
 
 .letter-box__support-line {
@@ -37,11 +40,4 @@
     bottom: 0;
     left: 0;
     right: 0;
-}
-
-.letter-box__apple-page {
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
 }

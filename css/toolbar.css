@@ -1,23 +1,25 @@
-.letter-toolbar {
+.toolbar {
     padding: 10px 20px;
     font-size: 13px;
+    margin: 0;
 }
 
-.letter-toolbar > li {
+.toolbar__item {
     display: inline-block;
+    list-style-type: none;
 }
 
-.letter-toolbar > li:first-child {
+.toolbar__item:first-child {
     margin-right: -5px;
 }
 
-.letter-toolbar > li:not(:first-child) {
+.toolbar__item:not(:first-child) {
     margin-left: 25px;
     color: #ccc;
     font-weight: 500;
 }
 
-.letter-toolbar > li > input[type="button"] {
+.toolbar__button {
     border: none;
     outline: none;
     background-color: inherit;
@@ -29,10 +31,10 @@
     cursor: pointer;
 }
 
-.letter-toolbar > li > input[type="button"]:hover {
+.toolbar__button:hover {
     color: #000;
 }
 
-.letter-toolbar > li > input[type="button"]:disabled {
+.toolbar__button:disabled {
     color: inherit;
 }
