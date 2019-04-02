@@ -1,9 +1,23 @@
 .letter {
     position: relative;
+    transition: height .5s, top .5s;
+    height: 0;
+    top: -42px;
 }
 
 .letter_unread {
     font-weight: 700;
+}
+
+.letter_added {
+    height: 42px;
+    top: 0;
+}
+
+.letter_removed {
+    z-index: 0;
+    height: 0;
+    top: -42px;
 }
 
 .letter__line {

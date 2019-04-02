@@ -1,6 +1,8 @@
 const MIN_TIMER_ADD_MAIL = 300000;
 const MAX_TIMER_ADD_MAIL = 600001;
 const MAX_MAIL_LIST_SIZE = 30;
+const REMOVE_LETTER_TIME = 500;
+const DELTA_TIME = 20;
 
 let curPage = 1;
 
@@ -205,59 +207,25 @@ function _removeAnimateLetter(letter, newLetterIndex) {
         mails[newLetterIndex].hidden = false;
     }
 
-    var time = 300;
-    var startShift = 42;
-    var fps = time / startShift;
-    letter.style.zIndex = '0';
-    animate(
-        timePassed => {
-            var shift = (timePassed / fps);
-            letter.style.height = `${startShift - shift}px`;
-            letter.style.top = `${-shift}px`;
-        },
-        time,
-        () => {
+    setTimeout(() => {
+        letter.classList.add("letter_removed");
+        setTimeout(() => {
             _removeLetter(letter);
-        }
-    );
+        }, REMOVE_LETTER_TIME)
+    }, DELTA_TIME);
 }
 
 function animateAddingLetter(newLetter) {
-    var time = 300;
-    var startShift = 42;
-    var fps = time / startShift;
-    newLetter.style.height = '0';
-    newLetter.style.top = `${-startShift}px`;
-    animate(
-        (timePassed) => {
-            var shift = (timePassed / fps);
-            newLetter.style.height = `${shift}px`;
-            newLetter.style.top = `${-startShift + shift}px`;
-        },
-        time
-    );
-}
-
-function animate(draw, duration, complete) {
-    var start = performance.now();
-
-    requestAnimationFrame(function animate(time) {
-        var timePassed = time - start;
-        if (timePassed > duration) timePassed = duration;
-        draw(timePassed);
-        if (timePassed < duration) {
-            requestAnimationFrame(animate);
-        } else {
-            complete();
-        }
-    });
+    setTimeout(() => {
+        newLetter.classList.add("letter_added");
+    }, DELTA_TIME);
 }
 
 function removeLetters() {
-    _doActionWithLetters(_removeAnimateLetter);
     setTimeout(() => {
         document.body.querySelector('.check__input').checked = false;
-    }, 700)
+    }, REMOVE_LETTER_TIME * 2 / 3);
+    _doActionWithLetters(_removeAnimateLetter);
 }
 
 function _removeClass(letter, className) {
@@ -284,7 +252,7 @@ setTimeout(function run() {
     newMail();
     var timer = _getInt(MIN_TIMER_ADD_MAIL, MAX_TIMER_ADD_MAIL);
     setTimeout(run, timer)
-}, _getInt(10, MAX_TIMER_ADD_MAIL));
+}, _getInt(DELTA_TIME, MAX_TIMER_ADD_MAIL));
 
 function openLetterBody(letter) {
     var letterDialog = document.querySelector('.letter-dialog');
