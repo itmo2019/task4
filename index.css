@@ -248,6 +248,7 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  cursor: pointer;
 }
 
 .email__sender-name {
@@ -295,10 +296,6 @@
   background-color: #6287bd;
 }
 
-.email__label {
-  cursor: pointer;
-}
-
 @media screen and (min-width: 1600px) {
   .email__sender-name {
     width: 20%;
@@ -321,7 +318,7 @@
 
 /* END SECTION: MAIL SCREEN */
 
-/* BEGIN SECTION: FIRST E-MAIL */
+/* BEGIN SECTION: E-MAIL CONTENT */
 
 #cat-image {
     margin-top: 5px;
@@ -333,7 +330,7 @@
     content: url("images/cat.png");
 }
 
-#first-email {
+.content__email-content {
   padding: 10px;
   display: none;
   margin-left: 22px;
@@ -355,23 +352,7 @@
   text-align: right;
 }
 
-#toggle-first-mail {
-    position: absolute;
-    top: -9999px;
-    left: -9999px;
-}
-
-
-#toggle-first-mail:checked ~ #first-email {
-    display: inline-block;
-}
-
-
-#toggle-first-mail:checked ~ .mail-screen-and-footer {
-    display: none;
-}
-
-/* END SECTION: FIRST E-MAIL */
+/* END SECTION: E-MAIL CONTENT */
 
 /* BEGIN SECTION: FOOTER */
 
