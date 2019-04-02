@@ -1,0 +1,347 @@
+@font-face {
+    font-family: YandexSansThin;
+    src: url("fonts/YandexSansDisplay-Thin.ttf");
+}
+
+@font-face {
+    font-family: HelveticaNeue;
+    src: url("fonts/HelveticaNeueCyr-Medium.otf");
+}
+
+@font-face {
+    font-family: HelveticaNeueLight;
+    src: url("fonts/HelveticaNeueCyr-Light.otf");
+}
+
+body {
+    padding: 12px 22px;
+    background-color: #e5eaf0;
+}
+
+.header {
+    width: 100%;
+    height: 32px;
+    min-width: 800px;
+    display: inline-block;
+}
+
+.header__burger-menu-rectangle {
+    width: 20px;
+    height: 3px;
+    margin-bottom: 5px;
+    background-color: #000;
+}
+
+.header__burger-menu {
+    display: inline-block;
+}
+
+.header__yandex-mail-logo {
+    width: 153px;
+    margin-left: 11px;
+    display: inline-block;
+}
+
+.header__search-input-block {
+    vertical-align: top;
+    display: inline-block;
+    width: 40%;
+    height: 100%;
+    margin-left: 10%;
+    background-color: #fff;
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.2);
+}
+
+.header__search-input {
+    width: 90%;
+    height: 100%;
+    padding-left: 10px;
+    padding-right: 7px;
+    outline: none;
+    border: none;
+    background: none;
+    -webkit-appearance: none;
+}
+
+.header__search-input-close {
+    margin-top: 8px;
+    margin-right: 10px;
+    width: 9px;
+    height: 9px;
+    position: relative;
+    float: right;
+    opacity: 0.15;
+    color: #000;
+}
+
+.main {
+    display: inline-block;
+    width: 100%;
+    height: calc(100% - 31px);
+    padding-top: 13px;
+    min-width: 800px;
+}
+
+.menu {
+    width: 147px;
+    position: relative;
+    float: left;
+}
+
+.menu-buttons {
+    margin-top: 8px;
+}
+
+.menu__new-letter-button {
+    width: 100%;
+    height: 32px;
+    border-radius: 3px;
+    border: #6287bd;
+    background-color: #6287bd;
+}
+
+.menu__new-letter-button-text {
+    font-family: HelveticaNeue;
+    font-size: 12px;
+    font-weight: 500;
+    color: #fff;
+}
+
+.menu-buttons__button:hover {
+    background-color: #cdd6e4;
+    font-size: 12px;
+    font-weight: bold;
+    color: #555;
+}
+
+.menu-buttons__button_default-link, .content-header-menu__button_default-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.menu-buttons__button_default-link:visited, .content-header-menu__button_default-link:visited {
+    color: inherit;
+}
+
+.menu-buttons__button_default-link:visited:hover, .content-header-menu__button_default-link:visited:hover {
+    color: inherit;
+}
+
+.menu-buttons__button {
+    height: 22px;
+    padding-top: 7px;
+    padding-left: 10px;
+    font-size: 11px;
+    font-weight: 500;
+    font-family: HelveticaNeue;
+    color: #707070;
+    list-style-type: none;
+    margin-left: -40px;
+}
+
+.content {
+    width: calc(100% - 170px);
+    margin-left: 22px;
+    display: inline-block;
+    background-color: #fff;
+    border-radius: 3px;
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.34);
+}
+
+.main-content {
+    width: 100%;
+    min-height: 715px;
+}
+
+.letters {
+    display: inline-block;
+    width: 100%;
+}
+
+.content-header-menu {
+    display: inline-block;
+    width: 90%;
+    height: 100%;
+    margin-top: 15px;
+    margin-left: -1%;
+}
+
+.content-header-menu__button {
+    display: inline-block;
+    font-family: HelveticaNeue;
+    opacity: 0.5;
+    margin-left: 3%;
+    font-size: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.letter, .content-header {
+    width: 100%;
+    height: 41px;
+    border-bottom: solid 2px #e2e2e2;
+}
+
+.letter__checkbox, .content-header__checkbox {
+    width: 18px;
+    height: 18px;
+    border-radius: 3px;
+    border: solid 1px rgba(0, 0, 0, 0.15);
+    margin-top: 12px;
+    padding: 2px;
+    color: #fff;
+    -webkit-appearance: none;
+    margin-left: 2%;
+    position: relative;
+    float: left;
+}
+
+.letter__checkbox:checked, .content-header__checkbox:checked {
+    background-clip: content-box;
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+.letter__author-logo {
+    width: 30px;
+    height: 30px;
+    margin-left: 1%;
+    background-color: #f33;
+    border-radius: 50%;
+    margin-top: 5px;
+    position: relative;
+    float: left;
+}
+
+.letter__author-abbr {
+    color: #fff;
+    text-align: center;
+    margin-top: 3px;
+    font-size: 18px;
+    font-weight: 700;
+    font-family: YandexSansThin;
+}
+
+.letter__text {
+    font-family: HelveticaNeue;
+    font-size: 12px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    margin-top: 15px;
+    position: relative;
+    float: left;
+}
+
+.letter__author {
+    width: 27%;
+    min-width: 50px;
+    margin-top: 15px;
+    margin-left: 2%;
+}
+
+.bold-text {
+    font-weight: bold;
+}
+
+.letter__new-letter-flag {
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    margin-left: 1%;
+    margin-top: 15px;
+    position: relative;
+    float: left;
+}
+
+.letter__new-letter-flag_enabled {
+    background-color: #6287bd;
+}
+
+.letter__subject {
+    width: 45%;
+    min-width: 80px;
+    margin-left: 2%;
+}
+
+.letter__time {
+    font-family: HelveticaNeue;
+    font-size: 12px;
+    opacity: 0.5;
+    margin-top: 15px;
+    margin-right: 1%;
+    position: relative;
+    float: right;
+}
+
+.content-footer {
+    border-top: solid 2px #e2e2e2;
+    width: 100%;
+    height: 37px;
+}
+
+.content-footer__text {
+    position: relative;
+    float: right;
+    margin-top: 12px;
+    margin-right: 2%;
+    font-family: HelveticaNeueLight;
+    font-size: 12px;
+    opacity: 0.5;
+}
+
+.letter-page {
+    display: none;
+    margin: 0;
+    width: 94%;
+    /*height: 100%;*/
+    padding: 1% 3%;
+    background-color: #fff;
+}
+
+.letter-page__text {
+    font-size: 20px;
+}
+
+.letter-page__page-close-button {
+    position: relative;
+    float: right;
+    font-size: 30px;
+    opacity: 0.5;
+    text-decoration: none;
+}
+
+.letter-page__page-close-button:visited {
+    color: inherit;
+}
+
+.letter-page__page-close-button:visited:hover {
+    color: inherit;
+}
+
+.letter__animated-add-letter {
+    animation: add-new-letter 1s linear;
+}
+
+@keyframes add-new-letter {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 100%;
+    }
+}
+
+.letter__animated-delete-letter {
+    animation: delete-letter 1s linear;
+}
+
+@keyframes delete-letter {
+    from {
+        opacity: 100%;
+    }
+
+    to {
+        opacity: 0;
+    }
+}

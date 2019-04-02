@@ -1,0 +1,66 @@
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
+    <title>Яндекс.Почта</title>
+</head>
+<body>
+<header class="header">
+    <div class="header__burger-menu">
+        <div class="header__burger-menu-rectangle"></div>
+        <div class="header__burger-menu-rectangle"></div>
+        <div class="header__burger-menu-rectangle"></div>
+    </div>
+    <a href="https://mail.yandex.ru"><img class="header__yandex-mail-logo" src="images/yandex-mail-logo.svg" alt="logo"></a>
+    <div class="header__search-input-block">
+        <input class="header__search-input" type="text" placeholder="Поиск">
+        <span class="header__search-input-close">&#x2715;</span>
+    </div>
+</header>
+<main class="main">
+    <div class="menu">
+        <button class="menu__new-letter-button"><span class="menu__new-letter-button-text">Написать</span></button>
+        <ul class="menu-buttons">
+            <li class="menu-buttons__button"><a href="#" class="menu-buttons__button_default-link">Входящие</a></li>
+            <li class="menu-buttons__button"><a href="#" class="menu-buttons__button_default-link">Отправленные</a></li>
+            <li class="menu-buttons__button"><a href="#" class="menu-buttons__button_default-link">Удаленные</a></li>
+            <li class="menu-buttons__button"><a href="#" class="menu-buttons__button_default-link">Спам</a></li>
+            <li class="menu-buttons__button"><a href="#" class="menu-buttons__button_default-link">Черновики</a></li>
+            <li class="menu-buttons__button"><a href="#" class="menu-buttons__button_default-link">Создать папку</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <div class="content-header">
+            <input class="content-header__checkbox" type="checkbox">
+            <div class="content-header-menu">
+                <div class="content-header-menu__button"><a href="#" class="content-header-menu__button_default-link">Переслать</a></div>
+                <div id="delete-letter-button" class="content-header-menu__button"><a href="#"
+                                                                                      class="content-header-menu__button_default-link">Удалить</a>
+                </div>
+                <div class="content-header-menu__button"><a href="#" class="content-header-menu__button_default-link">Это спам!</a></div>
+                <div class="content-header-menu__button"><a href="#" class="content-header-menu__button_default-link">Прочитано</a></div>
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="letters">
+
+            </div>
+            <div id="opened-letter" class="letter-page">
+                <a class="letter-page__page-close-button" href="#" onclick="closeLetter()">&#x2715;</a>
+                <div class="letter-page__text">
+
+                </div>
+            </div>
+        </div>
+
+        <div class="content-footer">
+            <div class="content-footer__text">&copy; 2001 - 2018, Яндекс</div>
+            <div class="content-footer__text">Реклама</div>
+            <div class="content-footer__text">Помощь и обратная связь</div>
+        </div>
+    </div>
+</main>
+<script src="js/script.js"></script>
+</body>
+</html>
