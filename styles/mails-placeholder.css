@@ -1,10 +1,10 @@
-.mails-placeholder__mails-actions {
+.mails-action {
     position: relative;
     white-space: nowrap;
     border-bottom: 2px solid #f0f0f0;
 }
 
-.mails-placeholder__mails-actions__button {
+.mails-action__button {
     width: 90px;
     height: 16px;
     color: #ccc;
@@ -16,29 +16,29 @@
     outline: none;
 }
 
-.mails-placeholder__mails-actions__button:hover {
+.mails-action__button:hover {
     cursor: pointer;
 }
 
-.mails-placeholder__item {
+.mails-action__item {
     display: inline-block;
     margin: 11px 0 11px 20px;
     position: relative;
 }
 
-.mails-placeholder__list-of-mails {
-    overflow-y: hidden;
+.list-of-mails {
+    overflow-y: scroll;
     overflow-x: hidden;
-    min-height: 450px;
+    height: 450px;
 }
 
-.mails-placeholder__list-of-footer-items {
+.list-of-footer-items {
     width: 100%;
     white-space: nowrap;
     border-top: 2px solid #f0f0f0;
 }
 
-.mails-placeholder__list-of-footer-items__company-about {
+.list-of-footer-items__company-about {
     float: right;
     margin: 10px 20px 0 0;
     text-decoration: none;
@@ -47,15 +47,4 @@
     font-family: HelveticaNeueLight, Arial;
     font-size: 11px;
 
-}
-
-.circle {
-    float: left;
-    shape-outside: circle();
-}
-
-.placeholder-for-close-button {
-    float: right;
-    background-color: red;
-    cursor: pointer;
 }

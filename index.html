@@ -2,9 +2,9 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="styles/animation.css">
     <link rel="stylesheet" href="styles/fonts.css">
     <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/animation.css">
     <link rel="stylesheet" href="styles/header.css">
     <link rel="stylesheet" href="styles/body.css">
     <link rel="stylesheet" href="styles/main.css">
@@ -13,87 +13,103 @@
     <title>Яндекс Почта</title>
 </head>
 <body class="body">
-<header class="header">
-    <div class="header__action-button">
-        <div class="header__line_transparent_height_8px"></div>
-        <div class="header__action-button__line_black"></div>
-        <div class="header__action-button__line_transparent"></div>
-        <div class="header__action-button__line_black"></div>
-        <div class="header__action-button__line_transparent"></div>
-        <div class="header__action-button__line_black"></div>
-    </div>
-    <div class="header__logo-placeholder">
-        <img src="images/YaLogo.png" class="header__logo-placeholder__image">
-    </div>
-    <div class="header__search-placeholder">
-        <input class="header__search-placeholder__search" placeholder="Поиск">
-        <div class="header__search-placeholder__close-button">&times;</div>
 
+<header class="logo-action-search">
+    <div class="action-button">
+        <div class="action-button__line_transparent_height_8px"></div>
+        <div class="action-button__line_black"></div>
+        <div class="action-button__line_transparent"></div>
+        <div class="action-button__line_black"></div>
+        <div class="action-button__line_transparent"></div>
+        <div class="action-button__line_black"></div>
+    </div>
+    <div class="logo">
+        <img src="images/YaLogo.png" class="logo__image">
+    </div>
+    <div class="search">
+        <input class="search__search-input" placeholder="Поиск">
+        <div class="search__close-button">&times;</div>
     </div>
 </header>
 <main class="main">
     <div class="menu">
         <button class="menu__write-letter-button text_hide-by-size">Написать</button>
         <nav class="menu__navigate-by-action">
-            <button class="menu__navigate-by-action__action-button text_hide-by-size">Входящие</button>
-            <button class="menu__navigate-by-action__action-button text_hide-by-size">Отправленные</button>
-            <button class="menu__navigate-by-action__action-button text_hide-by-size">Удалённые</button>
-            <button class="menu__navigate-by-action__action-button text_hide-by-size">Спам</button>
-            <button class="menu__navigate-by-action__action-button text_hide-by-size">Черновики</button>
-            <button class="menu__navigate-by-action__action-button text_hide-by-size">Создать папку</button>
-            <!--<button id="add-new-letter" class="menu__navigate-by-action__action-button text_hide-by-size">ДОБАВИТЬ НОВОЕ
+            <button class="menu__action-button text_hide-by-size">Входящие</button>
+            <button class="menu__action-button text_hide-by-size">Отправленные</button>
+            <button class="menu__action-button text_hide-by-size">Удалённые</button>
+            <button class="menu__action-button text_hide-by-size">Спам</button>
+            <button class="menu__action-button text_hide-by-size">Черновики</button>
+            <button class="menu__action-button text_hide-by-size">Создать папку</button>
+            <button class="menu__action-button text_hide-by-size" id="new-letter-button">ДОБАВИТЬ НОВОЕ
                 ПИСЬМО
-            </button> -->
+            </button>
         </nav>
     </div>
     <div class="mails-placeholder">
-        <div class="mails-placeholder__mails-actions">
-            <div class="mails-placeholder__item">
+
+        <div class="mails-action">
+            <div class="mails-action__item">
                 <label class="mails-checkbox">
-                    <input class="mails-checkbox__checkbox" id="select-all" type="checkbox">
+                    <input class="mails-checkbox__checkbox" id="select-all-mails" type="checkbox">
                     <span class="mails-checkbox__alternative-drawing"></span>
                 </label>
             </div>
-            <button class="mails-placeholder__mails-actions__button mails-placeholder__item text_hide-by-size">
+            <button class="mails-action__button mails-action__item text_hide-by-size">
                 Переслать
             </button>
-            <button id="delete-selected-button"
-                    class="mails-placeholder__mails-actions__button mails-placeholder__item text_hide-by-size">
+            <button class="mails-action__button mails-action__item text_hide-by-size" id="delete-selected-button">
                 Удалить
             </button>
-            <button class="mails-placeholder__mails-actions__button mails-placeholder__item text_hide-by-size">
+            <button class="mails-action__button mails-action__item text_hide-by-size">
                 Это спам!
             </button>
-            <button id="marked-selected-button"
-                    class="mails-placeholder__mails-actions__button mails-placeholder__item text_hide-by-size">
+            <button class="mails-action__button mails-action__item text_hide-by-size" id="marked-selected-button">
                 Прочитано
             </button>
         </div>
-        <div id="mails-placeholder" class="mails-placeholder__list-of-mails"></div>
-        <div id="preview-placeholder" class="mails-placeholder__list-of-mails" hidden>
-            <div id="placeholder-for-close-button" class="placeholder-for-close-button">X</div>
-            <div class="circle"><img src="images/circle.png" height="200" width="200"></div>
-            Круг -- геометрическое место точек плоскости, расстояние от которых до заданной точки<br>
-            называется центром круга не превышает заданного неотрицательного числа,<br>
-            называемого радиусом этого круга.<br>
-            Если радиус равен нулю, то круг вырождается в точку.<br>
-            При вращении плоскости относительно центра круг переходит сам в себя.<br>
-            Круг является выпуклой фигурой.
-        </div>
-        <div class="mails-placeholder__list-of-footer-items">
-            <a class="mails-placeholder__list-of-footer-items__company-about text_hide-by-size" href="#">
+
+        <div id="mails-placeholder" class="list-of-mails"></div>
+        <div class="list-of-footer-items">
+            <a class="list-of-footer-items__company-about text_hide-by-size" href="#">
                 © 2001—2018, Яндекс
             </a>
-            <a class="mails-placeholder__list-of-footer-items__company-about text_hide-by-size" href="#">
+            <a class="list-of-footer-items__company-about text_hide-by-size" href="#">
                 Реклама
             </a>
-            <a class="mails-placeholder__list-of-footer-items__company-about text_hide-by-size" href="#">
+            <a class="list-of-footer-items__company-about text_hide-by-size" href="#">
                 Помощь и обратная связь
             </a>
         </div>
     </div>
 </main>
-<script src="scripts/init-glodal-vars.js"></script>
+
+<div id="preview-placeholder" class="mails-placeholder__list-of-mails" hidden>
+    <div id="placeholder-for-close-button" class="placeholder-for-close-button">X</div>
+    <div class="circle"><img src="images/circle.png" height="200" width="200"></div>
+    Круг -- геометрическое место точек плоскости, расстояние от которых до заданной точки<br>
+    называется центром круга не превышает заданного неотрицательного числа,<br>
+    называемого радиусом этого круга.<br>
+    Если радиус равен нулю, то круг вырождается в точку.<br>
+    При вращении плоскости относительно центра круг переходит сам в себя.<br>
+    Круг является выпуклой фигурой.
+</div>
+<template id="mail-template">
+    <div class="mail mail_status_not-read" data-delete>
+        <div class="mail__item mail__select">
+            <label class="mails-checkbox">
+                <input class="mails-checkbox__checkbox" type="checkbox" data-checkbox-select>
+                <span class="mails-checkbox__alternative-drawing"></span>
+            </label>
+        </div>
+        <img class="mail__item mail__logo" src="//yastatic.net/mail/socialavatars/socialavatars/v4/ya-default.svg"
+             data-delete data-query-img>
+        <div class="mail__item mail__title text_hide-by-size" data-delete data-query-title>всем привей! + smth else</div>
+        <div class="mail__item mail__text-message text_hide-by-size" data-delete data-query-text-message>как дела???</div>
+        <div class="mail__item mail__receive-time text_hide-by-size" data-delete data-query-receive-time>6 янв</div>
+    </div>
+</template>
+<script src="scripts/init-global-vars.js"></script>
 <script src="scripts/letter-generate.js"></script>
 <script src="scripts/create-new-letters.js"></script>
 </body>

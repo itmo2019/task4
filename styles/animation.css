@@ -1,13 +1,10 @@
-.delete-animation {
-    animation-name: delete;
-    animation-duration: 2s;
+.create-animation {
+    top: 0;
+    transition: all 2s;
 }
 
-@keyframes delete {
-    0% {
-        right: 0;
-    }
-    100% {
-        right: 100%;
-    }
+.delete-animation {
+    opacity: 0;
+    top: -40px;
+    transition: all 2s;
 }

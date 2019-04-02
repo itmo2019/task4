@@ -54,6 +54,7 @@
 
 /*Mails */
 .mail {
+    top: -40px;
     position: relative;
     white-space: nowrap;
     border-bottom: 2px solid #f0f0f0;
@@ -78,48 +79,37 @@
     margin-top: 5px;
 }
 
-.mail__on-click-label {
-    display: inline;
-    top: 0;
-    position: absolute;
-    width: 100%;
-    height: 40px;
-    z-index: 2;
-}
-
-.mail__item-mail__select {
+.mail__select {
     bottom: 10px;
     margin-left: 20px;
     font-size: 19px;
     font-weight: 500;
 }
 
-.mail__item-mail__logo {
+.mail__logo {
     width: 30px;
     height: 30px;
     margin-left: 10px;
     margin-right: 10px;
 }
 
-.mail__item-mail__title {
+.mail__title {
     min-width: 160px;
     width: 19.63%;
     bottom: 6px;
-    height: 13px;
 }
 
-.mail__item-mail__text-message {
+.mail__text-message {
     min-width: 215px;
     width: 40%;
     bottom: 6px;
-    height: 13px;
 }
 
-.mail_status_read .mail__item-mail__text-message {
+.mail_status_read .mail__text-message {
     padding-left: 12px;
 }
 
-.mail_status_not-read .mail__item-mail__text-message:before {
+.mail_status_not-read .mail__text-message:before {
     content: ' ';
     display: inline-block;
     color: white;
@@ -128,7 +118,7 @@
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='10' width='10'%3E%3Ccircle cx='5' cy='5' r='5' fill='%236287bd' /%3E%3C/svg%3E ");
 }
 
-.mail__item-mail__receive-time {
+.mail__receive-time {
     min-width: 40px;
     width: 4.97%;
     top: 10px;

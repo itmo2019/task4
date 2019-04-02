@@ -23,7 +23,7 @@
 }
 
 /*Action button*/
-.menu__navigate-by-action__action-button {
+.menu__action-button {
     display: block;
     width: 147px;
     height: 22px;
@@ -42,7 +42,7 @@
     font-weight: 500;
 }
 
-.menu__navigate-by-action__action-button:hover {
+.menu__action-button:hover {
     background-color: #cdd6e4;
     color: #555;
     font-weight: 700;

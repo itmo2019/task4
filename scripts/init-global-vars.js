@@ -1,5 +1,3 @@
-var letterStorage = new Map();
-
 var titlesTemplate = ["hello dudes!", "привет", "отчисления и переводы", "очень не интересный заголовок",
     "очень интеллектуальная генерация", "добрый день!", "Здравствуйте!", "Приветсвтую!", "Добрый вечер!", "HOLA!!!"];
 var fromTemplate = ["Яндекс", "Яндекс.Почта", "Яндекс.Карты", "Яндекс.Музыка", "Яндекс.Поиск", "Яндекс.Переводчик",
@@ -40,16 +38,64 @@ var innerTemplate = ["В это воскресенье 24 марта в унив
     "(λa.λb.b) ((λх.х х) (λх.х х х))" +
     "" +
     "3) Выразите следующие функции в лямбда-исчислении:"];
-var selectAll = document.getElementById("select-all");
+
 var deleteButton = document.getElementById("delete-selected-button");
 var markeButton = document.getElementById("marked-selected-button");
 
+var selectAllMails = document.getElementById("select-all-mails");
+
 
 var countLetter = 1;
-var createNewLetter = document.getElementById("add-new-letter");
+var createNewLetter = document.getElementById("new-letter-button");
 var mailsPlaceholder = document.getElementById("mails-placeholder");
-var textPlaceholder = document.getElementById("preview-placeholder");
+
+var letterStorage = [];
+
+function findMail(element) {
+    let tmp = element;
+    while (tmp !== null) {
+        let classes = tmp.classList;
+        if (classes.contains('mail') && tmp.getAttribute('id') !== null) {
+            return tmp;
+        }
+        tmp = tmp.parentNode;
+    }
+    return null;
+}
+
+
+function addAnimationToMail(mail) {
+    setTimeout(() => {
+        mail.classList.add("create-animation");
+    }, 0);
+}
+
+function getExistMailCount() {
+    return mailsPlaceholder.getElementsByClassName("mail").length;
+}
+
+function insertInPlaceholder(mail, mailCount) {
+    if (mailCount.length === 0) {
+        mailsPlaceholder.appendChild(mail);
+        addAnimationToMail(mail);
+    } else {
+        let before = mailsPlaceholder.getElementsByClassName("mail")[0];
+        mailsPlaceholder.insertBefore(mail, before);
+        addAnimationToMail(mail);
+    }
+}
+
+function getRandomValue(left, right) {
+    let random = Math.random();
+    let dist = right - left + 1;
+    let mapping = random * dist;
+    return Math.floor(mapping + left);
+}
+
+
+/*
 document.getElementById("placeholder-for-close-button").addEventListener("click", () => {
     mailsPlaceholder.hidden = !mailsPlaceholder.hidden;
     textPlaceholder.hidden = !textPlaceholder.hidden;
 });
+*/
