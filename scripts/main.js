@@ -17,6 +17,9 @@ const ANIMATION_BOUNCE_OUT_RIGHT_CLASS = 'bounceOutRight'
 
 const EMAIL_ID_PREFIX = '__msg'
 
+const MAXIMAL_AMOUNT_OF_EMAILS_ON_PAGE = 30
+const NEW_EMAIL_COOLDOWN = 1000 * 60 * 5
+
 const EMailsStorage = {}
 
 /*
@@ -95,7 +98,7 @@ const getFirstByClass = (className /*: string*/) => {
 }
 
 const composeNewMessage = async (msgId /*: number*/) => {
-  const hasCat     = getRand(1, 2) == 1
+  const hasCat     = getRand(1, 10) <= 8
   const paragraphs = await window.contentGen.newRandomArticle()
     .type(RANDOM_TEXT_TYPES.ALL_MEAT)
     .paras(getRand(2, 10))
@@ -130,6 +133,21 @@ const stringToNode = (s /*: string */) => {
   return new DOMParser().parseFromString(s, 'text/html').body.firstChild
 }
 
+// Удаляет с экрана старые письма, если на экране сейчас больше 30 писем.
+// Данные о письмах содержатся в EmailsStorage, так что все можно восстановить.
+const removeEmailsWhichDoNotFit = () => {
+  const ids = [...getAllEmailsSelectCheckboxes()]
+    .map((checkbox) => { return parseInt(checkbox.dataset.msg) })
+    .filter((x) => !Number.isNaN(x))
+  if (ids.length > MAXIMAL_AMOUNT_OF_EMAILS_ON_PAGE) {
+    ids.sort((a, b) => a - b)
+    const messagesToRemove = ids.length - MAXIMAL_AMOUNT_OF_EMAILS_ON_PAGE
+    for (let index = 0; index < messagesToRemove; index++) {
+      document.getElementById(getEmailIdByNum(ids[index])).remove()
+    }
+  }
+}
+
 const createNewMessageAndUpdateDOM = async () => {
   const newMessageId   = getMaximalExistingMessageId() + 1
   const newMessageHTML = await composeNewMessage(newMessageId)
@@ -142,6 +160,7 @@ const createNewMessageAndUpdateDOM = async () => {
 
   setTimeout(() => {
     document.getElementById(getEmailIdByNum(newMessageId)).classList.remove(ANIMATION_BOUNCE_IN_CLASS)
+    removeEmailsWhichDoNotFit()
   }, 600)
 }
 
@@ -157,7 +176,7 @@ const runNewEmailGeneration = async () => {
   await newMail()
   
   while (true) {
-    await sleep(1000 * 60 * 5 + getRand(0, 1000 * 60 * 5))
+    await sleep(NEW_EMAIL_COOLDOWN + getRand(0, NEW_EMAIL_COOLDOWN))
     await newMail()
   }
 }
@@ -214,8 +233,9 @@ const deleteSelectedEmailsClickHandler = (event /*: any*/) => {
 }
 
 const closeOpenedEmailClickHandler = (event /*: any*/) => {
-  getFirstByClass(ID_EMAILS_LIST_CONTAINER).style.display = 'none'
-  getFirstByClass(ID_OPENNED_EMAIL_CONTAINER).style.display = 'block'
+  getFirstByClass(ID_EMAILS_LIST_CONTAINER).style.display = 'inline-block'
+  getFirstByClass(ID_OPENNED_EMAIL_CONTAINER).style.display = 'none'
+  document.getElementById(ID_OPENNED_EMAIL_TEXT_CONTAINER).innerHTML = ''
 }
 
 const emailsContainerCLickHandler = (event /*: any*/) => {
@@ -240,9 +260,8 @@ const emailsContainerCLickHandler = (event /*: any*/) => {
 const getEmailHTMLContent = (messageId /* number */) => {
   let result = ''
   const emailContent = EMailsStorage[messageId]
-  console.log(emailContent)
   if (emailContent.hasCat) {
-    result = `<div id="#cat-image"></div>`
+    result = `<img id="cat-image">`
   }
   
   for (const p of emailContent.paragraphs) {
@@ -254,6 +273,10 @@ const getEmailHTMLContent = (messageId /* number */) => {
 }
 
 const showMessageById = (messageId /* number */) => {
+  if (messageId < 10) {
+    alert('На самом деле это пример, как выглядит сообщение. Пожалуйста, дождитесь реальных сообщений!')
+    return
+  }
   const emailContent = document.getElementById(ID_OPENNED_EMAIL_TEXT_CONTAINER)
   emailContent.insertBefore(
     stringToNode(getEmailHTMLContent(messageId)), 
@@ -261,7 +284,7 @@ const showMessageById = (messageId /* number */) => {
   )
   
   getFirstByClass(ID_EMAILS_LIST_CONTAINER).style.display = 'none'
-  getFirstByClass(ID_OPENNED_EMAIL_CONTAINER).style.display = 'block'
+  getFirstByClass(ID_OPENNED_EMAIL_CONTAINER).style.display = 'inline-block'
 }
 
 const initListeners = () => {
