@@ -41,7 +41,6 @@ function LetterGenerator() {
              <a class="letter__open-letter"></a>
              <hr class="letter-box__hr">`,
 
-        months = ['янв', 'фев', 'мар', 'апр', 'май', 'июн', 'июл', 'авг', 'сен', 'окт', 'ноя', 'дек'],
         nounWords = ['собака', 'кошка', 'казимаки', 'казинаки', 'пивасик', 'Чебурашка', 'крокодил Гена',
             'Шапокляк', 'устрица', 'человечек', 'Чика Чика'],
         verbWords = ['сделал', 'съел', 'упал', 'изучил', 'погладил', 'узнал', 'обидел', 'зацепил',
@@ -80,7 +79,7 @@ function LetterGenerator() {
     function _getAuthorLogoDiv(authorName) {
         var authorLogoDiv = document.createElement('div');
         authorLogoDiv.className = 'letter__author_no-logo';
-        authorLogoDiv.textContent = authorName[0];
+        authorLogoDiv.textContent = authorName[0].toUpperCase();
         return authorLogoDiv;
     }
 
@@ -93,7 +92,12 @@ function LetterGenerator() {
     }
 
     function _getDate() {
-        return _getInt(1, 29) + ' ' + months[_getInt(0, 12)];
+        var today = new Date(),
+            formattedToday = today.toLocaleDateString("ru-RU", {day: 'numeric', month: 'short'}),
+            date = document.createElement("time");
+        date.setAttribute("datetime", today.toISOString());
+        date.innerText = formattedToday;
+        return date;
     }
 
     function _getSign() {
@@ -159,7 +163,7 @@ function LetterGenerator() {
         letter.innerHTML = defaultLetter;
         letter.querySelector('.letter__author-name').textContent = authorName;
         letter.querySelector('.letter__author').appendChild(_getAuthorLogo(authorName));
-        letter.querySelector('.letter__date').textContent = _getDate();
+        letter.querySelector('.letter__date').appendChild(_getDate());
         letter.querySelector('.letter__topic').appendChild(_getTopicName());
         letter.querySelector('.letter__topic').appendChild(_getLetterBody());
         return letter;
