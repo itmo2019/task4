@@ -1,7 +1,7 @@
 var titlesTemplate = ["hello dudes!", "привет", "отчисления и переводы", "очень не интересный заголовок",
     "очень интеллектуальная генерация", "добрый день!", "Здравствуйте!", "Приветсвтую!", "Добрый вечер!", "HOLA!!!"];
 var fromTemplate = ["Яндекс", "Яндекс.Почта", "Яндекс.Карты", "Яндекс.Музыка", "Яндекс.Поиск", "Яндекс.Переводчик",
-    "Яндекс.Маркет", "Яндекс.Видео", "Нет заголовка", "Есть заголовок", ""];
+    "Яндекс.Маркет", "Яндекс.Видео", "Нет заголовка", "Есть заголовок"];
 
 var innerTemplate = ["В это воскресенье 24 марта в университете будет проходить ИОИП  —  олимпиада для школьников. " +
 "Нам очень нужна помощь волонтеров." +
@@ -41,13 +41,13 @@ var innerTemplate = ["В это воскресенье 24 марта в унив
 
 var deleteButton = document.getElementById("delete-selected-button");
 var markeButton = document.getElementById("marked-selected-button");
-
 var selectAllMails = document.getElementById("select-all-mails");
-
-
-var countLetter = 1;
 var createNewLetter = document.getElementById("new-letter-button");
 var mailsPlaceholder = document.getElementById("mails-placeholder");
+var mailInnerPalceholder = document.getElementById("preview-placeholder");
+var closeButtonInnerMail = document.getElementById("placeholder-for-close-button");
+
+var countLetter = 1;
 
 var letterStorage = [];
 
@@ -64,24 +64,20 @@ function findMail(element) {
 }
 
 
-function addAnimationToMail(mail) {
-    setTimeout(() => {
-        mail.classList.add("create-animation");
-    }, 0);
-}
-
 function getExistMailCount() {
     return mailsPlaceholder.getElementsByClassName("mail").length;
 }
 
 function insertInPlaceholder(mail, mailCount) {
-    if (mailCount.length === 0) {
+    if (mailCount === 0) {
         mailsPlaceholder.appendChild(mail);
-        addAnimationToMail(mail);
+        mail.offsetHeight;
+        mail.classList.add("create-animation");
     } else {
         let before = mailsPlaceholder.getElementsByClassName("mail")[0];
         mailsPlaceholder.insertBefore(mail, before);
-        addAnimationToMail(mail);
+        mail.offsetHeight;
+        mail.classList.add("create-animation");
     }
 }
 
@@ -91,11 +87,3 @@ function getRandomValue(left, right) {
     let mapping = random * dist;
     return Math.floor(mapping + left);
 }
-
-
-/*
-document.getElementById("placeholder-for-close-button").addEventListener("click", () => {
-    mailsPlaceholder.hidden = !mailsPlaceholder.hidden;
-    textPlaceholder.hidden = !textPlaceholder.hidden;
-});
-*/

@@ -27,9 +27,8 @@
 }
 
 .list-of-mails {
-    overflow-y: scroll;
-    overflow-x: hidden;
-    height: 450px;
+    overflow: hidden;
+    min-height: 450px;
 }
 
 .list-of-footer-items {
@@ -47,4 +46,19 @@
     font-family: HelveticaNeueLight, Arial;
     font-size: 11px;
 
+}
+
+.inner-mail-viewer {
+    height: 450px;
+}
+
+.circle {
+    float: left;
+    shape-outside: circle();
+}
+
+.placeholder-for-close-button {
+    display: inline;
+    background-color: red;
+    cursor: pointer;
 }

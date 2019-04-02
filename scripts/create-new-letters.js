@@ -1,11 +1,16 @@
 createNewLetter.addEventListener("click", addLetter);
-mailsPlaceholder.addEventListener('click', deleteMessage);
-
+mailsPlaceholder.addEventListener('click', showInnerMessage);
+closeButtonInnerMail.addEventListener('click', hidePlaceholders);
 
 function addLetter() {
     let mailCount = getExistMailCount();
     let element = createLetter(countLetter);
-    insertInPlaceholder(element, mailCount);
+    setRandomValues(element);
+    if (mailCount < 30) {
+        insertInPlaceholder(element, mailCount);
+    } else {
+        letterStorage.push(element);
+    }
     countLetter++;
 }
 
@@ -18,7 +23,7 @@ function createLetter(id) {
     return innerDiv;
 }
 
-function deleteMessage(event) {
+function showInnerMessage(event) {
     if (event.target === undefined || event.target.getAttribute("data-delete") === null) {
         return;
     }
@@ -26,9 +31,13 @@ function deleteMessage(event) {
     if (mail === null) {
         return;
     }
-    deleteMail(mail);
+    hidePlaceholders();
 }
 
+function hidePlaceholders() {
+    mailsPlaceholder.hidden = !mailsPlaceholder.hidden;
+    mailInnerPalceholder.hidden = !mailInnerPalceholder.hidden;
+}
 
 function deleteMail(mail) {
     mail.classList.add("delete-animation");

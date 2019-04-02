@@ -2,7 +2,7 @@ selectAllMails.addEventListener("change", (event) => {
     selectAll(event.target.checked);
 });
 
-deleteButton.addEventListener("click", (event) => {
+deleteButton.addEventListener("click", () => {
     let mails = getSelectedMails();
     mails.forEach(item => deleteMail(item));
     selectAllMails.checked = false;
@@ -13,12 +13,13 @@ deleteButton.addEventListener("click", (event) => {
         let mails = letterStorage.slice(0, Math.min(needMails, letterStorage.length));
         mails.forEach((item, index) => {
             insertInPlaceholder(item, existMail + index);
-            addAnimationToMail(item);
+            item.offsetHeight;
+            item.classList.add("create-animation");
         });
         letterStorage = letterStorage.slice(Math.min(needMails, letterStorage.length), letterStorage.length);
     }
 });
-markeButton.addEventListener("click", (event) => {
+markeButton.addEventListener("click", () => {
     let mails = getSelectedMails();
     mails.forEach(item => {
         item.classList.remove("mail_status_not-read");
@@ -27,15 +28,8 @@ markeButton.addEventListener("click", (event) => {
 });
 
 function newMail() {
-    let mailCount = getExistMailCount();
-    let element = createLetter(countLetter);
-    if (mailCount < 30) {
-        insertInPlaceholder(element, mailCount);
-    } else {
-        letterStorage.push(element);
-    }
-    countLetter++;
-    setTimeout(newMail, 100 + getRandomValue(100, 2 * 100));
+    addLetter();
+    setTimeout(newMail, 5 * 1000 * 60 + getRandomValue(10, 1000 * 5));
 }
 
 
@@ -55,5 +49,26 @@ function selectAll(value) {
 
 
 function setRandomValues(mail) {
-    
+    function randomDate(start, end) {
+        return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
+    }
+
+    let img = mail.querySelector("[data-query-img]");
+    let title = mail.querySelector("[data-query-title]");
+    let message = mail.querySelector("[data-query-text-message]");
+    let time = mail.querySelector("[data-query-receive-time]");
+    img.setAttribute("src", (() => {
+        if (Math.random() >= 0.5) {
+            return "//yastatic.net/mail/socialavatars/socialavatars/v4/ya-default.svg";
+        } else {
+            return "./images/default.svg";
+        }
+    })());
+    title.innerHTML = fromTemplate[getRandomValue(0, fromTemplate.length - 1)];
+    message.innerHTML = titlesTemplate[getRandomValue(0, titlesTemplate.length - 1)] + " " + innerTemplate[getRandomValue(0, innerTemplate.length - 1)];
+    time.innerHTML = randomDate(new Date(2007, 1, 1), new Date()).toLocaleDateString("ru-RU", {
+        month: 'short',
+        day: 'numeric'
+    });
+
 }
