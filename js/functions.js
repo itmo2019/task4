@@ -301,12 +301,18 @@ function closeLetter(event) {
     letterDialog.style.zIndex = '0';
 }
 
-document.getElementById('letter-box__letters').addEventListener('click', openLetter);
-document.body.querySelector('.letter-dialog__exit').addEventListener('click', closeLetter);
+function addBaseEventMail() {
+    document.getElementById('letter-box__letters').addEventListener('click', openLetter);
+    document.body.querySelector('.letter-dialog__exit').addEventListener('click', closeLetter);
 
-document.getElementById('get-letter').addEventListener("click", newMail);
-document.getElementById('remove-letter').addEventListener("click", removeLetters);
-document.getElementById('spam-letter').addEventListener("click", removeLetters);
-document.getElementById('mark-read-letter').addEventListener("click", markReadLetters);
-document.getElementById('letter-box__letters').addEventListener('click', selectLetter);
-document.body.querySelector('.check__input').addEventListener('click', selectAll);
+    document.getElementById('get-letter').addEventListener("click", newMail);
+    document.getElementById('remove-letter').addEventListener("click", removeLetters);
+    document.getElementById('spam-letter').addEventListener("click", removeLetters);
+    document.getElementById('mark-read-letter').addEventListener("click", markReadLetters);
+    document.getElementById('letter-box__letters').addEventListener('click', selectLetter);
+    document.body.querySelector('.check__input').addEventListener('click', selectAll);
+}
+
+window.onload = function () {
+    addBaseEventMail();
+};
