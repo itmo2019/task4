@@ -14,13 +14,15 @@ let testLetter = `<input type="checkbox" class="letter__checkbox">
     мобильногоiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii</span>
     <time class="letter__date-msg" datetime="2018-07-06">6 июл</time>`;
 
+let months = ['янв', 'фев', 'мар', 'апр', 'май', 'июн', 'июл', 'авг', 'сен', 'окт', 'ноя', 'дек'];   
+
 let womenSenders = ['Астахова', 'Ассоль', 'Железнова', 'Душечка', 'Каренина', 'Измайлова',
                 'Иванова', 'Мармеладова', 'Эсмиральда', 'Кармен', 'Бовари'];
 
 let menSenders = ['Незнайка', 'Иван', 'Тёркин', 'Швейк', 'Тимур', 'Шариков', 'Мелехов', 'Бендер', 'Епанчин', 'Левша',
                     'Мышкин', 'Раскольников', 'Опискин', 'Головлев', 'Печорин', 'Чичиков', 'Ревизор', 'Хлестаков', 
                     'Бульба', 'Онегин', 'Чацкий', 'Митрофанушка', 'Мегрэ', 'Брюньон', 'Готье', 'Квазимодо',
-                    'Паганель', 'Тартарен', 'Монте-Кристо', 'Фигаро', 'Базаров', 'Обломов', 'Прутков',];
+                    'Паганель', 'Тартарен', 'Монте-Кристо', 'Фигаро', 'Базаров', 'Обломов', 'Прутков'];
 
 let womenMails = ['«Любить Вас сильнее» мне трудно – но я нежно обнимаю Вас. Письмо Ваше, полученное нынче утром, наполнено такой печалью, что тронуло меня до ГЛУБИНЫ души. Мы расстались в тот момент, когда многие вещи готовы уже были сорваться с наших губ. Все двери между нами еще не открыты. Вы внушаете мне великое уважение, и я не осмеливаюсь задать Вам главный вопрос.',
                     'Вы так красивы, что Вам необходимо делать паспортные фотографии в полный рост',
@@ -92,6 +94,8 @@ function addLetter(isTemplate) {
         newLetter.innerHTML = templateLetter + " " + (++count) + time;
     } else {
         var sender, mail;
+        var day = Math.floor(Math.random() * 28);
+        var month = months[Math.floor(Math.random() * months.length)]; 
         if (Math.random() > 0.5) {
             sender = menSenders[Math.floor(Math.random() * menSenders.length)];
             mail = menMails[Math.floor(Math.random() * menMails.length)];
@@ -99,12 +103,44 @@ function addLetter(isTemplate) {
             sender = womenSenders[Math.floor(Math.random() * womenSenders.length)];
             mail = womenMails[Math.floor(Math.random() * womenMails.length)];
         }
-        newLetter.innerHTML = `<input type="checkbox" class="letter__checkbox">\n
-        <div class="letter__pic"></div>\n
-        <span class="letter__sender letter__unread">` + sender + `</span>\n
-        <div class="letter__msg-mark letter__mark-unread"></div>\n
-        <span class="letter__message letter__unread">` + mail + `</span>\n
-        <time class="letter__date-msg" datetime="2019-03-16">16 мар</time>\n`;
+        var checkbox = document.createElement('input');
+        checkbox.type = "checkbox";
+        checkbox.classList.add("letter__checkbox");
+        newLetter.appendChild(checkbox);
+        newLetter.innerHTML += '\n';
+
+        var letterPic = document.createElement('div');
+        letterPic.classList.add("letter__pic");
+        letterPic.textContent = sender[0];
+        newLetter.appendChild(letterPic);
+        newLetter.innerHTML += '\n';
+
+        var letterSender = document.createElement('span');
+        letterSender.classList.add("letter__sender");
+        letterSender.classList.add("letter__unread");
+        letterSender.textContent = sender;
+        newLetter.appendChild(letterSender);
+        newLetter.innerHTML += '\n';
+
+        var mark = document.createElement('div');
+        mark.classList.add("letter__msg-mark");
+        mark.classList.add("letter__mark-unread");
+        newLetter.appendChild(mark);
+        newLetter.innerHTML += '\n';
+
+        var letter = document.createElement('span');
+        letter.classList.add("letter__message");
+        letter.classList.add("letter__unread");
+        letter.textContent = mail;
+        newLetter.appendChild(letter);
+        newLetter.innerHTML += '\n';
+
+        var date = document.createElement('time');
+        date.classList.add("letter__date-msg");
+        date.dateTime = `2019-` + months.findIndex((curMonth) => {return curMonth == month}) + `-` + day;
+        date.textContent = day + ` ` + month;
+        newLetter.appendChild(date);
+        newLetter.innerHTML += '\n';
     }
     test.insertBefore(newLetter, letters[0]);
 }
@@ -127,6 +163,10 @@ function deleteLetter() {
     for (var i = 0; i < checkboxes.length; i++) {
         if (checkboxes[i].checked) {
             var parent = checkboxes[i].parentElement;
+            if (parent.classList.contains("hidden")) {
+                checkboxes[i].checked = false;
+                continue;
+            }
             toDelete.push(parent);
             if (Math.random() > 0.5) {
                 parent.classList.add("msg-deleted-right");
