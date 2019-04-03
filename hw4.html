@@ -4,11 +4,12 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Yandex почта">
+    <meta name="description" content="Yandex Почта">
     <meta name="author" content="Zhevtyak Nina">
     <title>Яндекс Почта</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="hw4.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="common-styles.css">
 </head>
 
 <body>
@@ -37,22 +38,22 @@
         </ul>
     </div>
     <div class="block-inner">
-        <ul class="block-inner__bottom-borders block-inner__ul">
-            <input type="checkbox" id="block-inner__highlight">
-            <li class="block-inner__resend"><a href="" class="block-inner__links">Переслать</a></li>
-            <li class="block-inner__delete"><a class="block-inner__links" id="block-inner__delete">Удалить</a></li>
-            <li class="block-inner__make-spam"><a href="" class="block-inner__links">Это спам!</a></li>
-            <li class="block-inner__read-msgs"><a href="" class="block-inner__links">Прочитано</a></li>
+        <ul class="block-inner__can-do can-do">
+            <input type="checkbox" id="can-do__highlight">
+            <li class="can-do__resend"><a href="" class="can-do__links">Переслать</a></li>
+            <li class="can-do__delete"><a class="can-do__links" id="can-do__delete">Удалить</a></li>
+            <li class="can-do__make-spam"><a href="" class="can-do__links">Это спам!</a></li>
+            <li class="can-do__read-msgs"><a href="" class="can-do__links">Прочитано</a></li>
         </ul>
-        <div class="block-inner__letters">
-            <div class="block-inner__bottom-borders">
-                <input id="block-inner__choose" class="block-inner__checkbox" type="checkbox">
-                <div class="block-inner__mail">
-                    <label for="block-inner__choose">
-                        <div class="block-inner__close2">×</div>
+        <div class="block-inner__letters letters">
+            <div class="letters__letter letter">
+                <input id="letter__choose" class="letter__checkbox" type="checkbox">
+                <div class="letter__mail-opened mail-opened">
+                    <label for="letter__choose">
+                        <div class="mail-opened__close2">×</div>
                     </label>
-                    <img class="block-inner__snowman" src="circle.png" width="25%" alt="Снеговик">
-                    <div class="block-inner__text">
+                    <img class="mail-opened__snowman" src="circle.png" width="25%" alt="Снеговик">
+                    <div class="mail-opened__text">
                         Кто этот весёлый человечек с ведром на голове, со снегирём на плече, с метёлкой в руках, с
                         морковкой в зубах? Ах, нет! Морковка – не в зубах. Морковка – это такой смешной нос у этого
                         весёлого человечка. А почему у него ведро на голове? Он что, хочет охладить голову? Может он
@@ -71,46 +72,46 @@
                         Автор рассказа: Ирис Ревю
                     </div>
                 </div>
-                <img class="block-inner__pic" alt="logo"
+                <img class="letter__pic" alt="logo"
                     src="https://yastatic.net/mail/socialavatars/socialavatars/v4/ya-default.svg">
-                <span class="block-inner__sender block-inner__unread">Яндекс.Паспорт</span>
-                <div class="block-inner__msg-mark block-inner__mark-unread"></div>
-                <span class="block-inner__message block-inner__unread">Доступ к аккаунту восстановлен</span>
-                <time class="block-inner__date-msg" datetime="2018-08-06">6 авг</time>
+                <span class="letter__sender letter__unread">Яндекс.Паспорт</span>
+                <div class="letter__msg-mark letter__mark-unread"></div>
+                <span class="letter__message letter__unread">Доступ к аккаунту восстановлен</span>
+                <time class="letter__date-msg" datetime="2018-08-06">6 авг</time>
             </div>
-            <div class="block-inner__bottom-borders">
-                <input type="checkbox" class="block-inner__checkbox">
-                <img class="block-inner__pic" alt="logo"
+            <div class="letters__letter letter">
+                <input type="checkbox" class="letter__checkbox">
+                <img class="letter__pic" alt="logo"
                     src="https://yastatic.net/mail/socialavatars/socialavatars/v4/ya-default.svg">
-                <span class="block-inner__sender block-inner__unread">Команда Яндекс.Почты</span>
-                <div class="block-inner__msg-mark block-inner__mark-unread"></div>
-                <span class="block-inner__message block-inner__unread">Как читать почту с
+                <span class="letter__sender letter__unread">Команда Яндекс.Почты</span>
+                <div class="letter__msg-mark letter__mark-unread"></div>
+                <span class="letter__message letter__unread">Как читать почту с
                     мобильногоiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii</span>
-                <time class="block-inner__date-msg" datetime="2018-07-06">6 июл</time>
+                <time class="letter__date-msg" datetime="2018-07-06">6 июл</time>
             </div>
-            <div class="block-inner__bottom-borders">
-                <input type="checkbox" class="block-inner__checkbox">
-                <img class="block-inner__pic" alt="logo"
+            <div class="letters__letter letter">
+                <input type="checkbox" class="letter__checkbox">
+                <img class="letter__pic" alt="logo"
                     src="https://yastatic.net/mail/socialavatars/socialavatars/v4/ya-default.svg">
-                <span class="block-inner__sender">Команда Яндекс.Почты</span>
-                <div class="block-inner__msg-mark"></div>
-                <span class="block-inner__message">Как читать почту с мобильного</span>
-                <time class="block-inner__date-msg" datetime="2018-07-06">6 июл</time>
+                <span class="letter__sender">Команда Яндекс.Почты</span>
+                <div class="letter__msg-mark"></div>
+                <span class="letter__message">Как читать почту с мобильного</span>
+                <time class="letter__date-msg" datetime="2018-07-06">6 июл</time>
             </div>
-            <div class="block-inner__bottom-borders">
-                <input type="checkbox" class="block-inner__checkbox">
-                <img class="block-inner__pic" alt="logo"
+            <div class="letters__letter letter">
+                <input type="checkbox" class="letter__checkbox">
+                <img class="letter__pic" alt="logo"
                     src="https://yastatic.net/mail/socialavatars/socialavatars/v4/ya-default.svg">
-                <span class="block-inner__sender">Яндекс</span>
-                <div class="block-inner__msg-mark"></div>
-                <span class="block-inner__message">Соберите всю почту в этот ящик</span>
-                <time class="block-inner__date-msg" datetime="2018-07-06">16 июл</time>
+                <span class="letter__sender">Яндекс</span>
+                <div class="letter__msg-mark"></div>
+                <span class="letter__message">Соберите всю почту в этот ящик</span>
+                <time class="letter__date-msg" datetime="2018-07-06">16 июл</time>
             </div>
         </div>
-        <footer class="block-inner__footer">
-            <a href="" class="block-inner__links-footer">Помощь и обратная связь</a>
-            <a href="" class="block-inner__links-footer">Реклама</a>
-            <span class="block-inner__links-footer">©2001-2018,&nbspЯндекс</span>
+        <footer class="block-inner__footer footer">
+            <a href="" class="footer__links">Помощь и обратная связь</a>
+            <a href="" class="footer__links">Реклама</a>
+            <span class="footer__links">©2001-2018,&nbspЯндекс</span>
         </footer>
     </div>
 

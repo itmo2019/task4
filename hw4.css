@@ -9,6 +9,7 @@
 }
 
 body {
+    min-width: 630px;
     background-color: #e5eaf0;
     margin: 0;
 }
@@ -64,7 +65,7 @@ body {
     position: absolute;
     top: 15px;
     left: 600px;
-    color: #000000;
+    color: #000;
 }
 
 .actions {
@@ -127,19 +128,11 @@ body {
     background-color: #cdd6e4;
 }
 
-a {
-    text-decoration: none;
-}
-
-.block-inner__bottom-borders {
+.letters__letter {
     font-size: 13px;
     position: relative;
     width: 100%;
     border-bottom: solid 1px #e2e2e2;
-}
-
-li {
-    list-style-type: none;
 }
 
 .block-inner {
@@ -158,26 +151,28 @@ li {
     box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.34);
 }
 
-.hidden {
-    display: none;
-}
-
-.block-inner__links {
+.can-do__links {
     color: #ccc;
     cursor: pointer;
 }
 
 .block-inner__letters {
+    font-size: 13px;
+    position: absolute;
+    border-bottom: solid 1px #e2e2e2;
     overflow: auto;
     width: 100%;
-    height: calc(100% - 70px);
-    position: absolute;
+    height: calc(100% - 68px);
     display: inline;
     white-space: nowrap;
     box-sizing: border-box;
+    overflow-x: hidden;
 }
 
-.block-inner__ul {
+.block-inner__can-do {
+    font-size: 13px;
+    position: relative;
+    border-bottom: solid 1px #e2e2e2;
     outline: none;
     width: 100%;
     box-sizing: border-box;
@@ -187,14 +182,14 @@ li {
     padding-inline-start: 17px;
 }
 
-#block-inner__highlight {
+#can-do__highlight {
     width: 16px;
     height: 16px;
     border-radius: 3px;
     border: solid 1px rgba(0, 0, 0, 0.15);
 }
 
-.block-inner__checkbox {
+.letter__checkbox {
     vertical-align: top;
     margin-top: 11px;
     box-sizing: border-box;
@@ -206,7 +201,7 @@ li {
     border: solid 1px rgba(0, 0, 0, 0.15);
 }
 
-.block-inner__pic {
+.letter__pic {
     vertical-align: top;
     display: inline-block;
     margin-top: 5px;
@@ -216,7 +211,7 @@ li {
     width: 30px;
 }
 
-.block-inner__date-msg {
+.letter__date-msg {
     vertical-align: top;
     font-family: HelveticaNeue;
     position: absolute;
@@ -227,14 +222,14 @@ li {
     color: #9b9b9b;
 }
 
-.block-inner__sender {
+.letter__sender {
     box-sizing: border-box;
     vertical-align: top;
     font-family: HelveticaNeue;
     width: 28%;
     max-width: 28%;
     display: inline-block;
-    margin-top: 10.5px;
+    margin-top: 11px;
     margin-left: 10px;
     font-size: 13px;
     white-space: nowrap;
@@ -242,11 +237,11 @@ li {
     text-overflow: ellipsis;
 }
 
-.block-inner__unread {
+.letter__unread {
     font-weight: bold;
 }
 
-.block-inner__message {
+.letter__message {
     box-sizing: border-box;
     vertical-align: top;
     font-family: HelveticaNeue;
@@ -261,7 +256,7 @@ li {
     text-overflow: ellipsis;
 }
 
-.block-inner__resend {
+.can-do__resend {
     font-family: HelveticaNeue;
     display: inline-block;
     vertical-align: top;
@@ -269,7 +264,7 @@ li {
     margin-left: 20px;
 }
 
-.block-inner__delete {
+.can-do__delete {
     font-family: HelveticaNeue;
     display: inline-block;
     margin-left: 26px;
@@ -277,7 +272,7 @@ li {
     margin-top: 3px;
 }
 
-.block-inner__make-spam {
+.can-do__make-spam {
     font-family: HelveticaNeue;
     display: inline-block;
     margin-left: 24px;
@@ -285,7 +280,7 @@ li {
     margin-top: 3px;
 }
 
-.block-inner__read-msgs {
+.can-do__read-msgs {
     font-family: HelveticaNeue;
     display: inline-block;
     margin-left: 25px;
@@ -302,11 +297,11 @@ li {
     right: 0;
     border-top: solid 1px #e2e2e2;
     width: 100%;
-    height: 30.5px;
+    height: 31px;
     padding: 9px 20px 0 0;
 }
 
-.block-inner__links-footer {
+.footer__links {
     vertical-align: top;
     margin-left: 25px;
     font-family: HelveticaNeue;
@@ -319,17 +314,17 @@ li {
     color: #9b9b9b;
 }
 
-.block-inner__snowman {
+.mail-opened__snowman {
     float: right;
     shape-outside: circle();
 }
 
-#block-inner__choose:checked+.block-inner__mail {
+#letter__choose:checked+.letter__mail-opened {
     display: inline-block;
     margin-left: -42px;
 }
 
-.block-inner__close2 {
+.mail-opened__close2 {
     position: absolute;
     margin: 5px;
     font-size: 25px;
@@ -337,7 +332,7 @@ li {
     right: 7px;
 }
 
-.block-inner__mail {
+.letter__mail-opened {
     box-sizing: border-box;
     position: absolute;
     top: 0;
@@ -349,14 +344,14 @@ li {
     display: none;
 }
 
-.block-inner__text {
+.mail-opened__text {
     font-family: HelveticaNeue;
     font-size: 15px;
     padding: 20px;
     white-space: normal;
 }
 
-.block-inner__msg-mark {
+.letter__msg-mark {
     vertical-align: top;
     display: inline-block;
     margin-top: 14px;
@@ -365,7 +360,7 @@ li {
     border-radius: 10px;
 }
 
-.block-inner__mark-unread {
+.letter__mark-unread {
     background-color: #6287bd;
 }
 
@@ -379,6 +374,10 @@ li {
 
 .msg-deleted-left {
     animation: del-msg-left 2s ease forwards;
+}
+
+.hidden {
+    display: none;
 }
 
 @keyframes add-msg {
