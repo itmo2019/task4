@@ -1,0 +1,376 @@
+@font-face {
+  font-family: YandexSansBold;
+  src: url("./resources/font_style/YandexSansDisplay-Bold.ttf");
+}
+@font-face {
+  font-family: YandexSansThin;
+  src: url("./resources/font_style/YandexSansDisplay-Thin.ttf");
+}
+@font-face {
+  font-family: HelveticaNeueCyrLight;
+  src: url("./resources/font_style/HelveticaNeueCyr-Light.otf")
+}
+@font-face {
+  font-family: HelveticaNeueCyrMedium;
+  src: url("./resources/font_style/HelveticaNeueCyr-Medium.otf")
+}
+
+@font-face {
+  font-family: HelveticaNeueLight;
+  src: url("./resources/font_style/HelveticaNeueUltraLight.ttf")
+}
+
+@font-face {
+  font-family: YandexSansTextLight;
+  src: url("./resources/font_style/YandexSansText-Light.ttf")
+}
+
+.body {
+  margin: 0 auto;
+  position: relative;
+  background-color: #e5eaf0
+}
+
+a {
+  color: unset;
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.header {
+  margin-left: 22px;
+  height: 56px;
+  position: relative;
+}
+
+.service-logo {
+  position: relative;
+  cursor: pointer;
+  top: 12px;
+  height: 45px;
+  width: 180px;
+}
+
+.service-logo__menu-img {
+  width: 27px;
+  height: 27px;
+  top: 4px;
+  position: absolute;
+}
+.service-logo__logo-img {
+  width: 150px;
+  height: 31px;
+  left: 31px;
+  position: absolute;
+  color: #010101;
+  font-size: 25px;
+}
+
+.search-block {
+  left: 320px;
+  width: 37%;
+  height: 31px;
+  top: 11px;
+  display: inline-block;
+  position: absolute;
+  background-color: #fff;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.2);
+  opacity: 0.5;
+  line-height: 2.13;
+}
+
+.search-block__input {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  color: #000;
+  padding-left: 16px;
+  font-size: 15px;
+  outline: none;
+}
+
+.main-content {
+  margin-left: 22px;
+  position: relative;
+}
+
+.mail-menu {
+  width: 148px;
+  position: relative;
+}
+
+.mail-menu__send-button {
+  width: 100%;
+  height: 32px;
+  border-radius: 3px;
+  position: absolute;
+  background-color: #6287bd;
+  font-family: HelveticaNeueCyrMedium;
+  font-size: 12px;
+  font-weight: 500;
+  outline: none;
+  cursor: pointer;
+  color: #fff;
+}
+
+.mail-menu__bar {
+  top: 40px;
+  width: 100%;
+  padding-left: 0px;
+  margin: 0px;
+  position: absolute;
+  font-family: YandexSanBold;
+}
+
+.mail-menu__bar-item {
+  height: 22px;
+  font-family: YandexSanBold;
+  padding-left: 10px;
+  border-radius: 3px;
+  font-size: 11px;
+  font-weight: bold;
+  text-align: left;
+  vertical-align: middle;
+  line-height: 22px;
+  color: #555;
+}
+
+.mail-menu__bar-item__hover,
+.mail-menu__bar .mail-menu__bar-item:hover {
+  background-color: #cdd6e4;
+}
+
+.mail-box {
+  width: 75%;
+  min-width: 589px;
+  min-height: 530px;
+  left: 169px;
+  margin: 0px;
+  border-radius: 3px;
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.34);
+  background-color: #fff;
+  margin-bottom: 14px;
+  position: relative;
+}
+
+.mail-action {
+  width: 100%;
+  height: 37px;
+  position: relative;
+  border-bottom: solid 1px #e2e2e2;
+  border-bottom-width: 2px;
+}
+
+.mail-action__chooce_all {
+  top: 11px;
+  left: 20px;
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  border-radius: 3px;
+  border: solid 1px rgba(0, 0, 0, 0.15);
+  background-color: #fff;
+  position: absolute;
+}
+
+.mail-action__button {
+  top: 11px;
+  background: #fff;
+  position: absolute;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  font-family: YandexSanTextLight;
+  font-size: 13px;
+  font-weight: 500;
+  color: #ccc;
+}
+
+.mail-action__resend {
+  left: 7%;
+}
+
+.mail-action__delete {
+  left: 19%;
+}
+
+.mail-action__spam {
+  left: 29%;
+}
+
+.mail-action__read {
+  left: 40%;
+}
+
+.mail-article {
+  display: none;
+  min-height: 480px;
+}
+
+.mail-article__text {
+  position: absolute;
+  background-color: #fff;
+  width: 80%;
+  font-size: 16px;
+  margin: 5px;
+}
+
+.mail-article__close {
+  float: right;
+  margin: 5px;
+  font-size: 20px;
+  color: #708090;
+  cursor: pointer;
+}
+
+.mails {
+  min-height: 480px;
+  padding: 0px;
+  margin: 0px;
+}
+
+.mail {
+  display: table;
+  table-layout: fixed;
+  height: 40px;
+  width: 100%;
+  padding: 0px;
+  cursor: pointer;
+  font-size: 13px;
+  color: #000;
+  font-family: HelveticaNeueCyrLight;
+  border-bottom: solid 1px #e2e2e2;
+  border-bottom-width: 1px;
+}
+
+.mail__content__unread .mail__sender-name,
+.mail__content__unread .mail__title {
+  font-weight: bold;
+}
+
+.mail__content {
+  display: table-cell;
+  position: relative;
+  vertical-align: middle;
+  height: 100%;
+}
+
+.mail__chooce {
+  margin-left: 20px;
+  vertical-align: middle;
+  width: 16px;
+  height: 16px;
+  border-radius: 3px;
+  border: solid 1px rgba(0, 0, 0, 0.15);
+  background-color: #fff;
+}
+
+.mail__sender-logo {
+  width: 30px;
+  height: 30px;
+  margin-left: 10px;
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: 50%;
+  font-size: 30px;
+  font-weight: 100;
+}
+
+.mail__sender-name__hidden-text,
+.mail__title__hidden-text {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.mail__sender-name {
+  width: 25%;
+  margin-left: 10px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.mail__unread-flag {
+  width: 10px;
+  height: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: 50%;
+  background-color: #6287bd;
+}
+
+.mail__title {
+  display: inline-block;
+  vertical-align: middle;
+  width: 40%;
+}
+
+.mail__time {
+  right: 20px;
+  top: 13px;
+  position: absolute;
+}
+
+.mail__text {
+  display: none;
+}
+
+.contacts {
+  height: 30px;
+  position: relative;
+  border-top: solid 1px #e2e2e2;
+}
+
+.contacts__info {
+  top: 9px;
+  right: 20px;
+  position: absolute;
+  font-family: YandexSanBold;
+  font-size: 12px;
+  color: #9b9b9b;
+}
+
+.contact__info-item {
+  padding: 15px;
+}
+
+.mail__ariticle-link {
+  display: none;
+}
+
+.inactive {
+  background: #fff;
+}
+
+.insert-action {
+  animation-name: insert-animation;
+  animation-duration: 1s;
+}
+
+@keyframes insert-animation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.remove-action {
+  animation-name: remove-animation;
+  animation-duration: 1s;
+}
+
+@keyframes remove-animation {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}

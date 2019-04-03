@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="utf-8">
+  <title>mail</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="body">
+  <header class="header">
+    <div class="service-logo">
+      <img class="service-logo__menu-img" src="./resources/svg/menu-button.svg">
+      <img class="service-logo__logo-img" src="./resources/images/mail_logo.png">
+    </div>
+    <div class="search-block">
+      <input type="text" class="search-block__input" placeholder="Поиск">
+    </div>
+  </header>
+
+  <main class="main-content">
+    <div class="mail-menu">
+      <button class="mail-menu__send-button" onclick="createMail()">Написать</button>
+
+      <ul class="mail-menu__bar">
+        <li class="mail-menu__bar-item
+                   mail-menu__bar-item__hover">
+          <a href="">Входящие</a>
+        </li>
+        <li class="mail-menu__bar-item"><a href="">Отправленные</a></li>
+        <li class="mail-menu__bar-item"><a href="">Удалённые</a></li>
+        <li class="mail-menu__bar-item" onclick="createMail()"><a href="">Спам</a></li>
+        <li class="mail-menu__bar-item"><a href="">Черновики</a></li>
+        <li class="mail-menu__bar-item"><a href="">Создать папку</a></li>
+      </ul>
+    </div>
+
+    <div class="mail-box">
+      <div class="mail-action">
+        <input type="checkbox" class="mail-action__chooce_all" id="mail-action__chooce_all-id" onclick="markAllMails()">
+        <div class="mail-action__items">
+          <button class="mail-action__button
+                         mail-action__resend">
+            Переслать
+          </button>
+          <button class="mail-action__button
+                         mail-action__delete" onclick="removeMarkedMails()">
+            Удалить
+          </button>
+          <button class="mail-action__button
+                         mail-action__spam">
+            Это спам!
+          </button>
+          <button class="mail-action__button
+                         mail-action__read">
+            Прочитано
+          </button>
+        </div>
+      </div>
+      <div class="mail-article" id="mail-article-id">
+        <div class="mail-article__text" id="mail-article__text-id"></div>
+        <div class="mail-article__close" onclick="closeMail()">x</div>
+      </div>
+      <div class="mails" id="mails-id">
+        <template id="mail-template">
+          <div class="mail" id="mail-id">
+            <div class="mail__content mail__content__unread">
+              <input type="checkbox" class="mail__chooce" id="mail__chooce-id" onclick="checkMarkAllCheckBox()">
+              <img class="mail__sender-logo" id="mail__sender-logo-id" src="">
+              <span class="mail__sender-name mail__sender-name__hidden-text" id="mail__sender-name-id"></span>
+              <div class="mail__unread-flag"></div>
+              <span class="mail__title mail__title__hidden-text" id="mail__title-id"></span>
+              <time class="mail__time" id="mail__time-id"></time>
+              <div class="mail__text" id="mail__text-id"></div>
+            </div>
+          </div>
+        </template>
+      </div>
+
+      <div class="contacts">
+        <footer class="contacts__info">
+          <span class="contact__info-item"><a href="">Помощь и обратная связь</a></span>
+          <span class="contact__info-item"><a href="">Реклама</a></span>
+          <span class="contact__info-item">&copy; 2001 &ndash; 2018, Яндекс</span>
+        </footer>
+      </div>
+    </div>
+  </main>
+
+</body>
+<script src="script.js"></script>
+
+</html>
