@@ -71,7 +71,7 @@ function newMail() {
 
     setTimeout(() => {
         newMessage.classList.remove("to-create");
-    }, 1500);
+    }, 50);
 }
 
 function deleteSelectedMessages() {

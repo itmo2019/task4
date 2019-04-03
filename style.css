@@ -215,6 +215,8 @@ body {
     overflow: hidden;
     text-overflow: ellipsis;
     border-bottom: solid 1px #e2e2e2;
+    transition: opacity 1.5s, height 1.5s;
+    opacity: 1;
 }
 
 .message-info__sender-logo {
@@ -358,32 +360,11 @@ body {
 }
 
 .to-create {
-    animation: creation 1.5s forwards;
+    opacity: 0;
+    height: 0;
 }
 
 .to-delete {
-    animation: deletion 1.5s forwards;
-}
-
-@keyframes deletion {
-    from {
-        height: 40px;
-        opacity: 1;
-    }
-    100% {
-        height: 0;
-        opacity: 0;
-    }
-}
-
-@keyframes creation {
-    from {
-        height: 0;
-        opacity: 0;
-    }
-    100% {
-        height: 40px;
-
-        opacity: 1;
-    }
+    height: 0;
+    opacity: 0;
 }
