@@ -3,8 +3,11 @@
     width: 100%;
     border-bottom: 1px solid #cccccc;
     clear: both;
+    cursor: pointer;
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
 }
 
-.message {
-    cursor: pointer;
+.message.fade-out {
+    opacity: 0;
 }

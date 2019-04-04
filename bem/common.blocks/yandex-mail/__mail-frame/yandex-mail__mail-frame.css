@@ -1,12 +1,10 @@
 .yandex-mail__mail-frame {
-    position: relative;
-    display: inline-block;
+    position: absolute;
+    left: 169px;
+    right: 0;
+    bottom: 0;
+    top: 45px;
 
-    vertical-align: top;
-    margin: 13px 0 0 22px;
-
-    width: 75%;
-    height: 88%;
     border-radius: 3px;
     box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.34);
     background-color: #fff;

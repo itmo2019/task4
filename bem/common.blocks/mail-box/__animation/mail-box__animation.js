@@ -140,26 +140,26 @@ const messageStack = [];
 const MAX_LETTERS_NUMBER = 20;
 
 const snippetTemplate =
-    '    <label>\n' +
-    '        <input class="checkbox message__checkbox" type="checkbox">\n' +
-    '    </label>\n' +
-    '    <img class="message__avatar" src="img/yandex-logo.png" alt="Я">\n' +
-    '    <div class="message__sender">\n' +
-    '        <span class="message__text message_unread">\n' +
-    '            Яндекс.Паспорт\n' +
-    '        </span>\n' +
-    '    </div>\n' +
-    '    <div class="message__unread-dot message_unread"></div>\n' +
-    '    <div class="message__topic">\n' +
-    '        <span class="message__text message_unread">\n' +
-    '            Доступ к аккаунту восстановлен\n' +
-    '        </span>\n' +
-    '    </div>\n' +
-    '    <div class="message__date">\n' +
-    '        <span class="message__text message_unread">\n' +
-    '            6 авг\n' +
-    '        </span>\n' +
-    '    </div>';
+    '<label>\n' +
+    '    <input class="checkbox message__checkbox" type="checkbox">\n' +
+    '</label>\n' +
+    '<img class="message__avatar" src="img/yandex-logo.png" alt="Я">\n' +
+    '<div class="message__sender">\n' +
+    '    <span class="message__text message_unread">\n' +
+    '        Яндекс.Паспорт\n' +
+    '    </span>\n' +
+    '</div>\n' +
+    '<div class="message__unread-dot message_unread"></div>\n' +
+    '<div class="message__topic">\n' +
+    '    <span class="message__text message_unread">\n' +
+    '        Доступ к аккаунту восстановлен\n' +
+    '    </span>\n' +
+    '</div>\n' +
+    '<div class="message__date">\n' +
+    '    <span class="message__text message_unread">\n' +
+    '        6 авг\n' +
+    '    </span>\n' +
+    '</div>';
 
 setNewMessageListener();
 setRemoveListener();
@@ -233,7 +233,7 @@ function generateFullMessage() {
 
 function generateMessage() {
     const newMessage = document.createElement('li');
-    newMessage.className = 'message message_unread';
+    newMessage.className = 'message fade-out message_unread';
     newMessage.innerHTML = snippetTemplate;
     const texts = newMessage.getElementsByClassName('message__text');
     texts[0].textContent = generateName();
@@ -243,12 +243,15 @@ function generateMessage() {
 }
 
 function setNewMessageListener() {
-    let button = document.body
+    const button = document.body
         .getElementsByClassName('actions__item')[1];
     button
-        .addEventListener('click', () => addNewMessage());
-
-
+        .addEventListener('click', () => {
+            const m = addNewMessage();
+            setTimeout(() => {
+                m.classList.remove('fade-out');
+            },0);
+        });
 }
 
 function addRandomly() {
@@ -261,7 +264,7 @@ function addRandomly() {
 }
 
 function addNewMessage() {
-    let mailBox = document.getElementsByClassName('mail-box')[0];
+    let mailBox = document.querySelector('.mail-box');
     const newMessage = generateMessage();
 
     const visibleMessages = mailBox.getElementsByClassName('message');
@@ -292,6 +295,7 @@ function addNewMessage() {
     for (const text of texts){
         text.addEventListener('click', () => readMessage(newMessage, fullMessage));
     }
+    return newMessage;
 }
 
 function setRemoveListener() {
@@ -302,36 +306,25 @@ function setRemoveListener() {
 }
 
 function removeMessage(message) {
-    let id = setInterval(disappearing, 5);
-    let duration = 100.0;
-    let k = 0;
-    let stepOpacity = 1.0/duration;
-    function disappearing() {
-        if (k === duration) {
-            clearInterval(id);
-        } else {
-            k++;
-            message.style.opacity = (1.0 - k * stepOpacity).toString();
-        }
-    }
+    message.classList.add("fade-out");
 }
 
 function removeMessages() {
     let messages = document.body.getElementsByClassName('message');
     let remMessages = Array.prototype.filter.call(messages,
         elem => {
-            return elem.getElementsByClassName('message__checkbox')[0].checked
+            return elem.querySelector('.message__checkbox').checked
         });
     remMessages.forEach(message => {
         removeMessage(message);
-        setTimeout(() => message.parentNode.removeChild(message), 500);
+        setTimeout(() => message.parentNode.removeChild(message), 1000);
     });
 
-    setTimeout( () => addOldMessages(remMessages.length), 500);
+    setTimeout( () => addOldMessages(remMessages.length), 1000);
 }
 
 function addOldMessages(numRemoved) {
-    let mailBox = document.getElementsByClassName('mail-box')[0];
+    let mailBox = document.querySelector('.mail-box');
     const need = Math.min(numRemoved, messageStack.length);
     let i;
     for (i = 0; i < need; i++){
