@@ -61,7 +61,7 @@ function newRandomMessage() {
 }
 
 function newMail() {
-    let messagesList = document.getElementsByClassName('messages-list')[0];
+    let messagesList = document.querySelector('.messages-list');
     if (messagesList.children.length > 29) {
         messagesList.removeChild(messagesList.children[29]);
     }
@@ -76,7 +76,7 @@ function newMail() {
 
 function deleteSelectedMessages() {
     let checkboxes = document.getElementsByClassName('select-message__checkbox');
-    let messagesList = document.getElementsByClassName('messages-list')[0];
+    let messagesList = document.querySelector('.messages-list');
     for (let i = 0; i < checkboxes.length; i++) {
         if (checkboxes[i].checked) {
             let message = checkboxes[i].parentElement.parentElement;
@@ -93,9 +93,9 @@ function deleteSelectedMessages() {
 }
 
 function openMessage(message) {
-    let hiddenMessage = document.getElementsByClassName('hidden-message')[0];
-    let hiddenMessageContent = document.getElementsByClassName('hidden-message__content')[0];
-    let messagesList = document.getElementsByClassName('messages-list')[0];
+    let hiddenMessage = document.querySelector('.hidden-message');
+    let hiddenMessageContent = document.querySelector('.hidden-message__content');
+    let messagesList = document.querySelector('.messages-list');
 
     let hiddenHtml = idToHtmlMap.get(message.id);
 
@@ -107,8 +107,8 @@ function openMessage(message) {
 }
 
 function closeMessage() {
-    let hiddenMessage = document.getElementsByClassName('hidden-message')[0];
-    let messagesList = document.getElementsByClassName('messages-list')[0];
+    let hiddenMessage = document.querySelector('.hidden-message');
+    let messagesList = document.querySelector('.messages-list');
 
     hiddenMessage.style.display = "none";
     messagesList.style.display = "block";
