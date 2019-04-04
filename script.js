@@ -5,8 +5,9 @@ let months = ['январь', 'февраль', 'март', 'апрель', 'м�
 
 let anyCheckboxIsActive = false;
 let idToHtmlMap = new Map();
-let messagesPerPage = 6;
+let messagesPerPage = 30;
 let overflowMessages = [];
+let messagesListActualSize = 0;
 
 let timeoutUpper = 10 * 60 * 1000;
 let timeoutLower = 5 * 60 * 1000;
@@ -41,6 +42,9 @@ function selectCheckbox(checkbox) {
 function selectAll(selectAllCheckbox) {
     let checkboxes = document.getElementsByClassName('select-message__checkbox');
     for (let i = 0; i < checkboxes.length; i++) {
+        if (checkboxes[i].parentElement.parentElement.classList.contains('to-delete')) {
+            continue;
+        }
         checkboxes[i].checked = selectAllCheckbox.checked;
     }
     anyCheckboxIsActive = selectAllCheckbox.checked;
@@ -64,17 +68,28 @@ function newRandomMessage() {
 
 function newMail() {
     let messagesList = document.querySelector('.messages-list');
-    if (messagesList.children.length >= messagesPerPage) {
-        for (let index = messagesList.children.length - 1; index >= messagesPerPage - 1; index--) {
+    while (messagesListActualSize >= messagesPerPage) {
+        for (let index = messagesList.children.length - 1; index >= 0; index--) {
             let message = messagesList.children[index];
+            if (message.classList.contains('to-delete')) {
+                continue;
+            }
             message.classList.add("to-delete");
+            messagesListActualSize--;
+            overflowMessages.push(message);
             setTimeout(() => {
-                messagesList.removeChild(message)
+                if (message.classList.contains('to-delete')) {
+                    messagesList.removeChild(message);
+                    message.classList.remove('to-delete');
+                }
             }, 1500);
+            break;
         }
     }
     let newMessage = document.createElement('div');
     buildNewMessage(newMessage);
+
+    messagesListActualSize++;
     messagesList.insertBefore(newMessage, messagesList.children[0]);
 
     setTimeout(() => {
@@ -88,10 +103,28 @@ function deleteSelectedMessages() {
     for (let i = 0; i < checkboxes.length; i++) {
         if (checkboxes[i].checked) {
             let message = checkboxes[i].parentElement.parentElement;
+            if (message.classList.contains('to-delete')) {
+                continue;
+            }
+
             message.classList.add("to-delete");
+            messagesListActualSize--;
             setTimeout(() => {
-                messagesList.removeChild(message)
+                messagesList.removeChild(message);
             }, 1500);
+            if (overflowMessages.length > 0) {
+                let newMessage = overflowMessages.pop();
+                if (newMessage.classList.contains('to-delete')) {
+                    newMessage.classList.remove('to-delete');
+                } else {
+                    messagesList.appendChild(newMessage);
+                }
+                newMessage.classList.add('to-create');
+                messagesListActualSize++;
+                setTimeout(() => {
+                    newMessage.classList.remove("to-create");
+                }, 50);
+            }
         }
     }
     anyCheckboxIsActive = false;
