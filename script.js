@@ -24,7 +24,7 @@ function selectCheckbox(checkbox) {
         }
         anyCheckboxIsActive = true;
     } else {
-        let checkboxes = document.getElementsByClassName('select-message-checkbox');
+        let checkboxes = document.getElementsByClassName('select-message__checkbox');
         for (let i = 0; i < checkboxes.length; i++) {
             if (checkboxes[i].checked) {
                 return;
@@ -37,7 +37,7 @@ function selectCheckbox(checkbox) {
 }
 
 function selectAll(selectAllCheckbox) {
-    let checkboxes = document.getElementsByClassName('select-message-checkbox');
+    let checkboxes = document.getElementsByClassName('select-message__checkbox');
     for (let i = 0; i < checkboxes.length; i++) {
         checkboxes[i].checked = selectAllCheckbox.checked;
     }
@@ -75,11 +75,11 @@ function newMail() {
 }
 
 function deleteSelectedMessages() {
-    let checkboxes = document.getElementsByClassName('select-message-checkbox');
+    let checkboxes = document.getElementsByClassName('select-message__checkbox');
     let messagesList = document.getElementsByClassName('messages-list')[0];
     for (let i = 0; i < checkboxes.length; i++) {
         if (checkboxes[i].checked) {
-            let message = checkboxes[i].parentElement;
+            let message = checkboxes[i].parentElement.parentElement;
             message.classList.add("to-delete");
             setTimeout(() => {
                 messagesList.removeChild(message)
@@ -129,14 +129,23 @@ function buildNewMessage(newMessage) {
     newMessage.classList.add('message');
     newMessage.classList.add('to-create');
 
+    let checkboxLabel = document.createElement('label');
+    checkboxLabel.classList.add('select-message__checkbox-label');
+    checkboxLabel.setAttribute('for', 'checkbox-' + id);
+    checkboxLabel.onclick = function () {
+        window.event.stopPropagation();
+    };
+
     let checkbox = document.createElement('input');
     checkbox.type = 'checkbox';
-    checkbox.classList.add('select-message-checkbox');
+    checkbox.classList.add('select-message__checkbox');
     checkbox.classList.add('checkbox');
     checkbox.onclick = function () {
         selectCheckbox(this);
     };
-    newMessage.appendChild(checkbox);
+    checkbox.setAttribute('id', 'checkbox-' + id);
+    checkboxLabel.appendChild(checkbox);
+    newMessage.appendChild(checkboxLabel);
 
     let senderName = senders[Math.floor(Math.random() * senders.length)];
 
