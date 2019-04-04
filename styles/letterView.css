@@ -1,11 +1,10 @@
 .mail-body__letters-window__body__letter {
-    margin-left: 20px;
-    margin-right: 20px;
     height: calc(7.15% - 1px);
-    animation: swing 1s ease;
+    /*animation: swing 1s ease;*/
     transition: opacity 1s linear;
     font: 14px "Helvetica Neue", sans-serif;
     cursor: pointer;
+    margin: 0 3px;
 }
 
 .mail-body__letters-window__body__letter:before {
@@ -22,7 +21,6 @@
     width: 30px;
     height: 30px;
     background-image: url(../images/myPhoto.svg);
-    margin-left: 16px;
     margin-right: 16px;
     pointer-events: none;
 }
@@ -54,7 +52,6 @@
     width: 150px;
     height: 18px;
     letter-spacing: normal;
-    
     pointer-events: none;
 }
 
@@ -67,19 +64,17 @@
     margin-left: 20px;
     letter-spacing: normal;
     opacity: 0.5;
-    
     pointer-events: none;
 }
 
 .mail-body__letters-window__body__letter__data {
     display: inline-block;
     vertical-align: middle;
-    width: 120px;
+    width: 100px;
     height: 18px;
     text-align: right;
     color: #9b9b9b;
     letter-spacing: normal;
     margin-left: 20px;
-    
     pointer-events: none;
 }

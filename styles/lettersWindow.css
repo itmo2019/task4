@@ -11,7 +11,6 @@
 
 .mail-body__letters-window__header {
     height: 6.25%;
-    margin: 0 20px;
 }
 
 .mail-body__letters-window__header:before {
@@ -30,9 +29,12 @@
     background-color: #ffffff;
     border-style: none;
     outline: none;
-    margin-left: 20px;
     letter-spacing: normal;
     cursor: pointer;
+}
+
+.shift {
+    margin-left: 20px;
 }
 
 .line {

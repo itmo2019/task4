@@ -1,9 +1,6 @@
 function letterCreation() {
     let randomName = names[Math.floor(Math.random() * 5)];
     let themeBody = letterExamples[Math.floor(Math.random() * 5)];
-    themeBody[1] += '\n' +
-            '---\n' +
-            'Всего наилучшего,\n' + randomName + '.';
     return [randomName, themeBody[0], themeBody[1]];
 }
 

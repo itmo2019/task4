@@ -5,10 +5,12 @@ let timerId = setTimeout(function newMail() {
     timerId = setTimeout(newMail, fiveMin + rndNum);
 }, 1000);
 
+let letterCounterOnPage = 0;
+const maxLettersOnPage = 30;
+let stack = [];
+
+
 function addNewLetter() {
-    if (letterCounter === 30) {
-        removeLastLetter();
-    }
     let letters = document.getElementById("letters");
     let nameThemeContent = letterCreation();
     let bodyLetters = letters.children[2];
@@ -16,19 +18,20 @@ function addNewLetter() {
     letter.children[2].innerHTML = nameThemeContent[0];
     letter.children[4].innerHTML = nameThemeContent[1];
     letter.children[5].innerHTML = nameThemeContent[2];
+    if (letterCounterOnPage >= maxLettersOnPage) {
+        stack.push(letter);
+        return;
+    }
     bodyLetters.insertAdjacentElement("beforeend", letter);
     bodyLetters.insertAdjacentHTML("beforeend", lineHTML);
-    letterCounter++;
+    letterCounterOnPage++;
 }
 
 function openContentLetter(event) {
     let letter = event.target;
-    letter.style.animation = 'none';
-    console.log(letter);
     let letters = document.getElementById("letters");
     let bodyLetters = letters.children[2];
     let contentLetter = createElementFromHTML(contentLetterHTML);
-    console.log(contentLetter);
     contentLetter.children[1].children[1].innerHTML = letter.children[2].innerHTML;
     contentLetter.children[1].children[0].innerHTML = letter.children[4].innerHTML;
     contentLetter.children[3].innerHTML = letter.children[5].innerHTML;
@@ -53,7 +56,9 @@ const letterHTML =
     "<div class='mail-body__letters-window__body__letter' onclick='openContentLetter(event)'>\n" +
     "    <label class='check'>\n" +
     "        <input class='check__input' type='checkbox'>\n" +
-    "        <span class='check__box'></span>\n" +
+    "        <div class='check__box'>" +
+    "            <div class='check__box__border'></div>\n" +
+    "        </div>\n" +
     "    </label>\n" +
     "    <div class='mail-body__letters-window__body__letter__photo'></div>\n" +
     "    <div class='mail-body__letters-window__body__letter__author'></div>\n" +

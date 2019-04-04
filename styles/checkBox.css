@@ -7,15 +7,30 @@
 .check__box {
     display: inline-block;
     vertical-align: middle;
-    width: 16px;
-    height: 16px;
-    box-shadow: 0 0 0 1px #e2e2e2;
-    border-radius: 1px;
+    width: 52px;
+    height: 100%;
     background-color: white;
     cursor: pointer;
 }
 
+.check__box:before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+}
 
-.check__input:checked + .check__box {
+.check__box__border {
+    display: inline-block;
+    vertical-align: middle;
+    width: 16px;
+    height: 16px;
+    margin-left: 20px;
+    box-shadow: 0 0 0 1px #e2e2e2;
+    border-radius: 1px;
+}
+
+
+.check__input:checked + .check__box .check__box__border {
     background-image: url(../images/checkMark.svg);
 }

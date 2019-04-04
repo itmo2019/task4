@@ -1,9 +1,7 @@
-let letterCounter = 0;
-
-function mainCheckBoxClicked(event) {
+function mainCheckBoxClicked() {
     let letters = document.getElementById("letters");
     let bodyLetters = letters.children[2];
-    let inputCheckbox = event.target.previousElementSibling;
+    let inputCheckbox = document.getElementById("mainCheckbox");
     for (let i = 0; i < bodyLetters.childElementCount; i++) {
         if (i % 2 === 0) {
             bodyLetters.children[i].children[0].children[0].checked = !inputCheckbox.checked;
@@ -25,24 +23,16 @@ function removeCheckedLetters() {
                 bodyLetters.children[i].addEventListener('transitionend', function () {
                     bodyLetters.removeChild(this);
                 });
-                letterCounter--;
+                letterCounterOnPage--;
             }
         }
     }
-
-    if (letterCounter === 0) {
-        let mainCheckbox = document.getElementById("mainCheckbox");
-        if (mainCheckbox.checked) {
-            mainCheckbox.checked = false;
+    if (letterCounterOnPage < maxLettersOnPage) {
+        while (letterCounterOnPage < maxLettersOnPage && stack.length > 0) {
+            bodyLetters.insertAdjacentElement("beforeend", stack.pop());
+            bodyLetters.insertAdjacentHTML("beforeend", lineHTML);
+            letterCounterOnPage++;
         }
     }
-}
-
-function removeLastLetter() {
-    let letters = document.getElementById("letters");
-    let bodyLetters = letters.children[2];
-    let lastIndex = bodyLetters.childElementCount - 2;
-    bodyLetters.removeChild(bodyLetters.children[lastIndex + 1]);
-    bodyLetters.removeChild(bodyLetters.children[lastIndex]);
-    letterCounter--;
+    document.getElementById("mainCheckbox").checked = false;
 }

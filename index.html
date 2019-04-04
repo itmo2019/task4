@@ -57,12 +57,15 @@
         <header class="mail-body__letters-window__header">
             <label class="check">
                 <input id="mainCheckbox" class="check__input" type="checkbox">
-                <span class="check__box" onclick='mainCheckBoxClicked(event)'></span>
+                <div class="check__box" onclick='mainCheckBoxClicked()'>
+                    <div class='check__box__border'></div>
+                </div>
             </label>
             <button class="mail-body__letters-window__header__button">Переслать</button>
-            <button class="mail-body__letters-window__header__button" onclick="removeCheckedLetters()">Удалить</button>
-            <button class="mail-body__letters-window__header__button">Это спам!</button>
-            <button class="mail-body__letters-window__header__button">Прочитано</button>
+            <button class="mail-body__letters-window__header__button shift" onclick="removeCheckedLetters()">Удалить
+            </button>
+            <button class="mail-body__letters-window__header__button shift">Это спам!</button>
+            <button class="mail-body__letters-window__header__button shift">Прочитано</button>
         </header>
         <div class="line"></div>
         <div class="mail-body__letters-window__body"></div>
@@ -70,10 +73,45 @@
         <footer class="mail-body__letters-window__footer">
             <a class="mail-body__letters-window__footer__a" target="_blank">Помощь и обратная связь</a>
             <a class="mail-body__letters-window__footer__a" target="_blank">Реклама</a>
-            <a class="mail-body__letters-window__footer__a" target="_blank" href="https://yandex.ru/">&copy; 2001 - 2018, Яндекс</a>
+            <a class="mail-body__letters-window__footer__a" target="_blank" href="https://yandex.ru/">&copy; 2001 -
+                2018, Яндекс</a>
         </footer>
     </div>
 </main>
+
+<template id="letterHTML">
+    <div class='mail-body__letters-window__body__letter' onclick='openContentLetter(event)'>
+        <label class='check'>
+            <input class='check__input' type='checkbox'>
+            <div class='check__box'>
+                <div class='check__box__border'></div>
+            </div>
+        </label>
+        <div class='mail-body__letters-window__body__letter__photo'></div>
+        <div class='mail-body__letters-window__body__letter__author'></div>
+        <div class='mail-body__letters-window__body__letter__readed'></div>
+        <div class='mail-body__letters-window__body__letter__theme'></div>
+        <div class='mail-body__letters-window__body__letter__content'></div>
+        <div class='mail-body__letters-window__body__letter__data'>
+            <time datetime='2019-03-01'>3 мар</time>
+        </div>
+    </div>
+    <div class='line'></div>
+</template>
+<template id="lineHTML">
+    <div class='line'></div>
+</template>
+<template id="contentLetterHTML">
+    <div class='content-letter'>
+        <div class='content-letter__close' onclick='closeContentLetter()'></div>
+        <header class='content-letter__header'>
+            <div class='content-letter__header__theme'></div>
+            <div class='content-letter__header__author'></div>
+        </header>
+        <div class='line'></div>
+        <div class='content-letter__body'></div>
+    </div>
+</template>
 </body>
 <script src="scripts/letterCreation.js"></script>
 <script src="scripts/addNewLetter.js"></script>
