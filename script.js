@@ -20,7 +20,7 @@ function selectCheckbox(checkbox) {
     if (checkbox.checked) {
         if (!anyCheckboxIsActive) {
             let deleteButton = document.getElementById('delete-messages');
-            deleteButton.style.cursor = 'pointer';
+            deleteButton.classList.add('cursor-pointer');
         }
         anyCheckboxIsActive = true;
     } else {
@@ -32,7 +32,7 @@ function selectCheckbox(checkbox) {
         }
         anyCheckboxIsActive = false;
         let deleteButton = document.getElementById('delete-messages');
-        deleteButton.style.cursor = 'text';
+        deleteButton.classList.remove('cursor-pointer');
     }
 }
 
@@ -45,9 +45,9 @@ function selectAll(selectAllCheckbox) {
 
     let deleteButton = document.getElementById('delete-messages');
     if (!anyCheckboxIsActive) {
-        deleteButton.style.cursor = 'text';
+        deleteButton.classList.remove('cursor-pointer');
     } else {
-        deleteButton.style.cursor = 'pointer';
+        deleteButton.classList.add('cursor-pointer');
     }
 }
 
@@ -89,7 +89,7 @@ function deleteSelectedMessages() {
     anyCheckboxIsActive = false;
     document.getElementById('check-all').checked = false;
     let deleteButton = document.getElementById('delete-messages');
-    deleteButton.style.cursor = 'text';
+    deleteButton.classList.remove('cursor-pointer');
 }
 
 function openMessage(message) {

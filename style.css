@@ -205,6 +205,11 @@ body {
     height: 40px;
     display: inline-block;
     vertical-align: middle;
+    cursor: pointer;
+}
+
+.cursor-pointer {
+    cursor: pointer;
 }
 
 .messages-list {
