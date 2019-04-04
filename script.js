@@ -5,6 +5,8 @@ let months = ['январь', 'февраль', 'март', 'апрель', 'м�
 
 let anyCheckboxIsActive = false;
 let idToHtmlMap = new Map();
+let messagesPerPage = 6;
+let overflowMessages = [];
 
 let timeoutUpper = 10 * 60 * 1000;
 let timeoutLower = 5 * 60 * 1000;
@@ -62,8 +64,14 @@ function newRandomMessage() {
 
 function newMail() {
     let messagesList = document.querySelector('.messages-list');
-    if (messagesList.children.length > 29) {
-        messagesList.removeChild(messagesList.children[29]);
+    if (messagesList.children.length >= messagesPerPage) {
+        for (let index = messagesList.children.length - 1; index >= messagesPerPage - 1; index--) {
+            let message = messagesList.children[index];
+            message.classList.add("to-delete");
+            setTimeout(() => {
+                messagesList.removeChild(message)
+            }, 1500);
+        }
     }
     let newMessage = document.createElement('div');
     buildNewMessage(newMessage);
