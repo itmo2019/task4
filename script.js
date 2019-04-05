@@ -204,3 +204,7 @@ function buildNewMessage() {
     };
     return newMessage;
 }
+
+function makePretty() {
+    messagesPerPage = 7;
+}
