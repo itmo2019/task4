@@ -1,10 +1,7 @@
 .mail-body__letters-window__body__letter {
     height: calc(7.15% - 1px);
-    /*animation: swing 1s ease;*/
-    transition: opacity 1s linear;
-    font: 14px "Helvetica Neue", sans-serif;
+    font: 15px "Helvetica Neue", sans-serif;
     cursor: pointer;
-    margin: 0 3px;
 }
 
 .mail-body__letters-window__body__letter:before {

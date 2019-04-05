@@ -12,74 +12,43 @@ let stack = [];
 
 function addNewLetter() {
     let letters = document.getElementById("letters");
-    let nameThemeContent = letterCreation();
+    let authorThemeContent = letterCreation();
     let bodyLetters = letters.children[2];
-    let letter = createElementFromHTML(letterHTML);
-    letter.children[2].innerHTML = nameThemeContent[0];
-    letter.children[4].innerHTML = nameThemeContent[1];
-    letter.children[5].innerHTML = nameThemeContent[2];
+    let letter = document.querySelector('#letterHTML');
+    letter.content.querySelector('.mail-body__letters-window__body__letter__author').textContent = authorThemeContent[0];
+    letter.content.querySelector('.mail-body__letters-window__body__letter__theme').textContent = authorThemeContent[1];
+    letter.content.querySelector('.mail-body__letters-window__body__letter__content').textContent = authorThemeContent[2];
+    let letterClone = document.importNode(letter.content, true);
     if (letterCounterOnPage >= maxLettersOnPage) {
-        stack.push(letter);
+        stack.push(letterClone);
         return;
     }
-    bodyLetters.insertAdjacentElement("beforeend", letter);
-    bodyLetters.insertAdjacentHTML("beforeend", lineHTML);
+    bodyLetters.appendChild(letterClone);
     letterCounterOnPage++;
 }
 
 function openContentLetter(event) {
     let letter = event.target;
+    if (!letter.type) {
+        return;
+    }
     let letters = document.getElementById("letters");
     let bodyLetters = letters.children[2];
-    let contentLetter = createElementFromHTML(contentLetterHTML);
-    contentLetter.children[1].children[1].innerHTML = letter.children[2].innerHTML;
-    contentLetter.children[1].children[0].innerHTML = letter.children[4].innerHTML;
-    contentLetter.children[3].innerHTML = letter.children[5].innerHTML;
+    let contentLetter = document.querySelector('#contentLetterHTML');
+    contentLetter.content.querySelector('.content-letter__header__author').textContent =
+        letter.querySelector('.mail-body__letters-window__body__letter__author').textContent;
+    contentLetter.content.querySelector('.content-letter__header__theme').textContent =
+        letter.querySelector('.mail-body__letters-window__body__letter__theme').textContent;
+    contentLetter.content.querySelector('.content-letter__body').textContent =
+        letter.querySelector('.mail-body__letters-window__body__letter__content').textContent;
     bodyLetters.style.display = 'none';
-    bodyLetters.insertAdjacentElement("afterend", contentLetter);
+    let cloneContentLetter = document.importNode(contentLetter.content, true);
+    letters.insertBefore(cloneContentLetter, bodyLetters);
 }
 
 function closeContentLetter() {
     let letters = document.getElementById("letters");
-    let bodyLetters = letters.children[2];
-    letters.removeChild(letters.children[3]);
+    let bodyLetters = letters.children[3];
+    letters.removeChild(letters.children[2]);
     bodyLetters.style.display = "block";
 }
-
-function createElementFromHTML(htmlString) {
-    var div = document.createElement('div');
-    div.innerHTML = htmlString.trim();
-    return div.firstChild;
-}
-
-const letterHTML =
-    "<div class='mail-body__letters-window__body__letter' onclick='openContentLetter(event)'>\n" +
-    "    <label class='check'>\n" +
-    "        <input class='check__input' type='checkbox'>\n" +
-    "        <div class='check__box'>" +
-    "            <div class='check__box__border'></div>\n" +
-    "        </div>\n" +
-    "    </label>\n" +
-    "    <div class='mail-body__letters-window__body__letter__photo'></div>\n" +
-    "    <div class='mail-body__letters-window__body__letter__author'></div>\n" +
-    "    <div class='mail-body__letters-window__body__letter__readed'></div>\n" +
-    "    <div class='mail-body__letters-window__body__letter__theme'></div>\n" +
-    "    <div class='mail-body__letters-window__body__letter__content'></div>\n" +
-    "    <div class='mail-body__letters-window__body__letter__data'>\n" +
-    "        <time datetime='2019-03-01'>3 мар</time>\n" +
-    "    </div>\n" +
-    "</div>\n" +
-    "<div class='line'></div>";
-
-const lineHTML = "<div class='line'></div>";
-
-const contentLetterHTML =
-    "<div class='content-letter'>\n" +
-    "    <div class='content-letter__close' onclick='closeContentLetter()'></div>\n" +
-    "    <header class='content-letter__header'>\n" +
-    "        <div class='content-letter__header__theme'></div>\n" +
-    "        <div class='content-letter__header__author'></div>\n" +
-    "    </header>\n" +
-    "    <div class='line'></div>\n" +
-    "    <div class='content-letter__body'></div>\n" +
-    "</div>";

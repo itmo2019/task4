@@ -22,6 +22,12 @@
     }
 }
 
-.start-transition {
+.start-transition-opacity {
+    transition: opacity 1s linear;
     opacity: 0;
+}
+
+.start-animation-swing {
+    animation: swing 1s ease normal forwards;
+    animation-iteration-count: 1;
 }
