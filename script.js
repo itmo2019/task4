@@ -103,7 +103,7 @@ function newMail(toEnd, msg) {
 			var letters = document.querySelectorAll('.letters__single_letter')
 			letters[MAX_MESSAGES].remove()
 		}
-		var hack = newLetter.offsetHeight
+		var forceReflow = newLetter.offsetHeight
 		newLetter.classList.remove('zeroOpacity')
 	} else {
 		letters.appendChild(newLetter)
