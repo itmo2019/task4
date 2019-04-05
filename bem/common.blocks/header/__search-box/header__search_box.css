@@ -1,14 +1,14 @@
 .header__search-box {
-    display: inline-block;
-    vertical-align: top;
-    margin-left: 114px;
-    width: 300px;
-    height: 32px;
-    opacity: 0.5;
-    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.2);
+  display: inline-block;
+  width: 300px;
+  height: 32px;
+  margin-left: 114px;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.2);
+  opacity: 0.5;
+  vertical-align: top;
 }
 
 .header__search-box::-webkit-search-cancel-button {
-    opacity: 0.15;
-    margin-right: 10px;
+  margin-right: 10px;
+  opacity: 0.15;
 }

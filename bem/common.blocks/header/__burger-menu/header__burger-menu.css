@@ -1,8 +1,8 @@
 .header__burger-menu {
-    display: inline-block;
-    vertical-align: top;
+  display: inline-block;
+  width: 20px;
 
-    height: 30px;
-    width: 20px;
-    padding-top: 2px;
+  height: 30px;
+  padding-top: 2px;
+  vertical-align: top;
 }

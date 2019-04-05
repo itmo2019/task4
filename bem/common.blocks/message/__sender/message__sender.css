@@ -1,11 +1,11 @@
 .message__sender {
-    margin-left: 10px;
-    padding-top: 12px;
+  overflow: hidden;
+  width: 25%;
 
-    min-width: 155px;
-    width: 25%;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-    float: left;
+  min-width: 155px;
+  padding-top: 12px;
+  margin-left: 10px;
+  float: left;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }

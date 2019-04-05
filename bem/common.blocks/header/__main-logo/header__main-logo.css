@@ -1,12 +1,12 @@
 .header__main-logo {
-    /*position: absolute;*/
-    /*left: 53px;*/
-    display: inline-block;
-    vertical-align: top;
+  /*position: absolute;*/
+  /*left: 53px;*/
+  display: inline-block;
+  width: 153px;
+  height: 31px;
 
-    margin-left: 11px;
-    width: 153px;
-    height: 31px;
+  margin-left: 11px;
 
-    cursor: pointer;
+  cursor: pointer;
+  vertical-align: top;
 }

@@ -1,19 +1,19 @@
 .main-menu__item {
-    padding: 2px 0 2px 10px;
+  overflow: hidden;
+  max-width: 147px;
+  max-height: 22px;
+  padding: 2px 0 2px 10px;
 
-    text-overflow: ellipsis;
-    max-height: 22px;
-    max-width: 147px;
-    overflow: hidden;
-    white-space: nowrap;
+  cursor: pointer;
 
-    cursor: pointer;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .main-menu__item:hover {
-    border-radius: 3px;
-    background-color: #cdd6e4;
+  background-color: #cdd6e4;
+  border-radius: 3px;
+  color: #555555;
 
-    font-weight: bold;
-    color: #555555;
+  font-weight: bold;
 }

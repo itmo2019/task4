@@ -1,11 +1,11 @@
 .footer__item {
-    display: inline-block;
-    padding: 8px 20px 0 0;
+  display: inline-block;
+  overflow: hidden;
 
-    max-width: 30%;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
+  max-width: 30%;
+  padding: 8px 20px 0 0;
 
-    cursor: pointer;
+  cursor: pointer;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }

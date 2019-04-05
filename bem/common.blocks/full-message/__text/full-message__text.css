@@ -1,10 +1,10 @@
 .full-message__text {
-    font-family: serif;
-    font-size: 15px;
-    color: #000;
+  overflow: auto;
+  max-height: 80%;
 
-    padding: 0 30px 30px 30px;
-    max-height: 80%;
-    overflow: auto;
-    white-space: normal;
+  padding: 0 30px 30px 30px;
+  color: #000;
+  font-family: serif;
+  font-size: 15px;
+  white-space: normal;
 }

@@ -1,17 +1,17 @@
 .message__unread-dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 10px;
+  width: 10px;
+  height: 10px;
+  margin-top: 14px;
+  margin-left: 20px;
+  background-color: #6287bd;
+  border-radius: 10px;
 
-    float: left;
-    margin-left: 20px;
-    margin-top: 14px;
-    background-color: #6287bd;
+  cursor: pointer;
 
-    cursor: pointer;
-    visibility: hidden;
+  float: left;
+  visibility: hidden;
 }
 
 .message__unread-dot.message_unread {
-    visibility: visible;
+  visibility: visible;
 }

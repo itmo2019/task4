@@ -1,6 +1,6 @@
 .full-message__picture {
-    float: right;
-    shape-outside:circle();
-    height: 300px;
-    width: 300px;
+  width: 300px;
+  height: 300px;
+  float: right;
+  shape-outside: circle();
 }

@@ -1,9 +1,8 @@
 .full-message {
-    display: none;
-    position: absolute;
-    top: 31px;
+  position: absolute;
+  top: 38px;
 
-    height: 87%;
-    background-color: #fff;
-    z-index: 100;
+  display: none;
+
+  height: 87%;
 }
