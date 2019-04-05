@@ -86,8 +86,7 @@ function newMail() {
             break;
         }
     }
-    let newMessage = document.createElement('div');
-    buildNewMessage(newMessage);
+    let newMessage = buildNewMessage();
 
     messagesListActualSize++;
     messagesList.insertBefore(newMessage, messagesList.children[0]);
@@ -155,7 +154,7 @@ function closeMessage() {
     messagesList.style.display = "block";
 }
 
-function buildNewMessage(newMessage) {
+function buildNewMessage() {
     let currentDate = new Date();
 
     let id = currentDate.getTime();
@@ -166,67 +165,42 @@ function buildNewMessage(newMessage) {
 
     idToHtmlMap.set(id.toString(), hiddenHtml);
 
+    let templateClone = document.importNode(document.querySelector('#message-template').content, true);
+    let newMessage = templateClone.querySelector('.message');
     newMessage.id = id;
-    newMessage.classList.add('message');
-    newMessage.classList.add('to-create');
 
-    let checkboxLabel = document.createElement('label');
-    checkboxLabel.classList.add('select-message__checkbox-label');
+    let checkboxLabel = newMessage.querySelector('.select-message__checkbox-label');
     checkboxLabel.setAttribute('for', 'checkbox-' + id);
     checkboxLabel.onclick = function () {
         window.event.stopPropagation();
     };
 
-    let checkbox = document.createElement('input');
-    checkbox.type = 'checkbox';
-    checkbox.classList.add('select-message__checkbox');
-    checkbox.classList.add('checkbox');
+    let checkbox = newMessage.querySelector('.select-message__checkbox');
     checkbox.onclick = function () {
         selectCheckbox(this);
     };
     checkbox.setAttribute('id', 'checkbox-' + id);
-    checkboxLabel.appendChild(checkbox);
-    newMessage.appendChild(checkboxLabel);
 
     let senderName = senders[Math.floor(Math.random() * senders.length)];
 
-    let senderLogo = document.createElement('div');
-    senderLogo.classList.add('message-info__sender-logo');
+    let senderLogo = newMessage.querySelector('.message-info__sender-logo');
     senderLogo.textContent = senderName[0];
-    newMessage.appendChild(senderLogo);
 
-    let sender = document.createElement('div');
-    sender.classList.add('message-info__sender');
-    sender.classList.add('bold');
+    let sender = newMessage.querySelector('.message-info__sender');
     sender.textContent = senderName;
-    newMessage.appendChild(sender);
 
-    let unreadMark = document.createElement('div');
-    unreadMark.classList.add('message-info__mark');
-    unreadMark.classList.add('unread-mark');
-    newMessage.appendChild(unreadMark);
-
-    let subject = document.createElement('div');
-    subject.classList.add('message-info__subject');
-    subject.classList.add('bold');
+    let subject = newMessage.querySelector('.message-info__subject');
     subject.textContent = subjects[langInd];
-
-    newMessage.appendChild(subject);
-
-    let dateContainer = document.createElement('div');
-    dateContainer.classList.add('message-info__date-container');
 
     let monthInd = currentDate.getMonth().toLocaleString('rus');
     month = months[monthInd];
     let day = currentDate.getDate();
 
-    let date = document.createElement('div');
-    date.classList.add('date-container__date');
+    let date = newMessage.querySelector('.date-container__date');
     date.textContent = day + ' ' + month.substr(0, 3);
 
-    dateContainer.appendChild(date);
-    newMessage.appendChild(dateContainer);
     newMessage.onclick = function () {
         openMessage(this);
     };
+    return newMessage;
 }
