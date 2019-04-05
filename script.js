@@ -5,8 +5,8 @@ const MAX_MESSAGE_TIMEOUT = 600000
 const MIN_MESSAGE_TIMEOUT = 10
 const MESSAGE_FREQUENCY_TIMEOUT = 300000
 
-var firstMessageTime = undefined
-var secondMessageTime = undefined
+var firstMessageTime
+var secondMessageTime
 
 window.onload = function () {
 	var to = getRandomFromRange(MIN_MESSAGE_TIMEOUT, MAX_MESSAGE_TIMEOUT)
