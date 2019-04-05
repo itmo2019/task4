@@ -1,8 +1,9 @@
-var letterCounter = 5;
-
 const newMessageTimeoutMax = minutesToMillis(5);
 const minNewMessageTimeout = 10;
 const maxNewMessageTimeout = minutesToMillis(10);
+
+var letterCounter = 5;
+let lastTimeout = randomInteger(minNewMessageTimeout, maxNewMessageTimeout);
 
 function newMail() {
     const mails = document.getElementById("letters");
@@ -20,14 +21,17 @@ function newMail() {
 }
 
 window.onload = function () {
-    setTimeout(newMessagePerRandomTime, randomInteger(minNewMessageTimeout, maxNewMessageTimeout));
+    setTimeout(newMessagePerRandomTime, lastTimeout);
+    let sendBtn = document.querySelector(".ya-big-button");
+    sendBtn.onclick = newMail;
 };
 
 function newMessagePerRandomTime() {
     newMail();
     let randomTimeout = randomInteger(minNewMessageTimeout, maxNewMessageTimeout);
     let timeout = Math.max(randomTimeout, newMessageTimeoutMax);
-    setTimeout(newMessagePerRandomTime, timeout)
+    lastTimeout = timeout;
+    setTimeout((newMessageTimeoutMax - lastTimeout) + newMessagePerRandomTime, timeout)
 }
 
 function removeLetters() {
