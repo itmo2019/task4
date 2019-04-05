@@ -112,6 +112,7 @@ body {
     letter-spacing: normal;
     color: #707070;
     font-family: HelveticaNeue;
+    
 }
 
 .actions__not-writing {
@@ -120,6 +121,7 @@ body {
     box-sizing: border-box;
     width: 147px;
     min-height: 22px;
+    padding-top: 4px;
     padding-left: 10px;
     color: #707070;
     border: 0;
@@ -329,7 +331,7 @@ body {
 }
 
 #letter__choose:checked+.letter__mail-opened {
-    display: inline-block;
+    display: inline-block; 
     margin-left: -42px;
 }
 
