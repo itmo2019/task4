@@ -1,0 +1,4 @@
+.mail__layout-letters {
+    height: calc(100% - 114px);
+    min-height: calc(100% - 114px);
+}

@@ -1,0 +1,7 @@
+.essay__paragraph {
+    size: 16pt;
+    border-style: groove;
+    text-indent: 30px;
+    word-spacing: 5px;
+    quotes: "'" "'";
+}

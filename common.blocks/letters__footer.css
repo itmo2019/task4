@@ -1,0 +1,10 @@
+.letters__footer {
+    background-color: #fff;
+    border-top: solid 1px #e2e2e2;
+    bottom: 0;
+    float: bottom;
+    height: 48px;
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+}

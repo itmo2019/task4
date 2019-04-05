@@ -1,0 +1,7 @@
+.letter_unread .letter__sender-name {
+    font-weight: bold;
+}
+
+.letter_unread .letter__preview {
+    font-weight: bold;
+}

@@ -1,0 +1,4 @@
+.single-line {
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+}

@@ -1,0 +1,5 @@
+.sidebar__menu-item_active {
+    background-color: #cdd6e4;
+    border-radius: 3px;
+    font-weight: bold;
+}

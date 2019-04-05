@@ -1,0 +1,27 @@
+html {
+    font-family: "Helvetica Neue", sans-serif;
+    min-height: 100%;
+}
+
+@keyframes delete_animation {
+    50% {
+        opacity: 0;
+    }
+    to {
+        height: 0;
+        border: 0;
+    }
+}
+
+@keyframes add_animation {
+    from {
+        opacity: 0;
+        height: 0;
+    }
+    50% {
+        height: 48px;
+    }
+    to {
+        opacity: 1;
+    }
+}

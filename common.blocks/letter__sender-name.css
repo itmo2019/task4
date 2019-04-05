@@ -1,0 +1,5 @@
+.letter__sender-name {
+    float: left;
+    overflow: hidden;
+    width: 200px;
+}

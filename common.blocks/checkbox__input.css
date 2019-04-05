@@ -1,0 +1,4 @@
+.checkbox__input {
+    filter: brightness(120%);
+    transform: scale(1.5);
+}

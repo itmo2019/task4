@@ -1,0 +1,11 @@
+.essay-close {
+    background: none;
+    border: none;
+    font-family: "Droid Sans", sans-serif;
+    font-size: 32px;
+    height: 32px;
+    position: absolute;
+    right: 32px;
+    top: 64px;
+    width: 32px;
+}

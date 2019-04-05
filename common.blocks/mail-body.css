@@ -1,0 +1,9 @@
+.mail-body {
+    background-color: #e5eaf0;
+    height: calc(100% - 28px);
+    margin: 0 0 0 214px;
+    min-height: calc(100% - 28px);
+    min-width: 768px;
+    overflow: visible;
+    padding: 0 22px 14px;
+}

@@ -1,0 +1,8 @@
+.sidebar__hamburger {
+    height: 32px;
+    left: 10px;
+    position: absolute;
+    top: 3px;
+    transform: scale(0.7);
+    width: 32px;
+}

@@ -1,0 +1,4 @@
+.letter__single-letter {
+    color: #fff;
+    transform: scaleX(0.7) scaleY(1.2);
+}

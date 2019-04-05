@@ -1,0 +1,14 @@
+.letter__sender-icon {
+    background-color: #f33;
+    border-color: #fff;
+    border-radius: 16px;
+    box-sizing: border-box;
+    float: left;
+    font-size: 24px;
+    height: 32px;
+    margin: 8px 10px;
+    min-width: 32px;
+    padding-top: 3px;
+    text-align: center;
+    width: 32px;
+}

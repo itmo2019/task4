@@ -1,0 +1,19 @@
+.letters__control-checkbox {
+    display: none;
+}
+
+.letters__control-checkbox:checked ~ .letters__inbox {
+    display: none;
+}
+
+.letters__control-checkbox:checked ~ .letter-inline-first-task {
+    display: block;
+}
+
+.letters__control-checkbox:not(checked) ~ .letters__inbox {
+    display: block;
+}
+
+.letters__control-checkbox:not(checked) ~ .letter-inline-first-task {
+    display: none;
+}

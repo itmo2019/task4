@@ -1,0 +1,6 @@
+.letter__preview {
+    float: left;
+    overflow: hidden;
+    padding: 0 10px;
+    width: calc(100% - 418px);
+}
