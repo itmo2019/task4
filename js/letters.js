@@ -23,7 +23,7 @@ function newMail() {
 window.onload = function () {
     setTimeout(newMessagePerRandomTime, lastTimeout);
     let sendBtn = document.querySelector(".ya-big-button");
-    sendBtn.onclick = newMail;
+    sendBtn.addEventListener("click", () => newMail());
 };
 
 function newMessagePerRandomTime() {
