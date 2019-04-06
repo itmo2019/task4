@@ -122,7 +122,12 @@ function closeMail() {
 
 function openMail(text, eventInfo) {
   if (eventInfo.target.className != 'mail__chooce') {
-    document.getElementById('mail-article__text-id').textContent = text;
+    document.getElementById('mail-article__text-id').innerHTML =
+      "<div>" +
+      text.split("\n")
+        .filter(s => s !== "")
+        .join("<br>")
+      + "</div>";
     switchMailBoxDisplay(false);
   }
 }
