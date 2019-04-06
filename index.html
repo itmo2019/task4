@@ -70,6 +70,30 @@
                                 </ul>
                             </div>
                         </div>
+                        <template id="new-mail">
+                            <div class="mail">
+                                <input class="mail__checkbox" id="mail-trigger${mailID}" type="checkbox">
+                                <div class="mail-title mail-title_unread mail-title_from-delete">
+                                    <input type="checkbox" class="mail-title__checkbox">
+                                    <div class="mail-title__img-wrapper">
+                                    </div>
+                                    <div class="mail-title__sender">${sender}</div>
+                                    <div class="mail-title__unread-flag"></div>
+                                    <label class="mail-title__title" for="mail-trigger${mailID}">${title}</label>
+                                    <time class="mail-title__date">${getDate()}</time>
+                                </div>
+                                <article class="mail-article">
+                                    <label class="mail-article__cross" for="mail-trigger${mailID}">
+                                        <img src="resources/mail_cross.png" alt="quiting cross" width="18px" height="18px">
+                                    </label>
+                                    <div class="article1">
+                                        <div></div>
+                                        <footer class="article1__footer"><a href="http://numbersapi.com" target="_blank">NUMBERSAPI</a></footer>
+                                    </div>
+                                    <footer class="mail-article__clearfix"></footer>
+                                </article>
+                            </div>
+                        </template>
                         <div class="mail">
                             <input class="mail__checkbox" id="mail-trigger0" type="checkbox">
                             <div class="mail-title mail-title_unread">
@@ -189,90 +213,74 @@
             
             function getLetter(mail) {
                 return Array.from(mail.children)
-                    .map(m => m.className.startsWith("mail-title") ? m : null)
-                    .reduce((n, m) => n || m);
+                    .map(m => m.classList.contains("mail-title") ? m : null)
+                    .reduce((n, m) => n || m)
             }
 
-            function getCheckBox(mail) {
-                return getLetter(mail).children[0];
-            }
+            var getCheckBox = mail => getLetter(mail).children[0]
 
-            mails = new Set(Array.from(document.getElementsByClassName("mail")));
+            var elementsOfClass = className => Array.from(document.getElementsByClassName(className))
 
-            var month = ['янв.', 'фев.', 'март.', 'апр.', 'май.', 'июн.', 'июл.', 'авг.', 'сен.', 'окт.', 'ноя.', 'дек.'];
+            mails = new Set(elementsOfClass("mail"))
+
+            var month = ['янв.', 'фев.', 'март.', 'апр.', 'май.', 'июн.', 'июл.', 'авг.', 'сен.', 'окт.', 'ноя.', 'дек.']
             function getDate() {
-                var temp = new Date();
-                return temp.getDate() + ' ' + month[temp.getMonth()];                
+                var temp = new Date()
+                return temp.getDate() + ' ' + month[temp.getMonth()]                
             }
 
-            var mailMaintainance = document.getElementsByClassName("mails-maintainance")[0];
-            var mailCounter = 2;
+            var mailMaintainances = elementsOfClass("mails-maintainance")
+            var mailCounter = 2
             function constructMailOnPage(sender, title, body) {
-                var mailID = mailCounter++;
+                var mailID = mailCounter++
 
-                var res = document.createElement('div');
-                res.className = "mail";
-                res.innerHTML = `
-                        <input class="mail__checkbox" id="mail-trigger${mailID}" type="checkbox">
-                        <div class="mail-title mail-title_unread" fromDelete>
-                            <input type="checkbox" class="mail-title__checkbox">
-                            <div class="mail-title__img-wrapper">
-                            </div>
-                            <div class="mail-title__sender">${sender}</div>
-                            <div class="mail-title__unread-flag"></div>
-                            <label class="mail-title__title" for="mail-trigger${mailID}">${title}</label>
-                            <time class="mail-title__date">${getDate()}</time>
-                        </div>
-                        <article class="mail-article">
-                            <label class="mail-article__cross" for="mail-trigger${mailID}">
-                                <img src="resources/mail_cross.png" alt="quiting cross" width="18px" height="18px">
-                            </label>
-                            <div class="article1">
-                                ${body}
-                                <footer class="article1__footer"><a href="http://numbersapi.com" target="_blank">NUMBERSAPI</a></footer>
-                            </div>
-                            <footer class="mail-article__clearfix"></footer>
-                        </article>`;
-
-                mailMaintainance.insertBefore(res, mailMaintainance.children[1]);
-                var mail = getLetter(res);
+                res = document.getElementById("new-mail").content.children[0].cloneNode(true)
+                res.querySelector(".mail__checkbox").id=`mail-trigger${mailID}`
+                res.querySelector(".mail-title__title").setAttribute("for", `mail-trigger${mailID}`)
+                res.querySelector(".mail-article__cross").setAttribute("for", `mail-trigger${mailID}`)
+                res.querySelector(".mail-title__sender").innerHTML = sender
+                res.querySelector(".mail-title__title").innerHTML = title
+                res.querySelector(".mail-title__date").innerHTML = getDate()
+                res.querySelector(".article1").children[0].innerHTML = body
+                
+                mailMaintainances.forEach(m => m.insertBefore(res, m.children[2]))
+                var mail = getLetter(res)
                 setTimeout(() => {
-                    mail.setAttribute("toAppear", "");
-                }, 100);
+                    mail.classList.add("mail-title_to-appear")
+                }, 100)
                 setTimeout(() => { 
-                    mail.removeAttribute("fromDelete");
-                    mail.removeAttribute("toAppear");
-                }, 300);
-                mails.add(res);
+                    mail.classList.remove("mail-title_from-delete", "mail-title_to-appear")
+                }, 300)
+                mails.add(res)
             }
 
             document.getElementById("delete-button").addEventListener("click", () => {
                 Array.from(mails)
                     .filter(mail => getCheckBox(mail).checked)
                     .forEach(mail => { 
-                        mails.delete(mail);
-                        getLetter(mail).setAttribute("toDelete", "");
-                        setTimeout(() => mail.parentElement.removeChild(mail), 200);
-                    });
-            });
+                        mails.delete(mail)
+                        getLetter(mail).classList.add("mail-title_to-delete")
+                        setTimeout(() => mail.parentElement.removeChild(mail), 200)
+                    })
+            })
 
-            var selectAllCheckBox = document.getElementById("select-all");
+            var selectAllCheckBox = document.getElementById("select-all")
             selectAllCheckBox.addEventListener("click", () => 
-                mails.forEach(mail => getCheckBox(mail).checked = selectAllCheckBox.checked));
+                mails.forEach(mail => getCheckBox(mail).checked = selectAllCheckBox.checked))
 
             var requestsCounter = 0
             function addMail() {
                 if (mails.size < 30) {
-                    var xhr = new XMLHttpRequest();
-                    xhr.open('GET', `http://numbersapi.com/${requestsCounter}`, true);
-                    xhr.send();
+                    var xhr = new XMLHttpRequest()
+                    xhr.open('GET', `http://numbersapi.com/${requestsCounter}`, true)
+                    xhr.send()
                     xhr.onreadystatechange = function() {
                         if (xhr.readyState != xhr.DONE) {return} 
                         if (xhr.status != 200) {
-                            constructMailOnPage("mysterious stranger", "Что говорить, когда нечего говорить?", "Нет соединения. Inception - ЧБУ YouTube");
+                            constructMailOnPage("mysterious stranger", "Что говорить, когда нечего говорить?", "Нет соединения. Inception - ЧБУ YouTube")
                         } else {
-                            constructMailOnPage("mysterious stranger", `Did ya know?.. About ${requestsCounter}`, xhr.responseText);
-                            requestsCounter++;
+                            constructMailOnPage("mysterious stranger", `Did ya know?.. About ${requestsCounter}`, xhr.responseText)
+                            requestsCounter++
                         }
                     }
                 }
@@ -280,13 +288,13 @@
 
             function newMailTimeoutSetup() {
                 setTimeout(() => {
-                    addMail(); 
+                    addMail()
                     newMailTimeoutSetup()
-                }, (Math.random() + 1) * 5*60*1000);
+                }, (Math.random() + 1) * 5*60*1000)
             }
-            newMailTimeoutSetup();
+            newMailTimeoutSetup()
 
-            document.getElementById("write-mail").addEventListener("click", addMail);
+            document.getElementById("write-mail").addEventListener("click", addMail)
             
         </script>
     </body>

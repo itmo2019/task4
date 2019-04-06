@@ -6,7 +6,23 @@
     position: relative;
 }
 
-.mail-title[toDelete],
+.mail-title.mail-title_to-delete,
+.mail-title.mail-title_to-appear {
+    transition-duration: 200ms;
+}
+
+.mail-title.mail-title_from-delete,
+.mail-title.mail-title_to-delete {
+    height: 0;
+    border: 0;
+}
+
+.mail-title.mail-title_to-appear,
+.mail-title {
+    height: 39px;
+    border-bottom: 1px solid #e2e2e2;
+}
+/* .mail-title[toDelete],
 .mail-title[toAppear] {
     transition-duration: 200ms;
 }
@@ -21,7 +37,7 @@
 .mail-title {
     height: 39px;
     border-bottom: 1px solid #e2e2e2;
-}
+} */
 
 .mail-title__img-wrapper {
     width: 30px;
