@@ -42,19 +42,22 @@ function deleteChosen() {
 
 
 function addNewMail() {
-    let newItem = document.createElement("li");
-    newItem.innerHTML = mailHtml;
-    let list = document.getElementById("mail-list");
-    let firstElem = document.getElementsByClassName("mail-list__elem")[0];
-    if (firstElem != null) {
-        let ref = firstElem.childNodes[1].childNodes[3];
-        // ref.setAttribute("href", "index.html");
-        firstElem.childNodes[1].childNodes[3].replaceWith(ref);
-    }
-    list.insertBefore(newItem, list.childNodes[0]);
-    setTimeout(function() {
-        newItem.className = newItem.className + " mail-list__elem mail-list__elem_view";
-    }, 10);
+    let timeInterval = generateRandomTime(10, 10 * 60 * 1000);
+    setTimeout(function () {
+        let newItem = document.createElement("li");
+        newItem.innerHTML = mailHtml;
+        let list = document.getElementById("mail-list");
+        let firstElem = document.getElementsByClassName("mail-list__elem")[0];
+        if (firstElem != null) {
+            let ref = firstElem.childNodes[1].childNodes[3];
+            firstElem.childNodes[1].childNodes[3].replaceWith(ref);
+        }
+        list.insertBefore(newItem, list.childNodes[0]);
+        setTimeout(function() {
+            newItem.className = newItem.className + " mail-list__elem mail-list__elem_view";
+        }, 10);
+    }, timeInterval)
+
 }
 
 
@@ -62,4 +65,4 @@ function generateRandomTime(leftBorder, rightBorder) {
     return Math.random() * (rightBorder - leftBorder) + leftBorder
 }
 
-setInterval(addNewMail, generateRandomTime(10, 10000));
+setInterval(addNewMail, 5 * 60 * 1000);
