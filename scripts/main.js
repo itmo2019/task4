@@ -80,12 +80,6 @@ const getRand = (from, to) => {
   return Math.floor(Math.random() * (to - from + 1) ) + from;
 }
 
-const possibleMailTitles = [
-    'Это новое письмо!',
-    'Попробуйте еще больше этих свежих и сочных французских булочек',
-    'ШОК! Афоня TV выращивает Льва и Тигра!'
-]
-
 const possibleMonths = ['янв', 'фев', 'мар', 'апр', 'май', 'июн', 'июл', 'авг', 'сен', 'окт', 'ноя', 'дек']
 
 const getFirstByClass = (className /*: string*/) => {
@@ -104,13 +98,13 @@ const composeNewMessage = async (msgId /*: number*/) => {
     .paras(getRand(2, 10))
     .format(RANDOM_TEXT_FORMATS.JSON)
     .get()
-  const title      = possibleMailTitles[getRand(0, possibleMailTitles.length - 1)]
-  const day        = getRand(1, 28)
-  const month      = possibleMonths[getRand(0, possibleMonths.length - 1)] 
   
   if (!paragraphs) {
     throw new Error('Failure to generate new message text')
   }
+  const title = paragraphs[0].split(' ').slice(0, getRand(4, 10)).join(' ')
+  const day        = getRand(1, 28)
+  const month      = possibleMonths[getRand(0, possibleMonths.length - 1)]
   
   EMailsStorage[msgId] = {
     hasCat,
@@ -122,7 +116,7 @@ const composeNewMessage = async (msgId /*: number*/) => {
       <div class="email__mail-date">${day} ${month}</div>
       <input data-msg="${msgId}" type="checkbox" class="mail-screen__checkbox"/>
       <img class="email__sender-photo" src="images/yandex-logo.png" />
-      <div class="email__sender-part email__sender-name">Команда Яндекс.Письма</div>
+      <div class="email__sender-part email__sender-name">Команда Яндекс.Мясо</div>
       <div class="email__unread-flag"></div>
       <div class="email__sender-part email__sender-title">${title}</div>
     </div>
