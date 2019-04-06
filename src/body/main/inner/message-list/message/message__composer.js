@@ -1,6 +1,3 @@
-let messageTextArray = ['Водопад звонит из города, в котором никогда не слышно ветра.', 'Голос прерывается, плачет.', 'Мое горло моментально перехватывает.', '«Что случилось?» Треск в трубке, потом абсолютная тишина и опустошающие слова: «Мама умерла».', 'Для меня эта сцена происходит в другой декорации – я по-субботнему расслаблен, гуляю по заброшенной стройке недалеко от дома, мелкие камни осыпаются из-под ног, и солнце светит мне прямо в глаза.', 'Но то, что случилось, равняет наши условия.', 'Тети Эльзы больше нет.\n' +
-'Две недели назад у нее случился инсульт, сразу после традиционного утреннего чая с гвоздикой.', 'Но она быстро пришла в себя.', 'Будучи в больнице, развлекала соседей по палате еврейскими анекдотами и требовала у дочери хумуса с солеными огурцами.', 'Водопад рассказывала мне о капризах нашей любимицы, я хохотал, скучал по тете Эльзе.', '«Если хумуса хочет, значит, точно оклемается! Тем более у нее речь восстановилась, только нога отнялась».', 'Я дал слово, что скоро приеду и мы все вместе пойдем к морю.', 'Будем там есть сочные нектарины, запивать их вином из шиповника, собирать ракушки.', 'Я собирался к самой мудрой женщине моей жизни – она не дождалась.', 'Время пришло, а человека нет.', 'Остались воспоминания, главный ингредиент человеческой судьбы, и ее письма.\n' +
-'Тетя Эльза часто писала мне.', 'Размашистый, мелкий почерк.', 'Чуть ли не через каждое предложение еврейский мат.', 'Я всегда удивлялся, как виртуозно соединяет тетя язык ученых книг с языком подворотен.', 'Необычны были строки из последнего письма – о том, что мир, который для нас привычен, не более чем оболочка, и здесь на всех одни законы.', 'Мы родились в этом мире, выросли, даже счастливыми бываем.', 'Но еще есть изнанка этого мира, куда попадают с самого детства те, кого оболочка не приняла.', 'И такие люди создают свое пространство, ни на что здесь не похожее.', 'Их часто называют белыми воронами, потому что они продолжают противостоять материальному миру.', 'А мы – сдались.', 'И только пытаемся «держать марку» в своем поражении… Так в точку это было сказано.', 'Я тогда подумал, каким же идиотом был, пытаясь вписаться в окружение, чтобы и у меня был в жизни стандартный набор: друзья, кошелек, отношения, флирт на стороне.', 'И как меня утомляло вечное желание во всем увидеть суть.', 'Прошло.'];
 let messageContact = ["Яндекс.Облако", "Яндекс.Переводчик", "Яндекс.Драйв", "Яндекс.Почта", "Яндекс.Путешествия", "Яндекс.Дзен", "Яндекс.Транспорт",
     "Яндекс.Погода", "Яндекс.Навигатор", "Яндекс.Браузер", "Яндекс.Музыка", "Яндекс.Алиса"];
 
@@ -19,26 +16,40 @@ function randomizeDate() {
     return mailDate + " " + mailMonth;
 }
 
-function randomizeText(textArray) {
-    let resultText = '';
-    for (let i = 0; i < textArray.length/2; i++) {
-        resultText += textArray[randomizeArrayNumber(textArray)] + ' ';
-    }
-    return resultText;
+async function randomizeText() {
+    let requestText = await fetch("https://baconipsum.com/api/?type=meat&paras=" + randomizeNumber(3, 5));
+    let resultText = await requestText.json();
+    return resultText[0];
 }
 
-function composer() {
-    return '<div class="message message_not-read" id="message__id">\n' +
-        '<label>\n' +
-        '<input class="checkbox checkbox_message" type="checkbox">\n' +
-        '</label>\n' +
-        '<label for="message-list__cutter" onclick="formMessagePage(this)">\n' +
-        '<img class="message__logo" src="body/main/inner/message-list/message/message__logo-'+randomizeNumber(0, 3)+'.png">\n' +
-        '<div class="message__contact">' + messageContact[randomizeArrayNumber(messageContact)] + '</div>\n' +
-        '<div class="message__read-icon"></div>\n' +
-        '<div class="message__subject">' + randomizeText(messageTextArray) + '</div>\n' +
-        '<div class="message__date">' + randomizeDate() + '</div>\n' +
-        '</label>\n' +
-        '</div>\n' +
-        '<hr class="hr">';
+async function composer() {
+    let text = `<div class="message message_not-read" id="message__id">
+        <label>
+        <input class="checkbox checkbox_message" type="checkbox">
+        </label>
+        <label for="message-list__cutter" onclick="formMessagePage(this)">
+        <img class="message__logo" src="body/main/inner/message-list/message/message__logo-` + randomizeNumber(0, 3) + `.png">
+        <div class="message__contact">` + messageContact[randomizeArrayNumber(messageContact)] + `</div>
+        <div class="message__read-icon"></div>
+        <div class="message__subject">` + await randomizeText() + `</div>
+        <div class="message__date">` + randomizeDate() + `</div>
+        </label>
+        </div>
+        <hr class="hr">`;
+    return text;
 }
+
+// async function composer2() {
+//     let mail = document.getElementById("message__template");
+//     let backup = mail.cloneNode();
+//     document.getElementById("message__template").querySelector("message__logo").setAttribute('src', "body/main/inner/message-list/message/message__logo-"+randomizeNumber(0, 3)+".png");
+//     document.getElementById("message__template").querySelector(".message__contact").innerHTML = messageContact[randomizeArrayNumber(messageContact)];
+//     // ' + messageContact[randomizeArrayNumber(messageContact)] + '
+//     document.getElementById("message__template").querySelector(".message__subject").innerHTML = await randomizeText();
+//     // ' + randomizeText(messageTextArray) + '
+//     document.getElementById("message__template").querySelector(".message__date").innerHTML = randomizeDate();
+//     // ' + randomizeDate() + '
+//     let result = mail.innerHTML;
+//     mail = backup;
+//     return result;
+// }

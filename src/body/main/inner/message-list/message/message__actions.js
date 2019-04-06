@@ -5,11 +5,15 @@ function checkAll(toolbarCheckbox) {
     }
 }
 
-function newMailIncoming() {
-    let mails = document.getElementById("messages");
+async function newMail() {
+    let mailList = document.getElementById("messages");
+
     let mail = document.createElement("section");
-    mail.innerHTML = composer();
-    mails.insertBefore(mail, mails.firstChild);
+    mail.innerHTML = await composer();
+    mail.firstChild.id="message__id";
+
+    mailList.insertBefore(mail, mailList.firstChild);
+
     let GC = document.getElementById("message__id");
     setTimeout(() => {
         GC.classList.add("message_show")
@@ -36,7 +40,7 @@ function deleteMail() {
 
 function randomMailIncoming() {
     let randomTimer = Math.random() * (300000 - 10) + 10;
-    setTimeout(newMailIncoming, randomTimer);
+    setTimeout(newMail, randomTimer);
     setTimeout(randomMailIncoming, 300000 - randomTimer);
 }
 
@@ -47,48 +51,45 @@ let author = 'no author';
 
 function formCroissant() {
     author = 'История круассана'
-    text = '<img alt="Свежий круассан" class="message__image" src="body/main/inner/message-list/message/message__image.png" width="180">\n' +
-        'Мучные изделия в форме полумесяцев выпекались в Австрии по меньшей мере с XIII века. Но началом\n' +
-        'нынешней популярности круассанов можно считать 1839 год, когда австрийский артиллерийский офицер\n' +
-        'Август Цанг открыл в Париже «Венскую пекарню», где пекли такие булочки.\n' +
-        '<p>Существует легенда, что в 1683 году венский пекарь Петер Вендлер впервые сделал булочку в\n' +
-        'честь\n' +
-        'неуспеха турецкой осады Вены. Османское войско осадило Вену; пекари, работавшие по ночам и\n' +
-        'готовившие для горожан свежие булочки к утру, услышали шум от мотыг и кирок, — поняли, что\n' +
-        'турки\n' +
-        'делают подкоп под стенами города. Вовремя предупредив об этом солдат, они сорвали план\n' +
-        'врага.\n' +
-        '<p>По другой версии, спустя некоторое время после осады, шляхтичем Юрием Кульчицким в Вене была\n' +
-        'открыта первая знаменитая кофейня, в которой подавали круассаны в форме османского\n' +
-        'полумесяца и\n' +
-        'ароматный кофе по-восточному. Считается, что с тех пор эти необычные булочки стали очень\n' +
-        'популярны среди покупателей.\n' +
-        '<p>В 1770 году круассан впервые появился во Франции. Это случилось благодаря приезду из Вены\n' +
-        'Марии-Антуанетты и появлению вместе с ней в Париже «венской выпечки». Но венский и\n' +
-        'французский\n' +
-        'круассаны — это всё же два разных изделия. Ведь из Вены — только форма изделия, а изготовили\n' +
-        'его\n' +
-        'впервые из слоёного теста с маслом именно французские повара, и это случилось в начале XX\n' +
-        'века.\n' +
-        'В скором времени появилось целое «семейство» подобных дрожжевых и слоеных булочек, например,\n' +
-        'улитка с изюмом, слойка с яблочным пюре, слойка с шоколадом и т. д. В 2013 году\n' +
-        'антиправительственные повстанцы в Сирии запретили круассаны на контролируемой ими территории\n' +
-        'в\n' +
-        'Алеппо, объясняя свой запрет вышеупомянутой австрийской легендой'
+    text = `<img alt="Свежий круассан" class="message__image" src="body/main/inner/message-list/message/message__image.png" width="180">\n
+        Мучные изделия в форме полумесяцев выпекались в Австрии по меньшей мере с XIII века. Но началом
+        нынешней популярности круассанов можно считать 1839 год, когда австрийский артиллерийский офицер
+        Август Цанг открыл в Париже «Венскую пекарню», где пекли такие булочки.
+        <p>Существует легенда, что в 1683 году венский пекарь Петер Вендлер впервые сделал булочку в
+        честьнеуспеха турецкой осады Вены. Османское войско осадило Вену; пекари, работавшие по ночам и
+        готовившие для горожан свежие булочки к утру, услышали шум от мотыг и кирок, — поняли, что
+        турки делают подкоп под стенами города. Вовремя предупредив об этом солдат, они сорвали план врага.
+        <p>По другой версии, спустя некоторое время после осады, шляхтичем Юрием Кульчицким в Вене была
+        открыта первая знаменитая кофейня, в которой подавали круассаны в форме османского полумесяца и
+        ароматный кофе по-восточному. Считается, что с тех пор эти необычные булочки стали очень
+        популярны среди покупателей.
+        <p>В 1770 году круассан впервые появился во Франции. Это случилось благодаря приезду из Вены
+        Марии-Антуанетты и появлению вместе с ней в Париже «венской выпечки». Но венский и французский
+        круассаны — это всё же два разных изделия. Ведь из Вены — только форма изделия, а изготовили
+        его впервые из слоёного теста с маслом именно французские повара, и это случилось в начале XX
+        века.
+        В скором времени появилось целое «семейство» подобных дрожжевых и слоеных булочек, например,
+        улитка с изюмом, слойка с яблочным пюре, слойка с шоколадом и т. д. В 2013 году
+        антиправительственные повстанцы в Сирии запретили круассаны на контролируемой ими территории
+        в Алеппо, объясняя свой запрет вышеупомянутой австрийской легендой`
 }
 
 function formMessagePage(parent) {
-    text = parent.getElementsByClassName("message__subject").item(0).textContent;
-    author = parent.parentElement.getElementsByClassName("message__contact").item(0).textContent;
+    text = parent.querySelector('.message__subject').textContent;
+    author = parent.parentElement.querySelector('.message__contact').textContent;
 }
 
 function changeMessagePage(checkbox) {
     if (checkbox.checked == true) {
-        let content = document.getElementsByClassName("message__content").item(0);
-        content.getElementsByClassName("message__page").item(0).remove();
+        document.querySelector('.message__page').remove();
+        let content = document.querySelector('.message__content');
         let page = document.createElement("div");
-        page.className = "message__page";
-        page.innerHTML = '<p>От кого: ' + author + '</p>\n' + '<p>' + text + '</p>';
+        page.classList.add("message__page");
+        let page__author = document.createElement("p");
+        page__author.textContent = 'От кого: ' + author;
+        let page__text = document.createElement("p");
+        page__text.innerHTML = text;
+        page.innerHTML = page__author.outerHTML + page__text.outerHTML;
         content.appendChild(page);
     }
 }

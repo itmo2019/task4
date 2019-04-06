@@ -57,7 +57,7 @@
             <label>
                 <input class="checkbox" id="checkbox__toolbar" onclick="checkAll(this)" type="checkbox">
             </label>
-            <input class="toolbar__button" id="button__create-mail" onclick="newMailIncoming()" type="button"
+            <input class="toolbar__button" id="button__create-mail" onclick="newMail()" type="button"
                    value="Новое письмо">
             <input class="toolbar__button" type="button" value="Переслать">
             <input class="toolbar__button" id="button__delete-mail" onclick="deleteMail()" type="button"
@@ -146,5 +146,20 @@
         </footer>
     </div>
 </main>
+<template id="message__template">
+    <div class="message message_not-read">
+        <label>
+            <input class="checkbox checkbox_message" type="checkbox">
+        </label>
+        <label for="message-list__cutter" onclick="formMessagePage(this)">
+            <img class="message__logo">
+            <div class="message__contact"></div>
+            <div class="message__read-icon"></div>
+            <div class="message__subject"></div>
+            <div class="message__date"></div>
+        </label>
+    </div>
+    <hr class="hr">
+</template>
 </body>
 </html>
