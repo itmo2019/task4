@@ -429,6 +429,8 @@ body {
 .message-block__message-list {
     visibility: visible;
     position: relative;
+    max-height: 1230px;
+    overflow: hidden;
 }
 
 .message-block__message-list_hidden {

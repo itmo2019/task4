@@ -45,11 +45,11 @@
         console.log(r + " " + n);
         setTimeout(function () {
             sender(letters);
-            if (n < 30) {
+            //if (n < 30) {
                 n++;
                 k++;
                 addMessage(letters);
-            }
+            //}
         }, r * 1000);
     }
 </script>
@@ -86,7 +86,9 @@
         }
 
         function deleteMsg(msg) {
+            //msg.classList.add("message-block__deleted");
             msg.className = "message-block__deleted message-block__row message-block__central-row message-block_central-row-unread";
+            msg.parentNode.removeChild(msg);
         }
 
         function addMessageHtml(letterNum) {
@@ -95,9 +97,9 @@
 
             var newMessage = document.createElement('div');
             //newMessage.htmlFor = "hidden-message__chb";
-            newMessage.className = "message-block__row message-block__new-message message-block__central-row message-block__central-row_unread  flag";
+            newMessage.className = "message-block__row message-block__new-message message-block__central-row message-block__central-row_unread  message-block__new-message-before-anim";
             newMessage.innerHTML = "\n" +
-                //             "            <div class=\"message-block__row message-block__new-message message-block__central-row message-block__central-row_unread  flag\">\n" +
+                //             "            <div class=\"message-block__row message-block__new-message message-block__central-row message-block__central-row_unread  message-block__new-message-before-anim\">\n" +
                 "                \n" +
                 "                <div class=\"central-row__open-message_button\" id=\"" + k + "\" onclick=\"showMessage(this.id)\"></div>" +
                 "<label class=\"check\">\n" +
@@ -108,17 +110,25 @@
                 "                </div>\n" +
                 "                <div class=\"central-row__msg-sender\">Фридрих Ницше</div>\n" +
                 "                <div class=\"central-row__point\"></div>\n" +
-                "                <div class=\"central-row__msg-theme\">Глава " + (k + 1) + "</div>\n" +
+                "                <div class=\"central-row__msg-theme\">Глава " + (letterNum + 1) + "</div>\n" +
                 "                <div class=\"central-row__date\">6 авг</div>\n";
             // "            </div>";
-            let list = document.getElementsByClassName('message-block__message-list');
-            list[0].prepend(newMessage);
-
+            //let list = document.getElementsByClassName('message-block__message-list');
+            //list[0].prepend(newMessage);
+            document.querySelector('.message-block__message-list').prepend(newMessage);
 
         }
 
         function animAdd() {
-            document.getElementsByClassName("flag")[0].className = "new-message__appear  message-block__new-message message-block__row message-block__central-row message-block__central-row_unread message-block__new-message";
+            document.querySelector('.message-block__new-message-before-anim').className =
+                "new-message__appear  " +
+                "message-block__new-message " +
+                "message-block__row message-block__central-row message-block__central-row_unread";
+            //document.getElementsByClassName("message-block__new-message-before-anim")[0].className = "new-message__appear  message-block__new-message message-block__row message-block__central-row message-block__central-row_unread message-block__new-message";
+            //let new_m = document.querySelector('.message-block__new-message-before-anim');
+            //new_m.classList.add("new-message_appear");
+            //new_m.classList.remove("message-block__new-message-before-anim");
+
         }
 
         function addMessage() {
@@ -129,16 +139,20 @@
         }
 
         function setCheckBoxes() {
-            let topBox = document.getElementsByClassName("check__input")[0];
+            let topBox = document.querySelector('.check__input');
             var boxes = document.getElementsByClassName("check__input check__regular");
-            Array.from(boxes).forEach(function (box) {
+            let boxesArray = Array.from(boxes);
+            if (boxesArray.length > 30) {
+                boxesArray = boxesArray.slice(0, 30);
+            }
+            boxesArray.forEach(function (box) {
                 box.checked = topBox.checked;
             })
         }
 
         function showMessage(id) {
             // hide message list
-            let mesList = document.getElementsByClassName("message-block__message-list")[0];
+            let mesList = document.querySelector('.message-block__message-list');
             mesList.classList.add("message-block__message-list_hidden");
 
             // if message was unread- change class to read
@@ -149,7 +163,7 @@
             }
 
             // open message text
-            let mesText = document.getElementsByClassName("message-block__message-text")[0];
+            let mesText = document.querySelector('.message-block__message-text');
             mesText.innerHTML = "<button class=\"message-text__hide_button\" onclick=\"showMessageList()\">Hide</button>" + "<div class='message-text__inner-text'>" + lettersGlobal[letterMap.get(id)] + "</div>";
             mesText.classList.add("message-block__message-text_visible");
         }
@@ -157,11 +171,11 @@
         function showMessageList() {
 
             // open message list
-            let mesList = document.getElementsByClassName("message-block__message-list")[0];
+            let mesList = document.querySelector('.message-block__message-list');
             mesList.classList.remove("message-block__message-list_hidden");
 
             // hide message text
-            let mesText = document.getElementsByClassName("message-block__message-text")[0];
+            let mesText = document.querySelector('.message-block__message-text');
             mesText.classList.remove("message-block__message-text_visible");
 
 
