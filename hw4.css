@@ -328,6 +328,10 @@ body {
 .mail-opened__snowman {
     float: right;
     shape-outside: circle();
+}   
+
+#letter__choose {
+    display: none;
 }
 
 #letter__choose:checked+.letter__mail-opened {
