@@ -1,12 +1,12 @@
 function openMessage(label) {
     document.getElementById("full-message-img")
-        .setAttribute("src", label.getElementsByClassName("message__sender-picture")[0].getAttribute("src"));
+        .setAttribute("src", label.querySelector(".message__sender-picture").getAttribute("src"));
     document.getElementById("full-message-sender").innerText =
-        label.getElementsByClassName("message__sender-name")[0].innerHTML;
+        label.querySelector(".message__sender-name").innerHTML;
     document.getElementById("full-message-text").innerText =
-        label.getElementsByClassName("message__text-inner")[0].innerHTML;
+        label.querySelector(".message__text-inner").innerHTML;
     document.getElementById("full-message-date").innerText =
-        label.getElementsByTagName("time")[0].innerHTML;
+        label.querySelector("time").innerHTML;
 }
 
 const min = 10;
@@ -32,8 +32,8 @@ async function getMail() {
 function deleteMessages() {
     let messages = document.getElementsByClassName("message");
     for (let message of messages) {
-        if (message.getElementsByClassName("check__input")[0].checked === true) {
-            message.className += " delete-message";
+        if (message.querySelector(".check__input").checked === true) {
+            message.classList.add("delete-message");
             message.addEventListener('animationend', () => {
                 message.remove();
             });
@@ -45,7 +45,7 @@ function checkAllMessages() {
     let checkAll = document.getElementById("check-all");
     let messages = document.getElementsByClassName("message");
     for (let message of messages) {
-        message.getElementsByClassName("check__input")[0].checked = checkAll.checked;
+        message.querySelector(".check__input").checked = checkAll.checked;
     }
 }
 
@@ -108,6 +108,6 @@ checkAll.addEventListener('click', checkAllMessages);
 
 let messages = document.getElementsByClassName("message");
 for (let message of messages) {
-    let label = message.getElementsByClassName("open-message-label")[0];
+    let label = message.querySelector(".open-message-label");
     label.addEventListener('click', () => {openMessage(label)})
 }
