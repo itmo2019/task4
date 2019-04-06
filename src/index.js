@@ -2,14 +2,14 @@ const mailHtml = '                <section class="mail _bottom-separator-view">\
     '                            <div class="chose mail__elem mail__elem_view">\n' +
     '                                <input class="mail__checkbox" type="checkbox">\n' +
     '                            </div>\n' +
-    '                            <a href="#popup-essay" class="_simple-link-view">\n' +
+    '                            <a href="#popup-essay" class="simple-link_view">\n' +
     '                                <div class="mail__sender-logo mail__ivanov-logo_view"><p class="ii">И</p></div>\n' +
     '                                <div class="mail__author mail__author_view">\n' +
     '                                    <p class="ivan-ivanov ivan-ivanov_view _message_view">Иван Иванов</p>\n' +
     '                                </div>\n' +
     '                                <div class="read-status read-status_view read-status_not-read"></div>\n' +
     '                                <div class="mail__message-body mail__message-body_view">\n' +
-    '                                    <p class="ivan-body ivan-body_view _message_view _text-overflow-behaviour">Съешь же ещё этих мягких французских булок, да выпей чаю</p>\n' +
+    '                                    <p class="ivan-body ivan-body_view _message_view text-overflow_behaviour">Съешь же ещё этих мягких французских булок, да выпей чаю</p>\n' +
     '                                </div>\n' +
     '                                <div class="message-date message-date_view">\n' +
     '                                    <p class="date date_view _message_view">6 июл</p>\n' +
@@ -27,11 +27,14 @@ function chooseAll(checkbox) {
 
 function deleteChosen() {
     let checkboxes = document.getElementsByClassName("mail__checkbox");
-    let list = document.getElementById("mail-list");
     let checkboxesLength = checkboxes.length;
     while(checkboxesLength--) {
         if (checkboxes[checkboxesLength].checked) {
-            list.removeChild(checkboxes[checkboxesLength].parentElement.parentElement.parentElement);
+            let childToDelete = checkboxes[checkboxesLength].parentElement.parentElement.parentElement;
+            childToDelete.className = " will-be-removed";
+            childToDelete.addEventListener('transitionend', function () {
+                this.remove();
+            });
         }
     }
     document.getElementById("checkbox").checked = false;

@@ -137,7 +137,7 @@ body {
     border: solid 1px #e2e2e2;
 }
 
-._simple-link-view {
+.simple-link_view {
     color: #000;
     text-decoration: none;
 }
@@ -309,7 +309,7 @@ body {
 }
 
 
-._text-overflow-behaviour {
+.text-overflow_behaviour {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -577,9 +577,15 @@ body {
 
 
 .slide-fade li.mail-list__elem {
+    transition: all 1.2s ease-out;
     opacity: 1;
 }
 
+
+.slide-fade .will-be-removed {
+    transition: all 0.6s ease-out;
+    opacity: 0;
+}
 
 .essay {
     width: 69.5%;
