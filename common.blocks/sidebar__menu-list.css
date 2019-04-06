@@ -1,19 +1,4 @@
 .sidebar__menu-list {
     padding-left: 10px;
-}
-
-.sidebar__menu-list > li:hover {
-    background-color: #c8d1dd;
-    border-radius: 3px;
-}
-
-.sidebar__menu-list {
-    padding-left: 10px;
-}
-
-.sidebar__menu-list > li {
-    color: #707070;
-    display: block;
-    margin: 6px 0;
-    padding: 6px 10px;
+    list-style-type: none;
 }

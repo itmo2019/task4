@@ -1,0 +1,12 @@
+.sidebar__menu-item {
+    color: #707070;
+    display: block;
+    margin: 6px 0;
+    padding: 6px 10px;
+    text-decoration: unset;
+}
+
+.sidebar__menu-item:hover {
+    background-color: #c8d1dd;
+    border-radius: 3px;
+}

@@ -6,6 +6,7 @@
     <link href="common.blocks/centered-item.css" rel="stylesheet">
     <link href="common.blocks/checkbox.css" rel="stylesheet">
     <link href="common.blocks/checkbox__input.css" rel="stylesheet">
+    <link href="common.blocks/clickable.css" rel="stylesheet">
     <link href="common.blocks/essay-close.css" rel="stylesheet">
     <link href="common.blocks/essay-close__control-label.css" rel="stylesheet">
     <link href="common.blocks/essay__body.css" rel="stylesheet">
@@ -48,6 +49,7 @@
     <link href="common.blocks/sidebar__logo-container.css" rel="stylesheet">
     <link href="common.blocks/sidebar__logo.css" rel="stylesheet">
     <link href="common.blocks/sidebar__menu-item_active.css" rel="stylesheet">
+    <link href="common.blocks/sidebar__menu-item.css" rel="stylesheet">
     <link href="common.blocks/sidebar__menu-list.css" rel="stylesheet">
     <link href="common.blocks/single-line.css" rel="stylesheet">
     <script src="js/index.js"></script>
@@ -64,24 +66,20 @@
             </svg>
             <div class="sidebar__logo">
                 <img alt="yandex" class="sidebar__img-yandex" src="images/sidebar__img-yandex.svg">
-                <img alt="mail" class="sidebar__img-mail" src="images/sidebar_img-mail.svg">
+                <img alt="mail" class="sidebar__img-mail" src="images/sidebar__img-mail.svg">
             </div>
         </div>
         <button class="sidebar__button-new-letter clickable" onclick="addRandomLetter()">
             Написать
         </button>
-        <div class="sidebar__menu-container">
-            <ul class="sidebar__menu-list">
-                <li class="sidebar__menu-item sidebar__menu-item_active">
-                    <a class="mail-link" href="#">Входящие</a>
-                </li>
-                <li><a class="sidebar__menu-item mail-link" href="#">Отправленные</a></li>
-                <li><a class="sidebar__menu-item mail-link" href="#">Удалённые</a></li>
-                <li><a class="sidebar__menu-item mail-link" href="#">Спам</a></li>
-                <li><a class="sidebar__menu-item mail-link" href="#">Черновики</a></li>
-                <li><a class="sidebar__menu-item mail-link" href="#">Создать папку</a></li>
-            </ul>
-        </div>
+        <ul class="sidebar__menu-list">
+            <li><a class="sidebar__menu-item sidebar__menu-item_active" href="#">Входящие</a></li>
+            <li><a class="sidebar__menu-item" href="#">Отправленные</a></li>
+            <li><a class="sidebar__menu-item" href="#">Удалённые</a></li>
+            <li><a class="sidebar__menu-item" href="#">Спам</a></li>
+            <li><a class="sidebar__menu-item" href="#">Черновики</a></li>
+            <li><a class="sidebar__menu-item" href="#">Создать папку</a></li>
+        </ul>
     </nav>
 </div>
 <div class="mail__layout-search">
@@ -94,7 +92,7 @@
     <div class="letters">
         <div class="letters__panel">
             <label class="checkbox">
-                <input class="checkbox__input" type="checkbox" id="checkbox_all" onclick="selectAll()">
+                <input class="checkbox__input" id="checkbox_all" onclick="selectAll()" type="checkbox">
             </label>
             <div class="letters__panel-item">
                 <p><a class="mail-link single-line letters__panel-button" href="#">Переслать</a></p>
