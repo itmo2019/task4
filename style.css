@@ -1,11 +1,6 @@
-html {
+body {
     background: #e5eaf0;
     height: 100%;
-    width: 100%;
-    margin: 0;
-}
-
-body {
     width: 100%;
     margin: 0;
 }
@@ -130,6 +125,9 @@ body {
     padding: 5px 10px;
     color: #707070;
     font-size: 13px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .folders-list__folder:hover {
@@ -181,6 +179,10 @@ body {
     vertical-align: top;
 }
 
+.cursor-pointer {
+    cursor: pointer;
+}
+
 .checkbox {
     cursor: pointer;
     width: 16px;
@@ -205,10 +207,6 @@ body {
     height: 40px;
     display: inline-block;
     vertical-align: middle;
-    cursor: pointer;
-}
-
-.cursor-pointer {
     cursor: pointer;
 }
 
@@ -359,12 +357,6 @@ body {
 }
 
 .text-container {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.folders-list__folder {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;

@@ -59,7 +59,7 @@ function selectAll(selectAllCheckbox) {
 
 function createAndRandom() {
     newMail();
-    newRandomMessage()
+    newRandomMessage();
 }
 
 function newRandomMessage() {
@@ -193,7 +193,7 @@ function buildNewMessage() {
     subject.textContent = subjects[langInd];
 
     let monthInd = currentDate.getMonth().toLocaleString('rus');
-    month = months[monthInd];
+    let month = months[monthInd];
     let day = currentDate.getDate();
 
     let date = newMessage.querySelector('.date-container__date');
