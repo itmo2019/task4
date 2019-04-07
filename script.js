@@ -199,8 +199,11 @@ function buildNewMessage() {
     let date = newMessage.querySelector('.date-container__date');
     date.textContent = day + ' ' + month.substr(0, 3);
 
-    newMessage.onclick = function () {
-        openMessage(this);
+    newMessage.onmousedown = function () {
+        event.preventDefault();
+        newMessage.onclick = function () {
+            openMessage(newMessage);
+        }
     };
     return newMessage;
 }
