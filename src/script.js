@@ -1,4 +1,4 @@
-const maxLetterCount = 10;
+const maxLetterCount = 30;
 const inboxLetters = document.createElement('div');
 const textLetters = document.createElement('div');
 
