@@ -1,0 +1,45 @@
+#window-letters__label_open-art {
+  display: none;
+}
+
+.not_show {
+  display: none;
+}
+
+/*#window-letters__label_open-art:checked ~ #window-letters__letters-list_after-first {
+  display: none;
+}*/
+
+/*#window-letters__label_open-art:checked ~ .window-letters__letters-list {
+  display: none;
+}*/
+
+/*#window-letters__label_open-art:checked ~ .window-letters__article {
+  display: inline-block;
+}*/
+
+
+
+/*#window-letters__label_open-art_0 {
+  display: none;
+}
+
+#window-letters__label_open-art_0:checked ~ #window-letters__letters-list_after-first {
+  display: none;
+}
+
+#window-letters__label_open-art_0:checked ~ .window-letters__article_0 {
+  display: inline-block;
+}
+
+#window-letters__label_open-art_55 {
+  display: none;
+}
+
+#window-letters__label_open-art_55:checked ~ #window-letters__letters-list_after-first {
+  display: none;
+}
+
+#window-letters__label_open-art_55:checked ~ .window-letters__article_55 {
+  display: inline-block;
+}*/

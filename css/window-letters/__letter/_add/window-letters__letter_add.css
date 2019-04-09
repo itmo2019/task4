@@ -1,0 +1,7 @@
+.window-letters__letter_add {
+  margin-top: 0px;
+  transition-property: margin-top;
+  transition-duration: 1s;
+  transition-timing-function: linear;
+  transition-delay: 0s;
+}

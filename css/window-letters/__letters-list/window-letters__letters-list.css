@@ -1,0 +1,8 @@
+.window-letters__letters-list {
+  overflow: auto;
+  min-height: 475px;
+  max-height: 475px;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  list-style-type: none;
+}

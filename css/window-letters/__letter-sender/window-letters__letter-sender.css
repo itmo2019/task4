@@ -1,0 +1,10 @@
+.window-letters__letter-sender {
+  margin-left: 10px;
+  width: 130px;
+  height: 16px;
+  font-family: HelveticaNeueCyr-Medium;
+  font-size: 13px;
+  font-weight: bold;
+  color: #000000;
+  overflow: hidden;
+}

@@ -1,0 +1,8 @@
+.window-letters__letter_delete {
+  margin-top: -50.36px;
+  z-index: 0;
+  transition-property: margin-top;
+  transition-duration: 1s;
+  transition-timing-function: linear;
+  transition-delay: 0s;
+}

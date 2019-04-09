@@ -1,0 +1,9 @@
+.window-letters__letter-innerior {
+  margin: 0;
+  border-style: solid;
+  border-color: #9b9b9b;
+  border-width: 0 0 0.5px 0;
+  height: 50px;
+  list-style-type: none;
+  background-color: #ffffff;
+}

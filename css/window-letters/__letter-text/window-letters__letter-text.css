@@ -1,0 +1,11 @@
+.window-letters__letter-text {
+  margin-left: 10px;
+  /* width: 300px; */
+  width: calc(100% - 300px);
+  height: 16px;
+  font-family: HelveticaNeueCyr-Medium;
+  font-size: 13px;
+  font-weight: bold;
+  color: #000000;
+  overflow: hidden;
+}

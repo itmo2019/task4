@@ -1,0 +1,38 @@
+.window-letters__article {
+  display: none;
+  background: url("../../../src/background.jpg");
+  background-attachment: fixed;
+  background-size: 15%;
+  background-repeat: space;
+  background-color: #FFFFDD;
+  margin-left: -40px;
+  height: inherit;
+}
+
+.window-letters__article_0 {
+  display: none;
+  /* background: url("../../../src/background.jpg");
+  background-attachment: fixed;
+  background-size: 15%;
+  background-repeat: space;
+  background-color: #FFFFDD;*/
+  margin-left: -40px;
+  height: inherit;
+}
+
+.window-letters__article_55 {
+  display: none;
+  /* background: url("../../../src/background.jpg");
+  background-attachment: fixed;
+  background-size: 15%;
+  background-repeat: space;
+  background-color: #FFFFDD;*/
+  margin-left: -40px;
+  height: inherit;
+}
+
+/*.articles {
+  display: none;
+}*/
+
+/*There's something connected to .window-letters__article in window-letters__label_open-art */

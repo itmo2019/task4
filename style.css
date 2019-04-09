@@ -1,0 +1,65 @@
+@import url("css/high-part/__before-lines/high-part__before-lines.css");
+@import url("css/high-part/__one-line/high-part__one-line.css");
+@import url("css/high-part/__search/high-part__search.css");
+@import url("css/high-part/__search-cancel-sign/high-part__search-cancel-sign.css");
+@import url("css/high-part/__search-word/high-part__search-word.css");
+@import url("css/high-part/__yandex-mail/_picture/high-part__yandex-mail_picture.css");
+@import url("css/high-part/__yandex-mail/_unstressed-link/high-part__yandex-mail_unstressed-link.css");
+@import url("css/high-part/high-part.css");
+@import url("css/menu/__actions-list/_unstressed-link/menu__actions-list_unstressed-link.css");
+@import url("css/menu/__actions-list/menu__actions-list.css");
+@import url("css/menu/__navigation/menu__navigation.css");
+@import url("css/menu/__write-button/menu__write-button.css");
+@import url("css/menu/menu.css");
+@import url("css/window-letters/__article/window-letters__article.css");
+@import url("css/window-letters/__article-beginning/window-letters__article-beginning.css");
+@import url("css/window-letters/__article-cancel-sign/window-letters__article-cancel-sign.css");
+@import url("css/window-letters/__article-circled-cat/window-letters__article-circled-cat.css");
+@import url("css/window-letters/__article-first-word/window-letters__article-first-word.css");
+@import url("css/window-letters/__article-paragraph/_first/window-letters__article-paragraph_first.css");
+@import url("css/window-letters/__article-paragraph/_second/window-letters__article-paragraph_second.css");
+@import url("css/window-letters/__article-paragraph/_third/window-letters__article-paragraph_third.css");
+@import url("css/window-letters/__article-paragraph/window-letters__article-paragraph.css");
+@import url("css/window-letters/__delimiter-line/window-letters__delimiter-line.css");
+@import url("css/window-letters/__footer/window-letters__footer.css");
+@import url("css/window-letters/__footer-delimiter-line/window-letters__footer-delimiter-line.css");
+@import url("css/window-letters/__frontend-word/window-letters__frontend-word.css");
+@import url("css/window-letters/__header/window-letters__header.css");
+@import url("css/window-letters/__header-buttons/window-letters__header-buttons.css");
+@import url("css/window-letters/__header-part/window-letters__header-part.css");
+@import url("css/window-letters/__input-button/window-letters__input-button.css");
+@import url("css/window-letters/__label/_open-art/window-letters__label_open-art.css");
+@import url("css/window-letters/__letter/window-letters__letter.css");
+@import url("css/window-letters/__letter/_add/window-letters__letter_add.css");
+@import url("css/window-letters/__letter/_delete/window-letters__letter_delete.css");
+@import url("css/window-letters/__letter-date/window-letters__letter-date.css");
+@import url("css/window-letters/__letter-innerior/window-letters__letter-innerior.css");
+@import url("css/window-letters/__letter-part/window-letters__letter-part.css");
+@import url("css/window-letters/__letter-sender/_pict/_wrap/window-letters__letter-sender_pict_wrap.css");
+@import url("css/window-letters/__letter-sender/_pict/window-letters__letter-sender_pict.css");
+@import url("css/window-letters/__letter-sender/window-letters__letter-sender.css");
+@import url("css/window-letters/__letter-text/window-letters__letter-text.css");
+@import url("css/window-letters/__letter-unread-point/window-letters__letter-unread-point.css");
+@import url("css/window-letters/__letters-list/window-letters__letters-list.css");
+@import url("css/window-letters/__select-button/window-letters__select-button.css");
+@import url("css/window-letters/__square-for-button/window-letters__square-for-button.css");
+@import url("css/window-letters/window-letters.css");
+
+body {
+  height: 600px;
+  background-color: #e5eaf0;
+}
+
+@font-face {
+  font-family: 'HelveticaNeueCyr-Medium';
+  src: url('src/fonts/HelveticaNeueCyr-Medium.eot');
+  src: url('src/fonts/HelveticaNeueCyr-Medium.eot?#iefix') format('embedded-opentype'),
+       url('src/fonts/HelveticaNeueCyr-Medium.svg#HelveticaNeueCyr-Medium') format('svg'),
+       url('src/fonts/HelveticaNeueCyr-Medium.ttf') format('truetype'),
+       url('src/fonts/HelveticaNeueCyr-Medium.woff') format('woff'),
+       url('src/fonts/HelveticaNeueCyr-Medium.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+

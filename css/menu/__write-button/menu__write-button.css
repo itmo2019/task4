@@ -1,0 +1,11 @@
+.menu__write-button {
+  width: 147px;
+  height: 32px;
+  border: none;
+  border-radius: 3px;
+  background-color: #6287bd;
+  font-family: HelveticaNeueCyr-Medium;
+  font-size: 12px;
+  font-weight: 500;
+  color: #ffffff;
+}

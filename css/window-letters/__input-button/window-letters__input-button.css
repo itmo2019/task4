@@ -1,0 +1,3 @@
+.window-letters__input-button:checked + .window-letters__select-button:after {
+  visibility: inherit;
+}

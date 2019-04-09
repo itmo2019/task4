@@ -1,0 +1,14 @@
+.menu__navigation {
+  line-height: 22px;
+  padding-left: 10px;
+  margin-left: -28px;
+  font-family: HelveticaNeueCyr-Medium;
+  font-size: 11px;
+  font-weight: 500;
+  color: #707070;
+}
+
+.menu__navigation:hover {
+  border-radius: 3px;
+  background-color: #cdd6e4;
+}

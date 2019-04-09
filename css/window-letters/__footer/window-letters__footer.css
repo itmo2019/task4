@@ -1,0 +1,11 @@
+.window-letters__footer {
+  /*z-index: 1;*/
+  bottom: 0px;
+  right: 20px;
+  margin-top: 20px;
+  margin-right: 28px;
+  text-align: right;
+  font-family: HelveticaNeueCyr-Medium;
+  font-size: 11px;
+  color: #9b9b9b;
+}

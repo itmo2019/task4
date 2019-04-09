@@ -1,0 +1,25 @@
+.window-letters__select-button {
+  position: relative;
+  margin-top: -20px;
+  width: 16px;
+  height: 16px;
+  border-radius: 3px;
+  border: solid 1px rgba(0, 0, 0, 0.15);
+  background-color: #ffffff;
+}
+
+.window-letters__select-button:after {
+  margin: -3px 0 0 4px;
+  width: 7px;
+  height: 14px;
+  content: '';
+  position: absolute;
+  border-right: 2px solid;
+  border-bottom: 2px solid;
+  color: #000000;
+  -webkit-transform: scale(0.85) rotate(47deg) skewX(12deg);
+  transform: scale(0.85) rotate(47deg) skewX(12deg);
+  visibility: hidden;
+}
+
+/*There's something connected to window-letters__select-button in window-letters__input-button */

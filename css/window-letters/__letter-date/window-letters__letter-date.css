@@ -1,0 +1,10 @@
+.window-letters__letter-date {
+  float: right;
+  margin-right: 20px;
+  font-family: HelveticaNeueCyr-Medium;
+  font-size: 13px;
+  line-height: 28px;
+  text-align: right;
+  color: #9b9b9b;
+  /* margin-top: -30px; */
+}

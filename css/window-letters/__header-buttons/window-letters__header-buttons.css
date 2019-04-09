@@ -1,0 +1,9 @@
+.window-letters__header-buttons {
+  margin-left: 26px;
+  margin-top: -10px;
+  border: none;
+  outline: none;
+  background-color: inherit;
+  font-weight: 500;
+  color: #cccccc;
+}
