@@ -22,8 +22,15 @@ function newMail() {
 
 window.onload = function () {
     setTimeout(newMessagePerRandomTime, lastTimeout);
+
     let sendBtn = document.querySelector(".ya-big-button");
     sendBtn.addEventListener("click", () => newMail());
+
+     let removeBtn = document.querySelector("#remove-btn");
+    removeBtn.addEventListener("click", () => removeLetters());
+
+     let selectAllBtn = document.querySelector("#select-all");
+    selectAllBtn.addEventListener("click", () => selectAll());
 };
 
 function newMessagePerRandomTime() {
