@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Mail Yandex</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="animation.js" async></script>
+</head>
+<body class="body">
+<header>
+    <div class="header_yandex">
+        <img src="burger.svg" class="burger" alt="img">
+        <img src="yandex_logo.svg" class="yandex_logo" alt="img">
+        <img src="mail_logo.svg" class="mail_logo" alt="img">
+    </div>
+    <input type="search" placeholder="Поиск" class="search_rectangle"/>
+</header>
+<main>
+    <nav class="menu">
+        <button class="write">Написать</button>
+        <ul class="folders">
+            <li class="folder folder_chosen">Входящие</li>
+            <li class="folder">Отправленные</li>
+            <li class="folder">Удалённые</li>
+            <li class="folder">Спам</li>
+            <li class="folder">Черновики</li>
+            <li class="folder">Создать папку</li>
+        </ul>
+    </nav>
+    <div class="mail_rectangle">
+        <ul class="options">
+            <li class="check_mark"></li>
+            <li class="action">Переслать</li>
+            <li class="action" id="remove">Удалить</li>
+            <li class="action">Это спам</li>
+            <li class="action">Прочитано</li>
+            <li class="action" id="create">Получить новое сообщение</li>
+        </ul>
+        <a id="all_mails"></a>
+        <a id="a1"></a>
+        <div class="tab mails default-tab" id="mails">
+            <div class="mail hide" id="content5">
+                <div class="check_mark" id="check_mark5"></div>
+                <div class="logo">Т</div>
+                <div class="from from_unread">Татьяна Ларина</div>
+                <div class="unread_mark"></div>
+                <div class="date">8 фев</div>
+                <div class="message message_unread">Я к вам пришу - чего же боле? Что я могу ещё сказать?</div>
+            </div>
+            <a href="#a1" class="clicker">
+                <div class="mail" id="content4">
+                    <div class="check_mark" id="check_mark4"></div>
+                    <div class="logo">Я</div>
+                    <div class="from from_unread">Яндекс.Паспорт.Длинное название</div>
+                    <div class="unread_mark"></div>
+                    <div class="date">6 авг</div>
+                    <div class="message message_unread">Доступ к аккаунту восстановлен</div>
+                </div>
+            </a>
+            <div class="mail" id="content3">
+                <div class="check_mark" id="check_mark3"></div>
+                <div class="logo">Я</div>
+                <div class="from  from_unread">Команда Яндекс.Почты</div>
+                <div class="unread_mark"></div>
+                <div class="date">6 июл</div>
+                <div class="message message_unread">Как читать почту с мобильного. И допустим дальше очень длинное название которое не должно влезть</div>
+            </div>
+            <div class="mail_with_divider" id="mail2">
+                <div class="mail" id="content2">
+                    <div class="check_mark" id="check_mark2"></div>
+                    <div class="logo">Я</div>
+                    <div class="from">Команда Яндекс.Почты</div>
+                    <div class="read_mark"></div>
+                    <div class="date">6 июл</div>
+                    <div class="message">Как читать почту с мобильного</div>
+                </div>
+                <div class="divider"></div>
+            </div>
+            <div class="mail" id="content1">
+                <div class="check_mark" id="check_mark1"></div>
+                <div class="logo">Я</div>
+                <div class="from">Яндекс</div>
+                <div class="read_mark"></div>
+                <div class="message">Соберите всю почту в этот ящик</div>
+                <div class="date">6 июл</div>
+            </div>
+        </div>
+        <div class="tab after_click">
+            <table>
+                <a href="#all_mails" class="close">X</a>
+                <h3 class="secret_header">Тюлень</h3>
+                <div class="picture-container">
+                    <img src="sticker.png" class="seal" alt="img">
+                </div>
+                <p class="secret_tex">Тюле́ни — общее название двух семейств млекопитающих, полифилетическая группа, ранее относимая вместе с моржовыми (Odobenidae) в отдельный отряд ластоногих (Pinnipedia), который по современным представлениям считается устаревшим и исключён из систематики.
+                    Тюленями называют представителей семейств ушастых тюленей (Otariidae) и настоящих тюленей (Phocidae). У обеих групп обе пары конечностей преобразованы в ласты, вооружённые когтями; задние ласты направлены назад. Ушастые тюлени, вероятно, произошли от примитивных медведеобразных, настоящие — по-видимому, от примитивных куньих. У настоящих тюленей нет ушных раковин; задние ласты служат для передвижения в воде. У ушастых тюленей для передвижения в воде служат передние конечности, а задние в воде служат рулями, а на суше подгибаются вперёд и поддерживают массивное тело. Насчитывается около 20 видов из 12 родов.
+                    Распространены широко; особенно многочисленны в приполярных широтах. Большинство видов образует на льдах залёжки (на период размножения и линьки). Беременность, как правило, длится около года.
+                </p>
+            </table>
+        </div>
+        <div class="footer">
+            <ul class="help_data">
+                <li class="item">
+                    <a href="#">Помощь и обратная связь</a>
+                </li>
+                <li class="item">
+                    <a href="#">Реклама</a>
+                </li>
+                <li class="item">
+                    <a href="#">© 2001—2018, Яндекс</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</main>
+</body>
+</html>
