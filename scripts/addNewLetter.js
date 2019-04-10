@@ -9,15 +9,14 @@ let letterCounterOnPage = 0;
 const maxLettersOnPage = 30;
 let stack = [];
 
-
 function addNewLetter() {
     let letters = document.getElementById("letters");
     let authorThemeContent = letterCreation();
     let bodyLetters = letters.children[2];
     let letter = document.querySelector('#letterHTML');
-    letter.content.querySelector('.mail-body__letters-window__body__letter__author').textContent = authorThemeContent[0];
-    letter.content.querySelector('.mail-body__letters-window__body__letter__theme').textContent = authorThemeContent[1];
-    letter.content.querySelector('.mail-body__letters-window__body__letter__content').textContent = authorThemeContent[2];
+    letter.content.querySelector('.letter-view__author').textContent = authorThemeContent[0];
+    letter.content.querySelector('.letter-view__theme').textContent = authorThemeContent[1];
+    letter.content.querySelector('.letter-view__content').textContent = authorThemeContent[2];
     let letterClone = document.importNode(letter.content, true);
     if (letterCounterOnPage >= maxLettersOnPage) {
         stack.push(letterClone);
@@ -29,18 +28,15 @@ function addNewLetter() {
 
 function openContentLetter(event) {
     let letter = event.target;
-    if (!letter.type) {
-        return;
-    }
     let letters = document.getElementById("letters");
     let bodyLetters = letters.children[2];
     let contentLetter = document.querySelector('#contentLetterHTML');
-    contentLetter.content.querySelector('.content-letter__header__author').textContent =
-        letter.querySelector('.mail-body__letters-window__body__letter__author').textContent;
-    contentLetter.content.querySelector('.content-letter__header__theme').textContent =
-        letter.querySelector('.mail-body__letters-window__body__letter__theme').textContent;
+    contentLetter.content.querySelector('.content-letter__header-author').textContent =
+        letter.querySelector('.letter-view__author').textContent;
+    contentLetter.content.querySelector('.content-letter__header-theme').textContent =
+        letter.querySelector('.letter-view__theme').textContent;
     contentLetter.content.querySelector('.content-letter__body').textContent =
-        letter.querySelector('.mail-body__letters-window__body__letter__content').textContent;
+        letter.querySelector('.letter-view__content').textContent;
     bodyLetters.style.display = 'none';
     let cloneContentLetter = document.importNode(contentLetter.content, true);
     letters.insertBefore(cloneContentLetter, bodyLetters);

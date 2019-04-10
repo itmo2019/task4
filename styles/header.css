@@ -11,10 +11,12 @@
 }
 
 .mail-header__svgicon-menu {
+    display: inline-block;
     vertical-align: middle;
     width: 16px;
     height: 16px;
     margin-left: 20px;
+    background-image: url('../images/menu.svg');
 }
 
 .mail-header__logo-container {
@@ -25,14 +27,18 @@
     height: 32px;
 }
 
-.mail-header__logo-container__svgicon-Yandex {
+.mail-header__logo-container-svgicon-Yandex {
+    display: inline-block;
     width: 75px;
     height: 32px;
+    background-image: url('../images/yandexLogo.svg');
 }
 
-.mail-header__logo-container__svgicon-mail {
+.mail-header__logo-container-svgicon-mail {
+    display: inline-block;
     width: 52px;
     height: 32px;
+    background-image: url('../images/yandexServiceLogo.svg');
 }
 
 .mail-header__search-container {
