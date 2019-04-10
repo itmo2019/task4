@@ -330,13 +330,12 @@ body {
     shape-outside: circle();
 }   
 
-#letter__choose {
+.letter__choose{
     display: none;
 }
 
 #letter__choose:checked+.letter__mail-opened {
-    display: inline-block;
-    margin-left: -42px;
+    display: block;
 }
 
 .mail-opened__close2 {
@@ -350,7 +349,6 @@ body {
 .letter__mail-opened {
     box-sizing: border-box;
     position: absolute;
-    top: 0;
     width: 100%;
     background-color: white;
     z-index: 1;
