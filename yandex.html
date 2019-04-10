@@ -73,26 +73,23 @@
         }
 
     function deleteLetters() {
-        var allCheckboxButtons = document.querySelectorAll('.window-letters__input-button');
-        allCheckboxButtons[0].checked = false;
+        document.querySelector('.window-letters__input-button').checked = false;
         var allArticles = document.querySelectorAll('.window-letters__article');
         var allLetters = document.querySelectorAll('.window-letters__letter');
-        for (var i = 1; i < allCheckboxButtons.length; i++) {
-            if (allCheckboxButtons[i].checked) {
-                var letter = allCheckboxButtons[i];
-                while (letter.className != "window-letters__letter window-letters__letter_add") {
-                    letter = letter.parentElement;
-                }
-                var maxCnt = 30;
-                allArticles[i - 1].remove();
-                letter.classList.add('window-letters__letter_delete');
-                window.setTimeout(function() {
-                    letter.remove();
-                    if (allLetters.length > maxCnt) {
-                        allLetters[maxCnt].classList.remove('not_show');
-                    }
-                }, 1000);
+        var maxCnt = 30;
+        var need = 0;
+        for (var i = 0; i < allLetters.length; i++) {
+            if (allLetters[i].children[0].children[0].children[0].children[0].children[0].checked) {    
+                need++;
+                allArticles[i].remove();
+                allLetters[i].classList.add('window-letters__letter_delete');
+                window.setTimeout(function(allLetters, i, maxCnt) {
+                    allLetters[i].remove();
+                }, 1000, allLetters, i, maxCnt);
             }
+        }
+        for (var i = maxCnt; i < Math.min(maxCnt + need, allLetters.length); i++) {
+            allLetters[i].classList.remove('not_show');
         }
     }
 
@@ -111,7 +108,7 @@
     }
 
     function showLetters() {
-        document.getElementById('window-letters__letters-list_after-first').style = "";
+        document.getElementById('window-letters__letters-list_after-first').classList.remove('not_show');
         var allArticles = document.querySelectorAll('.window-letters__article');
         for (var i = 0; i < allArticles.length; i++) {
             allArticles[i].style.display = "none";
