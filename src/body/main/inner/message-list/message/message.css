@@ -33,7 +33,7 @@
 .message__contact {
     display: block;
     width: 175px;
-    padding-top: 14px;
+    padding: 14px 0;
     float: left;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -50,8 +50,7 @@
     float: left;
     height: 10px;
     width: 10px;
-    margin-top: 16px;
-    margin-right: 10px;
+    margin: 16px 10px 16px 0;
 }
 
 .message__read-icon_invisible {
@@ -60,8 +59,8 @@
 
 .message__subject {
     display: block;
-    width: 44%;
-    margin-top: 14px;
+    width: calc(100% - 344px);
+    margin: 14px 0;
     float: left;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -69,9 +68,8 @@
 
 .message__date {
     display: inline-block;
-    margin-top: 14px;
+    margin: 14px 15px 14px 0;
     float: right;
-    margin-right: 15px;
     text-align: right;
     color: #9b9b9b;
     font-weight: normal;
@@ -96,4 +94,8 @@
 
 .message_show {
     opacity: 1;
+}
+
+.message:hover {
+    background-color: #f0f0f0;
 }

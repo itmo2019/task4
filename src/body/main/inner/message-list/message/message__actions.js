@@ -65,16 +65,21 @@ function formCroissant() {
         В скором времени появилось целое «семейство» подобных дрожжевых и слоеных булочек, например,
         улитка с изюмом, слойка с яблочным пюре, слойка с шоколадом и т. д. В 2013 году
         антиправительственные повстанцы в Сирии запретили круассаны на контролируемой ими территории
-        в Алеппо, объясняя свой запрет вышеупомянутой австрийской легендой`
+        в Алеппо, объясняя свой запрет вышеупомянутой австрийской легендой`;
+    let checkbox = document.querySelector("#message-list__cutter");
+    changeMessagePage();
+    checkbox.checked = true;
 }
 
 function formMessagePage(parent) {
     text = parent.querySelector('.message__subject').textContent;
     author = parent.parentElement.querySelector('.message__contact').textContent;
+    let checkbox = document.querySelector("#message-list__cutter");
+    changeMessagePage();
+    checkbox.checked = true;
 }
 
-function changeMessagePage(checkbox) {
-    if (checkbox.checked == true) {
+function changeMessagePage() {
         document.querySelector('.message__page').remove();
         let content = document.querySelector('.message__content');
         let page = document.createElement("div");
@@ -85,5 +90,5 @@ function changeMessagePage(checkbox) {
         page__text.innerHTML = text;
         page.innerHTML = page__author.outerHTML + page__text.outerHTML;
         content.appendChild(page);
-    }
+
 }
