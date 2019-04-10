@@ -1,3 +1,4 @@
+
 function checkAll(toolbarCheckbox) {
     let checkboxes = document.querySelectorAll('.checkbox');
     for (let i = 1; i < checkboxes.length; i++) {
@@ -7,20 +8,13 @@ function checkAll(toolbarCheckbox) {
 
 async function newMail() {
     let mailList = document.getElementById("messages");
-
     let mail = document.createElement("section");
-    mail.innerHTML = await composer();
-    mail.firstChild.id="message__id";
-
+    mail.appendChild(await composeMail());
     mailList.insertBefore(mail, mailList.firstChild);
-
-    let GC = document.getElementById("message__id");
     setTimeout(() => {
-        GC.classList.add("message_show")
+        mail.querySelector(".message_not-read")
+            .classList.add("message_show");
     }, 20);
-    setTimeout(() => {
-        GC.removeAttribute('id');
-    }, 500);
 }
 
 function deleteMail() {
@@ -50,7 +44,7 @@ let text = 'no text';
 let author = 'no author';
 
 function formCroissant() {
-    author = 'История круассана'
+    author = 'История круассана';
     text = `<img alt="Свежий круассан" class="message__image" src="body/main/inner/message-list/message/message__image.png" width="180">\n
         Мучные изделия в форме полумесяцев выпекались в Австрии по меньшей мере с XIII века. Но началом
         нынешней популярности круассанов можно считать 1839 год, когда австрийский артиллерийский офицер

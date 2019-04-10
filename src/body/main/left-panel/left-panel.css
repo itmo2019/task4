@@ -1,4 +1,3 @@
-/*LEFT PANEL*/
 .left-panel {
     float: left;
     width: 147px;
@@ -43,7 +42,7 @@
     color: #555555;
 }
 
-.folders-panel__folder_link-decoration {
+.folders-panel__folder_link {
     color: #707070 !important;
     text-decoration: none;
 }

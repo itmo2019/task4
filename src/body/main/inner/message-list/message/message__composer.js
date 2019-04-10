@@ -6,7 +6,7 @@ function randomizeArrayNumber(text) {
 }
 
 function randomizeNumber(from, to) {
-    return Math.floor(Math.random()*(to + 1 - from))+from
+    return Math.floor(Math.random() * (to + 1 - from)) + from
 }
 
 function randomizeDate() {
@@ -22,34 +22,12 @@ async function randomizeText() {
     return resultText[0];
 }
 
-async function composer() {
-    let text = `<div class="message message_not-read" id="message__id">
-        <label>
-        <input class="checkbox checkbox_message" type="checkbox">
-        </label>
-        <label for="message-list__cutter" onclick="formMessagePage(this)">
-        <img class="message__logo" src="body/main/inner/message-list/message/message__logo-` + randomizeNumber(0, 3) + `.png">
-        <div class="message__contact">` + messageContact[randomizeArrayNumber(messageContact)] + `</div>
-        <div class="message__read-icon"></div>
-        <div class="message__subject">` + await randomizeText() + `</div>
-        <div class="message__date">` + randomizeDate() + `</div>
-        </label>
-        </div>
-        <hr class="hr">`;
-    return text;
+async function composeMail() {
+    let template = document.querySelector('#message__template');
+    template.content.querySelector(".message__logo").setAttribute('src',
+        "body/main/inner/message-list/message/message__logo-" + randomizeNumber(0, 3) + ".png");
+    template.content.querySelector(".message__contact").textContent = messageContact[randomizeArrayNumber(messageContact)];
+    template.content.querySelector(".message__subject").textContent = await randomizeText();
+    template.content.querySelector(".message__date").textContent = randomizeDate();
+    return document.importNode(template.content, true);
 }
-
-// async function composer2() {
-//     let mail = document.getElementById("message__template");
-//     let backup = mail.cloneNode();
-//     document.getElementById("message__template").querySelector("message__logo").setAttribute('src', "body/main/inner/message-list/message/message__logo-"+randomizeNumber(0, 3)+".png");
-//     document.getElementById("message__template").querySelector(".message__contact").innerHTML = messageContact[randomizeArrayNumber(messageContact)];
-//     // ' + messageContact[randomizeArrayNumber(messageContact)] + '
-//     document.getElementById("message__template").querySelector(".message__subject").innerHTML = await randomizeText();
-//     // ' + randomizeText(messageTextArray) + '
-//     document.getElementById("message__template").querySelector(".message__date").innerHTML = randomizeDate();
-//     // ' + randomizeDate() + '
-//     let result = mail.innerHTML;
-//     mail = backup;
-//     return result;
-// }
