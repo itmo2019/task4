@@ -71,21 +71,20 @@ function createLetter() {
     return letter;
 }
 
-function hideLetters(letters) {
-    for (let i = LETTERS_ON_PAGE - 1; i < letters.length; i++) {
+function hideLetters() {
+    if (count <= LETTERS_ON_PAGE) return;
+    let letters = document.getElementById('all-letters').querySelectorAll("li");
+    for (let i = LETTERS_ON_PAGE; i < letters.length; i++) {
         letters[i].style.display = 'none';
         letters[i].querySelector('.check').checked = false;
     }
 }
 
-function addLetter() {
+function newMail() {
     count++;
     console.log('add:' + count);
     document.querySelector('.check').checked = false;
     let allLetters = document.getElementById('all-letters');
-    if (count > LETTERS_ON_PAGE) {
-        hideLetters(allLetters.querySelectorAll("li"));
-    }
     let newLetter = createLetter();
     allLetters.insertBefore(newLetter, allLetters.querySelectorAll("li")[0]);
     if (!isOpen)
@@ -96,6 +95,9 @@ function addLetter() {
     allLetters.addEventListener("webkitAnimationEnd", function () {
         removeClass(allLetters, 'all-letter-down');
     });
+    if (!isOpen) {
+        hideLetters();
+    }
 }
 
 function removeClass(letter, name) {
@@ -138,7 +140,7 @@ function selectAll() {
 
 function getRandomLetter() {
     let t = randomInt(10, 300000) + 300000;
-    addLetter();
+    newMail();
     console.log(t);
     setTimeout(getRandomLetter, t);
 }
@@ -161,6 +163,7 @@ function openLetter(event) {
                 target = target.parentElement;
             }
             isOpen = false;
+            hideLetters();
             _displayNone(target.querySelector('.main-block__letter-content'));
             _displayBlock(target.querySelector("div"));
         } else { //open
@@ -181,6 +184,6 @@ Elem.addEventListener('customAdd', getRandomLetter);
 Elem.dispatchEvent(Event);
 
 document.getElementById('all-letters').addEventListener('click', openLetter);
-document.getElementById('get-letter').addEventListener('click', addLetter);
+document.getElementById('get-letter').addEventListener('click', newMail);
 document.getElementById('remove').addEventListener('click', removeLetters);
 document.querySelector('.check').addEventListener('click', selectAll);

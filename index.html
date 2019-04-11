@@ -26,91 +26,89 @@
         </button>
     </form>
 </header>
-<div>
-    <section class="menu">
-        <button class="menu__to-write">
-            Написать
-        </button>
-        <ul class="menu__bar">
-            <li class="menu__action">
-                <a href="#" class="menu__text-ref">Входящие</a>
+<section class="menu">
+    <button class="menu__to-write">
+        Написать
+    </button>
+    <ul class="menu__bar">
+        <li class="menu__action">
+            <a href="#" class="menu__text-ref">Входящие</a>
+        </li>
+        <li class="menu__action">
+            <a href="#" class="menu__text-ref">Отправленные</a>
+        </li>
+        <li class="menu__action">
+            <a href="#" class="menu__text-ref">Удаленные</a>
+        </li>
+        <li class="menu__action">
+            <a href="#" class="menu__text-ref">Спам</a>
+        </li>
+        <li class="menu__action">
+            <a href="#" class="menu__text-ref">Черновики</a>
+        </li>
+        <li class="menu__action">
+            <a href="#" class="menu__text-ref">Создать папку</a>
+        </li>
+    </ul>
+</section>
+<div class="main-block">
+    <div class="main-block__mail-functions clearfix">
+        <label>
+            <input type="checkbox" class="check">
+        </label>
+        <ul class="main-block__all-function">
+            <li class="main-block__func">
+                <a href="#" id="get-letter" class="main-block__ref-func">Получить</a>
             </li>
-            <li class="menu__action">
-                <a href="#" class="menu__text-ref">Отправленные</a>
+            <li class="main-block__func">
+                <a href="#" id="remove" class="main-block__ref-func">Удалить</a>
             </li>
-            <li class="menu__action">
-                <a href="#" class="menu__text-ref">Удаленные</a>
+            <li class="main-block__func">
+                <a href="#" class="main-block__ref-func">Переслать</a>
             </li>
-            <li class="menu__action">
-                <a href="#" class="menu__text-ref">Спам</a>
+            <li class="main-block__func">
+                <a href="#" class="main-block__ref-func">Это спам!</a>
             </li>
-            <li class="menu__action">
-                <a href="#" class="menu__text-ref">Черновики</a>
-            </li>
-            <li class="menu__action">
-                <a href="#" class="menu__text-ref">Создать папку</a>
+            <li class="main-block__func">
+                <a href="#" class="main-block__ref-func">Прочитано</a>
             </li>
         </ul>
-    </section>
-    <div class="main-block">
-        <div class="main-block__mail-functions clearfix">
+    </div>
+
+    <template id="template-letter">
+        <div>
             <label>
                 <input type="checkbox" class="check">
             </label>
-            <ul class="main-block__all-function">
-                <li class="main-block__func">
-                    <a href="#" id="get-letter" class="main-block__ref-func">Получить</a>
-                </li>
-                <li class="main-block__func">
-                    <a href="#" id="remove" class="main-block__ref-func">Удалить</a>
-                </li>
-                <li class="main-block__func">
-                    <a href="#" class="main-block__ref-func">Переслать</a>
-                </li>
-                <li class="main-block__func">
-                    <a href="#" class="main-block__ref-func">Это спам!</a>
-                </li>
-                <li class="main-block__func">
-                    <a href="#" class="main-block__ref-func">Прочитано</a>
-                </li>
-            </ul>
+            <div class="main-block__img">
+                <img src="img/icons/yandex.png" alt="SomeImg" width="30">
+            </div>
+            <span class="main-block__mail-from  bold-text">От кого</span>
+            <div class="main-block__mail-not-read"></div>
+            <span class="main-block__topic bold-text">Тема письма</span>
+            <time class="main-block__date" datetime="06.07">Дата</time>
         </div>
+        <div class="main-block__letter-content">
+            <img src="img/reset.png" alt="reset" class="close" data-close-letter="close" width="15">
+            <p class="main-block__paragraph">
+                Некоторый текст
+            </p>
+            <p class="main-block__paragraph">
+            </p>
+        </div>
+    </template>
 
-        <template id="template-letter">
-            <div>
-                <label>
-                    <input type="checkbox" class="check">
-                </label>
-                <div class="main-block__img">
-                    <img src="img/icons/yandex.png" alt="SomeImg" width="30">
-                </div>
-                <span class="main-block__mail-from  bold-text">От кого</span>
-                <div class="main-block__mail-not-read"></div>
-                <span class="main-block__topic bold-text">Тема письма</span>
-                <time class="main-block__date" datetime="06.07">Дата</time>
-            </div>
-            <div class="main-block__letter-content">
-                <img src="img/reset.png" alt="reset" class="close" data-close-letter="close" width="15">
-                <p class="main-block__paragraph">
-                    Некоторый текст
-                </p>
-                <p class="main-block__paragraph">
-                </p>
-            </div>
-        </template>
+    <ul class="main-block__all-letters" id="all-letters">
 
-        <ul class="main-block__all-letters" id="all-letters">
+    </ul>
 
-        </ul>
-
-        <footer class="footer">
+    <footer class="footer">
             <span class="footer__texts">
                 <a href="#" class="footer__ref">Помощь и обратная связь</a>
                 <a href="#" class="footer__ref">Реклама</a>
                 <span>&copy; 2001&mdash;2018, Яндекс</span>
             </span>
-        </footer>
-    </div>
+    </footer>
 </div>
 </body>
 <script src="js/actions.js"></script>
