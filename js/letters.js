@@ -37,8 +37,8 @@ function newMessagePerRandomTime() {
     newMail();
     let randomTimeout = randomInteger(minNewMessageTimeout, maxNewMessageTimeout);
     let timeout = Math.max(randomTimeout, newMessageTimeoutMax);
+    setTimeout(newMessagePerRandomTime, (newMessageTimeoutMax - lastTimeout) + timeout);
     lastTimeout = timeout;
-    setTimeout((newMessageTimeoutMax - lastTimeout) + newMessagePerRandomTime, timeout)
 }
 
 function removeLetters() {
