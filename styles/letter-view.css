@@ -4,7 +4,7 @@
     cursor: pointer;
 }
 
-.letter-view:before {
+.letter-view::before {
     content: "";
     display: inline-block;
     vertical-align: middle;
@@ -17,7 +17,7 @@
     border-radius: 50%;
     width: 30px;
     height: 30px;
-    background-image: url(../images/myPhoto.svg);
+    background-image: url(../images/tempPhoto.png);
     margin-right: 16px;
     pointer-events: none;
 }

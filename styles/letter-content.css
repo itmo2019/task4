@@ -31,7 +31,7 @@
 .content-letter__close {
     width: 16px;
     height: 16px;
-    background: url(../images/cross.jpg);
+    background: url(../images/cross.svg);
     background-size: cover;
     cursor: pointer;
     float: right;

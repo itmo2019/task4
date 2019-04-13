@@ -4,18 +4,18 @@
     <meta charset="UTF-8">
     <title>Яндекс.Почта</title>
     <link href="styles/header.css" rel="stylesheet">
-    <link href="styles/mailBody.css" rel="stylesheet">
-    <link href="styles/lettersWindow.css" rel="stylesheet">
-    <link href="styles/letterView.css" rel="stylesheet">
-    <link href="styles/checkBox.css" rel="stylesheet">
+    <link href="styles/mail-body.css" rel="stylesheet">
+    <link href="styles/letters-window.css" rel="stylesheet">
+    <link href="styles/letter-view.css" rel="stylesheet">
+    <link href="styles/checkbox.css" rel="stylesheet">
     <link href="styles/animation.css" rel="stylesheet">
-    <link href="styles/letterContent.css" rel="stylesheet">
+    <link href="styles/letter-content.css" rel="stylesheet">
 </head>
 <body>
 <header class="mail-header">
     <div class="mail-header__svgicon-menu"></div>
     <div class="mail-header__logo-container">
-        <a class="mail-header__logo-container-svgicon-Yandex" target="_blank" href="https://yandex.ru/"></a>
+        <a class="mail-header__logo-container-svgicon-yandex" target="_blank" href="https://yandex.ru/"></a>
         <a class="mail-header__logo-container-svgicon-mail" target="_blank" href="https://mail.yandex.ru/"></a>
     </div>
     <div class="mail-header__search-container">
@@ -26,7 +26,7 @@
     <div class="folders-menu">
         <button class="folders-menu__button-write">Написать</button>
         <div class="folders-menu__folders-list">
-            <button class="folders-menu__folders-list-button selected">Входящие</button>
+            <button class="folders-menu__folders-list-button folders-menu__folders-list-button_selected">Входящие</button>
             <button class="folders-menu__folders-list-button">Отправленные</button>
             <button class="folders-menu__folders-list-button">Удаленные</button>
             <button class="folders-menu__folders-list-button">Спам</button>
@@ -39,22 +39,22 @@
             <label class="check">
                 <input id="mainCheckbox" class="check__input" type="checkbox">
                 <div class="check__box" onclick='mainCheckBoxClicked()'>
-                    <div class='check__box__border'></div>
+                    <div class='check__box-border'></div>
                 </div>
             </label>
             <button class="letters-window__header-button">Переслать</button>
-            <button class="letters-window__header-button shift" onclick="removeCheckedLetters()">Удалить
+            <button class="letters-window__header-button" onclick="removeCheckedLetters()">Удалить
             </button>
-            <button class="letters-window__header-button shift">Это спам!</button>
-            <button class="letters-window__header-button shift">Прочитано</button>
+            <button class="letters-window__header-button">Это спам!</button>
+            <button class="letters-window__header-button">Прочитано</button>
         </header>
         <div class="line"></div>
         <div class="letters-window__body"></div>
         <div class="line"></div>
         <footer class="letters-window__footer">
-            <a class="letters-window__footer-a" target="_blank">Помощь и обратная связь</a>
-            <a class="letters-window__footer-a" target="_blank">Реклама</a>
-            <a class="letters-window__footer-a" target="_blank" href="https://yandex.ru/">&copy; 2001 -
+            <a class="letters-window__footer-link" target="_blank">Помощь и обратная связь</a>
+            <a class="letters-window__footer-link" target="_blank">Реклама</a>
+            <a class="letters-window__footer-link" target="_blank" href="https://yandex.ru/">&copy; 2001 -
                 2018, Яндекс</a>
         </footer>
     </div>
@@ -65,7 +65,7 @@
         <label class='check'>
             <input class='check__input' type='checkbox'>
             <div class='check__box'>
-                <div class='check__box__border'></div>
+                <div class='check__box-border'></div>
             </div>
         </label>
         <div class='letter-view__photo'></div>

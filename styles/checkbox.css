@@ -13,14 +13,14 @@
     cursor: pointer;
 }
 
-.check__box:before {
+.check__box::before {
     content: "";
     display: inline-block;
     vertical-align: middle;
     height: 100%;
 }
 
-.check__box__border {
+.check__box-border {
     display: inline-block;
     vertical-align: middle;
     width: 16px;
@@ -31,6 +31,6 @@
 }
 
 
-.check__input:checked + .check__box .check__box__border {
+.check__input:checked + .check__box .check__box-border {
     background-image: url(../images/checkMark.svg);
 }

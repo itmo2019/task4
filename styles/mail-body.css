@@ -74,12 +74,12 @@ body {
 
 }
 
-.selected {
+.folders-menu__folders-list-button_selected {
     border-radius: 4px;
     background-color: #cdd6e4;
     font-weight: bold;
 }
 
-.selected:hover {
+.folders-menu__folders-list-button_selected:hover {
     background-color: #cdd6e4;
 }

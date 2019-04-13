@@ -3,7 +3,7 @@
     width: 100%;
 }
 
-.mail-header:before {
+.mail-header::before {
     content: "";
     display: inline-block;
     vertical-align: middle;
@@ -27,7 +27,7 @@
     height: 32px;
 }
 
-.mail-header__logo-container-svgicon-Yandex {
+.mail-header__logo-container-svgicon-yandex {
     display: inline-block;
     width: 75px;
     height: 32px;
@@ -71,6 +71,6 @@
     display: block;
     height: 10px;
     width: 10px;
-    background-image: url(../images/cross.jpg);
-    background-size: contain;
+    background-image: url(../images/cross.svg);
+    cursor: pointer;
 }

@@ -13,7 +13,7 @@
     height: 6.25%;
 }
 
-.letters-window__header:before {
+.letters-window__header::before {
     content: "";
     display: inline-block;
     vertical-align: middle;
@@ -38,7 +38,7 @@
     cursor: pointer;
 }
 
-.shift {
+.letters-window__header-button + .letters-window__header-button {
     margin-left: 20px;
 }
 
@@ -60,14 +60,14 @@
     width: 100%;
 }
 
-.letters-window__footer:before {
+.letters-window__footer::before {
     content: "";
     display: inline-block;
     vertical-align: middle;
     height: 100%;
 }
 
-.letters-window__footer-a {
+.letters-window__footer-link {
     display: inline-block;
     vertical-align: middle;
     color: #ccc;
