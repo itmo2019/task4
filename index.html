@@ -1,0 +1,106 @@
+<html>
+
+<head>
+    <title>Яндекс.Почта</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <div class="page">
+        <header class="page__header">
+            <div class="page_inline page__ya-menu-logo">
+                <a href=""><img class="page__sidebar-menu" src="images/sidebar-menu.png" width="25" height="29"></a>
+            </div>
+            <a href="#"><img src="images/ya-mail-logo.png" alt="" class="page__ya-mail-logo" width="153" height="31"></a>
+            <input type="search" class="page__ya-search" placeholder="Поиск">
+            <button class="page__message-creator" onclick="createMessage()">New Mail</button>
+        </header>
+        <div class="ya-sidebar page__ya-sidebar">
+            <ul class="ya-sidebar__nav-sidebar">
+                <li class="ya-sidebar__compose-message page_text-overflow_hide"><a href="">Написать</a></li>
+                <li class="ya-sidebar__action page_text-overflow_hide"><a href="#">Входящие</a></li>
+                <li class="ya-sidebar__action page_text-overflow_hide"><a href="#">Отправленные</a></li>
+                <li class="ya-sidebar__action page_text-overflow_hide"><a href="#">Удалённые</a></li>
+                <li class="ya-sidebar__action page_text-overflow_hide"><a href="#">Спам</a></li>
+                <li class="ya-sidebar__action page_text-overflow_hide"><a href="#">Черновики</a></li>
+                <li class="ya-sidebar__action page_text-overflow_hide"><a href="#">Создать папку</a></li>
+            </ul>
+        </div>
+        <section class="ya-mail page__ya-mail">
+            <div class="ya-mail__content-top-bar">
+                <ul class="ya-mail__top-content-list">
+                    <li class="ya-mail__action ya-mail__select-all">
+                        <input type="checkbox" class="page_checkbox ya-mail__select-all-check" onclick="selectAll()">
+                    </li>
+                    <li class="ya-mail__action page_text-overflow_hide"><a href="#">Переслать</a></li>
+                    <li class="ya-mail__action page_text-overflow_hide"><a href="#" onclick="deleteSelected()">Удалить</a></li>
+                    <li class="ya-mail__action page_text-overflow_hide"> <a href="#">Это спам!</a></li>
+                    <li class="ya-mail__action page_text-overflow_hide"><a href="#">Прочитанно</a></li>
+                </ul>
+            </div>
+            <div class="content-messages ya-mail__content-messages">
+                <div class="content-messages__message-body">
+                    <input type="checkbox" id="message-select1">
+                    <div class="message1 content-messages__message1">
+                        <label for="message-select1" class="message1__exit" onclick="showList()">X</label>
+                        <img class="my-blog__round" alt="round" src="images/round.png" width="400" height="400">
+                        <div class="content-messages__body-text">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam vero minus accusamus hic eum fuga, voluptatibus, perspiciatis inventore 
+                            sunt, a natus asperiores nisi nam nulla magni cumque laborum nihil. Nam!
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Suscipit 
+                            laudantium aliquid aspernatur expedita eaque? Omnis optio qui saepe 
+                            facilis doloribus accusantium, laboriosam libero, voluptate aspernatur, 
+                            sapiente inventore! Impedit, nulla explicabo!
+                        </div>
+                    </div>
+                </div>
+                <ul class="content-messages__message-list">
+                    <template id="message-template">
+                        <li class="message message_unread content-messages__message"> 
+                            <input type="checkbox" class="message__elem message__message-select page_checkbox">
+                            <label class="message-open" for="message-select1">
+                                <img class="message__elem message__author-avatar" src="images/ya-message-logo.svg" width="30px" height="30px">
+                                <span class="message__elem message__author-name page_text-overflow_hide">Яндекс.Паспорт</span>
+                                <div class="message__elem message__mark-as-read-tick"></div>
+                                <span class="message__elem message__message-subject page_text-overflow_hide">Доступ к аккаунту восстановленДоступ к аккаунту восстановленДоступ к аккаунту восстановлен</span>
+                                <time class="message__elem message__message-receive-time page_text-overflow_hide">6 авг</time>
+                            </label>
+                        </li>
+                    </template>
+                    <li class="message message_unread content-messages__message"> 
+                        <input type="checkbox" class="message__elem message__message-select page_checkbox">
+                        <label class="message-open" for="message-select1">
+                            <img class="message__elem message__author-avatar" src="images/ya-message-logo.svg" width="30px" height="30px">
+                            <span class="message__elem message__author-name page_text-overflow_hide">Яндекс.Паспорт</span>
+                            <div class="message__elem message__mark-as-read-tick"></div>
+                            <span class="message__elem message__message-subject page_text-overflow_hide">Доступ к аккаунту восстановленДоступ к аккаунту восстановленДоступ к аккаунту восстановлен</span>
+                            <time class="message__elem message__message-receive-time page_text-overflow_hide">6 авг</time>
+                        </label>
+                    </li>
+                    <li class="message content-messages__message">
+                        <input type="checkbox" class="message__elem message__message-select page_checkbox">
+                        <img class="message__elem message__author-avatar" src="images/ya-message-logo.svg" width="30px" height="30px">
+                        <span class="message__elem message__author-name page_text-overflow_hide">Яндекс.Паспорт</span>
+                        <div class="message__elem message__mark-as-read-tick page_visibility_hide"></div>
+                        <span class="message__elem message__message-subject page_text-overflow_hide">Доступ к аккаунту восстановлен</span>
+                        <time class="message__elem message__message-receive-time page_text-overflow_hide">5 авг</time>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-content page__footer-content">
+                <footer>
+                    <nav class="page_inline">
+                        <a href="#" class="footer-content__link page_text-overflow_hide">Помощь и обратная связь</a>
+                        <a href="#" class="footer-content__link page_text-overflow_hide">Реклама</a>
+                    </nav>
+                    <span class="footer-content__copyright page_text-overflow_hide">&copy;2001&mdash;2018, Яндекс</span>
+                </footer>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>
