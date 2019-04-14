@@ -246,8 +246,8 @@ ul {
   border-bottom-width: 1px;
 }
 
-.mail__content__unread .mail__sender-name,
-.mail__content__unread .mail__title {
+.mail__content_unread .mail__sender-name,
+.mail__content_unread .mail__title {
   font-weight: bold;
 }
 
@@ -293,7 +293,7 @@ ul {
   vertical-align: middle;
 }
 
-.mail__unread-flag {
+.mail_unread-flag {
   width: 10px;
   height: 10px;
   margin-left: 10px;

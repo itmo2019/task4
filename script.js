@@ -61,18 +61,17 @@ const MAIL_CONTENT_TEMPLATE = {
 
 var mailsHolder = [];
 
-function stashOldMails() {
-  let mails = document.getElementsByClassName('mail');
+async function stashOldMail() {
+  let mails = await document.getElementsByClassName('mail');
   if (mails.length > 30) {
-    for (var i = mails.length - 1; i >= 30; i--) {
-      mailsHolder.push(mails[i]);
-      mails[i].parentElement.removeChild(mails[i]);
-    }
+    let mailToStash = mails[mails.length - 1];
+    mailsHolder.push(mailToStash);
+    mailToStash.parentElement.removeChild(mailToStash);
   }
 }
 
-function unstashOldMails(unstashCount) {
-  let mailBox = document.getElementById('mails-id');
+async function unstashOldMails(unstashCount) {
+  let mailBox = await document.getElementById('mails-id');
 
   let count = Math.min(unstashCount, mailsHolder.length);
   for (var i = 0; i < count; i++) {
@@ -176,7 +175,7 @@ function createMail() {
   }
 
   mails.insertBefore(mail, mails.firstChild);
-  stashOldMails();
+  stashOldMail();
   setAllMarkStatus(false);
 }
 
