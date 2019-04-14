@@ -1,7 +1,7 @@
 .check__input {
     position: absolute;
-    -webkit-appearance: none;
-    -moz-appearance: none;
+    left: -9999px;
+    opacity: 0;
 }
 
 .check__box {
