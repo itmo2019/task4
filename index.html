@@ -10,7 +10,7 @@
 <body class="body">
   <header class="header">
     <div class="service-logo">
-      <img class="service-logo__menu-img" src="./resources/svg/menu-button.svg">
+      <img class="service-logo__menu-img" src="./resources/images/menu-button.svg">
       <img class="service-logo__logo-img" src="./resources/images/mail_logo.png">
     </div>
     <div class="search-block">
@@ -20,7 +20,7 @@
 
   <main class="main-content">
     <div class="mail-menu">
-      <button class="mail-menu__send-button" onclick="createMail()">Написать</button>
+      <button class="mail-menu__send-button">Написать</button>
 
       <ul class="mail-menu__bar">
         <li class="mail-menu__bar-item
@@ -64,11 +64,11 @@
       <div class="mails" id="mails-id">
         <template id="mail-template">
           <div class="mail" id="mail-id">
-            <div class="mail__content mail__content__unread">
+            <div class="mail__content mail__content_unread">
               <input type="checkbox" class="mail__chooce" id="mail__chooce-id" onclick="checkMarkAllCheckBox()">
               <img class="mail__sender-logo" id="mail__sender-logo-id" src="">
               <span class="mail__sender-name mail__sender-name__hidden-text" id="mail__sender-name-id"></span>
-              <div class="mail__unread-flag"></div>
+              <div class="mail_unread-flag"></div>
               <span class="mail__title mail__title__hidden-text" id="mail__title-id"></span>
               <time class="mail__time" id="mail__time-id"></time>
               <div class="mail__text" id="mail__text-id"></div>

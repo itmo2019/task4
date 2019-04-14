@@ -1,28 +1,28 @@
 @font-face {
   font-family: YandexSansBold;
-  src: url("./resources/font_style/YandexSansDisplay-Bold.ttf");
+  src: url("./resources/fonts/YandexSansDisplay-Bold.ttf");
 }
 @font-face {
   font-family: YandexSansThin;
-  src: url("./resources/font_style/YandexSansDisplay-Thin.ttf");
+  src: url("./resources/fonts/YandexSansDisplay-Thin.ttf");
 }
 @font-face {
   font-family: HelveticaNeueCyrLight;
-  src: url("./resources/font_style/HelveticaNeueCyr-Light.otf")
+  src: url("./resources/fonts/HelveticaNeueCyr-Light.otf")
 }
 @font-face {
   font-family: HelveticaNeueCyrMedium;
-  src: url("./resources/font_style/HelveticaNeueCyr-Medium.otf")
+  src: url("./resources/fonts/HelveticaNeueCyr-Medium.otf")
 }
 
 @font-face {
   font-family: HelveticaNeueLight;
-  src: url("./resources/font_style/HelveticaNeueUltraLight.ttf")
+  src: url("./resources/fonts/HelveticaNeueUltraLight.ttf")
 }
 
 @font-face {
   font-family: YandexSansTextLight;
-  src: url("./resources/font_style/YandexSansText-Light.ttf")
+  src: url("./resources/fonts/YandexSansText-Light.ttf")
 }
 
 .body {
