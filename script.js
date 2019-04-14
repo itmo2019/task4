@@ -17,21 +17,14 @@ var letterThemes = [];
 var nextLetterId = 3;
 
 function createMail(from = "Яндекс.Почта", theme = "Тестовое письмо", date = "6 июл.") {
-    var mail = document.createElement("section");
-    mail.setAttribute("class", "letter letter-creation-animation");
-    mail.innerHTML =
-        "            <input type=\"checkbox\" class=\"letter__checkbox hidden-checkbox\">\n" +
-        "            <span class=\"decorative-checkbox letter__decorative-checkbox\"></span>\n" +
-        "            <label class=\"letter__label\" for=\"check-label\" id=\"letter" + nextLetterId + "\">" +
-        "            <img class=\"letter__img\" src=\"https://thispersondoesnotexist.com/image?randomSeed=" + nextLetterId + "\">\n" +
-        "            <h2 class=\"letter__from bold hide-overflow\">" + from + "</h2>\n" +
-        "            <div class=\"letter__read-status unchecked\"></div>\n" +
-        "            <p class=\"letter__date hide-overflow\">" + date + "</p>\n" +
-        "            <h3 class=\"letter__theme bold hide-overflow\">" + theme + "</h3>\n" +
-        "            <div class=\"line letter__line\"></div>\n" +
-        "            </label>";
+    var letter = document.getElementById("letter-template").content.cloneNode(true);
+    letter.querySelector(".letter__label").setAttribute("id", "letter" + nextLetterId);
+    letter.querySelector(".letter__img").setAttribute("src", "https://thispersondoesnotexist.com/image?randomSeed=" + nextLetterId);
+    letter.querySelector(".letter__from").innerHTML = from;
+    letter.querySelector(".letter__date").innerHTML = date;
+    letter.querySelector(".letter__theme").innerHTML = theme;
     nextLetterId++;
-    return mail;
+    return letter;
 }
 
 function changeCheckboxesStatus() {
@@ -82,7 +75,7 @@ function newMail() {
     letterThemes[curLetterId] = "";
     setRandomText(curLetterId);
     var theme = "...";
-    mailsList.insertBefore(createMail(from, theme, date), mailsList.firstChild.nextSibling.nextSibling);
+    mailsList.insertBefore(createMail(from, theme, date), mailsList.querySelector("#dog-letter").nextSibling);
     document.getElementById("letter" + curLetterId).addEventListener("click", function () {
         document.getElementById("letter-theme").innerHTML = letterThemes[curLetterId];
         document.getElementById("letter-text").innerHTML = letterTexts[curLetterId];

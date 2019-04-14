@@ -48,7 +48,21 @@
     </header>
     <div class="line"></div>
     <div class="letters-list" id="letters-list">
-        <section>
+        <template id="letter-template">
+            <section class="letter letter-creation-animation">
+                <input type="checkbox" class="letter__checkbox hidden-checkbox">
+                <span class="decorative-checkbox letter__decorative-checkbox"></span>
+                <label class="letter__label" for="check-label" id="letter">
+                    <img class="letter__img">
+                    <h2 class="letter__from bold hide-overflow"></h2>
+                    <div class="letter__read-status unchecked"></div>
+                    <p class="letter__date hide-overflow"></p>
+                    <h3 class="letter__theme bold hide-overflow"></h3>
+                    <div class="line letter__line"></div>
+                </label>
+            </section>
+        </template>
+        <section id="dog-letter">
             <input type="checkbox" id="check-label">
             <div class="open-letter hidden-text">
                 <div class="open-letter__header">
