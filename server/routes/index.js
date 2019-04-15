@@ -1,7 +1,7 @@
 const router = require('express').Router();
 
-const sender = require('./send');
-const deleter = require('./delete');
+const sender = require('./sender');
+const deleter = require('./deleter');
 const messagesLoader = require('./messages');
 const Database = require('./database');
 
