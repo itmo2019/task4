@@ -1,4 +1,4 @@
-export function request(method, path, headers, async, onResponse) {
+export default function request(method, path, headers, async, onResponse) {
 	const xhr = new XMLHttpRequest();
 
 	xhr.open(method, path, async);

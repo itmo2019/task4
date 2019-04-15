@@ -1,4 +1,4 @@
-import * as http from './http';
+import request from './http';
 
 const host = 'http://localhost';
 const port = 8080;
@@ -6,7 +6,7 @@ const port = 8080;
 const Method = {
 	GET : 'GET',
 	POST : 'POST'
-}
+};
 
 function resolve(path) {
 	return `${host}:${port}${path}`;
@@ -18,10 +18,10 @@ function header(name, value) {
 
 const Headers = {
 	AppJson : header('Content-Type', 'application/json')
-}
+};
 
 export function sendMessage(msg, callback) {
-	http.request(
+	request(
 		Method.POST,
 		resolve('/send'),
 		[Headers.AppJson],
@@ -31,7 +31,7 @@ export function sendMessage(msg, callback) {
 }
 
 export function deleteMessages(ids, callback) {
-	http.request(
+	request(
 		Method.POST, 
 		resolve('/delete'),
 		[Headers.AppJson],
@@ -41,7 +41,7 @@ export function deleteMessages(ids, callback) {
 }
 
 export function loadMessages(callback) {
-	http.request(
+	request(
 		Method.GET,
 		resolve('/messages'),
 		[Headers.AppJson],
@@ -51,7 +51,7 @@ export function loadMessages(callback) {
 }
 
 export function getMessage(id, callback) {
-	http.request(
+	request(
 		Method.GET,
 		resolve(`/messages/${id}`),
         [Headers.AppJson],
