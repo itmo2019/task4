@@ -35,17 +35,8 @@ module.exports = class Database {
 	}
 
 	takeLast(n) {
-		const lasts = [];
-
-		for (let i = 0; i < n; i++) {
-			if (this.elems.length === 0) break;
-			lasts.push(this.elems.pop());
-		}
-
+		const lasts = this.elems.slice(Math.max(0, this.elems.length - n));
 		lasts.reverse();
-
-		for (let i in lasts) this.elems.push(lasts[i]);
-
 		return lasts;
 	}
 }
