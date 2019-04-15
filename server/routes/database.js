@@ -13,12 +13,8 @@ module.exports = class Database {
 	}
 
 	delete(id) {
-		for (let i in this.elems) {
-			if (id === this.elems[i].id) {
-				this.elems.splice(i, 1);
-				break;
-			}
-		}
+		const pos = this.elems.findIndex(elem => elem.id === id);
+		this.elems.splice(pos, 1);
 	}
 
 	find(id) {
