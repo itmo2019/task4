@@ -1,7 +1,5 @@
 const router = require('express').Router();
 
-const sender = require('./sender');
-const deleter = require('./deleter');
 const messagesLoader = require('./messages');
 const Database = require('./database');
 
@@ -11,24 +9,24 @@ module.exports = function() {
 	router.get('/messages', messagesLoader.all.bind({ db: db }));
 	router.get('/messages/:id', messagesLoader.byId.bind({ db: db}));
 
-	const newMsgSock = this.io.of('/new-message');
-	sender.addListener(newMessageListener.bind({ socket: newMsgSock}));
-	router.post('/send', sender.send);
-
-	deleter.addListener(deleteMessagesListener);
-	router.post('/delete', deleter.delete);
+	router.post('/send', receiveMessage(this.io.of('/new-message')));
+	router.post('/delete', deleteMessages);
 
 	router.get('/*', (req, res) => res.sendStatus(404));
 
 	return router;
 }
 
-function newMessageListener(req) {
-	let letter = req.body;
-	letter = db.insert(letter);
-	this.socket.emit('new-message', letter);
+function receiveMessage(socket) {
+	return (req, res) => {
+		let letter = req.body;
+		letter = db.insert(letter);
+		socket.emit('new-message', letter);
+		res.send();
+	}
 }
 
-function deleteMessagesListener(req) {
+function deleteMessages(req, res) {
 	req.body.forEach(id => db.delete(id));
+	res.send();
 }
