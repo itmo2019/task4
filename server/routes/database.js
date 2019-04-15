@@ -35,8 +35,6 @@ module.exports = class Database {
 	}
 
 	takeLast(n) {
-		const lasts = this.elems.slice(Math.max(0, this.elems.length - n));
-		lasts.reverse();
-		return lasts;
+		return this.elems.slice(Math.max(0, this.elems.length - n));
 	}
 }
