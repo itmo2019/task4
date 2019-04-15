@@ -6,7 +6,7 @@ module.exports = {
 	},
 
 	send: function(req, res) {
-		for (let l in listeners) listeners[l](req);
+		listeners.forEach(listener => listener(req));
 		res.send('send');
 	}
 }
