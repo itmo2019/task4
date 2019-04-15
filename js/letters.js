@@ -3,9 +3,14 @@ const minNewMessageTimeout = 10;
 const maxNewMessageTimeout = minutesToMillis(10);
 
 var letterCounter = 5;
+var letterId = 5;
 let lastTimeout = randomInteger(minNewMessageTimeout, maxNewMessageTimeout);
 
 function newMail() {
+    if (letterCounter >= 30) {
+        return
+    }
+
     const mails = document.getElementById("letters");
     const letter = generateLetter();
 
@@ -17,7 +22,7 @@ function newMail() {
     }
     mails.insertBefore(letter, before);
 
-    setTimeout(() => setCreateTransition(letter), 10);
+    setCreateTransition(letter);
 }
 
 window.onload = function () {
@@ -26,19 +31,21 @@ window.onload = function () {
     let sendBtn = document.querySelector(".ya-big-button");
     sendBtn.addEventListener("click", () => newMail());
 
-     let removeBtn = document.querySelector("#remove-btn");
+    let removeBtn = document.querySelector("#remove-btn");
     removeBtn.addEventListener("click", () => removeLetters());
 
-     let selectAllBtn = document.querySelector("#select-all");
+    let selectAllBtn = document.querySelector("#select-all");
     selectAllBtn.addEventListener("click", () => selectAll());
 };
 
 function newMessagePerRandomTime() {
     newMail();
-    let randomTimeout = randomInteger(minNewMessageTimeout, maxNewMessageTimeout);
-    let timeout = Math.max(randomTimeout, newMessageTimeoutMax);
-    setTimeout(newMessagePerRandomTime, (newMessageTimeoutMax - lastTimeout) + timeout);
-    lastTimeout = timeout;
+    if (letterCounter < 30) {
+        let randomTimeout = randomInteger(minNewMessageTimeout, maxNewMessageTimeout);
+        let timeout = Math.max(randomTimeout, newMessageTimeoutMax);
+        setTimeout(newMessagePerRandomTime, (newMessageTimeoutMax - lastTimeout) + timeout);
+        lastTimeout = timeout;
+    }
 }
 
 function removeLetters() {
@@ -49,7 +56,8 @@ function removeLetters() {
         .call(mails.getElementsByClassName("ya-checkbox"), (elem) => elem.checked)
         .map((doc) => doc.parentElement.parentElement);
 
-    setTimeout(() => markAsRemoved(checked), 10);
+    markAsRemoved(checked);
+    letterCounter -= checked.length;
 
     let selectAllCheckBox = document.getElementById("select-all");
     selectAllCheckBox.checked = false;
@@ -72,7 +80,8 @@ function generateLetter() {
 }
 
 function buildLetter(avatar, sender, title, date) {
-    let letter = getLetterTemplate(letterCounter++);
+    let letter = getLetterTemplate(letterId++);
+    letterCounter++;
 
     setText(letter, ".letters__mail_sender", sender);
     setText(letter, ".letters__mail_message-title", title);
@@ -103,31 +112,29 @@ function setText(letter, className, text) {
 }
 
 function setCreateTransition(letter) {
-    return letter.className += " letters_mail_show";
+    const forceReflow = letter.offsetHeight;
+    return letter.classList.add("letters_mail_show");
 }
 
 function markAsRemoved(checked) {
     checked.forEach((parent) => {
-        parent.className += " letters_mail_will_be_removed";
+        const forceReflow = parent.offsetHeight;
+        parent.classList.add("letters_mail_will_be_removed");
     })
 }
 
 function loadFactAboutYear(year, msg) {
-    let xhr = new XMLHttpRequest();
-    xhr.open('GET', `http://numbersapi.com/${year}/year`, true);
-    xhr.onload = function (e) {
-        if (xhr.readyState === 4) {
-            if (xhr.status === 200) {
-                msg.innerText = xhr.responseText;
+    fetch(`http://numbersapi.com/${year}/year`)
+        .then(function (response) {
+            if (response.status === 200) {
+                return response.text().then(text => {
+                        msg.innerText = text
+                    }
+                );
             } else {
-                console.error(xhr.statusText);
+                console.error(response.statusText);
             }
-        }
-    };
-    xhr.onerror = function (e) {
-        console.error(xhr.statusText);
-    };
-    xhr.send(null);
+        });
 }
 
 function getYear() {
@@ -155,9 +162,12 @@ function getAvatar() {
 
 function getTitle(year) {
     switch (randomInteger(0, 2)) {
-        case 0: return `В ${year} нужно всего лишь...`;
-        case 1: return `А ты знал что в ${year} году...`;
-        case 2: return `Раз в ${year} происходит...`;
+        case 0:
+            return `В ${year} нужно всего лишь...`;
+        case 1:
+            return `А ты знал что в ${year} году...`;
+        case 2:
+            return `Раз в ${year} происходит...`;
     }
 }
 
