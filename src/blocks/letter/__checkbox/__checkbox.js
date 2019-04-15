@@ -1,7 +1,5 @@
 Array.from(document.querySelectorAll('.letter__checkbox')).forEach(checkbox => {
 	checkbox.addEventListener('change', event => {
-			console.log('changed')
-
 		const letter = checkbox.parentNode.parentNode.parentNode;
 
 		if (checkbox.checked) {

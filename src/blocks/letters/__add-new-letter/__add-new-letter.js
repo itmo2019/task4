@@ -82,7 +82,6 @@ function addLinkListener(letter) {
 }
 
 function showContent(content) {
-    console.log(content)
     const messageContent = createMessageContent(content);
     const lettersList = document.querySelector('.letters__list');
 

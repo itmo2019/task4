@@ -2,7 +2,6 @@ import generateLetter from './__letter-generator/__letter-generator';
 import {sendMessage} from '../../lib/server-api';
 
 export function newMail() {
-	console.log(new Date());
 	sendMessage(generateLetter());
 }
 
