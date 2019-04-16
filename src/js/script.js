@@ -9,24 +9,30 @@ function openMessage(label) {
         label.querySelector("time").innerHTML;
 }
 
-const min = 10;
-const max = 600000;
+const minDelay = 10;
+/* 10 mins */
+const maxDelay = 600000;
+/* 5 mins */
+const interval = maxDelay / 2;
+
 /* Returns result in ms */
-function getRandomInterval() {
+function getRandomTimeout(min, max) {
     return Math.floor(Math.random() * Math.floor(min + max) - min);
 }
 
-function sleep (interval) {
-    return new Promise((resolve) => setTimeout(resolve, interval));
-}
-
 async function getMail() {
-    await sleep(getRandomInterval());
-    await newMail();
-    while (true) {
-        await sleep(getRandomInterval() + max);
-        await newMail();
-    }
+    await new Promise((resolve) => {
+        setTimeout(async () => {
+            await newMail();
+            resolve();
+        }, getRandomTimeout(minDelay, maxDelay));
+    });
+    await new Promise((resolve) => {
+        setTimeout(async () => {
+            await getMail();
+            resolve();
+        }, interval + getRandomTimeout(minDelay, maxDelay));
+    });
 }
 
 function deleteMessages() {
@@ -82,7 +88,9 @@ async function newMail() {
     newLetterNode.getElementById("sender-name").innerText = randomPage['parse']['title'];
     newLetterNode.getElementById("message-text").innerText = parseText(randomPage['parse']['text']['*']);
     let today = new Date();
-    let time = today.getHours() + ":" + today.getMinutes();
+    let minutes = today.getMinutes();
+    let minsPrefix = Math.floor(minutes / 10) === 0 ? "0" : "";
+    let time = today.getHours() + ":" + minsPrefix + minutes;
     let messageTime = newLetterNode.getElementById("message-time");
     messageTime.innerText = time;
     messageTime.setAttribute("datetime", time);
@@ -96,9 +104,7 @@ async function newMail() {
     messagesList.insertBefore(newLetterNode, messagesList.firstChild);
 }
 
-(async function () {
-    await getMail();
-})();
+getMail();
 
 let deleteButton = document.getElementById("delete-button");
 deleteButton.addEventListener('click', deleteMessages);
