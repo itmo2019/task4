@@ -82,17 +82,16 @@ function hideLetters() {
 
 function newMail() {
     count++;
-    console.log('add:' + count);
     document.querySelector('.check').checked = false;
     let allLetters = document.getElementById('all-letters');
     let newLetter = createLetter();
     allLetters.insertBefore(newLetter, allLetters.querySelectorAll("li")[0]);
     if (!isOpen)
         allLetters.classList.add('all-letter-down');
-    newLetter.addEventListener("webkitAnimationEnd", function () {
+    newLetter.addEventListener("animationend", function () {
         removeClass(newLetter, 'animation-insert');
     });
-    allLetters.addEventListener("webkitAnimationEnd", function () {
+    allLetters.addEventListener("animationend", function () {
         removeClass(allLetters, 'all-letter-down');
     });
     if (!isOpen) {
@@ -104,7 +103,7 @@ function removeClass(letter, name) {
     letter.classList.remove(name);
 }
 
-function checkVisibility() {
+function updateVisibility() {
     let letters = document.getElementById('all-letters').querySelectorAll("li");
     for (let i = 0; i < Math.min(letters.length, LETTERS_ON_PAGE); i++) {
         letters[i].style.display = 'block';
@@ -113,17 +112,16 @@ function checkVisibility() {
 
 function removeLetters() {
     if (isOpen) return;
-    console.log('remove:' + count);
     document.body.querySelector('.check').checked = false;
     let letters = document.getElementById('all-letters').querySelectorAll("li");
     letters.forEach(letter => {
         if (letter.querySelector(".check").checked) {
             letter.classList.add('animation-delete');
-            letter.addEventListener("webkitAnimationEnd", function () {
+            letter.addEventListener("animationend", function () {
                 removeClass(letter, 'animation-delete');
                 count--;
                 letter.remove();
-                checkVisibility();
+                updateVisibility();
             });
         }
     });
@@ -141,7 +139,6 @@ function selectAll() {
 function getRandomLetter() {
     let t = randomInt(10, 300000) + 300000;
     newMail();
-    console.log(t);
     setTimeout(getRandomLetter, t);
 }
 
@@ -155,33 +152,23 @@ function _displayBlock(obj) {
 
 function openLetter(event) {
     let target = event.target;
-    console.log(target);
     if (target.tagName !== 'INPUT' && target.type !== 'checkbox'
         && !target.classList.contains('main-block__all-letters')) {
         if (target.dataset.closeLetter === 'close') {
-            while (!target.classList.contains('main-block__letter')) {
-                target = target.parentElement;
-            }
+            target = target.closest(".main-block__letter");
             isOpen = false;
             hideLetters();
             _displayNone(target.querySelector('.main-block__letter-content'));
             _displayBlock(target.querySelector("div"));
         } else { //open
-            while (!target.classList.contains('main-block__letter')) {
-                target = target.parentElement;
-            }
+            target = target.closest(".main-block__letter");
             isOpen = true;
             _displayNone(target.querySelector("div"));
             _displayBlock(target.querySelector('.main-block__letter-content'));
         }
     }
-    console.log(target);
 }
 
-let Event = new CustomEvent('customAdd', getRandomLetter);
-let Elem = document.body;
-Elem.addEventListener('customAdd', getRandomLetter);
-Elem.dispatchEvent(Event);
 
 document.getElementById('all-letters').addEventListener('click', openLetter);
 document.getElementById('get-letter').addEventListener('click', newMail);
