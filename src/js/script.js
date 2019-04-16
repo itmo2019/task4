@@ -17,21 +17,16 @@ const interval = maxDelay / 2;
 
 /* Returns result in ms */
 function getRandomTimeout(min, max) {
-    return Math.floor(Math.random() * Math.floor(min + max) - min);
+    return Math.floor(min + Math.random() * Math.floor(max - min));
 }
 
 async function getMail() {
-    await new Promise((resolve) => {
-        setTimeout(async () => {
-            await newMail();
-            resolve();
-        }, getRandomTimeout(minDelay, maxDelay));
-    });
+    await newMail();
     await new Promise((resolve) => {
         setTimeout(async () => {
             await getMail();
             resolve();
-        }, interval + getRandomTimeout(minDelay, maxDelay));
+        }, getRandomTimeout(interval, maxDelay));
     });
 }
 
@@ -104,7 +99,16 @@ async function newMail() {
     messagesList.insertBefore(newLetterNode, messagesList.firstChild);
 }
 
-getMail();
+async function main() {
+    await new Promise((resolve) => {
+        setTimeout(async () => {
+            await getMail();
+            resolve();
+        }, getRandomTimeout(minDelay, maxDelay));
+    });
+}
+
+main().catch(console.log);
 
 let deleteButton = document.getElementById("delete-button");
 deleteButton.addEventListener('click', deleteMessages);
