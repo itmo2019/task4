@@ -115,11 +115,11 @@ body {
 }
 
 .content-main {
-    height: 88%;
+    height: 92%;
 }
 
 .content-main_view {
-    overflow: hidden;
+    overflow-y: auto;
 }
 
 ._bottom-separator-view {
