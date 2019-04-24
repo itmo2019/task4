@@ -47,6 +47,7 @@ var mailsPlaceholder = document.getElementById("mails-placeholder");
 var mailInnerPalceholder = document.getElementById("preview-placeholder");
 var closeButtonInnerMail = document.getElementById("placeholder-for-close-button");
 
+
 var countLetter = 1;
 
 var letterStorage = [];

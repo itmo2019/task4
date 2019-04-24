@@ -31,6 +31,12 @@ function showInnerMessage(event) {
     if (mail === null) {
         return;
     }
+    console.log(mail);
+    let texts = mail.getElementsByClassName("mail__text-message");
+    if (texts === undefined || texts.length !== 1) {
+        return;
+    }
+    setFullText(texts[0].innerText);
     hidePlaceholders();
 }
 
@@ -44,4 +50,11 @@ function deleteMail(mail) {
     mail.addEventListener('transitionend', (event1) => {
         event1.target.remove();
     });
+}
+
+function setFullText(text) {
+    var mailFullContent = document.getElementById("mail-full-content");
+    console.log(text);
+    console.log(mailFullContent);
+    mailFullContent.innerText = text;
 }
