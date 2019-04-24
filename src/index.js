@@ -47,11 +47,6 @@ function addNewMail() {
         let newItem = document.createElement("li");
         newItem.innerHTML = mailHtml;
         let list = document.querySelector(".mail-list");
-        let firstElem = document.querySelector(".mail-list__elem");
-        if (firstElem != null) {
-            let ref = firstElem.childNodes[1].childNodes[3];
-            firstElem.childNodes[1].childNodes[3].replaceWith(ref);
-        }
         list.insertBefore(newItem, list.childNodes[0]);
         setTimeout(function() {
             newItem.classList.add("mail-list__elem", "mail-list__elem_view");
@@ -66,4 +61,4 @@ function generateRandomTime(leftBorder, rightBorder) {
     return Math.random() * (rightBorder - leftBorder) + leftBorder
 }
 
-setInterval(addNewMail, 5  * 1000);
+setInterval(addNewMail, 5   *  1000);
