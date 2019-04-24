@@ -497,21 +497,6 @@ body {
     color: #fff;
 }
 
-.sidebar__add-mail {
-    width: 147px;
-    height: 32px;
-}
-
-.sidebar__add-mail_view {
-    margin-top: 8px;
-    border-radius: 3px;
-    background-color: #6287bd;
-    border: none;
-    font: normal 500 12px normal HelveticaNeue;
-    letter-spacing: normal;
-    font-stretch: normal;
-    color: #fff;
-}
 
 .another-items__list {
 }
