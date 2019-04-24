@@ -372,6 +372,12 @@ body {
     text-align: right;
 }
 
+.footer__link_view {
+    color: #9b9b9b;
+    margin-right: 20px;
+    text-decoration: none;
+}
+
 .read-status_not-read {
     visibility: visible;
 }
@@ -529,6 +535,7 @@ body {
     width: 147px;
     height: 22px;
 }
+
 
 .another-items__item_view {
     margin: 0;
