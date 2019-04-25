@@ -18,58 +18,63 @@ var mails = [
 ];
 
 const maxMails = 30;
+const minTimeInterval = 10;
+const consTimeInterval = 300000;
+const maxTimeInterval = 600000;
 
 window.onload = init;
 
+var penultimateMailTime = 0;
+var previousMailTime = 0;
+
 function init() {
-    var mailList = document.getElementsByClassName("mailbox__mail-list")[0];
+    var mailList = document.querySelector(".mailbox__mail-list");
     mails.forEach(mail => {
-        mailList.insertAdjacentHTML("afterBegin", mail.toHTML());
-        var mailElement = document.getElementsByClassName("mailbox__mail")[0];
-        mailElement.removeAttribute("state");
+        mailList.insertBefore(mail.toNode(), mailList.firstChild);
+        var mailElement = document.querySelector(".mailbox__mail");
+        mailElement.removeAttribute("data-state");
         mailElement.addEventListener('click', () => setMailContents(mailElement.id));
     })
 
-    setTimeout(autoMails, getRandomInt(10, 600000));
+    setTimeout(autoMails, getRandomInt(minTimeInterval, maxTimeInterval));
 }
 
 function autoMails() {
-    var timeout = getRandomInt(300000, 600000);
+    var currentTime = getCurrentTime();
+    var timeout = getRandomInt(Math.max(minTimeInterval, Math.min(currentTime - penultimateMailTime, consTimeInterval)), maxTimeInterval);
+    penultimateMailTime = previousMailTime;
+    previousMailTime = currentTime + timeout;
     newMail();
     setTimeout(autoMails, timeout);
 }
 
-function findMailById(id) {
-    return mails.filter(mail => mail.id == id)[0];
-}
-
 function setMailContents(id) {
-    document.getElementsByClassName("mail-contents__html")[0].innerHTML = findMailById(id).text;
+    document.querySelector(".mail-contents__html").innerHTML = mails.find(mail => mail.id == id).text;
 }
 
 function inflateMail(id) {
     var mailElement = document.getElementById(id);
-    mailElement.setAttribute("state", "showing");
     mailElement.style.display = 'block';
+    mailElement.setAttribute("data-state", "showing");
     mailElement.addEventListener('click', () => setMailContents(mailElement.id));
-    setTimeout(function() {
-        mailElement.removeAttribute("state");
-    }, 400);
+    mailElement.addEventListener('animationend', function() {
+        mailElement.removeAttribute("data-state");
+    });
 }
 
 function deflateMail(id) {
     var mail = document.getElementById(id);
-    mail.setAttribute("state", "deleted");
-    setTimeout(function() {
+    mail.setAttribute("data-state", "deleted");
+    mail.addEventListener('animationend', function() {
         mail.style.display = "none";
-    }, 400);
+    });
 }
 
 function newMail() {
-    var mailList = document.getElementsByClassName("mailbox__mail-list")[0];
+    var mailList = document.querySelector(".mailbox__mail-list");
     var mail = generateMail();
     mails.push(mail);
-    mailList.insertAdjacentHTML("afterBegin", mail.toHTML());
+    mailList.insertBefore(mail.toNode(), mailList.firstChild);
     inflateMail(mail.id);
 
     if (mails.length > maxMails) {
@@ -83,14 +88,14 @@ function deleteMail(message) {
         inflateMail(mails[mails.length - maxMails - 1].id);
     }
     mails = mails.filter(mail => mail.id != message.id);
-    setTimeout(function() {
+    message.addEventListener('animationend', function() {
         message.remove();
-    }, 400);
+    });
 
 }
 
 function deleteSelected() {
     var mailList = Array.from(document.getElementsByClassName("mailbox__mail"));
-    var checkedMailList = mailList.filter(mail => mail.getElementsByClassName("checkbox__input")[0].checked);
+    var checkedMailList = mailList.filter(mail => mail.querySelector(".checkbox__input").checked);
     checkedMailList.forEach(deleteMail);
 }

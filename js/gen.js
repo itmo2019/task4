@@ -61,26 +61,18 @@ function Mail(img, author, title, date, text, old) {
     this.id = mailCnt++;
 }
 
-Mail.prototype.toHTML = function() {
-    return `<label for="mailbox__trigger">
-                <div class="mailbox__mail ${this.old?"":"mail__new"}" state="hidden" id="${this.id}">
-                    <label class="checkbox">
-                        <input type="checkbox" class="checkbox__input"/>
-                        <span class="checkbox__span"></span>
-                    </label>
-                    <div class="mailbox__mail-element mail__pic">
-                        <img class="pic__img" src=${this.img}></img>
-                    </div>
-                    <div class="mailbox__mail-element mail__author">
-                        ${this.author}
-                    </div>
-                    <div class="mailbox__mail-element mail__dot"></div>
-                    <div class="mailbox__mail-element mail__title">
-                        ${this.title}
-                    </div>
-                    <time class="mailbox__mail-element mail__time">
-                        ${this.date}
-                    </time>
-                </div>
-            </label>`;
+Mail.prototype.toNode = function() {
+    var mailTemplate = document.getElementById("mailbox__mail-template");
+    var mailNode = mailTemplate.content.cloneNode(true);
+    
+    if (!this.old) {
+        mailNode.querySelector(".mailbox__mail").classList.add("mail__new");
+    }
+    mailNode.querySelector(".mailbox__mail").setAttribute("id", this.id);
+    mailNode.querySelector(".pic__img").setAttribute("src", this.img);
+    mailNode.querySelector(".mail__author").innerHTML = this.author;
+    mailNode.querySelector(".mail__title").innerHTML = this.title;
+    mailNode.querySelector(".mail__time").innerHTML = this.date;
+    
+    return mailNode;
 }

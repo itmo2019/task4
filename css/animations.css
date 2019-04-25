@@ -5,11 +5,11 @@
     }
 }
 
-.mailbox__mail[state="deleted"] {
+.mailbox__mail[data-state="deleted"] {
     animation: deletion 0.4s 1 ease-out forwards;
 }
 
-.mailbox__mail[state="hidden"] {
+.mailbox__mail[data-state="hidden"] {
     height: 0px;
     border-width: 0px;
 }
@@ -25,6 +25,6 @@
     }
 }
 
-.mailbox__mail[state="showing"] {
+.mailbox__mail[data-state="showing"] {
     animation: appearance 0.4s 1 ease-out forwards;
 }
