@@ -1,0 +1,52 @@
+.menu {
+    height: calc(100% - 70px);
+    width: 147px;
+}
+
+.body__menu {
+    float: left;
+    position: relative;
+    margin-left: 22px;
+}
+
+.buttons-list {
+    height: 100%;
+    list-style-type: none;
+}
+
+.menu__buttons-list {
+    margin: 0;
+    padding: 0;
+}
+
+.buttons-list__element {
+    padding-left: 10px;
+    padding-top: 2%;
+    padding-bottom: 3%;
+    padding-right: 10%;
+    border-radius: 3px;
+    color: #707070;
+    font-size: 11px;
+    font-weight: 500;
+}
+
+.buttons-list__element:hover {
+    background-color: #cdd6e4;
+    color: #555555;
+    font-weight: 700;
+}
+
+.buttons-list__element_new-message-button {
+    text-align: center;
+    color: #ffffff;
+    background-color: #6287bd;
+    padding-top: 3%;
+    padding-bottom: 4%;
+    margin-bottom: 5%;
+    font-size: 12px;
+}
+
+.buttons-list__element_new-message-button:hover {
+    background-color: #4e72a6;
+    color: #ffffff;
+}

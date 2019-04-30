@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>Yandex mail</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Yandex mail">
+    <meta name="author" content="Pakulev Alexandr">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/content.css">
+</head>
+<body>
+<header class="header">
+    <div class="burger-menu header__burger-menu">
+        <div class="burger-menu__element burger-menu__element_without-top-margine"></div>
+        <div class="burger-menu__element"></div>
+        <div class="burger-menu__element"></div>
+    </div>
+    <div class="yandex-logo-image header__yandex-logo-image"></div>
+    <div class="search header__search">
+        <input class="search__input" placeholder="Поиск">
+        <div class="search__clean-search"></div>
+    </div>
+</header>
+<div class="menu body__menu">
+    <ul class="buttons-list menu__buttons-list">
+        <li class="buttons-list__element buttons-list__element_new-message-button" id="new">Написать</li>
+        <li class="buttons-list__element">Входящие</li>
+        <li class="buttons-list__element">Отправленные</li>
+        <li class="buttons-list__element">Длинное поле для этого меню в почте</li>
+        <li class="buttons-list__element">Спам</li>
+        <li class="buttons-list__element">Написать</li>
+        <li class="buttons-list__element">Черновики</li>
+        <li class="buttons-list__element">Создать папку</li>
+    </ul>
+</div>
+<div class="content-block body__content-block">
+    <div class="content-menu content-block__content-menu">
+        <input type="checkbox" class="content-menu__check" id="input0">
+        <label for="input0" class="check-view content-menu__check-view" onclick="selectAll()"></label>
+        <span class="content-menu__button content-menu__button_first">Переслать</span>
+        <span class="content-menu__button" id="delete-message">Удалить</span>
+        <span class="content-menu__button">Это спам!</span>
+        <span class="content-menu__button">Прочитано</span>
+    </div>
+    <div class="new-page content-block__new-page">
+        <div class="new-page-content">
+            <div class="new-page-content__close-page-icon" onclick="closeNewPage()"></div>
+        </div>
+    </div>
+    <div class="emails-block">
+        <ul class="emails-list emails-block__emails-list">
+        </ul>
+    </div>
+    <div class="footer content-block__footer">
+        <span class="footer__info">© 2001 - 2018, Яндекс</span>
+        <span class="footer__info">Реклама</span>
+        <span class="footer__info">Помощь и обратная связь</span>
+    </div>
+</div>
+</body>
+<script src="js/gen.js"></script>
+<script src="js/script.js"></script>
+</html>
