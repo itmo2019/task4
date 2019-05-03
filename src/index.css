@@ -1,0 +1,42 @@
+body {
+    height: 100vh;
+    min-width: 760px;
+    background-color: #e5eaf0;
+    font-family: "HelveticaNeue", sans-serif;
+    margin: 0;
+}
+
+.inbox__header-checkbox:hover, .round:hover, .letter__author:hover, .letter__title:hover, .photo:hover, .inbox__close-story-button:hover {
+    cursor: pointer;
+}
+
+.inbox__show-story-checkbox {
+    display: none;
+}
+
+.inbox__show-story-checkbox:not(:checked) ~ .letter {
+    display: block;
+}
+
+.inbox__show-story-checkbox:checked ~ .mail-list {
+    display: none;
+}
+
+.inbox__show-story-checkbox:not(:checked) ~ .inbox__story {
+    display: none;
+}
+
+.inbox__show-story-checkbox:checked ~ .inbox__story {
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 400px;
+    background-color: white;
+    font-size: 14px;
+    font-weight: 300;
+    padding: 10px 10px;
+    display: block;
+}
+
+.inbox__show-story-checkbox:checked ~ #first {
+    font-weight: normal;
+}

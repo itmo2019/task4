@@ -1,0 +1,14 @@
+.inbox__footer-link {
+    float: right;
+    font-size: 12px;
+    font-weight: 500;
+    color: #ccc;
+    margin-right: 20px;
+    margin-top: 9px;
+    display: block;
+}
+
+.inbox__footer-link:hover {
+    cursor: pointer;
+    color: #000;
+}

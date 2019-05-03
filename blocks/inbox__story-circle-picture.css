@@ -1,0 +1,6 @@
+.inbox__story-circle-picture {
+    width: 150px;
+    float: right;
+    shape-outside: circle(40%);
+    clip-path: circle(40%);
+}

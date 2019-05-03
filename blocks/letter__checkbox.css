@@ -1,0 +1,10 @@
+.letter__checkbox {
+    float: left;
+    width: 16px;
+    height: 16px;
+    margin-top: 12px;
+    margin-left: 10px;
+    border-radius: 3px;
+    border: solid 1px rgba(0, 0, 0, 0.15);
+    background-color: #fff;
+}

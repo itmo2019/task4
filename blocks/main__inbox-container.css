@@ -1,0 +1,5 @@
+.main__inbox-container {
+    min-height: calc(100% - 90px);
+    height: calc(100% - 90px);
+    padding-bottom: 20px;
+}

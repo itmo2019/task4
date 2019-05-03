@@ -1,0 +1,7 @@
+.hamburger__slice {
+    width: 20px;
+    min-height: 2px;
+    height: 2px;
+    margin-bottom: 5px;
+    background-color: #000;
+}

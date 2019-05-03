@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta content="Arina Rossomakhina" name="author">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link href="../blocks/finder.css" rel="stylesheet">
+    <link href="../blocks/finder__button-close.css" rel="stylesheet">
+    <link href="../blocks/finder__input.css" rel="stylesheet">
+    <link href="../blocks/hamburger.css" rel="stylesheet">
+    <link href="../blocks/hamburger__slice.css" rel="stylesheet">
+    <link href="../blocks/inbox.css" rel="stylesheet">
+    <link href="../blocks/inbox__close-story-button.css" rel="stylesheet">
+    <link href="../blocks/inbox__footer-link.css" rel="stylesheet">
+    <link href="../blocks/inbox__footer.css" rel="stylesheet">
+    <link href="../blocks/inbox__header-button.css" rel="stylesheet">
+    <link href="../blocks/inbox__header-checkbox.css" rel="stylesheet">
+    <link href="../blocks/inbox__header.css" rel="stylesheet">
+    <link href="../blocks/inbox__story-circle-picture.css" rel="stylesheet">
+    <link href="../blocks/inbox__wrapper.css" rel="stylesheet">
+    <link href="../blocks/letter.css" rel="stylesheet">
+    <link href="../blocks/letter__author.css" rel="stylesheet">
+    <link href="../blocks/letter__avatar.css" rel="stylesheet">
+    <link href="../blocks/letter__checkbox.css" rel="stylesheet">
+    <link href="../blocks/letter__date.css" rel="stylesheet">
+    <link href="../blocks/letter__icon.css" rel="stylesheet">
+    <link href="../blocks/letter__special-letter.css" rel="stylesheet">
+    <link href="../blocks/letter__title.css" rel="stylesheet">
+    <link href="../blocks/letter__unread-indicator.css" rel="stylesheet">
+    <link href="../blocks/logo.css" rel="stylesheet">
+    <link href="../blocks/logo__picture.css" rel="stylesheet">
+    <link href="../blocks/mail-list.css" rel="stylesheet">
+    <link href="../blocks/main.css" rel="stylesheet">
+    <link href="../blocks/main__inbox-container.css" rel="stylesheet">
+    <link href="../blocks/menu.css" rel="stylesheet">
+    <link href="../blocks/menu__button-current.css" rel="stylesheet">
+    <link href="../blocks/menu__button-special.css" rel="stylesheet">
+    <link href="../blocks/menu__button.css" rel="stylesheet">
+    <link href="../blocks/menu__header.css" rel="stylesheet">
+    <link href="index.css" rel="stylesheet">
+    <script src="index.js"></script>
+    <title>Яндекс Почта</title>
+</head>
+<body>
+<div class="menu">
+    <div class="menu__header">
+        <div class="hamburger">
+            <div class="hamburger__slice"></div>
+            <div class="hamburger__slice"></div>
+            <div class="hamburger__slice"></div>
+        </div>
+        <div class="logo">
+            <img alt="Яндекс.Почта" class="logo__picture" src="../images/logoYandex.png">
+        </div>
+    </div>
+    <button class="menu__button-special" onclick="newMail()">
+        Новое письмо
+    </button>
+    <button class="menu__button-current">
+        Входящие
+    </button>
+    <button class="menu__button">
+        Отправленные
+    </button>
+    <button class="menu__button">
+        Удалённые
+    </button>
+    <button class="menu__button">
+        Спам
+    </button>
+    <button class="menu__button">
+        Черновики
+    </button>
+    <button class="menu__button">
+        Создать папку
+    </button>
+</div>
+<div class="main">
+    <div class="finder">
+        <input class="finder__input" placeholder="Поиск" type="text">
+        <label class="finder__button-close">&times;</label>
+    </div>
+    <div class="main__inbox-container">
+        <div class="inbox">
+            <div class="inbox__header">
+                <label>
+                    <input class="inbox__header-checkbox" type="checkbox" onclick="selectAll()">
+                </label>
+                <a class="inbox__header-button">Переслать</a>
+                <a class="inbox__header-button" onclick="deleteLetters()">Удалить</a>
+                <a class="inbox__header-button">Это спам!</a>
+                <a class="inbox__header-button">Прочитано</a>
+            </div>
+            <input class="inbox__show-story-checkbox" id="show" type="checkbox"/>
+            <div class="inbox__story">
+                <label class="inbox__close-story-button" for="show">&times;</label>
+                <img alt="Венок" class="inbox__story-circle-picture" src="../images/christmas.jpg">
+                Рождественский венок — типичное украшение в домах в предрождественское время в форме венка из еловых
+                веток с
+                четырьмя свечами, закрепляемое вертикально или устанавливаемое на стол. В первое из четырёх воскресений
+                адвента зажигается первая свеча, на следующей неделе — вторая и т. д.
+                Рождественский венок был введён в рождественские традиции гамбургским лютеранским теологом Иоганном
+                Хинрихом
+                Вихерном, взявшим на воспитание нескольких детей из семей бедняков. В адвент дети постоянно спрашивали
+                воспитателя, когда же наступит Рождество. Чтобы дети могли отсчитывать дни до Рождества, в
+                1839 году Вихерн смастерил из старого деревянного колеса венок, украшенный двадцатью четырьмя малыми
+                красными и четырьмя большими белыми свечами. Каждое утро в этом венке зажигалось по одной маленькой
+                свечке,
+                к которым по воскресеньям добавлялась большая свеча.
+                В Европе венок нес особый смысл – это символ радости и веры. Рождественский венок, как со свечей, так и
+                без
+                нее, все равно нес в себе особое значение и его могли повесить на дверь или просто на стену. На двери он
+                говорил всем приходящим о гостеприимстве хозяев и готовности к празднику, а на стене был просто
+                украшением и
+                напоминал о приближении Рождества.
+            </div>
+
+            <div class="inbox__wrapper">
+                <ul class="mail-list" id="mail-list">
+                    <li class="letter letter_unread">
+                        <label class="letter__special-letter" for="show">
+                            <input class="letter__checkbox" type="checkbox">
+                            <div class="letter__icon">Я</div>
+                            <div class="letter__author">Яндекс.Паспорт</div>
+                            <div class="letter__unread-indicator letter__unread-indicator_active"></div>
+                            <div class="letter__title">Доступ восстановлен</div>
+                            <div class="letter__date">9 мар</div>
+                        </label>
+                    </li>
+
+                    <li class="letter letter_unread">
+                        <label>
+                            <input class="letter__checkbox" type="checkbox">
+                        </label>
+                        <div class="letter__icon">
+                            <img alt="avatar" class="letter__avatar" src="../images/avatar.JPG">
+                        </div>
+                        <div class="letter__author">Мама</div>
+                        <div class="letter__unread-indicator letter__unread-indicator_active"></div>
+                        <div class="letter__title">Рецепт борща</div>
+                        <div class="letter__date">9 мар</div>
+                    </li>
+                    <li class="letter">
+                        <label>
+                            <input class="letter__checkbox" type="checkbox">
+                        </label>
+                        <div class="letter__icon">И</div>
+                        <div class="letter__author">Иванов Иван</div>
+                        <div class="letter__unread-indicator letter__unread-indicator_inactive"></div>
+                        <div class="letter__title">Дипломная работа на тему "Социально педагогическая работа по развитию
+                            социальной
+                            активности старшеклассников в условиях общеобразовательного учреждения"
+                        </div>
+                        <div class="letter__date">7 мар</div>
+                    </li>
+                    <li class="letter">
+                        <label>
+                            <input class="letter__checkbox" type="checkbox">
+                        </label>
+                        <div class="letter__author">Абракадабра</div>
+                        <div class="letter__unread-indicator letter__unread-indicator_inactive"></div>
+                        <div class="letter__title">Заклинание</div>
+                        <div class="letter__date">5 мар</div>
+                    </li>
+                    <template id="template">
+                        <li class="letter letter_new-animation" id="letter">
+                            <label>
+                                <input class="letter__checkbox" type="checkbox">
+                            </label>
+                            <div class="letter__icon" id="icon"></div>
+                            <div class="letter__author" id="author"></div>
+                            <div class="letter__unread-indicator" id="unread_indicator"></div>
+                            <div class="letter__title" id="title"></div>
+                            <div class="letter__date" id="date"></div>
+                        </li>
+                    </template>
+                </ul>
+            </div>
+            <footer class="inbox__footer">
+                <a class="inbox__footer-link">© 2001—2018, Яндекс</a>
+                <a class="inbox__footer-link">Реклама</a>
+                <a class="inbox__footer-link">Помощь и обратная связь</a>
+            </footer>
+        </div>
+    </div>
+</div>
+</body>
+</html>
