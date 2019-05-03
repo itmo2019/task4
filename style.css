@@ -12,12 +12,10 @@
 	font-family: 'Yandex Sans Text Regular';
 	src: url('YandexSansText-Regular/YandexSansText-Regular.woff') format('woff'),
 		 url('YandexSansText-Regular/YandexSansText-Regular.ttf') format('truetype');
-	font-weight: normal;
-	font-style: normal;
 }
 
 .window__header {
-	margin-left: 20px; 
+	/*margin-left: 20px; */
 	margin-top: 11px; 
 }
 .bold {
@@ -26,12 +24,27 @@
 .thin {
 	font-family: Yandex Sans Text Thin;
 }
+
+@keyframes new-animation {
+	30% {
+		opacity: 0;
+		height: auto;
+		position: static;
+    }
+    to {
+    	position: static;
+    	height: auto;
+        opacity: 1;
+    }
+}
+
 @keyframes del-animation {
     90% {
         transform:  translateX(100%);
     }
     to {
         height: 0;
+        width: 0;
         opacity: 0;
         visibility: hidden;
         position: absolute;
@@ -40,6 +53,14 @@
 
 .deleted {
     animation: del-animation linear 1s;
+    animation-fill-mode:forwards;
+    animation-duration: 0.5s;
+    opacity: 1;
+    animation-iteration-count: 1;
+}
+
+.show-letter {
+	animation: new-animation linear 1s;
     animation-fill-mode:forwards;
     animation-duration: 0.5s;
     opacity: 1;
@@ -86,11 +107,6 @@
 	height: 12px;
 	font-family: HelveticaNeue, Helvetica, sans-serif;
 	font-size: 11px;
-	font-weight: normal;
-	font-style: normal;
-	font-stretch: normal;
-	line-height: normal;
-	letter-spacing: normal;
 	color: #9b9b9b;
 }
 .body__newbox-refl {
@@ -103,11 +119,7 @@
 	font-family: HelveticaNeue, Helvetica, sans-serif;
 	font-size: 12px;
 	font-weight: 500;
-	font-style: normal;
-	font-stretch: normal;
-	line-height: normal;
-	letter-spacing: normal;
-	color: #ffffff; 
+	color: #fff; 
 }
 .body__newbox {
 	width: 147px;
@@ -138,10 +150,6 @@
   	font-family: HelveticaNeue, Helvetica, sans-serif;
   	font-size: 11px;
   	font-weight: 500;
-  	font-style: normal;
-  	font-stretch: normal;
-  	line-height: normal;
-  	letter-spacing: normal;
   	color: #707070;
 }
 .menu__item:hover {
@@ -151,17 +159,11 @@
   	color: #555;
 }
 
-label {
+.firstletter__clickme {
 	display: inline-block;
 	width: inherit;
 }
-.letter__box, .firstletter__box, .lettermove__box {
-	display: inline-block;
-	position: relative;
-	margin-top: 10px;
-	margin-left: 20px;
-	margin-right: 10px;
-}
+
 .firstletter {
 	border-bottom: 1px solid #e2e2e2;
 	margin: 0px;
@@ -174,7 +176,7 @@ label {
 	color: #ccc;
 	border: 0 none;
 }
-.unreaded-letter {
+.unread-letter {
 	font-weight: bold;
 }
 
@@ -194,10 +196,6 @@ label {
 	margin-left: 10px;
 	font-family: HelveticaNeue, Helvetica, sans-serif;
 	font-size: 13px;
-	font-style: normal;
-	font-stretch: normal;
-	line-height: normal;
-	letter-spacing: normal;
 	color: #000;
 }
 
@@ -212,10 +210,6 @@ label {
 	white-space: nowrap;
 	font-family: HelveticaNeue, Helvetica, sans-serif;
 	font-size: 13px;
-	font-style: normal;
-	font-stretch: normal;
-	line-height: normal;
-	letter-spacing: normal;
 	color: #000;
 }
 
@@ -231,11 +225,6 @@ label {
 	float: right;
  	font-family: HelveticaNeue, Helvetica, sans-serif;
   	font-size: 13px;
-  	font-weight: normal;
-  	font-style: normal;
-  	font-stretch: normal;
-  	line-height: normal;
-  	letter-spacing: normal;
   	text-align: right;
   	color: #9b9b9b;
 }
@@ -274,9 +263,11 @@ body {
 	box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.2);
 	background-color: #fff;
 }
-.letter__unreaded, .firstletter__unreaded  {
+.letter__unread, .firstletter__unread  {
 	position: absolute;
-	margin-top: -20px;
+	margin-top: -25px;
+	/*margin-bottom: -20px;*/
+
 	margin-left: 261px;
 	border-radius: 50%;
 	width: 10px;
@@ -307,7 +298,8 @@ body {
     display: none;
 }
 
-#krestik, .krestik {
+#essay__close, .close {
+	display: none;
 	position: absolute;
     font-size: 20px;
     z-index: 200;
@@ -326,6 +318,16 @@ body {
 .letters__text {
 	padding: 40px;
 	box-sizing: border-box;
+}
+.letter_checkbox{
+	width: 46px;
+	height: 40px;
+	display: inline-block;
+	position: relative;
+}
+.letter__box, .firstletter__box, .lettermove__box, #set-all-box {
+	margin-top: 10px;
+	margin-left: 20px;
 }
 
 #show-letter1:checked ~ #essay {

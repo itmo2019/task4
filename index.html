@@ -44,7 +44,11 @@
 	</div>	
 	<div class="window body__window">
 		<div class="header window__header">
-				<input type="checkbox" class="header__box-item" id = "set-all-box">
+				<label id = "hb" for="set-all-box" class="letter_checkbox">
+						<input  type="checkbox" class="header__box-item" id = "set-all-box">
+						<!-- <input id = "checkbox1" type="checkbox" class="firstletter__box letter__box"> -->
+				</label>
+				
 				<input type="submit" name="forward" class="header__item" value="Переслать">
 				<button id="delButton">Удалить</button>
 				<input type="submit" name="spam" class="header__item" value="Это спам!">
@@ -53,19 +57,21 @@
 		<div id = "letters-context">
 			<input type="checkbox" id="show-letter1">
 			<article id = "essay">
-				<label id="krestik" for="show-letter1">x</label>
+				<label id="essay__close" for="show-letter1">x</label>
            		<iframe src="essay/index.html" width=100% height=100%></iframe>
 			</article>
 		</div>
 		<div class="letters window__letters" id = "list-of-letters">
-			<div class = "firstletter letters__firstletter">
-				<label id = "letters__letter1" for="show-letter1" class="letter firstletter__clickme unreaded-letter">
-					<input type="checkbox" class="firstletter__box letter__box">
+			<div class = "firstletter letters__firstletter show-letter">
+				
+				<label id = "letters__letter1" for="show-letter1" class="letter firstletter__clickme">
+					<label id = "ch1" for="checkbox1" class="letter_checkbox">
+						<input id = "checkbox1" type="checkbox" class="firstletter__box letter__box">
+					</label>
 					<div class="firstletter__logo-authtor">Я</div>
 					<div class="firstletter__authtor">Яндекс.Паспорт</div> 
 					<div class="firstletter__textletter">Доступ к аккаунту востановлен</div>
-					<div class="firstletter__date">6 авг</div>
-					<div class="firstletter__unreaded"></div>
+					<date class="firstletter__date">6 авг</date>
 				</label>
 			</div>
 			<div class="letters__emptypart"></div>
@@ -99,32 +105,54 @@
 				x.style.display = "none"
 				y.style.display = "none"
 			}
-			var leti = document.getElementById("letters__letter" + cnt)
-			if (leti.classList.contains("unreaded-letter")) {
-				leti.classList.remove("unreaded-letter")
-				leti.getElementsByClassName("letter__unreaded")[0].style.display = "none"
+			var leti = document.querySelector("#letters__letter" + cnt + ".unread-letter")
+			if (leti!=null) {
+				leti.classList.remove("unread-letter")
+				leti.getElementsByClassName("letter__unread")[0].style.display = "none"
 			}
+			
 				
 		}
-		function shcl () {
-			var leti = document.getElementById("letters__letter1")
-			if (leti.classList.contains("unreaded-letter")) {
-				leti.classList.remove("unreaded-letter")
-				leti.getElementsByClassName("firstletter__unreaded")[0].style.display = "none"
-			}
-		}
-		document.getElementById("show-letter1").addEventListener('onclick', shcl())
+		// function shcl () {
+		// 	var leti = document.getElementById("letters__letter1")
+		// 	if (leti.classList.contains("unread-letter")) {
+		// 		leti.classList.remove("unread-letter")
+		// 		leti.getElementsByClassName("firstletter__unread")[0].style.display = "none"
+		// 	}
+		// }
+		// document.getElementById("show-letter1").addEventListener('onclick', shcl())
 		function genNewLetter() {
 			var labelName = "show-letter" + cntletters
 			var newLetter = document.createElement('label');
-			newLetter.className = "letter letters__letter unreaded-letter"
+			newLetter.className = "letter letters__letter unread-letter"
 			newLetter.id = "letters__letter" + cntletters
-			newLetter.innerHTML = '<input type="checkbox" class="letter__box">'
+
+
+			var newChb = document.createElement('label');
+			newChb.setAttribute("for", "checkbox" + cntletters)
+			newChb.id = "ch" + cntletters
+			newChb.className = "letter_checkbox"
+
+			var newInnerChb = document.createElement('input');
+			newInnerChb.setAttribute('type', "checkbox")
+			newInnerChb.id = "checkbox"+ cntletters
+			newInnerChb.className = "letter__box"
+			// console.log(newInnerChb)
+
+			newChb.appendChild(newInnerChb)
+			//'<input id = "checkbox'+ cntletters+'" type="checkbox" class="letter__box">'
+			// console.log(newChb)
+			newLetter.appendChild(newChb)
+
+			/*<label id = "ch1" for="checkbox1" class="letter_checkbox">
+						<input id = "checkbox1" type="checkbox" class="firstletter__box letter__box">
+					</label>*/
+
 			author = genAuthtor()
 			newLetter.innerHTML+=' <div class="letter__logo-authtor">'+ author[0]+'</div>' 
 			newLetter.innerHTML+='<div class="letter__authtor">' + author + '</div>'
-			newLetter.innerHTML+=' <div class="letter__unreaded"></div>'
-			mesText = (generate())
+			newLetter.innerHTML+=' <div class="letter__unread"></div>'
+			mesText = generate()
 			var newLable = document.createElement('input');
 			newLable.setAttribute('type', "checkbox")
 			newLable.id = labelName
@@ -132,11 +160,11 @@
 			newLable.setAttribute("onclick", "f(" + cntletters + ")")
 			newLetter.setAttribute("for", labelName)
 			allTexts.appendChild (newLable)
-			allTexts.innerHTML+='<label class="krestik" style="display: none;" for="'  + labelName + '">x</label>'
-			allTexts.innerHTML+='<div class = "letters__text" style="display: none;">'+"От: "+author+"</br>"+ mesText +'</div>'
+			allTexts.innerHTML+='<label class="close" for="'  + labelName + '">x</label>'
+			allTexts.innerHTML+='<div class = "letters__text">'+"От: "+author+"</br>"+ mesText +'</div>'
 		
 			newLetter.innerHTML+='<div class="letter__textletter">' + mesText + '</div>'
-			newLetter.innerHTML+='<div class="letter__date">16 мар</div> </div>'
+			newLetter.innerHTML+='<date class="letter__date">16 мар</date> </div>'
 			
 			return newLetter
 		}
@@ -145,9 +173,11 @@
 			cntletters++
 			nonDeletedLetters++
 			var newDiv = document.createElement('div')
-			newDiv.className="firstletter"
-			if (nonDeletedLetters > 30) {
-				newDiv.className+=" hidden";
+			newDiv.className="firstletter show-letter"
+			if (nonDeletedLetters > 10) {
+				// var shl = querySelectorAll
+				var shl = document.getElementsByClassName("show-letter");
+				shl[9].className+=" hidden";
 			}
 			newDiv.appendChild (genNewLetter())
 
@@ -158,47 +188,73 @@
 		}
 		
 		document.getElementById("newButton").onclick=function(){
-				genLetterAndLine()
+			genLetterAndLine()
+			console.log(nonDeletedLetters)
 		}
 
 	</script>
 
 	<script language="JavaScript" type="text/javascript">
 		var setAll = document.getElementById("set-all-box")
-		setAll.onclick=function(){
+
+		function ff () {
 			var chbox;
 			chbox = document.getElementsByClassName('letter__box');
 			if (setAll.checked) {
 				for (var i = 0; i < chbox.length; i++) {
-					var elem = chbox[i].parentElement.parentElement;
+					var elem = chbox[i].parentElement.parentElement.parentElement;
 					if (!(elem.classList.contains("hidden") || (elem.classList.contains("deleted")))) {
 						chbox[i].checked = true;
 					}
 				}
 			} else {
 				for (var i = 0; i < chbox.length; i++) {
-					var elem = chbox[i].parentElement.parentElement;
+					var elem = chbox[i].parentElement.parentElement.parentElement;
 					if (!(elem.classList.contains("hidden") || (elem.classList.contains("deleted")))) {
 						chbox[i].checked = true;
 					}
 				}
 			}	
-		}
+		} 
+		setAll.addEventListener('change', function(){
+			var chbox;
+			chbox = document.getElementsByClassName('letter__box');
+			if (this.checked) {
+				// console.log("checked")
+				for (var i = 0; i < chbox.length; i++) {
+					var elem = chbox[i].parentElement.parentElement.parentElement;
+					if (!(elem.classList.contains("hidden") || (elem.classList.contains("deleted")))) {
+						chbox[i].checked = true;
+					}
+				}
+			} else {
+				// console.log("unchecked")
+				for (var i = 0; i < chbox.length; i++) {
+					var elem = chbox[i].parentElement.parentElement.parentElement;
+					if (!(elem.classList.contains("hidden") || (elem.classList.contains("deleted")))) {
+						chbox[i].checked = false;
+					}
+				}
+			}	
+		})
 	</script>
 	<script language="JavaScript" type="text/javascript">
-		document.getElementById("delButton").onclick=function(){
-			var d;
-			d=document.getElementsByClassName('letter');
+		document.getElementById("delButton").onclick = function(){
+			// console.log(nonDeletedLetters)
+			var d = document.getElementsByClassName('letter');
 			for (var i = 0; i < d.length; i++) {
-				if (d[i].firstElementChild.checked) {
-					if (nonDeletedLetters > 30) {
-						var hiddenElem = document.getElementsByClassName("hidden")[0]
-						hiddenElem.classList.remove("hidden")
+				if (d[i].firstElementChild.firstElementChild.checked) {
+					if (nonDeletedLetters > 10) {
+						var hiddenElem = document.getElementsByClassName("hidden")
+						console.log(hiddenElem)
+						hiddenElem[0].classList.remove("hidden")
 					}
 					nonDeletedLetters--
 					d[i].className+=" deleted";
+					// d[i].classList.remove("show-letter")
+					d[i].parentElement.classList.remove("show-letter")
 					d[i].parentElement.className+=" deleted";
-					d[i].firstElementChild.checked = false;
+					d[i].firstElementChild.firstElementChild.checked = false;
 				}
 			}
 
@@ -206,6 +262,7 @@
 			if (setAll.checked) {
 				setAll.checked = false;
 			}
+			console.log(nonDeletedLetters)
 			
 		}
 	</script>
