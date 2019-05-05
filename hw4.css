@@ -133,7 +133,6 @@ body {
 
 .letters__letter {
     font-size: 13px;
-    position: relative;
     width: 100%;
     border-bottom: solid 1px #e2e2e2;
 }
@@ -330,11 +329,19 @@ body {
     shape-outside: circle();
 }   
 
-.letter__choose{
+.letter__choose, .hidden { 
     display: none;
 }
 
-#letter__choose:checked+.letter__mail-opened {
+/* #letter__choose:checked+.letter__mail-opened {
+    top: 0;
+    bottom: 0;
+    display: block;
+} */
+
+#letter__choose {
+    top: 0;
+    bottom: 0;
     display: block;
 }
 
@@ -377,62 +384,34 @@ body {
     background-color: #6287bd;
 }
 
-.msg-added {
-    animation: add-msg 1s ease;
-}
-
-.msg-deleted-right {
-    animation: del-msg-right 2s ease forwards;
-}
-
-.msg-deleted-left {
-    animation: del-msg-left 2s ease forwards;
-}
-
 .hidden {
     display: none;
 }
 
-@keyframes add-msg {
-    from {
-        opacity: 0;
-        height: 0;
-    }
-    50% {
-        opacity: 0.5;
-    }
-    to {
-        opacity: 0.9;
-        height: 39px;
-    }
+.msg-adding-start {
+    opacity: 0;
+    margin-top: -1px;
+    height: 0;
 }
 
-@keyframes del-msg-right {
-    from {
-        opacity: 1;
-    }
-    75% {
-        transform: translateX(100%);
-    }
-    to {
-        opacity: 0;
-        height: 0;
-        transform: translateX(100%);
-        border: 0;
-    }
+.msg-adding-finish {
+    opacity: 1;
+    height: 39.33px;
+    transition: height 0.9s ease 0s, opacity 1s ease 0s;
 }
 
-@keyframes del-msg-left {
-    from {
-        opacity: 1;
-    }
-    75% {
-        transform: translateX(-100%);
-    }
-    to {
-        opacity: 0;
-        height: 0;
-        transform: translateX(-100%);
-        border: 0;
-    }
+.msg-deleting-start {
+    opacity: 1;
+}
+
+.msg-deleting-right {
+    opacity: 0;
+    transition: transform 2s ease 0s, opacity 2s ease 0s;   
+    transform: translateX(100%);
+}   
+
+.msg-deleting-left {
+    opacity: 0;
+    transition: transform 2s ease 0s, opacity 2s ease 0s;   
+    transform: translateX(-100%);
 }
