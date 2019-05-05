@@ -1,16 +1,17 @@
 .menu__button-current {
-    width: 100%;
-    height: 22px;
-    border-radius: 3px;
-    background-color: #cdd6e4;
-    text-align: start;
-    font-family: HelveticaNeue-Bold, sans-serif;
-    font-size: 11px;
-    margin-bottom: 3px;
-    border: none;
-    color: #555555;
+  width: 100%;
+  height: 22px;
+  margin-bottom: 3px;
+
+  border: none;
+  background-color: #cdd6e4;
+  border-radius: 3px;
+  color: #555555;
+  font-family: HelveticaNeue-Bold, sans-serif;
+  font-size: 11px;
+  text-align: start;
 }
 
 .menu__button-current:hover {
-    cursor: pointer;
+  cursor: pointer;
 }

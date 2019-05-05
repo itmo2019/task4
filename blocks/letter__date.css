@@ -1,10 +1,11 @@
 .letter__date {
-    position: relative;
-    margin-right: 20px;
-    width: 50px;
-    margin-left: auto;
-    padding-top: 12px;
-    font-weight: normal;
-    padding-left: 5px;
-    color: #9b9b9b;
+  position: relative;
+
+  width: 50px;
+  padding-top: 12px;
+  padding-left: 5px;
+  margin-right: 20px;
+  margin-left: auto;
+  color: #9b9b9b;
+  font-weight: normal;
 }

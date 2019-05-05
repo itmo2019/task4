@@ -1,15 +1,13 @@
 .letter__unread-indicator {
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    top: calc(50% - 5px);
-    border-radius: 50%;
-    margin-left: 260px;
+  position: absolute;
+  top: calc(50% - 5px);
+
+  width: 10px;
+  height: 10px;
+  margin-left: 260px;
+  border-radius: 50%;
 }
 
 .letter__unread-indicator_active {
-    background-color: #6287bd;
-}
-
-.letter__unread-indicator_inactive {
+  background-color: #6287bd;
 }

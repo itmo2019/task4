@@ -1,6 +1,7 @@
 .letter__author {
-    position: absolute;
-    height: 16px;
-    padding-top: 12px;
-    margin-left: 80px;
+  position: absolute;
+
+  height: 16px;
+  padding-top: 12px;
+  margin-left: 80px;
 }

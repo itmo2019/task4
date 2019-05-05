@@ -1,7 +1,12 @@
 .inbox__close-story-button {
-    font-size: 28px;
-    float: right;
-    margin-right: 10px;
-    border: none;
-    background: white;
+  margin-right: 10px;
+
+  border: none;
+  background: white;
+  float: right;
+  font-size: 28px;
+}
+
+.inbox__close-story-button:hover {
+  cursor: pointer;
 }

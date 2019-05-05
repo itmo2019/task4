@@ -1,5 +1,5 @@
 .inbox__wrapper {
-    overflow-y: overlay;
-    overflow-x: hidden;
-    height: calc(100% - 40px);
+  height: calc(100% - 40px);
+  overflow-x: hidden;
+  overflow-y: overlay;
 }

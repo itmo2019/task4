@@ -1,3 +1,7 @@
 .letter__special-letter {
-    font-weight: bold;
+  font-weight: bold;
+}
+
+.letter__special-letter:hover {
+  cursor: pointer;
 }

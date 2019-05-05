@@ -1,5 +1,5 @@
 .letter__avatar {
-    width: 100%;
-    height: 100%;
-    clip-path: circle();
+  width: 100%;
+  height: 100%;
+  clip-path: circle();
 }

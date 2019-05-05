@@ -25,7 +25,7 @@ function createLetter(icon, author, unread, title, date) {
     } else {
         mailList.appendChild(clone)
     }
-    setTimeout(() => mailList.firstElementChild.classList.remove("letter_new-animation"), 30)
+    setTimeout(() => mailList.firstElementChild.classList.add("letter-enter-active"), 30)
 }
 
 (function sendEmails([time1, time2]) {
@@ -64,7 +64,7 @@ function deleteLetters() {
         return x.querySelector(".letter__checkbox").checked
     });
     elements.forEach((x) => {
-        x.classList.add("letter_deleted");
+        x.classList.add("letter-exit-active", "letter-exit");
         x.querySelector(".letter__checkbox").checked = false
     });
     setTimeout(() => {

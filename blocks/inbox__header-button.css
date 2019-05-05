@@ -1,13 +1,16 @@
 .inbox__header-button {
-    margin-top: 7px;
-    float: left;
-    font-size: 14px;
-    font-weight: 500;
-    color: #ccc;
-    margin-left: 20px;
+  margin-top: 7px;
+  margin-left: 20px;
+
+  border: none;
+  background: unset;
+  color: #ccc;
+  float: left;
+  font-size: 14px;
+  font-weight: 500;
 }
 
 .inbox__header-button:hover {
-    cursor: pointer;
-    color: #000;
+  color: #000;
+  cursor: pointer;
 }

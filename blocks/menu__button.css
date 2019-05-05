@@ -1,18 +1,19 @@
 .menu__button {
-    width: 100%;
-    height: 22px;
-    border-radius: 3px;
-    background: none;
-    text-align: start;
-    font-family: HelveticaNeue-Medium, sans-serif;
-    font-size: 11px;
-    margin-bottom: 3px;
-    padding: 0 7px;
-    border: none;
-    color: #707070;
+  width: 100%;
+  height: 22px;
+  padding: 0 7px;
+  margin-bottom: 3px;
+
+  border: none;
+  background: none;
+  border-radius: 3px;
+  color: #707070;
+  font-family: HelveticaNeue-Medium, sans-serif;
+  font-size: 11px;
+  text-align: start;
 }
 
 .menu__button:hover {
-    cursor: pointer;
-    background-color: #cdd6e4;;
+  background-color: #cdd6e4;
+  cursor: pointer;
 }

@@ -1,17 +1,19 @@
 .finder__button-close {
-    position: relative;
-    border: none;
-    margin: auto auto auto -25px;
-    padding-left: 0;
-    width: 10px;
-    font-size: 16px;
-    border-radius: 3px;
-    background-color: inherit;
-    text-align: start;
-    color: #bcbcbc;
+  position: relative;
+
+  width: 10px;
+  padding-left: 0;
+  margin: auto auto auto -25px;
+
+  border: none;
+  background-color: inherit;
+  border-radius: 3px;
+  color: #bcbcbc;
+  font-size: 16px;
+  text-align: start;
 }
 
 .finder__button-close:hover {
-    cursor: pointer;
-    color: #dadada;
+  color: #dadada;
+  cursor: pointer;
 }

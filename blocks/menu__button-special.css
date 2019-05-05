@@ -1,14 +1,15 @@
 .menu__button-special {
   width: 100%;
   height: 32px;
-  border-radius: 3px;
+  margin-bottom: 8px;
+
+  border: none;
   background-color: #6287bd;
+  border-radius: 3px;
+  color: #ffffff;
   font-family: HelveticaNeue-Medium, sans-serif;
   font-size: 12px;
   font-weight: 500;
-  border: none;
-  color: #ffffff;
-  margin-bottom: 8px;
 }
 
 .menu__button-special:hover {
@@ -16,7 +17,7 @@
 }
 
 .menu__button-special:active {
-  cursor: pointer;
   border-top: solid 2px #50709d;
   border-left: solid 2px #50709d;
+  cursor: pointer;
 }
