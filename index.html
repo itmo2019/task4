@@ -174,10 +174,10 @@
 			nonDeletedLetters++
 			var newDiv = document.createElement('div')
 			newDiv.className="firstletter show-letter"
-			if (nonDeletedLetters > 10) {
+			if (nonDeletedLetters > 30) {
 				// var shl = querySelectorAll
 				var shl = document.getElementsByClassName("show-letter");
-				shl[9].className+=" hidden";
+				shl[29].className+=" hidden";
 			}
 			newDiv.appendChild (genNewLetter())
 
@@ -244,7 +244,7 @@
 			var d = document.getElementsByClassName('letter');
 			for (var i = 0; i < d.length; i++) {
 				if (d[i].firstElementChild.firstElementChild.checked) {
-					if (nonDeletedLetters > 10) {
+					if (nonDeletedLetters > 30) {
 						var hiddenElem = document.getElementsByClassName("hidden")
 						console.log(hiddenElem)
 						hiddenElem[0].classList.remove("hidden")
