@@ -313,7 +313,7 @@ a, a:active, a:visited, a:hover {
 }
 
 .message__author-name{
-    widows: 26%;
+    width: 150px; 
 }
 
 .message__mark-as-read-tick{

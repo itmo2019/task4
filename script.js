@@ -1,13 +1,13 @@
-let authors = ["Яндекс.Иванов1", "Яндекс.Иванов2", "Яндекс.Иванов3"];
-let subject = ["Задание 1", "Задание 2", "Задание 3"];
-let text = ["Первое задание принято", "Во втором задании нужны правки", "Ты опоздал с дедлайном"];
+let authors = ["Антон", "Саша", "Алексей"];
+let subject = ["Путешествие", "Стажировка", "Виза"];
+let text = ["Когда планируема дата вашего приезда ?", "Где вы собираетесь оставаться ?", "Ты опоздал с дедлайном"];
 let dates = ["1 янв", "2 фев", "3 март", "4 апр", "5 авг"];
 
 let messageTexts = new Map();
 let minTime = 10;
 let maxTime = 1000 * 60 * 10 - minTime;
 
-function selectAll() {
+function allMessagesSelect() {
     let checkboxes = document.getElementsByClassName('message__message-select');
     for (let i = 0; i < checkboxes.length; ++i) {
         if (checkboxes[i].checked) {
@@ -18,22 +18,16 @@ function selectAll() {
     }
 }
 
-function showList() {
+function setMessageListActive() {
     let lst = document.querySelector('.content-messages__message-list');
     lst.classList.remove('page_visibility_hide');
-    let x = document.querySelector('#message-select1');
-    x.style.display = 'none';
 }
 
 function getText(event, id) {
-    messageBody = document.querySelector('.content-messages__body-text');
-    messageBody.textContent = messageTexts.get(id.toString());
+    putTextContent(document, '.content-messages__body-text', messageTexts.get(id.toString()))
 
     let lst = document.querySelector('.content-messages__message-list');
     lst.classList.add('page_visibility_hide');
-
-    let x = document.querySelector('#message-select1');
-    x.style.display = 'block';
 }
 
 function buildMessage() {
@@ -52,16 +46,16 @@ function buildMessage() {
         getText(event, id);
     }, false);
 
-    messageName = newMessage.querySelector('.message__author-name');
-    messageName.textContent = authors[Math.floor(Math.random() * authors.length)];
-
-    messageSubject = newMessage.querySelector('.message__message-subject');
-    messageSubject.textContent = subject[Math.floor(Math.random() * subject.length)];
-
-    messageTime = newMessage.querySelector('.message__message-receive-time');
-    messageTime.textContent = dates[Math.floor(Math.random() * dates.length)]; 
+    putTextContent(newMessage, '.message__author-name', authors[Math.floor(Math.random() * authors.length)]);
+    putTextContent(newMessage, '.message__message-subject', subject[Math.floor(Math.random() * subject.length)]);
+    putTextContent(newMessage, '.message__message-receive-time', dates[Math.floor(Math.random() * dates.length)]);
     
     return newMessage;
+}
+
+function putTextContent(doc, name, value) {
+    messagePart = doc.querySelector(name);
+    messagePart.textContent = value; 
 }
 
 function createMessage() {
