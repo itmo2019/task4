@@ -134,6 +134,7 @@
     message24 = `— Ой! Вань! Смотри, какие клоуны!\nРот — хоть завязочки пришей…\nОй, до чего, Вань, размалёваны,\nИ голос — как у алкашей!\n\nА тот похож (нет, правда, Вань)\nНа шурина — такая ж пьянь.\nНу нет, ты глянь, нет-нет, ты глянь,\nЯ — правду, Вань!\n\n— Послушай, Зин, не трогай шурина:\nКакой ни есть, а он родня.\nСама намазана, прокурена \n—Гляди, дождёшься у меня!\n\nА чем болтать — взяла бы, Зин,\nВ антракт сгоняла б в магазин…\nЧто, не пойдёшь? Ну, я — один.\nПодвинься, Зин!..\n\n— Ой! Вань! Гляди, какие карлики!\nВ джерси одеты — не в шевьёт,\nНа нашей пятой швейной фабрике\nТакое вряд ли кто пошьёт.\n\nА у тебя, ей-богу, Вань,\nНу все друзья — такая рвань,\nИ пьют всегда в такую рань\nТакую дрянь!\n\n— Мои друзья хоть не в болонии,\nЗато не тащат из семьи.\nА гадость пьют — из экономии,\nХоть поутру — да на свои!\nА у тебя самой-то, Зин,\nПриятель был с завода шин,\nТак тот — вообще хлебал бензин.\nТы вспомни, Зин!..\n\n— Ой! Вань! Гляди-кось, попугайчики!\nНет, я, ей-богу, закричу!..\nА это кто в короткой маечке?\nЯ, Вань, такую же хочу.\n\nВ конце квартала — правда, Вань, —\nТы мне такую же сваргань…\nНу что «отстань», всегда «отстань»…\nОбидно, Вань!\n\n— Уж ты бы лучше бы молчала бы —\nНакрылась премия в квартал!\nКто мне писал на службу жалобы?\nНе ты?! Когда я их читал!\n\nК тому же эту майку, Зин,\nТебе напяль — позор один.\nТебе шитья пойдёт аршин —\nГде деньги, Зин?..\n\n— Ой! Вань! Умру от акробатиков!\nСмотри, как вертится, нахал!\nЗавцеха наш товарищ Сатюков\nНедавно в клубе так скакал.\n\nА ты придёшь домой, Иван,\nПоешь — и сразу на диван,\nИль, вон, кричишь, когда не пьян…\nТы что, Иван?\n\n— Ты, Зин, на грубость нарываешься,\nВсё, Зин, обидеть норовишь!\nТут за день так накувыркаешься…\nПридёшь домой — там ты сидишь!\n\nНу, и меня, конечно, Зин,\nВсё время тянет в магазин,\nА там — друзья… Ведь я же, Зин,\nНе пью один!`;
 
     numOfLetters = 0;
+    maxNumOfLetters = 30;
 
     document.getElementsByClassName("menu__option")[0].focus = true;
 
@@ -157,6 +158,7 @@
 
     document.getElementById('delete-button').onclick=function() {
         const d=document.getElementsByClassName('letter');
+        document.getElementsByClassName('options__all-letters-marker')[0].checked = false;
         for (var i = 0; i < d.length; i++) {
             if (d[i].firstElementChild.checked) {
                 d[i].firstElementChild.checked = false;
@@ -165,7 +167,7 @@
                 delLetter.className = 'list-of-letters__letter delete';
             }
         }
-        for (;numOfLetters < 5; numOfLetters++) {
+        for (;numOfLetters < maxNumOfLetters; numOfLetters++) {
             unbindLetter = document.getElementsByClassName('noth')[0];
             if(unbindLetter != null) {
                 unbindLetter.className = 'list-of-letters__letter add';
@@ -177,7 +179,7 @@
 
     allletters = []
 
-    const mounths = ["янв", "февр", "март", "апр", "май", "июнь", "июль", "авг", "сент", "окт", "нояб", "дека"]
+    const mounths = ["янв", "фев", "мар", "апр", "мая", "июн", "июл", "авг", "сен", "окт", "ноя", "дек"]
 
     function genData() {
         const day = genNum(1, 29);
@@ -213,7 +215,7 @@
                </div>
            </label>`;
         newLetter.classList.add('list-of-letters__letter');
-        while(numOfLetters > 5) {
+        while(numOfLetters > maxNumOfLetters) {
             addLetters = document.getElementsByClassName('add');
             addLetter = addLetters[addLetters.length - 1];
             addLetter.className = "list-of-letters__letter noth";

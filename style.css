@@ -181,7 +181,8 @@ span {
     margin-top: 0;
     margin-left: 0;
     z-index: 1;
-    overflow: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
     height: calc(100% - 37px);
 }
 
@@ -240,7 +241,7 @@ span {
 .unread-letter__title {
     position: absolute;
     top: 11px;
-    right: 72px;
+    right: 82px;
     bottom: auto;
     left: 285px;
     white-space: nowrap;
@@ -251,7 +252,7 @@ span {
 .unread-letter__date {
     float: right;
     margin: 8px 20px 8px auto;
-    width: 50px;
+    width: 60px;
     font-size: 13px;
     color: #9b9b9b;
     overflow: hidden;
