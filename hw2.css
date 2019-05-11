@@ -379,6 +379,9 @@ body {
     display: inline-block;
     margin-right: 20px;
     min-width: max-content;
+    background-color: white;
+    z-index: 300;
+
 }
 
 
@@ -408,7 +411,7 @@ body {
     /*transition-property: transform, height;
     transition-duration: 1s;*/
 
-    animation: expand 1s ease-in-out;
+    animation: expand 0.5s ease-in-out;
 }
 
 .new-message__appear {
@@ -436,13 +439,13 @@ body {
 .message-block__message-list_hidden {
     position: absolute;
     visibility: hidden;
-
 }
 
 .message-block__message-text {
     /*display: none;*/
     visibility: hidden;
     height: 0;
+    z-index: 300;
 }
 
 .message-block__message-text_visible {

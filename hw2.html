@@ -127,11 +127,18 @@
 
         }
 
+        function deleteAnim() {
+            document.querySelector('.new-message__appear').className =
+                "message-block__row message-block__central-row message-block__central-row_unread";
+
+        }
+
         function addMessage() {
 
             let letterNum = Math.floor(Math.random() * 29);
             addMessageHtml(letterNum);
             animAdd();
+            setTimeout(deleteAnim, 1000);
         }
 
         function setCheckBoxes() {
@@ -146,23 +153,31 @@
             })
         }
 
-        function showMessage(id) {
-            // hide message list
-            let mesList = document.querySelector('.message-block__message-list');
-            mesList.classList.add("message-block__message-list_hidden");
+        function hideMessageList() {
+            console.log("hideMesList");
 
-            // if message was unread- change class to read
-            let messageRow = document.getElementById(id).parentElement;
-            if (messageRow.classList.contains("message-block__central-row_unread")) {
-                messageRow.classList.remove("message-block__central-row_unread");
-                messageRow.classList.add("message-block__central-row_read")
-            }
+        }
+
+
+        function showMessage(id) {
+
+
 
             // open message text
-            let mesText = document.querySelector('.message-block__message-text');
-            mesText.innerHTML = "<button class=\"message-text__hide_button\" onclick=\"showMessageList()\">Hide</button>" + "<div class='message-text__inner-text'>" + lettersGlobal[letterMap.get(id)] + "</div>";
-            mesText.classList.add("message-block__message-text_visible");
-        }
+            setTimeout(function () {
+                let mesList = document.querySelector('.message-block__message-list');
+                mesList.classList.add("message-block__message-list_hidden");
+                // if message was unread- change class to read
+                let messageRow = document.getElementById(id).parentElement;
+                if (messageRow.classList.contains("message-block__central-row_unread")) {
+                    messageRow.classList.remove("message-block__central-row_unread");
+                    messageRow.classList.add("message-block__central-row_read")
+                }
+                let mesText = document.querySelector('.message-block__message-text');
+                mesText.innerHTML = "<button class=\"message-text__hide_button\" onclick=\"showMessageList()\">Hide</button>" + "<div class='message-text__inner-text'>" + lettersGlobal[letterMap.get(id)] + "</div>";
+                mesText.classList.add("message-block__message-text_visible");
+            }, 500)
+            }
 
         function showMessageList() {
 
