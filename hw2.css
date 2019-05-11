@@ -440,13 +440,17 @@ body {
 }
 
 .message-block__message-text {
-    display: none;
+    /*display: none;*/
+    visibility: hidden;
+    height: 0;
 }
 
 .message-block__message-text_visible {
     display: block;
     background-color: white;
     margin: 20px;
+    visibility: visible;
+    height: auto;
 }
 
 .message-text__hide_button {

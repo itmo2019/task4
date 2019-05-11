@@ -21,7 +21,7 @@
 
     function initSender() {
 
-        var letters
+        var letters;
 
         $.getJSON("./letter.json", function (json) {
 
@@ -33,11 +33,8 @@
             letterMap.set("2", 2);
             letterMap.set("3", 3);
             letterMap.set("4", 4);
-
             sender(letters);
         });
-
-
     }
 
     function sender(letters) {
@@ -50,7 +47,7 @@
                 k++;
                 addMessage(letters);
             //}
-        }, r * 1000);
+        }, r * 10);
     }
 </script>
 
@@ -81,7 +78,7 @@
                         n -= 1;
                     }
                 }
-            )
+            );
             console.log(msgs.length);
         }
 
@@ -92,8 +89,7 @@
         }
 
         function addMessageHtml(letterNum) {
-
-            letterMap.set("" + k, letterNum)
+            letterMap.set("" + k, letterNum);
 
             var newMessage = document.createElement('div');
             //newMessage.htmlFor = "hidden-message__chb";
