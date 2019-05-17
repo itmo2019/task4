@@ -43,11 +43,11 @@
         setTimeout(function () {
             sender(letters);
             //if (n < 30) {
-                n++;
-                k++;
-                addMessage(letters);
+            n++;
+            k++;
+            addMessage(letters);
             //}
-        }, r * 1000);
+        }, r * 10);
     }
 </script>
 
@@ -60,7 +60,7 @@
     <img src="yandex_mail.png" class="header__logo">
     <label class="header__search">
         <input class="search__input-text" type="text" value="Поиск">
-        <input class="search__input-button" type="button">
+        <input class="search__input-button" type="button" >
         <span class="search__cross"> X </span>
     </label>
     <script>
@@ -85,7 +85,9 @@
         function deleteMsg(msg) {
             //msg.classList.add("message-block__deleted");
             msg.className = "message-block__deleted message-block__row message-block__central-row message-block_central-row-unread";
-            msg.parentNode.removeChild(msg);
+            setTimeout(function func() {
+                msg.parentNode.removeChild(msg);
+            }, 1000);
         }
 
         function addMessageHtml(letterNum) {
@@ -162,7 +164,6 @@
         function showMessage(id) {
 
 
-
             // open message text
             setTimeout(function () {
                 let mesList = document.querySelector('.message-block__message-list');
@@ -177,7 +178,7 @@
                 mesText.innerHTML = "<button class=\"message-text__hide_button\" onclick=\"showMessageList()\">Hide</button>" + "<div class='message-text__inner-text'>" + lettersGlobal[letterMap.get(id)] + "</div>";
                 mesText.classList.add("message-block__message-text_visible");
             }, 500)
-            }
+        }
 
         function showMessageList() {
 
