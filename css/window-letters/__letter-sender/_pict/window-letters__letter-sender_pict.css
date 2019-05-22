@@ -1,4 +1,10 @@
 .window-letters__letter-sender_pict {
   width: inherit;
+  height: inherit;
   border-radius: 50%;
+  text-align: center;
+  /*padding-top: 10px;*/
+  /*background-color: purple;
+  color: purple;*/
+  /*background-color: green;*/
 }
