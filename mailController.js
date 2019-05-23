@@ -1,6 +1,6 @@
-const minTimeFrequencyAppearance = minutesToMillis(0.1);
-const maxTimeWindow = minutesToMillis(0.2);
-const maxLettersOnPage = 5;
+const minTimeFrequencyAppearance = minutesToMillis(5);
+const maxTimeWindow = minutesToMillis(10);
+const maxLettersOnPage = 30;
 
 let stack = [];
 let letterCounterOnPage = 0;
@@ -19,8 +19,9 @@ let timerId = setTimeout(function newLetter() {
         + getRandomArbitrary(0, maxTimeWindow - minTimeFrequencyAppearance));
 }, 1000);
 
+let checkAllBox = document.querySelector('#check-all-letters');
+
 function checkAll() {
-    let checkAllBox = document.querySelector('#check-all-letters');
     let checkBoxes = document.body.querySelectorAll('.check-letter_visually-hidden');
     checkBoxes.forEach(
         checkBox => {
@@ -31,21 +32,22 @@ function checkAll() {
 
 function uncheckAllChecker(currentCheckBox) {
     if (!currentCheckBox.checked) {
-        document.getElementById('check-all-letters').checked = false;
+        checkAllBox.checked = false;
     }
 }
 
 function getReadLetter(currentReadableLetter) {
-    currentReadableLetter.classList.remove('is-read_not-read');
-    currentReadableLetter.classList.add('is-read');
+    currentReadableLetter.classList.remove('covered-letter_not-read');
+    currentReadableLetter.classList.add('covered-letter');
     let needRemoveClassNode = currentReadableLetter.querySelector('.is-read-mark_not-read');
     needRemoveClassNode.classList.remove('is-read-mark_not-read');
+    needRemoveClassNode.classList.add('is-read-mark');
 }
 
 function removeLetters() {
-    let openedLetters = document.body.querySelectorAll('.letter-body_opened');
+    let openedLetters = document.body.querySelectorAll('.opened-letter');
     for (let i = 0; i < openedLetters.length; i++) {
-        if (!openedLetters[i].classList.contains('letter-body_non-displayed')) {
+        if (!openedLetters[i].classList.contains('non-displayed')) {
             return
         }
     }
@@ -56,29 +58,29 @@ function removeLetters() {
             while (!checkedLetter.classList.contains('letters-section__letter-wrapper')) {
                 checkedLetter = checkedLetter.parentNode;
             }
-            checkedLetter.classList.add('letters-section__delete-letter');
+            checkedLetter.classList.add('letters-section_delete-letter-animation');
             checkedLetter.addEventListener('animationend', () => {
                 checkedLetter.parentNode.removeChild(checkedLetter);
             });
             letterCounterOnPage--;
         }
     }
-    if (checkBoxes[0].checked) {
-        checkBoxes[0].checked = false;
+    if (checkAllBox.checked) {
+        checkAllBox.checked = false;
     }
     setTimeout( function () {
         while (letterCounterOnPage < maxLettersOnPage && stack.length > 0) {
             let lettersSection = document.querySelector('.letters-section');
             let newLetter = stack.pop();
-            newLetter.classList.add('letters-section__add-letter_with_delay');
+            newLetter.classList.add('letters-section_add-letter-animation');
             lettersSection.appendChild(newLetter);
             newLetter.addEventListener('animationend', () => {
-                newLetter.classList.remove('letters-section__add-letter_with_delay');
+                newLetter.classList.remove('letters-section_add-letter-animation');
             });
             letterCounterOnPage++;
 
         }
-    }, 700);
+    }, 550);
 
 }
 
@@ -87,11 +89,11 @@ function hideOtherLetters(currentReadableLetter) {
     let wrapperCurLetter = currentReadableLetter.parentNode.parentNode;
     for (let i = 0; i < letterSection.length; i++) {
         if (letterSection[i] !== wrapperCurLetter) {
-            letterSection[i].classList.add('letter-body_non-displayed');
+            letterSection[i].classList.add('non-displayed');
         } else {
-            letterSection[i].querySelector('.letter-body_opened').classList.remove('letter-body_non-displayed');
-            letterSection[i].querySelector('.letter-body_covered').classList.add('letter-body_non-displayed');
-            letterSection[i].querySelector('.mail-box__hr-line').classList.add('letter-body_non-displayed');
+            letterSection[i].querySelector('.opened-letter').classList.remove('non-displayed');
+            letterSection[i].querySelector('.covered-letter').classList.add('non-displayed');
+            letterSection[i].querySelector('.mail-box__hr-line').classList.add('non-displayed');
         }
     }
 }
@@ -101,11 +103,11 @@ function showOtherLetters(currentClosableLetter) {
     let wrapperCurLetter = currentClosableLetter.parentNode.parentNode;
     for (let i = 0; i < letterSection.length; i++) {
         if (letterSection[i] !== wrapperCurLetter) {
-            letterSection[i].classList.remove('letter-body_non-displayed');
+            letterSection[i].classList.remove('non-displayed');
         } else {
-            letterSection[i].querySelector('.letter-body_opened').classList.add('letter-body_non-displayed');
-            letterSection[i].querySelector('.letter-body_covered').classList.remove('letter-body_non-displayed');
-            letterSection[i].querySelector('.mail-box__hr-line').classList.remove('letter-body_non-displayed');
+            letterSection[i].querySelector('.opened-letter').classList.add('non-displayed');
+            letterSection[i].querySelector('.covered-letter').classList.remove('non-displayed');
+            letterSection[i].querySelector('.mail-box__hr-line').classList.remove('non-displayed');
         }
     }
 }

@@ -253,15 +253,15 @@
     display: none;
 }
 
-.letter-body_opened {
+.opened-letter {
     background-color: white;
 }
 
-.letter-body_covered {
+.covered-letter {
     display: flex;
 }
 
-.letter-body_opened__close {
+.opened-letter__closer {
     float: right;
     margin-top: 10px;
     margin-right: 20px;
@@ -271,17 +271,17 @@
     cursor: pointer;
 }
 
-.letter-body_opened__close:hover {
+.opened-letter__closer:hover {
     opacity: 1;
 }
 
-.letter-body_opened__content {
+.opened-letter__content {
     padding: 15px;
     font: 15px HelveticaNeue sans-serif;
     white-space: normal;
 }
 
-.is-read_not-read {
+.covered-letter_not-read {
     font-weight: 700;
 }
 
@@ -289,7 +289,7 @@
     font-weight: 500;
 }
 
-.letter-body_covered__click-to-open-wrapper {
+.covered-letter__click-to-open-wrapper {
     display: flex;
     margin: 0;
     vertical-align: middle;
@@ -299,7 +299,7 @@
     min-width: 485px;
 }
 
-.letter-body_covered__checkbox-wrapper {
+.covered-letter__checkbox-wrapper {
     padding: 13px 10px 13px 20px;
     cursor: pointer;
 }
@@ -339,14 +339,14 @@
     0 0 0 0.3em #ffff00;
 }
 
-.letter-body_covered__mini-logo-wrapper {
+.covered-letter__mini-logo-wrapper {
     margin-top: 5px;
     min-width: 30px;
     width: 30px;
     height: 30px;
 }
 
-.mini-logo {
+.mini-sender-pic {
     width: 30px;
     height: 30px;
 }
@@ -360,7 +360,7 @@
     background-color: #6287bd;
 }
 
-.is-read-mark {
+.is-read-mark, .is-read-mark_not-read {
     margin-left: 8px;
     width: 10px;
     height: 10px;
@@ -390,7 +390,7 @@
     display: inline-block;
 }
 
-.letter-body_covered__item {
+.covered-letter__item {
     line-height: 1.2;
     margin-top: 5px;
     overflow: hidden;
@@ -443,16 +443,11 @@
     min-height: 380px;
 }
 
-.letters-section__delete-letter {
+.letters-section_delete-letter-animation {
     animation: deleteLetter 0.5s linear;
 }
 
-.letters-section__add-letter {
-    animation: addLetter 0.5s linear;
-}
-
-.letters-section__add-letter_with_delay {
-    /*animation-delay: 0.5s;*/
+.letters-section_add-letter-animation {
     animation: addLetter 0.5s linear;
 }
 
@@ -478,6 +473,6 @@
     }
 }
 
-.letter-body_non-displayed {
+.non-displayed {
     display: none;
 }

@@ -101,29 +101,29 @@ function getNewLetter() {
     let letterTheme = genLetterText(true);
     let letterText = genLetterText(false);
     let letterTemplate = `
-                    <div class="letter-body_opened letter-body_non-displayed">
-                        <div class="letter-body_opened__close" onclick="showOtherLetters(this)">×</div>
-                        <div class="letter-body_opened__content main-content__distinguished">` + letterTheme +
+                    <div class="opened-letter non-displayed">
+                        <div class="opened-letter__closer" onclick="showOtherLetters(this)">×</div>
+                        <div class="opened-letter__content main-content__distinguished">` + letterTheme +
         `<br><br>` + letterText +
         `</div>
                     </div>
-                    <div class="letter-body_covered">
-                        <label class="letter-body_covered__checkbox-wrapper check-letter">
+                    <div class="covered-letter">
+                        <label class="covered-letter__checkbox-wrapper check-letter">
                             <input class="check-letter_visually-hidden" type="checkbox"
                                    onclick=uncheckAllChecker(this)>
                             <span class="check-letter__box"></span>
                         </label>
-                        <div class="letter-body_covered__mini-logo-wrapper">
-                            <img class="mini-logo" src="` + senderImage + `" alt="` + senderName + `">
+                        <div class="covered-letter__mini-logo-wrapper">
+                            <img class="mini-sender-pic" src="` + senderImage + `" alt="` + senderName + `">
                         </div>
-                        <div class="letter-body_covered__click-to-open-wrapper is-read_not-read"
+                        <div class="covered-letter__click-to-open-wrapper covered-letter_not-read"
                              onclick="hideOtherLetters(this); getReadLetter(this)">
-                            <div class="sender-name letter-body_covered__item main-content__distinguished">` + senderName +
+                            <div class="sender-name covered-letter__item main-content__distinguished">` + senderName +
         `</div>
-                            <div class="is-read-mark is-read-mark_not-read letter-body_covered__item"></div>
-                            <div class="title-text letter-body_covered__item main-content__distinguished">` + letterTheme +
+                            <div class="is-read-mark_not-read covered-letter__item"></div>
+                            <div class="title-text covered-letter__item main-content__distinguished">` + letterTheme +
         `</div>
-                            <div class="date-info letter-body_covered__item main-content__distinguished">` + letterDate +
+                            <div class="date-info covered-letter__item main-content__distinguished">` + letterDate +
         `</div>
                         </div>
                     </div>
@@ -140,22 +140,21 @@ function getNewLetter() {
     let newLetter = document.createElement('div');
     newLetter.classList.add('letters-section__letter-wrapper');
     newLetter.innerHTML = letterTemplate;
-    newLetter.classList.add('letters-section__add-letter');
-    let openedLetter = document.body.querySelectorAll('.letter-body_opened');
+    newLetter.classList.add('letters-section_add-letter-animation');
+    let openedLetter = document.body.querySelectorAll('.opened-letter');
     if (openedLetter.length !== 0) {
         for (let i = 0; i < openedLetter.length; i++) {
-            if (!openedLetter[i].classList.contains('letter-body_non-displayed')) {
-                newLetter.classList.add('letter-body_non-displayed');
+            if (!openedLetter[i].classList.contains('non-displayed')) {
+                newLetter.classList.add('non-displayed');
             }
         }
     }
     lettersSection.insertBefore(newLetter, lettersSection.firstElementChild);
     newLetter.addEventListener('animationend', () => {
-        newLetter.classList.remove('letters-section__add-letter');
+        newLetter.classList.remove('letters-section_add-letter-animation');
     });
     letterCounterOnPage++;
-    let checkBoxes = document.body.querySelectorAll('.check-letter_visually-hidden');
-    if (checkBoxes[0].checked) {
-        checkBoxes[0].checked = false;
+    if (checkAllBox.checked) {
+        checkAllBox.checked = false;
     }
 }
