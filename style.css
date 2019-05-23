@@ -1,0 +1,483 @@
+@font-face {
+    font-family: 'Yandex Sans Text';
+    src: url('fonts/YandexSansDisplay-Regular.woff');
+}
+
+@font-face {
+    font-family: HelveticaNeue;
+    src: url("fonts/HelveticaNeueCyr-Medium.otf");
+}
+
+.yandex-mail {
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    -webkit-user-select: none;
+}
+
+.main-content__distinguished {
+    -moz-user-select: text;
+    -ms-user-select: text;
+    -o-user-select: text;
+    -webkit-user-select: text;
+}
+
+.yandex-mail {
+    background-color: #e5eaf0;
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
+}
+
+.yandex-mail__header {
+    float: top;
+}
+
+.header {
+    height: 45px;
+    min-width: 800px;
+}
+
+.header__burger-menu {
+    display: inline-block;
+    margin-top: 10px;
+    margin-left: 17px;
+    padding-left: 5px;
+    padding-right: 5px;
+    float: left;
+}
+
+.burger-menu {
+    width: 20px;
+    height: 32px;
+    cursor: pointer;
+}
+
+.burger-menu__stripe {
+    display: inline-block;
+    margin-top: 7px;
+    margin-bottom: 7px;
+    width: 20px;
+    height: 3px;
+    background-color: #000000;
+}
+
+.header__yandex-mail-logo {
+    display: inline-block;
+    float: left;
+    margin-left: 6px;
+    margin-top: 12px;
+    cursor: pointer;
+}
+
+.header__mail-search {
+    padding: 11px 179px 0 320px;
+    min-width: 301px;
+    height: 32px;
+}
+
+.mail-search__input {
+    display: inline-block;
+    border: none;
+    box-sizing: border-box;
+    padding-left: 16px;
+    padding-right: 30px;
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .2);
+    background-color: #e2e2e2;
+    width: 100%;
+    height: 100%;
+    color: #6287bd;
+    outline: none;
+    font: 15px "YS Text - Regular", sans-serif;
+}
+
+.mail-search__input::placeholder {
+    color: #000000;
+    opacity: 0.3;
+}
+
+.mail-search__clear {
+    display: inline-block;
+    margin-left: -28px;
+    vertical-align: middle;
+    opacity: 0.3;
+    font-size: 22px;
+    cursor: pointer;
+    color: #000000;
+}
+
+.mail-search__clear:hover {
+    opacity: 1;
+}
+
+.mail-search {
+    min-width: 301px;
+    height: 30px;
+}
+
+
+.main-content__nav-menu {
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 22px;
+    float: left;
+}
+
+.nav-menu {
+    font-family: HelveticaNeue, sans-serif;
+    width: 147px;
+    white-space: normal;
+}
+
+.nav-menu__action-button {
+    border: none;
+    outline: none;
+    width: 147px;
+    min-height: 32px;
+    text-align: center;
+    border-radius: 3px;
+    background-color: #6287bd;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 500;
+    opacity: 0.95;
+    cursor: pointer;
+}
+
+.nav-menu__action-button:hover {
+    opacity: 1;
+}
+
+.nav-menu__action-button-indent {
+    margin-top: 5px;
+}
+
+.nav-menu__menu-list-tabs {
+    margin-top: 8px;
+    padding: 0;
+}
+
+.menu-list-tabs {
+    width: 147px;
+}
+
+.menu-list-tabs__tab {
+    list-style-type: none;
+    box-sizing: border-box;
+    padding: 7px 10px;
+    width: 147px;
+    min-height: 14px;
+    color: #707070;
+    font-size: 11px;
+    cursor: pointer;
+}
+
+
+.menu-list-tabs__incoming-tab,
+.menu-list-tabs__tab:hover {
+    border-radius: 3px;
+    background-color: #cdd6e4;
+}
+
+
+.mail-content__mail-box {
+    margin: 13px 20px 12px 191px;
+}
+
+.mail-box {
+    min-height: 530px;
+    min-width: 589px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .34);
+    border-radius: 3px;
+    background-color: #ffffff;
+    font-family: HelveticaNeue, sans-serif;
+}
+
+.mail-box__box-header {
+    display: flex;
+}
+
+.box-header {
+    height: 38px;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.mail-box__hr-line {
+    height: 1px;
+    border-top: solid 1px #e2e2e2;
+}
+
+.box-header__button {
+    padding: 15px 15px 11px 10px;
+    border: none;
+    outline: none;
+    background-color: inherit;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: pointer;
+}
+
+.box-header__button:hover {
+    color: #000000;
+    opacity: 0.75;
+}
+
+.box-header__button-wrapper {
+    color: #cccccc;
+}
+
+.box-header__check-letter {
+    display: inline-block;
+}
+
+.check-letter {
+    width: 16px;
+    height: 16px;
+}
+
+.box-header__check-all-letters-wrapper {
+    padding: 11px 10px 11px 20px;
+    cursor: pointer;
+}
+
+
+.letters-section {
+    background-color: #ffffff;
+    overflow: hidden;
+    font: 13px HelveticaNeue, sans-serif;
+}
+
+#read-letter-check {
+    display: none;
+}
+
+.letter-body_opened {
+    background-color: white;
+}
+
+.letter-body_covered {
+    display: flex;
+}
+
+.letter-body_opened__close {
+    float: right;
+    margin-top: 10px;
+    margin-right: 20px;
+    color: #000000;
+    opacity: 0.4;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.letter-body_opened__close:hover {
+    opacity: 1;
+}
+
+.letter-body_opened__content {
+    padding: 15px;
+    font: 15px HelveticaNeue sans-serif;
+    white-space: normal;
+}
+
+.is-read_not-read {
+    font-weight: 700;
+}
+
+.is-read {
+    font-weight: 500;
+}
+
+.letter-body_covered__click-to-open-wrapper {
+    display: flex;
+    margin: 0;
+    vertical-align: middle;
+    padding: 11px 10px;
+    flex-grow: 1;
+    cursor: pointer;
+    min-width: 485px;
+}
+
+.letter-body_covered__checkbox-wrapper {
+    padding: 13px 10px 13px 20px;
+    cursor: pointer;
+}
+
+.check-letter_visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+.check-letter__box {
+    display: inline-block;
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    overflow: hidden;
+    border-radius: 3px;
+    border: 1px solid rgba(0, 0, 0, .15);
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-color: #ffffff;
+    cursor: pointer;
+}
+
+.check-letter_visually-hidden:checked + .check-letter__box {
+    background-color: #4A90E2;
+    background-image: url(images/check.svg);
+}
+
+.check-letter_visually-hidden:focus + .check-letter__box {
+    box-shadow: 0 0 0 0.1em #4A90E2,
+    0 0 0 0.3em #ffff00;
+}
+
+.letter-body_covered__mini-logo-wrapper {
+    margin-top: 5px;
+    min-width: 30px;
+    width: 30px;
+    height: 30px;
+}
+
+.mini-logo {
+    width: 30px;
+    height: 30px;
+}
+
+.sender-name {
+    width: 160px;
+}
+
+.is-read-mark_not-read {
+    border-radius: 100px;
+    background-color: #6287bd;
+}
+
+.is-read-mark {
+    margin-left: 8px;
+    width: 10px;
+    height: 10px;
+}
+
+.title-text {
+    margin-left: 10px;
+    margin-right: 35px;
+    width: 220px;
+    flex: 1;
+    white-space: nowrap;
+}
+
+.date-info {
+    color: #9b9b9b;
+    text-align: right;
+    margin: 5px 10px 0 0;
+    font-weight: 500;
+    max-width: 50px;
+}
+
+#read-letter-check:checked ~ .letters-section__closed-letter-body {
+    display: none;
+}
+
+#read-letter-check:checked ~ .letters-section__letter-body_interior {
+    display: inline-block;
+}
+
+.letter-body_covered__item {
+    line-height: 1.2;
+    margin-top: 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.letters-section__footer {
+    margin-top: 75px;
+    min-width: 530px;
+    border-radius: 3px;
+    background-color: #ffffff;
+}
+
+.letters-section__footer-info {
+    padding: 7px 20px;
+    text-align: right;
+    font-size: 11px;
+    cursor: pointer;
+}
+
+.letters-section__footer-item {
+    display: inline-block;
+    margin-top: 5px;
+    vertical-align: center;
+    margin-left: 25px;
+    margin-right: -25px;
+    color: #9b9b9b;
+    max-width: 100px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.letters-section__footer-link {
+    display: inline-block;
+    margin-top: 5px;
+    margin-left: 25px;
+    color: #9b9b9b;
+    text-decoration: none;
+    max-width: 140px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.letters-section__footer-link:hover {
+    color: #000000;
+    opacity: 0.75;
+}
+
+.mail-box__letters-section-wrapper {
+    min-height: 380px;
+}
+
+.letters-section__delete-letter {
+    animation: deleteLetter 0.5s linear;
+}
+
+.letters-section__add-letter {
+    animation: addLetter 0.5s linear;
+}
+
+.letters-section__add-letter_with_delay {
+    /*animation-delay: 0.5s;*/
+    animation: addLetter 0.5s linear;
+}
+
+@keyframes addLetter {
+    from {
+        opacity: 0.0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1.0;
+        transform: translateY(0);
+    }
+}
+
+@keyframes deleteLetter {
+    from {
+        opacity: 1.0;
+        transform: translateX(0);
+    }
+    to {
+        opacity: 0.0;
+        transform: translateX(50px);
+    }
+}
+
+.letter-body_non-displayed {
+    display: none;
+}

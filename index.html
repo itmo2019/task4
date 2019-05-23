@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Яндекс Почта</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body class="yandex-mail">
+
+<header class="yandex-mail__header header">
+    <div class="burger-menu header__burger-menu">
+        <div class="burger-menu__stripe">
+            <div class="burger-menu__stripe">
+                <div class="burger-menu__stripe"></div>
+            </div>
+        </div>
+    </div>
+    <img class="header__yandex-mail-logo" src="images/yandex-mail-logo.svg" alt="Лого - Яндекс Почта"/>
+    <form class="mail-search header__mail-search">
+        <label>
+            <input class="mail-search__input" type="text" placeholder="Поиск"/>
+        </label>
+        <div class="mail-search__clear">×</div>
+    </form>
+</header>
+
+<main class="main-content">
+    <nav class="nav-menu main-content__nav-menu">
+        <button class="nav-menu__action-button">Написать</button>
+        <button class="nav-menu__action-button nav-menu__action-button-indent"
+                onclick=getNewLetter()>Получить письмо</button>
+        <ul class="nav-menu__menu-list-tabs menu-list-tabs">
+            <li class="menu-list-tabs__tab menu-list-tabs__incoming-tab">Входящие</li>
+            <li class="menu-list-tabs__tab">Отправленные</li>
+            <li class="menu-list-tabs__tab">Удалённые</li>
+            <li class="menu-list-tabs__tab">Спам</li>
+            <li class="menu-list-tabs__tab">Черновики</li>
+            <li class="menu-list-tabs__tab">Создать папку</li>
+        </ul>
+    </nav>
+    <div class="mail-content__mail-box mail-box">
+        <div class="mail-box__box-header box-header">
+            <label class="box-header__check-all-letters-wrapper check-letter">
+                <input id="check-all-letters" class="check-letter_visually-hidden" type="checkbox"
+                       onclick=checkAll()>
+                <span class="check-letter__box"></span>
+            </label>
+            <label class="box-header__button-wrapper"><input type="button"
+                                                             class="box-header__button"
+                                                             value="Переслать">
+            </label>
+            <label class="box-header__button-wrapper"><input type="button" class="box-header__button"
+                                                             value="Удалить" onclick=removeLetters()></label>
+            <label class="box-header__button-wrapper"><input type="button" class="box-header__button"
+                                                             value="Это спам!"></label>
+            <label class="box-header__button-wrapper"><input type="button" class="box-header__button"
+                                                             value="Прочитано"></label>
+        </div>
+        <div class="mail-box__hr-line"></div>
+
+
+        <div class="mail-box__letters-section-wrapper">
+            <section class="letters-section">
+            </section>
+        </div>
+
+
+        <footer class="letters-section__footer">
+            <div class="mail-box__hr-line"></div>
+            <div class="letters-section__footer-info">
+                <a href="#" class="letters-section__footer-link">Помощь и обратная связь</a>
+                <a href="#" class="letters-section__footer-link">Реклама</a>
+                <div class="letters-section__footer-item">&copy 2001-2019,</div>
+                <div class="letters-section__footer-link">Яндекс</div>
+            </div>
+        </footer>
+    </div>
+</main>
+
+</body>
+<script src="mailController.js" async></script>
+<script src="creationLetter.js" async></script>
+
+</html>
