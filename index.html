@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <title>Яндекс.Почта</title>
+</head>
+<body>
+
+<header class="header">
+    <div class="header__burger-menu">
+        <div class="header__line"></div>
+        <div class="header__line"></div>
+        <div class="header__line"></div>
+    </div>
+    <img class="header__yp-logo" src="images/header-logo.svg">
+    <div class="header__search">
+        <input class="header__text-search" type="text" placeholder="Поиск">
+        <img class="header__cross" src="images/cross.png">
+    </div>
+</header>
+<div class="main-part">
+
+    <div class="left-menu">
+        <button class="left-menu__button"><span class="left-menu__text-write">Написать</span></button>
+        <ul class="left-menu__actions-block">
+            <li class="left-menu__text-menu"><a class="main-part_unhighlight main-part__del-line" href="#">Входящие</a>
+            </li>
+            <li class="left-menu__text-menu"><a class="main-part_unhighlight main-part__del-line"
+                                                href="#">Отправленные</a></li>
+            <li class="left-menu__text-menu"><a class="main-part_unhighlight main-part__del-line" href="#">Удалённые</a>
+            </li>
+            <li class="left-menu__text-menu"><a class="main-part_unhighlight main-part__del-line" href="#">Спам</a></li>
+            <li class="left-menu__text-menu"><a class="main-part_unhighlight main-part__del-line" href="#">Черновики</a>
+            </li>
+            <li class="left-menu__text-menu"><a class="main-part_unhighlight main-part__del-line" href="#">Создать
+                папку</a></li>
+        </ul>
+    </div>
+
+    <div class="main-info">
+        <div>
+            <div class="main-title">
+                <input class="main-part__checkbox" type="checkbox" onclick="selectAll()">
+                <a class="main-title__text-title main-part__del-line" href="#">Переслать</a>
+                <a class="main-title__text-title main-part__del-line" href="#">Удалить</a>
+                <a class="main-title__text-title main-part__del-line" href="#">Это спам!</a>
+                <a class="main-title__text-title main-part__del-line" href="#">Прочитано</a>
+            </div>
+            <div class="size-content" id="show">
+                <div class="mem">
+
+                </div>
+
+                <div class="content">
+                    <a class="content__close main-part__del-line" href="#" onclick="closeLetter()"><img class="content__cross" src="images/cross.png"></a>
+                    <div class="content__text-letter"></div>
+                </div>
+            </div>
+        </div>
+        <div class="end-title">
+            <span class="end-title__text-endline">&copy; 2001-2018, <a class="main-part_unhighlight main-part__del-line" href="#">Яндекс</a></span>
+            <span class="end-title__text-endline"><a class="main-part_unhighlight main-part__del-line" href="#">Реклама</a></span>
+            <span class="end-title__text-endline"><a class="main-part_unhighlight main-part__del-line" href="#">Помощь и обратная связь</a></span>
+        </div>
+
+    </div>
+</div>
+<script src="scripts/script.js"></script>
+</body>
+</html>
