@@ -60,11 +60,11 @@ function getLetter(i) {
     letter.querySelectorAll('label[for="letter_open_"]').forEach(
         (it) => it.setAttribute("for", id)
     );
-    const sender = senders[getRandomInt(0, senders.length)];
+    const sender = getRandomElement(senders);
     letter.querySelector(".letter__mail-sender").innerText = sender;
     letter.querySelector(".letter__sender-ico").innerText = sender[0];
     letter.querySelector(".letter__receive-time").innerText = getDate();
-    letter.querySelector(".letter__message-title").innerText = themes[getRandomInt(0, themes.length)];
+    letter.querySelector(".letter__message-title").innerText = getRandomElement(themes);
     letter.querySelector(".letter__message-text").innerText = getMessage();
 
     return letter;
@@ -113,8 +113,20 @@ const senders = ["Удивительные факты", "Настоящие но
 
 const themes = ["Ты не поверишь", "Этого никто не мог предскозать", "Это действительно случилось"];
 
+const subject = ["Омич", "Кот", "Студент"];
+const action = ["спас", "ограбил", "убил"];
+const object = ["собаку", "пенсионерку", "барнаульца"];
+const smth = ["ночью", "в морге", "во славу Сатане"];
+
 function getMessage() {
-    return "123e";
+    return getRandomElement(subject) + " "
+        + getRandomElement(action) + " "
+        + getRandomElement(object) + " "
+        + getRandomElement(smth) + "!";
+}
+
+function getRandomElement(arr) {
+    return arr[getRandomInt(0, arr.length)];
 }
 
 function getDate() {
