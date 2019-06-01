@@ -1,0 +1,57 @@
+.menu-hamburger {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    padding-bottom: 5px;
+    margin-right: 6px;
+}
+
+.menu-hamburger__plank {
+    width: 22px;
+    height: 2px;
+    margin: 5px;
+    background: #000;
+}
+
+.search__input {
+    display: inline-block;
+    padding-left: 16px;
+    opacity: 0.5;
+    background-color: #fff;
+    font-family: YandexSansRegular, serif;
+    font-size: 15px;
+    line-height: 2.13;
+    color: #000;
+    width: 80%;
+    border: 1px solid #ccc;
+    outline: 0;
+    padding-right: 24px;
+}
+
+.search {
+    margin-left: 130px;
+    display: inline-block;
+    position: relative;
+    width: 300px;
+    height: 32px;
+}
+
+.sidebar__logo {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 11px;
+    font-weight: 100;
+}
+.search__cross-button {
+    position: absolute;
+    right: 20px;
+    top: 4px;
+    width: 12px;
+    height: 12px;
+    padding: 0 8px;
+    font-style: normal;
+    font-size: 1.5em;
+    user-select: none;
+    cursor: pointer;
+    opacity: 0.15;
+}

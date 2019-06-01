@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>Яндекс.Почта</title>
+    <meta charset="utf-8">
+    <link href="css/mail.css" rel="stylesheet">
+    <link href="css/header.css" rel="stylesheet">
+    <link href="css/letter.css" rel="stylesheet">
+    <link href="css/footer.css" rel="stylesheet">
+    <link href="css/navigation.css" rel="stylesheet">
+    <script src="js/mail.js"></script>
+</head>
+<body>
+
+<header>
+    <div class="menu-hamburger">
+        <div class="menu-hamburger__plank"></div>
+        <div class="menu-hamburger__plank"></div>
+        <div class="menu-hamburger__plank"></div>
+    </div>
+    <div class="sidebar__logo">
+        <a class="mail__link" href="#">
+            <img alt="yandex" src="img/sidebar__img-yandex.svg">
+        </a>
+        <a class="mail__link" href="#">
+            <img alt="mail" src="img/sidebar_img-mail.svg">
+        </a>
+    </div>
+    <div class="search">
+        <input class="search__input" type="text" placeholder="Поиск">
+        <i class="search__cross-button">&times</i>
+    </div>
+</header>
+<main class="mail__main-container">
+    <section class="navigation-bar">
+        <button class="navigation-bar__button" id="write-button">Написать</button>
+        <nav>
+            <ul class="navigation-list">
+                <li><a class="mail__link" href="#">
+                    <div class="navigation-list__item">Входящие</div>
+                </a></li>
+                <li><a class="mail__link" href="#">
+                    <div class="navigation-list__item">Отправленные</div>
+                </a></li>
+                <li><a class="mail__link" href="#">
+                    <div class="navigation-list__item">Удаленные</div>
+                </a></li>
+                <li><a class="mail__link" href="#">
+                    <div class="navigation-list__item">Спам</div>
+                </a></li>
+                <li><a class="mail__link" href="#">
+                    <div class="navigation-list__item">Черновики</div>
+                </a></li>
+                <li><a class="mail__link" href="#">
+                    <div class="navigation-list__item">Создать папку</div>
+                </a></li>
+            </ul>
+        </nav>
+    </section>
+    <section class="mail__body">
+        <div class="mails__actions">
+            <input id="checkbox-that-rules" class="mail__checkbox" type="checkbox">
+            <div class="mail__action"><a class="mail__link" href="#">Переслать</a></div>
+            <div class="mail__action"><a class="mail__link" href="#" id="delete">Удалить</a></div>
+            <div class="mail__action"><a class="mail__link" href="#">Это спам!</a></div>
+            <div class="mail__action"><a class="mail__link" href="#">Прочитано</a></div>
+        </div>
+        <div class="letters">
+            <div class="latter letter_unread">
+                <input id="letter_open0" class="letter__opener" type="checkbox">
+                <label for="letter_open0">
+                    <input class="mail__checkbox" type="checkbox">
+                    <div class="letter__sender-ico">Я</div>
+                    <span class="letter__mail-sender">Яндекс</span>
+                    <input class="letter__read-mark" type="checkbox" checked>
+                    <span class="letter__message-title">Доступ восстановлен</span>
+                    <span class="letter__receive-time">12 авг</span>
+                </label>
+                <article class="letter__message">
+                    <label for="letter_open0" class="letter__message-close">X</label>
+                    <p class="letter__message-text">
+                        <img class="letter__img" src="./img/crug.jpg" alt="crug">
+                        В Горящих Источниках я свернул вправо и тенью пронесся через Горную
+                        Страну Артайна. Шерн пришлось лишить главаря кертов, поскольку ее банда
+                        назойливо досаждала мне с высоких карнизов местных каньонов. В конце
+                        концов нас оставили в покое, и мы оказались под синевато-серым небом, из
+                        которого лился зеленый дождь. Теперь вниз, на равнины, туда, где вьются
+                        песчаные дьяволы, напевая в камнях, которыми они были когда-то, унылые
+                        мелодии загробных миров.</p>
+
+                </article>
+            </div>
+            <div class="latter letter_unread">
+                <input id="letter_open1" class="letter__opener" type="checkbox">
+                <label for="letter_open1">
+                    <input class="mail__checkbox" type="checkbox">
+                    <div class="letter__sender-ico">Я</div>
+                    <span class="letter__mail-sender">qwerty</span>
+                    <input class="letter__read-mark" type="checkbox" checked>
+                    <span class="letter__message-title">восстановлен</span>
+                    <span class="letter__receive-time">3 мар</span>
+                </label>
+                <article class="letter__message">
+                    <label for="letter_open1" class="letter__message-close">X</label>
+                    <p class="letter__message-text">
+                        qwerty
+                       </p>
+
+                </article>
+            </div>
+            <div class="latter ">
+                <input id="letter_open2" class="letter__opener" type="checkbox">
+                <label for="letter_open2">
+                    <input class="mail__checkbox" type="checkbox">
+                    <div class="letter__sender-ico">Я</div>
+                    <span class="letter__mail-sender">Яндекс,Яндекс,Яндекс,Яндекс,Яндекс,Яндекс,Яндекс,Яндекс,Яндекс,,Яндекс,Яндекс</span>
+                    <input class="letter__read-mark" type="checkbox">
+                    <span class="letter__message-title">Доступ восстановлен,восстановлен,восстановлен,восстановлен,восстановлен,восстановлен,восстановлен,восстановлен</span>
+                    <span class="letter__receive-time">12 авг,авг,авг,авг,авг,авг,авг,авг,авг,авг,авг,авг,авг,авг,авг,авг</span>
+                </label>
+                <article class="letter__message">
+                    <label for="letter_open2" class="letter__message-close">X</label>
+                    <p class="letter__message-text">
+                        ps</p>
+                </article>
+            </div>
+
+        </div>
+        <footer class="mail-footer">
+            <nav class="mail-footer__body">
+                <a class="mail-footer__item mail__link" href="#">Помощь и обратная связь</a>
+                <a class="mail-footer__item mail__link" href="#">Реклама</a>
+                <a class="mail-footer__item mail__link" href="#">&copy 2001&mdash;2019, Яндекс</a>
+            </nav>
+        </footer>
+    </section>
+</main>
+<template id="letter__template">
+    <div class="latter letter_unread letter_new">
+        <input id="letter_open_" class="letter__opener" type="checkbox">
+        <label for="letter_open_">
+            <input class="mail__checkbox" type="checkbox">
+            <div class="letter__sender-ico">Я</div>
+            <span class="letter__mail-sender">qwerty</span>
+            <input class="letter__read-mark" type="checkbox" checked>
+            <span class="letter__message-title">восстановлен</span>
+            <span class="letter__receive-time">3 мар</span>
+        </label>
+        <article class="letter__message">
+            <label for="letter_open_" class="letter__message-close">X</label>
+            <p class="letter__message-text">
+                qwerty
+            </p>
+
+        </article>
+    </div>
+</template>
+</body>
+</html>
