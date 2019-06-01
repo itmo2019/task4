@@ -13,9 +13,9 @@ function getRandomArbitrary(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min
 }
 
-let timerId = setTimeout(function newLetter() {
+let clock = setTimeout(function newLetter() {
     getNewLetter();
-    timerId = setTimeout(newLetter, minTimeFrequencyAppearance
+    clock = setTimeout(newLetter, minTimeFrequencyAppearance
         + getRandomArbitrary(0, maxTimeWindow - minTimeFrequencyAppearance));
 }, 1000);
 
