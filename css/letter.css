@@ -1,0 +1,171 @@
+.letter_unread span:not(.letter__receive-time) {
+    font-family: HelveticaNeue, serif;
+    font-weight: bold;
+}
+
+.latter {
+    white-space: nowrap;
+    padding: 2px 20px;
+    vertical-align: middle;
+
+    line-height: normal;
+    font-family: HelveticaNeueLight, serif;
+    font-size: 0;
+    color: #000;
+    background-color: white;
+    border-bottom: 1px solid #e2e2e2;
+}
+
+.letter__read-mark {
+    vertical-align: middle;
+    display: inline-block;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: 0;
+}
+
+.letter__sender-ico {
+    margin: 5px 10px;
+    box-sizing: border-box;
+    padding: 4px 8px;
+    width: 30px;
+    font-size: 20px;
+    height: 30px;
+    display: inline-block;
+    vertical-align: middle;
+    color: #fff;
+    background: #f22;
+    align-content: center;
+    border-radius: 50%;
+    font-weight: bold;
+    font-family: HelveticaNeue, serif;
+}
+
+.letter__read-mark:checked {
+    background-color: #6287bd;
+}
+
+.letter__read-mark:hover {
+    background-color: #e5eaf0;
+}
+
+.letter__receive-time {
+    overflow: hidden;
+    max-width: 40px;
+    font-size: 13px;
+    display: inline-block;
+    vertical-align: middle;
+    float: right;
+    color: #9b9b9b;
+    line-height: 40px;
+    font-weight: normal;
+}
+
+.letter__message-title {
+    font-size: 13px;
+    display: inline-block;
+    max-width: calc(80% - 200px);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+}
+
+.letter__mail-user-avatar {
+    margin: 5px;
+    vertical-align: middle;
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+.letter__mail-sender {
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 185px;
+    max-height: 16px;
+    font-size: 13px;
+    vertical-align: middle;
+}
+
+.letter__opener {
+    display: none;
+}
+
+.letter__opener:checked ~ .letter__message {
+    display: block;
+    z-index: 6;
+}
+
+.letter__message {
+    font-family: HelveticaNeueLight, serif;
+    vertical-align: middle;
+    display: none;
+    padding: 15px;
+    font-size: 16px;
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 43px;
+    height: calc(100% - 84px - 20px);
+    background-color: white;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    z-index: -1;
+}
+
+.letter__message-close {
+    float: right;
+    width: 15px;
+    height: 15px;
+    font-weight: 100;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.letter__message-text {
+    word-wrap: break-word;
+    white-space: initial;
+    vertical-align: middle;
+}
+
+.letter__img {
+    width: 140px;
+    height: 140px;
+    float: left;
+    border-radius: 50%;
+    shape-outside: circle();
+}
+
+.letter_new {
+
+opacity: 0;
+}
+
+.letter_showed {
+transition: all 1000ms;
+
+opacity: 1;
+}
+
+
+.letter_removed {
+    opacity: 0;
+    transition: opacity 400ms;
+
+}
+
+
+
+
+
+
+

@@ -1,0 +1,24 @@
+
+.mail-footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    overflow: hidden;
+    height: 40px;
+    border-top: 1px solid #e2e2e2;;
+    font-family: HelveticaNeueLight, serif;
+    font-size: 11px;
+    color: #9b9b9b;
+    line-height: 15px;
+    text-align: right;
+    vertical-align: bottom;
+}
+
+.mail-footer__item {
+    margin-left: 20px;
+}
+
+.mail-footer__body {
+    display: inline-block;
+    padding: 10px 20px;
+}

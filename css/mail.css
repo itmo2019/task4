@@ -1,0 +1,104 @@
+@font-face {
+    font-family: YandexSansBold;
+    src: url("../fonts/YandexSansDisplay-Bold.ttf");
+}
+
+@font-face {
+    font-family: YandexSansThin;
+    src: url("../fonts/YandexSansDisplay-Thin.ttf");
+}
+
+@font-face {
+    font-family: YandexSansLight;
+    src: url("../fonts/YandexSansDisplay-Light.ttf");
+}
+
+@font-face {
+    font-family: YandexSansRegular;
+    src: url("../fonts/YandexSansDisplay-Regular.ttf");
+}
+
+@font-face {
+    font-family: HelveticaNeue;
+    src: url("../fonts/HelveticaNeueCyr-Medium.otf");
+}
+
+@font-face {
+    font-family: HelveticaNeueLight;
+    src: url("../fonts/HelveticaNeueCyr-Light.otf");
+}
+
+body {
+    background-color: #e5eaf0;
+    height: 100%;
+    min-width: 900px;
+    padding-left: 20px;
+    padding-right: 14px;
+
+}
+
+html {
+    height: 100%;
+}
+
+
+.mail__link {
+    color: unset;
+    text-decoration: none;
+}
+
+.mail__body {
+    display: inline-block;
+    position: relative;
+    width: 80%;
+    min-height: 500px;
+    border-radius: 3px;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.34);
+    background-color: #fff;
+    margin-bottom: 30px;
+    padding-bottom: 40px;
+}
+
+.mail__action {
+    vertical-align: middle;
+    display: inline-block;
+    margin-right: 26px;
+}
+
+.mails__actions {
+    padding: 10px 20px;
+    font-family: HelveticaNeue, serif;
+    font-size: 13px;
+    color: #ccc;
+    border-bottom: 1px solid #e2e2e2;;
+}
+
+.letters {
+    height: calc(100% - 71px);
+    overflow: auto;
+}
+
+.mail__checkbox {
+    display: inline-block;
+    vertical-align: middle;
+    filter: brightness(1.2);
+    width: 16px;
+    height: 16px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#checkbox-that-rules {
+    margin-right: 20px;
+}
+
+.mail__main-container {
+    height: 100%;
+}
+
+
+
+
+
