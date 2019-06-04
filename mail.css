@@ -129,6 +129,10 @@ body {
 
 }
 
+.button__added {
+    padding-top: 40%;
+}
+
 .options {
     margin-top: 6%;
     height: 25%;
@@ -188,10 +192,12 @@ body {
 }
 
 .letter {
-    height: 8%;
+    height: 30px;
     border-bottom: 1px solid #e2e2e2;
     font-size: 100%;
     padding: 0 1%;
+    transition: height 0.6s, background-color 0.6s;
+    overflow-y: hidden;
 }
 
 .letter__contact {
@@ -317,5 +323,26 @@ body {
 
 .button_write:active {
     background: #6287ff;
+}
+
+@keyframes deletion {
+    to {
+        height: 0px;
+        border: none;
+    }
+}
+
+.letter[data-state="deleted"] {
+    animation: deletion 0.6s 1 ease forwards;
+}
+
+.letter[data-state="hidden"] {
+    height: 0px;
+    border-width: 0px;
+}
+
+.letter[data-state="showed"] {
+    height: 30px;
+    background-color: white;
 }
 
