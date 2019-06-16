@@ -1,0 +1,19 @@
+.write-letter-button {
+    border-radius: 3px;
+    background-color: #6287bd;
+    cursor: pointer;
+    padding: 10px 0 12px 0;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    font-family: Helvetica;
+    font-size: 12px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #ffffff;
+}

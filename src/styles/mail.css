@@ -1,0 +1,16 @@
+.mail {
+    position: relative;
+    box-sizing: border-box;
+    min-width: 400px;
+    width: calc(100% - 300px - 20px);
+    background-color: #fff;
+    border-radius: 3px;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.34);
+    overflow: hidden;
+}
+
+.mail__action-bar,
+.mail__letter-block,
+.mail__footer {
+    display: block;
+}

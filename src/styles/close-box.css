@@ -1,0 +1,35 @@
+.close-box {
+    background-color: rgba(255, 255, 255, 0);
+    cursor: pointer;
+    height: 32px;
+    width: 32px;
+    opacity: 0.15;
+    position: relative;
+}
+
+.close-box:hover {
+    opacity: 1;
+}
+
+.close-box__close {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
+
+.close-box__close:before,
+.close-box__close:after {
+    position: absolute;
+    content: "";
+    height: 15px;
+    width: 1px;
+    background-color: rgb(0, 0, 0);
+}
+
+.close-box__close:before {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.close-box__close:after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}

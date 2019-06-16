@@ -1,0 +1,8 @@
+.checkbox {
+    margin: auto 10px auto 20px;
+}
+
+.checkbox {
+    display: inline-block;
+    vertical-align: middle;
+}

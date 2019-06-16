@@ -1,0 +1,26 @@
+@import "header.css";
+@import "search-bar.css";
+@import "close-box.css";
+@import "burger.css";
+@import "yandex-logo.css";
+@import "main-block.css";
+@import "sidebar.css";
+@import "write-letter-button.css";
+@import "mail.css";
+@import "action-bar.css";
+@import "letter.css";
+@import "footer.css";
+@import "checkbox.css";
+@import "icon.css";
+@import "letter-block.css";
+@import "message.css";
+
+body {
+    min-width: 900px;
+    margin: 0;
+    background-color: #E5EAF0;
+}
+
+html {
+    height: 100%;
+}

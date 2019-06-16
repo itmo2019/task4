@@ -1,0 +1,15 @@
+.main-block {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.main-block__sidebar {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.main-block__mail {
+    display: inline-block;
+    vertical-align: top;
+}
