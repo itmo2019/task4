@@ -1,0 +1,23 @@
+.message {
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    white-space: normal;
+    overflow: auto;
+    text-overflow: clip;
+}
+
+.message__close-box-wrapper {
+    background-color: rgba(255, 255, 255, 0);
+
+    display: block;
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.message__image {
+    float: left;
+    shape-outside: polygon(27% 1%, 83% 37%, 88% 70%, 54% 100%, 0 100%, 0 18%);
+}

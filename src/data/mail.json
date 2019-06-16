@@ -1,0 +1,101 @@
+[
+    {
+        "id" : "1",
+        "sender": {
+            "name": "Alex",
+            "email": "sasha@example.com"
+        },
+        "topic" : "привет",
+        "data" : "привет)",
+        "date" : "15.09.09"
+    },
+    {
+        "id" : "2",
+        "sender": {
+            "name": "Anna",
+            "email": "anna@example.com"
+        },
+        "topic" : "Re: привет",
+        "data" : "Добрый вечер",
+        "date" : "17.09.09"
+    },
+    {
+        "id" : "3",
+        "sender": {
+            "name": "Контест2",
+            "email": "contest2@example.com"
+        },
+        "topic": "Результаты2",
+        "data" : "К сожалению вы прошли в следующий этап.",
+        "date" : "08.08.18",
+        "unread" : "true"
+    },
+    {
+        "id" : "4",
+        "sender": {
+            "avatar" : "images/ya-default2.svg",
+            "name": "Контест2",
+            "email": "contest2@example.com"
+        },
+        "topic": "Результаты 1.25",
+        "data" : "К сожалению вы прошли в следующий этап.",
+        "date" : "08.08.18"
+    },
+    {
+        "id" : "5",
+        "sender": {
+            "avatar" : "images/ya-default.svg",
+            "name": "Яндекс.Контест",
+            "email": "contest@example.com"
+        },
+        "topic": "Результаты",
+        "data" : "Поздравляем! Вы прошли в следующий этап.",
+        "date" : "08.08.18"
+    },
+    {
+        "id" : "6",
+        "sender": {
+            "name": "Яндекс.Карты",
+            "email": "maps@example.com"
+        },
+        "topic": "карты",
+        "data" : "что то про карты",
+        "date" : "03.12.18"
+    },
+    {
+        "id" : "7",
+        "sender": {
+            "avatar" : "images/ya-default2.svg",
+            "name": "Rандекс.Паспорт",
+            "email": "pass@example.com"
+        },
+        "topic": "Письмо с неверной ссылкой для аватара",
+        "data" : "Письмо с неверной ссылкой для аватара",
+        "date" : "06.12.18",
+        "unread" : "true"
+    },
+    {
+        "id" : "8",
+        "sender": {
+            "avatar" : "images/ya-default.svg",
+            "name": "Яндекс.Паспорт",
+            "email": "pass@example.com"
+        },
+        "topic": "Очень большое сообщение которое не помещается в строку.\n                        Очень большое сообщение которое не помещается в строку.\n                        Очень большое сообщение которое не помещается в строку.\n                        Очень большое сообщение которое не помещается в строку.\n                        Очень большое сообщение которое не помещается в строку.",
+        "data" : "Очень большое сообщение которое не помещается в строку.\n                        Очень большое сообщение которое не помещается в строку.\n                        Очень большое сообщение которое не помещается в строку.\n                        Очень большое сообщение которое не помещается в строку.\n                        Очень большое сообщение которое не помещается в строку.",
+        "date" : "12.02.19",
+        "unread" : "false"
+    },
+    {
+        "id" : "9",
+        "sender": {
+            "avatar" : "images/peepoClown.png",
+            "name": "peepoClown",
+            "email": "peepoClown@example.com"
+        },
+        "topic": "Message: very clever text dlya proverki obtekaemosti",
+        "data" : "<img class=\"message__image\" src=\"images/peepoClown.png\" alt=\"peepoClown image\" width=\"240\" height=\"240\">\n\n        Message: very clever text dlya proverki obtekaemosti\n        a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a \n        a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a \n        a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a \n        a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a \n        a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a \n        a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a \n        a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a \n        a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a \n        a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a ",
+        "date" : "01.04.19",
+        "unread" : "true"
+    }
+]

@@ -1,0 +1,8 @@
+.letter-block {
+    position: relative;
+    min-height: 450px;
+}
+
+.letter-block__letter {
+    display: block;
+}
