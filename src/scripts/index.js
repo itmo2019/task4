@@ -1,6 +1,6 @@
 const root = document.getElementById('mail');
 
-const LETTER_ON_PAGE = 15;
+const LETTERS_ON_PAGE = 30;
 
 let last_id = -1;
 let letters_num = 0;
@@ -40,7 +40,7 @@ global.newMail = newMail;
 function addItem(data) {
     let item = generateLetter(data);
     item.classList.add('letter_new');
-    if (letters_num === LETTER_ON_PAGE) {
+    if (letters_num === LETTERS_ON_PAGE) {
         root.lastChild.remove();
         letters_num -= 1;
     }
@@ -126,8 +126,8 @@ function prepareMail() {
                 last_id = Math.max(last_id, parseInt(l.id, 10));
             }
             console.log(data);
-            letters_num = Math.min(store.length, LETTER_ON_PAGE);
-            root.append(...(store.slice(Math.max(0, store.length - LETTER_ON_PAGE), store.length).map(generateLetter).reverse()));
+            letters_num = Math.min(store.length, LETTERS_ON_PAGE);
+            root.append(...(store.slice(Math.max(0, store.length - LETTERS_ON_PAGE), store.length).map(generateLetter).reverse()));
             newMail();
         });
 }
@@ -147,7 +147,7 @@ remove_button.addEventListener("click", function () {
         letters_num -= 1;
         setTimeout(function () {
             parent.remove();
-            if (store.length > letters_num && letters_num < LETTER_ON_PAGE) {
+            if (store.length > letters_num && letters_num < LETTERS_ON_PAGE) {
                 letters_num += 1;
                 root.insertAdjacentElement('beforeend', generateLetter(store[store.length - letters_num]));
             }
