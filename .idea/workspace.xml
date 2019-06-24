@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7d830bdb-dc5b-422c-a4a8-cda1c210d36b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Яндекс.Почта.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mail.css" beforeDir="false" afterPath="$PROJECT_DIR$/mail.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mail.html" beforeDir="false" afterPath="$PROJECT_DIR$/mail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/script3.js" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -19,16 +23,21 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="467">
-              <caret line="62" column="24" lean-forward="true" selection-start-line="62" selection-start-column="24" selection-end-line="62" selection-end-column="24" />
+            <state relative-caret-position="306">
+              <caret line="18" column="71" selection-start-line="18" selection-start-column="71" selection-end-line="18" selection-end-column="71" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Яндекс.Почта.png">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="647">
+            <state relative-caret-position="1139">
               <caret line="67" column="37" selection-start-line="67" selection-start-column="37" selection-end-line="67" selection-end-column="37" />
             </state>
           </provider>
@@ -37,26 +46,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mail.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="556">
-              <caret line="325" column="1" selection-start-line="325" selection-start-column="1" selection-end-line="325" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://D:/untitled/mail.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="59" column="29" lean-forward="true" selection-end-line="108" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://D:/untitled/mail.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="505">
-              <caret line="345" column="28" lean-forward="true" selection-end-line="348" />
+            <state relative-caret-position="573">
+              <caret line="86" column="21" selection-start-line="86" selection-start-column="21" selection-end-line="86" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -84,20 +75,23 @@
       <find>text_left</find>
       <find>cancel_</find>
       <find>button</find>
+      <find>chec</find>
+      <find>let</find>
     </findStrings>
     <replaceStrings>
       <replace>text_letter</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/mail.css" />
-        <option value="$PROJECT_DIR$/mail.html" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/mail.html" />
+        <option value="$PROJECT_DIR$/mail.css" />
       </list>
     </option>
   </component>
@@ -113,6 +107,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -124,18 +119,23 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="C:/Program Files/Git/bin/git.exe" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -168,11 +168,13 @@
       <workItem from="1552564075753" duration="24300000" />
       <workItem from="1552764122572" duration="5514000" />
       <workItem from="1559651586146" duration="1248000" />
+      <workItem from="1559741912498" duration="6472000" />
+      <workItem from="1561395854350" duration="838000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52204000" />
+    <option name="totallyTimeSpent" value="59514000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -202,43 +204,35 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/../Education/homework1/index.html" />
-    <entry file="file://D:/untitled/mail.css">
+    <entry file="file://D:/untitled/mail.css" />
+    <entry file="file://D:/untitled/mail.html" />
+    <entry file="file://$PROJECT_DIR$/script3.js" />
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="505">
-          <caret line="345" column="28" lean-forward="true" selection-end-line="348" />
+        <state relative-caret-position="1139">
+          <caret line="67" column="37" selection-start-line="67" selection-start-column="37" selection-end-line="67" selection-end-column="37" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://D:/untitled/mail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="59" column="29" lean-forward="true" selection-end-line="108" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/script3.js">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/mail.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="556">
-          <caret line="325" column="1" selection-start-line="325" selection-start-column="1" selection-end-line="325" selection-end-column="1" />
+        <state relative-caret-position="573">
+          <caret line="86" column="21" selection-start-line="86" selection-start-column="21" selection-end-line="86" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="467">
-          <caret line="62" column="24" lean-forward="true" selection-start-line="62" selection-start-column="24" selection-end-line="62" selection-end-column="24" />
+        <state relative-caret-position="306">
+          <caret line="18" column="71" selection-start-line="18" selection-start-column="71" selection-end-line="18" selection-end-column="71" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="647">
-          <caret line="67" column="37" selection-start-line="67" selection-start-column="37" selection-end-line="67" selection-end-column="37" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/Безымянный.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Яндекс.Почта.png">
+      <provider selected="true" editor-type-id="images" />
     </entry>
   </component>
 </project>
