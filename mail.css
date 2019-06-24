@@ -77,10 +77,14 @@ body {
 
 .search__search-form {
     position: relative;
-    margin-left: 25%;
-    width: 50%;
+    margin-left: 18%;
+    width: 65%;
     height: 100%;
     opacity: 0.5033;
+    font-family: "YSText-Regular", serif;
+    font-size: 100%;
+    line-height: 100%;
+    font-weight: 400;
 }
 
 @font-face {
@@ -102,7 +106,7 @@ body {
     position: relative;
     top: 0;
     height: 100%;
-    width: 18.4%
+    width: 15%
 }
 
 .content {
@@ -115,7 +119,7 @@ body {
 }
 
 .menu__button_write {
-    padding-top: 4%;
+    padding-top: 6%;
     position: relative;
     height: 5.1%;
     background: #6287bd;
@@ -129,10 +133,6 @@ body {
 
 }
 
-.button__added {
-    padding-top: 40%;
-}
-
 .options {
     margin-top: 6%;
     height: 25%;
@@ -140,24 +140,26 @@ body {
 
 .option {
     font-family: HelveticaNeue-Medium, sans-serif;
-    font-size: 90%;
+    font-size: 100%;
     height: 18%;
     color: #707070;
     border-radius: 5px;
     padding-left: 5%;
     vertical-align: center;
     padding-top: 3%;
+    display: table;
+    width: 100%;
 }
 
 .actions {
-    height: 8%;
+    height: 3.125%;
     border-bottom: 1px solid #e2e2e2;
     padding-left: 1%;
 }
 
 .checkbox {
     float: left;
-    height: calc(85% - 0px);
+    height: calc(70% - 0px);
     vertical-align: middle;
 }
 
@@ -192,12 +194,20 @@ body {
 }
 
 .letter {
-    height: 30px;
+    height: 3.125%;
     border-bottom: 1px solid #e2e2e2;
     font-size: 100%;
     padding: 0 1%;
     transition: height 0.6s, background-color 0.6s;
     overflow-y: hidden;
+}
+
+.icon {
+    height: 100%;
+    padding: 0.15% 0 0 0.5%;
+    vertical-align: middle;
+    width: 2%;
+    float: left;
 }
 
 .letter__contact {
@@ -213,7 +223,7 @@ body {
     text-overflow: ellipsis;
     height: calc(100% - 0px);
     display: table;
-    padding: 0 2%;
+    padding: 0 0 0 1.5%;
 }
 
 .checked {
@@ -241,7 +251,7 @@ body {
 }
 
 .footer {
-    height: 5%;
+    height: 3.125%;
     position: relative;
     bottom: 0;
     border-top: 1px solid #e2e2e2;
@@ -324,25 +334,3 @@ body {
 .button_write:active {
     background: #6287ff;
 }
-
-@keyframes deletion {
-    to {
-        height: 0px;
-        border: none;
-    }
-}
-
-.letter[data-state="deleted"] {
-    animation: deletion 0.6s 1 ease forwards;
-}
-
-.letter[data-state="hidden"] {
-    height: 0px;
-    border-width: 0px;
-}
-
-.letter[data-state="showed"] {
-    height: 30px;
-    background-color: white;
-}
-
