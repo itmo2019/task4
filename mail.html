@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <title>task 2</title>
     <link rel="stylesheet" href="mail.css">
-
+    <script type="text/javascript" src="script3.js"></script>
 </head>
-<body class="body">
+<body class="body" onload="f()">
 <div class="header">
     <div class="img">
         <img class="img__toolbar" src="https://upload.wikimedia.org/wikipedia/commons/b/b2/Hamburger_icon.svg" width="31px" alt="toolbar">
@@ -31,6 +31,8 @@
             <div class="option options__">Черновики</div>
             <div class="option options__createdir">Создать папку</div>
         </div>
+        <div class="menu__button_add">Добавить письмо</div>
+        <div class="menu__button_delete">Удалить письмо</div>
     </div>
 
     <div class="main">
@@ -62,6 +64,14 @@
                     </p>
                 </section>
             </article>
+            <div class="letter letter_hidden" data-state="hidden">
+                <input type="checkbox" class="checkbox">
+                <div class="icon"><img src="yandex_cyr_icon-icons.com_59870.svg" height="90%" class="letter__contact" alt="yaicon"></div>
+                <div class="from"><div class="text_overflow">ЯндексПаспорт</div></div>
+                <div class="letter__checked"></div>
+                <div class="theme"><div class="text_overflow">Доступ к аккаунту восстановлён</div></div>
+                <div class="data"><div class="text_overflow">6 авг</div></div>
+            </div>
             <div class="letter">
                 <input type="checkbox" class="checkbox">
                 <div class="icon"><img src="yandex_cyr_icon-icons.com_59870.svg" height="90%" class="letter__contact" alt="yaicon"></div>

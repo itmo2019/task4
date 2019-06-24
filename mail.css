@@ -151,6 +151,36 @@ body {
     width: 100%;
 }
 
+.menu__button_add {
+    margin-top: 50%;
+    padding-top: 6%;
+    position: relative;
+    height: 5.1%;
+    background: #6287bd;
+    top: 0;
+    border-radius: 5px;
+    font-family: HelveticaNeue-Medium, sans-serif;
+    color: white;
+    text-align: center;
+    font-size: 100%;
+    vertical-align: center;
+}
+
+.menu__button_delete {
+    margin-top: 60%;
+    padding-top: 6%;
+    position: relative;
+    height: 5.1%;
+    background: #6287bd;
+    top: 0;
+    border-radius: 5px;
+    font-family: HelveticaNeue-Medium, sans-serif;
+    color: white;
+    text-align: center;
+    font-size: 100%;
+    vertical-align: center;
+}
+
 .actions {
     height: 3.125%;
     border-bottom: 1px solid #e2e2e2;
@@ -333,4 +363,31 @@ body {
 
 .button_write:active {
     background: #6287ff;
+}
+
+@keyframes deletion {
+    to {
+        height: 0px;
+        border: none;
+    }
+}
+
+@keyframes addition {
+    from {
+        height: 0%;
+        border: none;
+    }
+}
+
+.letter[data-state="deleted"] {
+    animation: deletion 0.6s 1 ease forwards;
+}
+
+.letter[data-state="hidden"] {
+    height: 0%;
+    border-width: 0px;
+}
+
+.letter[data-state="showed"] {
+    animation: addition 0.6s 1 ease forwards;
 }
