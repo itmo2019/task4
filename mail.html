@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>task 2</title>
     <link rel="stylesheet" href="mail.css">
-    <script type="text/javascript" src="script3.js"></script>
+    <script type="text/javascript" src="script4.js"></script>
 </head>
 <body class="body" onload="f()">
 <div class="header">
@@ -24,15 +24,13 @@
     <div class="menu">
         <div class="menu__button_write">Написать</div>
         <div class="options">
-            <div class="option"><div class="text option__input">Входящие</div></div>
+            <div class="option" onclick="showLetters()"><div class="text option__input">Входящие</div></div>
             <div class="option"><div class="text option__sended">Отправленные</div></div>
             <div class="option"><div class="text option__removed">Удалённые</div></div>
             <div class="option options__spam">Спам</div>
             <div class="option options__">Черновики</div>
             <div class="option options__createdir">Создать папку</div>
         </div>
-        <div class="menu__button_add">Добавить письмо</div>
-        <div class="menu__button_delete">Удалить письмо</div>
     </div>
 
     <div class="main">
@@ -44,33 +42,23 @@
             <div class="action"><div class="text action__readed">Прочитано</div></div>
         </div>
         <div class="letters">
-            <div class="letter letter_focused" tabindex="0">
+            <div class="letter">
                 <input type="checkbox" class="checkbox">
                 <div class="icon"><img src="yandex_cyr_icon-icons.com_59870.svg" height="90%" class="letter__contact" alt="yaicon"></div>
                 <div class="from"><div class="text_overflow">ЯндексПаспорт</div></div>
                 <div class="letter__checked"></div>
                 <div class="theme"><div class="text_overflow">Доступ к аккаунту восстановлён</div></div>
                 <div class="data"><div class="text_overflow">6 авг</div></div>
+                <div class="text letter__text"></div>
             </div>
-            <article class="article">
-                <div class="cancel cancel_focused" tabindex="1"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Fairytale_button_cancel.png" width="34px" alt="cancel" class="cancel__button"></div>
-                <section class="first-section">
-                    <div class="shaped"></div>
-                    <p class="paragrah">
-                        <span class="paragraph__first-letter">Ф</span><b>роненд разаработчик</b> является одной из самых востребованных профессией по версии сайта <a href="https://insights.stackoverflow.com/survey/2018/#developer-roles">StackOverflow</a>.
-                        Но так же существует и большая конкуренция, поскольку в сети множество курсов, обучающих созданию сайтов.
-                        А значит для получения высокооплачиваемой работы необходимо обладать качественными знаниями (о них говорится на изображении).
-                        Я надеюсь, что курс фронтенда даст мне знания, которых хватит для создания простейших веб-приложений.
-                    </p>
-                </section>
-            </article>
-            <div class="letter letter_hidden" data-state="hidden">
+            <div class="letter_hidden" data-state="hidden">
                 <input type="checkbox" class="checkbox">
                 <div class="icon"><img src="yandex_cyr_icon-icons.com_59870.svg" height="90%" class="letter__contact" alt="yaicon"></div>
                 <div class="from"><div class="text_overflow">ЯндексПаспорт</div></div>
                 <div class="letter__checked"></div>
                 <div class="theme"><div class="text_overflow">Доступ к аккаунту восстановлён</div></div>
                 <div class="data"><div class="text_overflow">6 авг</div></div>
+                <div class="text letter__text"></div>
             </div>
             <div class="letter">
                 <input type="checkbox" class="checkbox">
@@ -79,6 +67,7 @@
                 <div class="letter__checked"></div>
                 <div class="theme"><div class="text_overflow">Доступ к аккаунту восстановлён</div></div>
                 <div class="data"><div class="text_overflow">6 авг</div></div>
+                <div class="text letter__text"></div>
             </div>
             <div class="letter">
                 <input type="checkbox" class="checkbox">
@@ -87,6 +76,7 @@
                 <div class="letter__checked"></div>
                 <div class="theme"><div class="text_overflow">Доступ к аккаунту восстановлён</div></div>
                 <div class="data"><div class="text_overflow">6 авг</div></div>
+                <div class="text letter__text"></div>
             </div>
             <div class="letter">
                 <input type="checkbox" class="checkbox">
@@ -95,6 +85,7 @@
                 <div class="letter__checked"></div>
                 <div class="theme"><div class="text_overflow">Доступ к аккаунту восстановлён</div></div>
                 <div class="data"><div class="text_overflow">6 авг</div></div>
+                <div class="text letter__text"></div>
             </div>
         </div>
         <div class="footer">

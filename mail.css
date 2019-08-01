@@ -391,3 +391,12 @@ body {
 .letter[data-state="showed"] {
     animation: addition 0.6s 1 ease forwards;
 }
+
+.letter__text {
+    display: none;
+    width: 0;
+}
+
+.letter_hidden {
+    display: none;
+}
