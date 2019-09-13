@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>task 2</title>
+    <link rel="stylesheet" href="mail.css">
+    <script type="text/javascript" src="script4.js"></script>
+</head>
+<body class="body" onload="f()">
+<div class="header">
+    <div class="img">
+        <img class="img__toolbar" src="https://upload.wikimedia.org/wikipedia/commons/b/b2/Hamburger_icon.svg" width="31px" alt="toolbar">
+    </div>
+    <div class="logo">
+        <img class="logo__img" src="Яндекс.Почта.png" width="300px">
+    </div>
+    <div class="search">
+        <label>
+            <input type="text" class="search__search-form" value="Поиск">
+        </label>
+    </div>
+</div>
+<div class="content">
+    <div class="menu">
+        <div class="menu__button_write">Написать</div>
+        <div class="options">
+            <div class="option" onclick="showLetters()"><div class="text option__input">Входящие</div></div>
+            <div class="option"><div class="text option__sended">Отправленные</div></div>
+            <div class="option"><div class="text option__removed">Удалённые</div></div>
+            <div class="option options__spam">Спам</div>
+            <div class="option options__">Черновики</div>
+            <div class="option options__createdir">Создать папку</div>
+        </div>
+    </div>
+    <div class="main">
+        <div class="actions">
+            <input type="checkbox" class="checkbox actions__checkbox">
+            <div class="action"><div class="text action__replace">Переслать</div></div>
+            <div class="action"><div class="text action__remove" onclick="deleteLetters()">Удалить</div></div>
+            <div class="action"><div class="text action__spam">Это спам!</div></div>
+            <div class="action"><div class="text action__readed">Прочитано</div></div>
+        </div>
+        <div class="letters">
+            <div class="letter">
+                <input type="checkbox" class="checkbox">
+                <div class="icon"><img src="yandex_cyr_icon-icons.com_59870.svg" height="90%" class="letter__contact" alt="yaicon"></div>
+                <div class="from"><div class="text_overflow">ЯндексПаспорт</div></div>
+                <div class="letter__checked"></div>
+                <div class="theme"><div class="text_overflow">Доступ к аккаунту восстановлён</div></div>
+                <div class="data"><div class="text_overflow">6 авг</div></div>
+                <div class="text letter__text"></div>
+            </div>
+            <div class="letter_hidden" data-state="hidden">
+                <input type="checkbox" class="checkbox">
+                <div class="icon"><img src="yandex_cyr_icon-icons.com_59870.svg" height="90%" class="letter__contact" alt="yaicon"></div>
+                <div class="from"><div class="text_overflow">ЯндексПаспорт</div></div>
+                <div class="letter__checked"></div>
+                <div class="theme"><div class="text_overflow">Доступ к аккаунту восстановлён</div></div>
+                <div class="data"><div class="text_overflow">6 авг</div></div>
+                <div class="text letter__text"></div>
+            </div>
+            <div class="letter">
+                <input type="checkbox" class="checkbox">
+                <div class="icon"><img src="yandex_cyr_icon-icons.com_59870.svg" height="90%" class="letter__contact" alt="yaicon"></div>
+                <div class="from"><div class="text_overflow">ЯндексПаспорт</div></div>
+                <div class="letter__checked"></div>
+                <div class="theme"><div class="text_overflow">Доступ к аккаунту восстановлён</div></div>
+                <div class="data"><div class="text_overflow">6 авг</div></div>
+                <div class="text letter__text"></div>
+            </div>
+            <div class="letter">
+                <input type="checkbox" class="checkbox">
+                <div class="icon"><img src="yandex_cyr_icon-icons.com_59870.svg" height="90%" class="letter__contact" alt="yaicon"></div>
+                <div class="from"><div class="text_overflow">ЯндексПаспорт</div></div>
+                <div class="letter__checked"></div>
+                <div class="theme"><div class="text_overflow">Доступ к аккаунту восстановлён</div></div>
+                <div class="data"><div class="text_overflow">6 авг</div></div>
+                <div class="text letter__text"></div>
+            </div>
+            <div class="letter">
+                <input type="checkbox" class="checkbox">
+                <div class="icon"><img src="yandex_cyr_icon-icons.com_59870.svg" height="90%" class="letter__contact" alt="yaicon"></div>
+                <div class="from"><div class="text_overflow">ЯндексПаспорт</div></div>
+                <div class="letter__checked"></div>
+                <div class="theme"><div class="text_overflow">Доступ к аккаунту восстановлён</div></div>
+                <div class="data"><div class="text_overflow">6 авг</div></div>
+                <div class="text letter__text"></div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="link footer__link1">&copy; 2001-2018, Яндекс</div>
+            <div class="link footer__link2">Реклама</div>
+            <div class="link footer__link3">Помощь и обратная связь</div>
+        </div>
+    </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
